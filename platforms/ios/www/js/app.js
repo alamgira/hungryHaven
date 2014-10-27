@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var myApp = angular.module('starter', ['ionic', 'starter.controllers'])
+var myApp = angular.module('starter', ['ionic', 'starter.controllers','ui.router']);
 
 myApp.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,7 +20,7 @@ myApp.run(function($ionicPlatform) {
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
     .state('app', {
@@ -47,21 +47,25 @@ myApp.run(function($ionicPlatform) {
         }
       }
     })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('app.home', {
+      url: "/home",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/home.html",
+          controller: 'homeCtrl'
         }
       }
     })
-      .state('checkLocation',{
-        url:"/checkLocation",
-          templateUrl:'templates/checkLocation.html',
-          controller:'checkLocation'
-      })
 
+      .state('app.playlists', {
+          url: "/playlists",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/playlists.html",
+                  controller: 'PlaylistsCtrl'
+              }
+          }
+      })
     .state('app.single', {
       url: "/playlists/:playlistId",
       views: {
@@ -70,8 +74,32 @@ myApp.run(function($ionicPlatform) {
           controller: 'PlaylistCtrl'
         }
       }
-    });
+    })
+      .state('checkLocation',{
+          url:"/checkLocation",
+          templateUrl:'templates/checkLocation.html',
+          controller:'checkLocationCtrl'
+      })
+      .state('login',{
+          url:"/login",
+
+          templateUrl:'templates/login.html',
+          controller:'LoginCtrl'
+      })
+      .state('login-registerUser',{
+
+          url:"/login/registerUser",
+
+          templateUrl:'templates/registerUser.html',
+          controller:'registerCtrl'
+
+
+
+      })
+
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/checkLocation');
-});
+        //$provide("adminRoot","http://www.adminhungryhaven.com/")
+}]);
 

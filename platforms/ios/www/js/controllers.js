@@ -45,4 +45,184 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService) {
+        function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
+
+            if (states[networkState] != 'No network Connection'){
+                return true;
+            }
+            return false;
+
+        }
+        $ionicPlatform.ready(function() {
+
+
+            // $scope.submit = utils.submitForm;
+
+
+            window.scope = $scope;
+            function startRedirecting(){
+                console.log("redirecting");
+               // $location.path('/login');
+                 $state.go('login');
+            }
+            function onSuccess(position) {
+                /* alert('Latitude: '          + position.coords.latitude          + '\n' +
+                 'Longitude: '         + position.coords.longitude         + '\n' +
+                 'Altitude: '          + position.coords.altitude          + '\n' +
+                 'Accuracy: '          + position.coords.accuracy          + '\n' +
+                 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                 'Heading: '           + position.coords.heading           + '\n' +
+                 'Speed: '             + position.coords.speed             + '\n' +
+                 'Timestamp: '         + position.timestamp                + '\n');
+
+                 */
+                SessionService.set('current_user_longitude',position.coords.longitude);
+                console.log(SessionService.get('current_user_longitude'));
+                startRedirecting();
+            };
+
+// onError Callback receives a PositionError object
+//
+            function onError(error) {
+                alert('code: '    + error.code    + '\n' +
+                    'message: ' + error.message + '\n');
+            }
+
+            // $location.path('/login');
+            if (!checkConnection()){
+                navigator.app.exitApp();
+            }
+            else{
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            }
+            $scope.myForm = {};
+            $scope.locationDetails = null;
+
+            var utils = {
+                submitForm:function(){
+                    SessionService.set('current_user_locationDetails',$scope.locationDetails);
+                    //$location.path('/login');
+                   // $state.go('/login','slide');
+                    $state.go('login');
+                    //$location.path('/login')
+                },
+                test:function(){
+                    console.log("Clicked");
+
+                }
+
+            };
+            $scope.$watch('locationDetails',function(){
+                if ($scope.locationDetails != null){
+                    alert("Clicked");
+                    utils.submitForm();
+                }
+
+            });
+
+            $scope.test = utils.test;
+
+            //checkConnection();
+            /*var div = document.getElementById("map_canvas");
+             map = plugin.google.maps.Map.getMap(div);
+             */
+        });
+
+
+})
+.controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','SessionService','$ionicModal', function($scope, Auth, $location, $ionicPlatform, SessionService,$ionicModal) {
+    $ionicPlatform.ready(function() {
+        window.scope = $scope;
+        $scope.credentials = {username: "", password: "", remember: ""};
+        $scope.userData = {username: "", id: ""};
+
+        $ionicModal.fromTemplateUrl('templates/registerUser.html', {
+            scope: $scope
+        }).then(function(modal) {
+                $scope.modal = modal;
+            });
+
+        // Triggered in the login modal to close it
+        $scope.closeLogin = function() {
+            $scope.modal.hide();
+        };
+        var utils = {
+            createNewUser:function(){
+                console.log('here');
+                $scope.modal.show();
+            },
+            signIn:function(){
+                console.log("Clicking Sign IN");
+                $location.path('/app/home');
+            }
+        };
+        $scope.goToRegistration = utils.createNewUser;
+        $scope.signInUser = utils.signIn;
+       /*$scope.loginUser = function() {
+
+            angular.element('#error-message').hide();
+
+            Auth.login({
+                username: $scope.credentials.username,
+                password: $scope.credentials.password,
+                remember: $scope.credentials.remember
+            }).success(function(data) {
+
+                    if (data.error) {
+                        angular.element('#error-message').show();
+                    } else {
+                        console.log("You are signed in!");
+                        /*console.log($scope.userData);
+                         $scope.userData.username = data.user.username;
+                         $scope.userData.id = data.user.id;
+                         console.log($scope.userData);*/
+        /*        $scope.credentials = {};
+                        $location.path('/');
+                  }
+                });
+        };*/
+
+    });
+
+}])
+    .controller('registerCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','SessionService','$stateParams', function($scope, Auth, $location, $ionicPlatform,SessionService,$stateParams) {
+        $ionicPlatform.ready(function() {
+
+        });
+
+
+    }])
+
+    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+        $ionicPlatform.ready(function() {
+            $scope.toggleLeft = function() {
+                alert('leftMenuOpende');
+                $ionicSideMenuDelegate.toggleLeft();
+            };
+            $scope.toggleRight = function() {
+                alert('RightMenu');
+                $ionicSideMenuDelegate.toggleRight();
+            };
+            $timeout(function() {
+                var div = document.getElementById("mapView");
+                map = plugin.google.maps.Map.getMap(div);
+            }, 1000);
+
+        });
+    }])
+;
+

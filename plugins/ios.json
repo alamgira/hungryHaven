@@ -5,6 +5,86 @@
     },
     "config_munge": {
         "files": {
+            "framework": {
+                "parents": {
+                    "AVFoundation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "CoreLocation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 2
+                        }
+                    ],
+                    "CoreText.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "GLKit.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "ImageIO.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libc++.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libicucore.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "OpenGLES.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "QuartzCore.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        },
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
             "config.xml": {
                 "parents": {
                     "/*": [
@@ -27,21 +107,21 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
-                        }
-                    ]
-                }
-            },
-            "framework": {
-                "parents": {
-                    "CoreLocation.framework": [
+                        },
                         {
-                            "xml": "false",
+                            "xml": "<feature name=\"HttpRequest\"><param name=\"ios-package\" value=\"HttpRequest\" /></feature>",
                             "count": 1
-                        }
-                    ],
-                    "SystemConfiguration.framework": [
+                        },
                         {
-                            "xml": "true",
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"ios-package\" value=\"GoogleMaps\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"External\"><param name=\"ios-package\" value=\"External\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geocoder\"><param name=\"ios-package\" value=\"Geocoder\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -53,6 +133,22 @@
                         {
                             "xml": "<string />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<string>Show your location on the map</string>",
+                            "count": 1
+                        }
+                    ],
+                    "Google Maps API Key": [
+                        {
+                            "xml": "<string>AIzaSyB_7YMp9ruG68qlUbZEy2RKi7dciMBzASE</string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSLocationAlwaysUsageDescription": [
+                        {
+                            "xml": "<string>Trace your location on the map</string>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,21 +156,38 @@
         }
     },
     "installed_plugins": {
+        "android.support.v4": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
         "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.hungryionic968110"
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.hungryionic968110"
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.ionicframework.hungryionic968110"
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.geolocation": {
-            "PACKAGE_NAME": "com.ionicframework.hungryionic968110"
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.network-information": {
-            "PACKAGE_NAME": "com.ionicframework.hungryionic968110"
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_IOS": "AIzaSyB_7YMp9ruG68qlUbZEy2RKi7dciMBzASE",
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "plugin.http.request": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        }
+    }
 }

@@ -116,6 +116,7 @@ select, input[type=text]{
     background-color: rgba(255,255,255, .3);
     border:1px solid #fff;
 }
+
 .pPic input[type=text],
 .pPic input[type=password],
 .pPic input[type=email],
@@ -146,7 +147,7 @@ ul.pPic li input[type=text],
 ul.pPic li input[type=password],
 ul.pPic li input[type=email],
 ul.pPic li input[type=number], select{
-    width: 85%;
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
 }
 ul.pPic select{
