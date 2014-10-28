@@ -47,7 +47,7 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService) {
+    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate) {
         function checkConnection() {
             var networkState = navigator.connection.type;
 
@@ -101,7 +101,10 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
                 alert('code: '    + error.code    + '\n' +
                     'message: ' + error.message + '\n');
             }
-
+            $scope.toggleSideMenu = function(){
+              alert('here');
+                $ionicSideMenuDelegate.toggleLeft();
+            };
             // $location.path('/login');
             if (!checkConnection()){
                 navigator.app.exitApp();
@@ -110,11 +113,11 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
                 navigator.geolocation.getCurrentPosition(onSuccess, onError);
             }
             $scope.myForm = {};
-            $scope.locationDetails = null;
+            $scope.data = null;
 
             var utils = {
                 submitForm:function(){
-                    SessionService.set('current_user_locationDetails',$scope.locationDetails);
+                    SessionService.set('current_user_locationDetails',$scope.data.locationDetails);
                     //$location.path('/login');
                    // $state.go('/login','slide');
                     $state.go('login');
@@ -126,15 +129,18 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
                 }
 
             };
-            $scope.$watch('locationDetails',function(){
-                if ($scope.locationDetails != null){
-                    alert("Clicked");
+            $scope.$watch('data.locationDetails',function(oldValue,newValue){
+                alert(newValue);
+                if (newValue != oldValue && newValue != null){
+                    $scope.data = newValue;
+                    alert('clicked');
                     utils.submitForm();
                 }
 
+
             });
 
-            $scope.test = utils.test;
+            //$scope.test = utils.test;
 
             //checkConnection();
             /*var div = document.getElementById("map_canvas");
@@ -209,10 +215,7 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
     .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
         $ionicPlatform.ready(function() {
-            $scope.toggleLeft = function() {
-                alert('leftMenuOpende');
-                $ionicSideMenuDelegate.toggleLeft();
-            };
+
             $scope.toggleRight = function() {
                 alert('RightMenu');
                 $ionicSideMenuDelegate.toggleRight();
@@ -221,6 +224,93 @@ appController.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
                 var div = document.getElementById("mapView");
                 map = plugin.google.maps.Map.getMap(div);
             }, 1000);
+
+            $scope.toggleSideMenu = function(){
+
+                if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                    document.getElementById('leftSideMenu').style.visibility = "hidden";
+                    map.setClickable(true);
+                    $ionicSideMenuDelegate.toggleRight();
+                }
+                else{
+
+
+                    document.getElementById('leftSideMenu').style.visibility = "visible";
+                    map.setClickable(false);
+                    $ionicSideMenuDelegate.toggleLeft();
+
+                }
+
+            };
+
+        });
+    }])
+    .controller('detailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate) {
+        $ionicPlatform.ready(function() {
+
+            $scope.goBack = function(){
+                $ionicNavBarDelegate.back();
+            };
+            var contest={
+                titleClass : "hcontestgreen",
+                dateClass : "conDateG",
+                timeClass : "",
+                addressClass : "conAdsG",
+                priceClass : "conTag",
+                mapClass : "mapIt4Green mapIt4contest"
+            };
+            var challenge={
+                titleClass : "hcongreen",
+                dateClass : "othDateG",
+                timeClass : "othalmG",
+                addressClass : "othAdsG",
+                priceClass : "pTag",
+                mapClass : "mapIt4Green"
+            };
+            var festival={
+                titleClass : "hcon",
+                dateClass : "othDate",
+                timeClass : "",
+                addressClass : "othAds",
+                priceClass : "",
+                mapClass : "mapIt"
+            };
+            console.log("id: "+$stateParams.id + " type: "+$stateParams.type);
+            if ($stateParams.type == "contest"){
+                $scope.styleClass = contest;
+            }else if ($stateParams.type == "challenge"){
+                $scope.styleClass = challenge;
+            }else{
+                $scope.styleClass = festival;
+            }
+            /*$scope.toggleRight = function() {
+                alert('RightMenu');
+                $ionicSideMenuDelegate.toggleRight();
+            };
+            $timeout(function() {
+                var div = document.getElementById("mapView");
+                map = plugin.google.maps.Map.getMap(div);
+            }, 1000);
+
+            $scope.toggleSideMenu = function(){
+
+                if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                    document.getElementById('leftSideMenu').style.visibility = "hidden";
+                    map.setClickable(true);
+                    $ionicSideMenuDelegate.toggleRight();
+                }
+                else{
+
+
+                    document.getElementById('leftSideMenu').style.visibility = "visible";
+                    map.setClickable(false);
+                    $ionicSideMenuDelegate.toggleLeft();
+
+                }
+
+            };*/
 
         });
     }])

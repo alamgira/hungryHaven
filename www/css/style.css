@@ -965,7 +965,10 @@ img.bic{width: 15px;}
 .menu-select-box ul{width:85%;margin:0;padding:0px 0px 20px 0px;}
 .menu-select-box ul li{ list-style:none; color:#fff; padding:13px 0px;border-bottom:1px solid #c5c8c8;margin:5px 25px;font-size:16px; line-height:20px;}
 #border-grey{border-bottom:1px solid #a5bbcb;}
-.search-text-box{		   -webkit-appearance: none;  width: 65%;margin-left:87px;
+.search-text-box{
+    -webkit-appearance: none;
+    width: 100%;
+    /*margin-left:87px;*/
     color: #fff;
 
     text-align:center;
@@ -979,7 +982,7 @@ img.bic{width: 15px;}
     background-size:  10%;
     border:1px solid #fff;
     margin-top:30px;
-    width:250px;
+   /* width:250px;*/
     border-radius:6px;
     height:30px;
     color:#333;
@@ -1345,4 +1348,19 @@ img.bic{width: 15px;}
     h3 {
         page-break-after: avoid;
     }
+}
+
+.useFullWidth{
+    width:100%;
+}
+.setZeroPadding{
+    padding:0px;
+}
+.wide-as-needed {
+    overflow: scroll;
+    white-space: nowrap;
+}
+.sideMenuSearchBar{
+    width:90%;
+    margin:10px auto 0px auto;
 }

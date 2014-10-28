@@ -56,7 +56,15 @@ myApp.run(function($ionicPlatform) {
         }
       }
     })
-
+      .state('app.details', {
+          url: "/details/:id/:type",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/details.html",
+                  controller: 'detailsCtrl'
+              }
+          }
+      })
       .state('app.playlists', {
           url: "/playlists",
           views: {

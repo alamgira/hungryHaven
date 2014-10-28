@@ -1,6 +1,24 @@
-<ion-view title="Playlists">
+<ion-view title="Home">
     <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <ion-header-bar class="bar-header setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td class="cLoc"><select><option>Choose Location</option></select></td>
+                        <td width="35px"><a><img src="img/filterIcon.png"></a></td>
+                    </tr>
+                </table>
+            </div>
+            <!--<button class="button button-icon" ng-click="toggleSideMenu()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            <h1 class="title">Home1</h1>
+            <button class="button button-icon">
+                <i class="icon ion-star"></i>
+            </button>-->
+        </ion-header-bar>
+        <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
         <!--<div class="pageNavHead">
             <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
@@ -14,42 +32,75 @@
     <ion-content class="has-header">
         <div class="mapCont">
 
-            <ul class="hNav clearfix">
-                <li><a href="#">&nbsp;</a></li>
-                <li><a href="#" class="sltItm">all</a></li>
-                <li><a href="#">challanges</a></li>
-                <div class="fadeImg"><img src="img/fadeImg.png"></div>
-            </ul>
+            <ion-scroll direction="x" class="wide-as-needed">
+                <ul class="hNav clearfix">
+                    <li><a href="#">&nbsp;</a></li>
+                    <li><a href="#" class="sltItm">all</a></li>
+                    <li><a href="#" >challanges</a></li>
+                    <li><a href="#">challanges</a></li>
+                    <li><a href="#">challanges</a></li>
+                    <li><a href="#">challanges</a></li>
+                    <li><a href="#">challanges</a></li>
+                    <div class="fadeImg"><img src="img/fadeImg.png"></div>
+                </ul>
+            </ion-scroll>
             <div class="sltBar">
                 <span></span>
             </div>
             <div class="mapView" id="mapView">
 
             </div>
-            <ul class="restList clearfix">
-                <li>
-                    <figure>
-                        <img src="img/img1.jpg">
-                        <figcaption>Crazy Tacos challenge</figcaption>
-                        <span class="flgSet"><img src="img/gb.png"></span>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img src="img/img2.jpg">
-                        <figcaption>Eat 2 pounds of beef cont</figcaption>
-                        <span class="flgSet"><img src="img/gn.png"></span>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img src="img/img3.jpg">
-                        <figcaption>Toronto Food Festival</figcaption>
-                        <span class="flgSet"><img src="img/org.png"></span>
-                    </figure>
-                </li>
-            </ul>
+            <ion-scroll direction="x" class="wide-as-needed">
+                <ul class="restList clearfix">
+                    <li>
+                        <figure>
+                            <a href="#/app/details/1/challenge"><img src="img/img1.jpg"></a>
+                            <figcaption><a href="#/app/details/1/challenge">Crazy Tacos challenge</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/1/challenge"><img src="img/gb.png"></a></span>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <a href="#/app/details/2/contest"><img src="img/img2.jpg"></a>
+                            <figcaption><a href="#/app/details/2/contest">Eat 2 pounds of beef cont</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/2/contest"><img src="img/gn.png"></a></span>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <a href="#/app/details/3/festival"><img src="img/img3.jpg"></a>
+                            <figcaption><a href="#/app/details/3/festival">Toronto Food Festival</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/3/festival"><img src="img/org.png"></a></span>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <a href="#/app/details/4/challenge"><img src="img/img1.jpg"></a>
+                            <figcaption><a href="#/app/details/4/challenge">Crazy Tacos challenge</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/4/challenge"><img src="img/gb.png"></a></span>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <a href="#/app/details/5/contest"> <img src="img/img2.jpg"></a>
+                            <figcaption><a href="#/app/details/5/contest">Eat 2 pounds of beef cont</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/5/contest"><img src="img/gn.png"></a></span>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <a href="#/app/details/6/festival"><img src="img/img3.jpg"></a>
+                            <figcaption><a href="#/app/details/6/festival">Toronto Food Festival</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/6/festival"><img src="img/org.png"></a></span>
+                        </figure>
+                    </li>
+                </ul>
+            </ion-scroll>
+
         </div>
-        <div class="promoAds"><img src="img/ads.jpg"></div>
+
     </ion-content>
+    <ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>
 </ion-view>
