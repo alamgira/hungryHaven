@@ -30,20 +30,28 @@
 
 
           </header>
-          <ion-content class="has-header">
+          <ion-content class="has-header" >
+
               <div class="menu-select-box">
                   <p>Edit Profile</p>
+                  <!--<ion-list>
+                  <ion-item nav-clear menu-close ng-repeat="sMenuList in sideMenuLists" href="{{sMenuList.url}}">
+                      {{sMenuList.sideMenuName}}
+                  </ion-item>
+
+                  </ion-list>-->
                   <ul>
-                      <li>Challenges & Contests</li>
-                      <li id="border-grey">Food festivals</li>
+                      <a ng-repeat="sMenuList in sideMenuLists" nav-clear menu-close href="{{sMenuList.url}}" style="text-decoration: none;"><li >{{sMenuList.sideMenuName}}</li></a>
+                      <!--<li id="border-grey">Food festivals</li>
                       <li>Influencers</li>
                       <li>Shop</li>
                       <li>Blog</li>
                       <li id="border-grey">About</li>
-                      <li id="border-grey" >Settings</li>
+                      <li id="border-grey" >Settings</li>-->
 
                   </ul>
               </div>
+
               </ion-content>
 
 

@@ -30,7 +30,7 @@
             </table>
         </div><!--End of Header-->
     </ion-nav-buttons>
-    <ion-content class="has-header" scroll="false">
+    <ion-content class="has-header">
         <div class="norContainor">
 
             <div class="ff-hero">
@@ -43,23 +43,23 @@
                 <div class="othDts">
                     <ul>
                         <li class="{{styleClass.dateClass}}">Sept. 1, 2014 at 8pm</li>
-                        <li class="{{styleClass.timeClass}}">1h30</li>
+                        <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">1h30</li>
                         <li class="{{styleClass.addressClass}}">Jimmy’s restaurant<br>
                     <span>121 Austinpaul Dr,<br>
                     Newmarket, ON L3X 2K6</span>
                         </li>
                     </ul>
-                    <div href="#" class="{{styleClass.priceClass}}">$25</div>
+                    <div ng-if="styleClass.priceEnabled" href="#" class="{{styleClass.priceClass}}">$25</div>
                     <a href="#" class="{{styleClass.mapClass}}">MAP IT</a>
                 </div>
             </div>
             <div style="margin-top: 10px;">
                 <div class="srhDirHead smTbs clearfix">
                     <ul>
-                        <li><a href="#" class="selt">Details <span class="sltArrow"><img src="img/sltArrow.png"></span></a></li>
-                        <li><a href="#">prize <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
+                        <li ng-repeat="menu in menus"><a ng-click="selectMenu($index)" ng-class="{selt: $index==selected}">{{menu.menuName}} <span class="sltArrow"><img src="img/sltArrow.png"></span></a></li>
+                       <!-- <li><a href="#">prize <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
                         <li><a href="#">stats <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
-                        <li><a href="#">More info <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
+                        <li><a href="#">More info <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>-->
                     </ul>
                 </div>
                 <div class="whitebg" style="margin-top: 0;padding-top: 10px;">
@@ -67,7 +67,7 @@
                     <p>Aliquam ut pretium magna, vel ornare risus. Praesent vel venenatis felis. Nam in facilisis mauris, id elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales.  </p></div>
             </div>
             <div style="margin-top: 10px;">
-                <div class="srhDirHead tRts lftBrd">Other Challenges in your area</div>
+                <div class="{{styleClass.otherClass}}">Other Challenges in your area</div>
             </div>
             <div class="eventListCont whitebg">
                 <a href="#" class="evntList">
@@ -78,8 +78,8 @@
                                 <div class="et">Crazy Tacos Challenge</div>
                                 <div class="ds">Lorem ipsum dolor sit amet, consectetu... </div>
                                 <ul class="evtInfoIco clearfix">
-                                    <li class="evtInfo3">35</li>
-                                    <li class="evtInfo4">5.2 km</li>
+                                    <li class="{{styleClass.eventInfoIcon}}">35</li>
+                                    <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
                                 </ul>
                             </td>
                             <td class="moreArrow"><img src="img/moreArrowB.png"></td>
@@ -96,8 +96,8 @@
                                 <div class="et">Fifty Ribs Challenge</div>
                                 <div class="ds">Lorem ipsum dolor sit amet, consectetu... </div>
                                 <ul class="evtInfoIco clearfix">
-                                    <li class="evtInfo3">35</li>
-                                    <li class="evtInfo4">5.2 km</li>
+                                    <li class="{{styleClass.eventInfoIcon}}">35</li>
+                                    <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
                                 </ul>
                             </td>
                             <td class="moreArrow"><img src="img/moreArrowB.png"></td>

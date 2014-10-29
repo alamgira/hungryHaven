@@ -273,9 +273,12 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/plugin.http.request/www \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/plugin.http.request/www/http-request.js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/browse.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/challengContestList.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/checkLocation.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/details.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/festivalList.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/home.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/influencerList.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/login.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/menu.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/playlist.html \

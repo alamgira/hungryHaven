@@ -56,6 +56,33 @@ myApp.run(function($ionicPlatform) {
         }
       }
     })
+      .state('app.challengeList', {
+          url: "/challengelist",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/challengContestList.html",
+                  controller: 'challengeListCtrl'
+              }
+          }
+      })
+      .state('app.festival', {
+          url: "/festivalList",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/festivalList.html",
+                  controller: 'festivalListCtrl'
+              }
+          }
+      })
+      .state('app.influencers', {
+          url: "/influencersList",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/influencerList.html",
+                  controller: 'influencerListCtrl'
+              }
+          }
+      })
       .state('app.details', {
           url: "/details/:id/:type",
           views: {
@@ -100,8 +127,6 @@ myApp.run(function($ionicPlatform) {
 
           templateUrl:'templates/registerUser.html',
           controller:'registerCtrl'
-
-
 
       })
 

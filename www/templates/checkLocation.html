@@ -9,16 +9,9 @@
             </div>
             <div class="select-box">
                 <form name="checkLocationForm" ng-submit="submit()">
-                    <select ng-model="data.locationDetails">
+                    <select ng-model="countryList" ng-option="country.countryName for country in countryList" ng-change="locationChanged($index)">
                         <option value="">Choose a location</option>
-                        <option value="test">Abilene, TX</option>
-                        <option value="test2">Akron / Canton</option>
-                        <option value="test3">Albany  / Capital Region</option>
-                        <option value="test3">Albuquerque</option>
-                        <option>Allentown /Reading</option>
-                        <option>Amarillo</option>
-                        <option>Anchorage</option>
-                        <option>Amytiville</option>
+
                     </select>
                 </form>
 

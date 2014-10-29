@@ -944,8 +944,8 @@ img.bic{width: 15px;}
 .each_food{border-left:none;  width:100%; padding:0px ;}
 .each_food h1{margin-top:4px;}
 .food_date{width:20%;padding:3%;font-size:13px;background:#c7c7c7;text-align:center;margin-right:4%;}
-.food_date h2{color:#da251d;padding:0;margin:0;}
-.food_date h4{ color:#fff;padding:0;margin:0;}
+.food_date h2{color:#da251d;padding:0;margin:0;font-size:100%;}
+.food_date h4{ color:#fff;padding:0;margin:0;font-size:100%;}
 
 
 /* location select css */
@@ -1363,4 +1363,12 @@ img.bic{width: 15px;}
 .sideMenuSearchBar{
     width:90%;
     margin:10px auto 0px auto;
+}
+
+.festivalHeaderText h3{
+    color:#fff;
+    font-family:'Open Sans', sans-serif;
+    font-weight:normal;
+    font-size: 17px;
+    margin-top:4%;
 }
