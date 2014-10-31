@@ -1,0 +1,114 @@
+<ion-view title="List">
+<ion-nav-buttons side="left">
+    <ion-header-bar class="bar-header setZeroPadding">
+        <div class="pageNavHead useFullWidth">
+            <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                    <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                    <td class="festivalHeaderText"><h3>Blog</h3></td>
+                    <td width="35px"><a><img src="img/search-icon-white.png"></a></td>
+                </tr>
+            </table>
+        </div>
+
+    </ion-header-bar>
+    <ion-header-bar class="bar bar-subheader">
+
+            <div class="blog_content_top">
+                <div ng-click="selectBlog($index)" ng-class="{blogSelected: $index==selected}" ng-repeat="subMenu in subMenuList" class="blog_content_top_left">
+                    <h1> {{subMenu.subMenuName}}</h1>
+                </div>
+                <!--<div class="blog_content_top_left blogSelected">
+                    <h1> CATEGORIES</h1>
+                </div>-->
+            </div>
+
+    </ion-header-bar>
+
+
+</ion-nav-buttons>
+<ion-content class="has-header has-subheader">
+    <div class="containor white_back">
+
+        <div class="clear"></div>
+        <ion-scroll>
+
+
+        <div class="each_blog">
+            <div class="blog_left">
+                <img src="img/burger_img.jpg"  height="54" alt="burger" />
+            </div>
+            <div class="blog_middle">
+                <h1>How to Become a Competitive Eater</h1>
+                <p>AUG 26 AT 8PM</p>
+            </div>
+            <div class="blog_right">
+                <img src="img/red_arrow.jpg" height="18" />
+            </div>
+        </div><!--blog_cont-->
+
+        <div class="each_blog">
+            <div class="blog_left">
+                <img src="img/danforth_blog.jpg"   alt="burger" />
+            </div>
+            <div class="blog_middle">
+                <h1>Taste of the Danforth is
+                    coming soon</h1>
+                <p>AUG 26 AT 8PM</p>
+            </div>
+            <div class="blog_right">
+                <img src="img/red_arrow.jpg"   height="18" />
+            </div>
+        </div><!--blog_cont-->
+
+        <div class="each_blog">
+            <div class="blog_left">
+                <img src="img/taste_blog.jpg"  height="54" alt="burger" />
+            </div>
+            <div class="blog_middle">
+                <h1>Discover the joy of
+                    Toronto Taste</h1>
+                <p>AUG 25 AT 8PM</p>
+            </div>
+            <div class="blog_right">
+                <img src="img/red_arrow.jpg"  height="18" />
+            </div>
+        </div><!--blog_cont-->
+
+        <div class="each_blog">
+            <div class="blog_left">
+                <img src="img/danforth_blog2.jpg"  height="54" alt="burger" />
+            </div>
+            <div class="blog_middle">
+                <h1>Taste of the Danforth is
+                    coming soon</h1>
+                <p>AUG 24 AT 8PM</p>
+            </div>
+            <div class="blog_right">
+                <img src="img/red_arrow.jpg"   height="18" />
+            </div>
+        </div><!--blog_cont-->
+
+        <div class="each_blog no_border" >
+            <div class="blog_left">
+                <img src="img/ribfest_blog.jpg"  height="54" alt="burger" />
+            </div>
+            <div class="blog_middle">
+                <h1>Toronto Ribfest is  back !
+                    New contests !</h1>
+                <p>AUG 22 AT 8PM</p>
+            </div>
+            <div class="blog_right">
+                <img src="img/red_arrow.jpg"   height="18" />
+            </div>
+        </div><!--blog_cont-->
+        </ion-scroll>
+    </div>
+
+
+
+</ion-content>
+<ion-footer-bar>
+    <div class="promoAds"><img src="img/ads.jpg"></div>
+</ion-footer-bar>
+</ion-view>

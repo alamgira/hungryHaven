@@ -11,6 +11,16 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard$2.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard$3.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/ionic/keyboard/IonicKeyboard.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$1$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$1$2.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$2$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$2$2.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$2$3.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$2.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$DateSetListener.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$TimeSetListener.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager$1.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager.class \
@@ -26,6 +36,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncLicenseInfo.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncLoadImage.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncLoadImageInterface.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/External$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/External$TRAVEL_MODE.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/External.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1$1.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1.class \

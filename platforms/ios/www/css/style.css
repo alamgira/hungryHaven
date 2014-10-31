@@ -71,7 +71,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    /*background: url(../img/cover.png) no-repeat center center fixed; 
+    /*background: url(../img/cover.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -127,6 +127,9 @@ select, input[type=text]{
     background-color: rgba(255,255,255, .5);
     border:1px solid #fff;
     width: 100%
+}
+.pPic input[type=date]{
+    min-width:95%;
 }
 
 
@@ -520,9 +523,12 @@ img.bic{width: 15px;}
     background-size: 100%;
 }
 .menu_containor{
-    min-height: 100%;
-    background: url(../img/menu-bg.png) no-repeat;
-    background-size: 100%;
+
+    background: url(../img/menu-bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .about_top{
@@ -741,7 +747,7 @@ img.bic{width: 15px;}
     padding:0;
 }
 #notify_icon{
-    background-image:   url(../img/notify_icon.jpg);
+    background-image: none;
     background-size: 9%;
     border-top:1px dotted #999;
 }
@@ -796,9 +802,11 @@ img.bic{width: 15px;}
     font-family:'Open Sans', sans-serif;
 }
 .map_containor{
-    min-height: 100%;
-    background: url(../img/map.png)  no-repeat;
-    background-size: 100%;
+    min-height: 400px;
+    height:100%;
+    width:100%;
+   /* background: url(../img/map.png)  no-repeat;*/
+    /*background-size: 100%;*/
 }
 
 .map_right h2{
@@ -835,10 +843,16 @@ img.bic{width: 15px;}
 /* blog page */
 .blog_top h3{margin-left:35%;}
 .blog_content_top{width:75%;margin:0 auto;border:2px solid #8e8d93;border-radius:5px;margin-top:5px;height:33px;margin-bottom:15px;}
-.blog_content_top_left{width:50%;background:#8e8d93;float:left;text-align:center;height:33px;}
-.blog_content_top_right{width:50%;background:#fff;float:left;text-align:center}
-.blog_content_top_left h1{  margin:0; height:auto; width:95%;  font-family:"Kreon";margin-top:7px; font-size:16px; color:#fff;  font-weight:bold; text-decoration:none; padding:0;line-height:18px;}
-.blog_content_top_right h1{  margin:0; height:auto; width:95%;  font-family:"Kreon"; margin-top:7px; font-size:16px; color:#8e8d93;  font-weight:bold; text-decoration:none; padding:0;line-height:20px;}
+.blog_content_top_left{width:50%;background:#fff;float:left;text-align:center;height:100%;}
+.blog_content_top_right{width:50%;background:#fff;float:left;text-align:center;height:100%;}
+.blog_content_top_left h1{  margin:0; height:auto; width:95%;  font-family:"Kreon";margin-top:7px; font-size:16px;   font-weight:bold; text-decoration:none; padding:0;line-height:18px;color:#8e8d93;}
+.blog_content_top_right h1{  margin:0; height:auto; width:95%;  font-family:"Kreon"; margin-top:7px; font-size:16px;   font-weight:bold; text-decoration:none; padding:0;line-height:20px;color:#8e8d93;}
+.blogSelected{
+    background:#8e8d93;
+}
+.blogSelected h1{
+    color:#fff;
+}
 .each_blog{ float:left; display:inline; padding:0; height:auto; width:100%; padding:14px 15px;;background:#FFF;border-bottom:1px dotted #999;padding-bottom:3%;}
 
 .blog_left{width:32%;float:left;margin-right:10px;}
@@ -863,7 +877,7 @@ img.bic{width: 15px;}
 
 .search_content{background:#fff ; float:left; display:inline; margin:0; padding:0; height:auto; width:100%;}
 .each_srch{  float:left; display:inline; padding:0; height:auto; width:100%; padding:15px 15px;;background:#FFF;border-bottom:1px dotted #999;padding-bottom:3%;border-left:#1d909a solid 2px;}
-..each_srch h3{ float:left;margin-left:12%;margin-right:10%;margin-top:0%;}
+.each_srch h3{ float:left;margin-left:12%;margin-right:10%;margin-top:0%;}
 .srch_top h3{ float:left;margin-left:10%;margin-top:8%;padding:0;}
 .srch_top img{margin-left:7%;}
 .each_srch img{background-size:100%;}
@@ -981,7 +995,7 @@ img.bic{width: 15px;}
     background-color:#fff;
     background-size:  10%;
     border:1px solid #fff;
-    margin-top:30px;
+    /*margin-top:30px;*/
    /* width:250px;*/
     border-radius:6px;
     height:30px;
@@ -1371,4 +1385,10 @@ img.bic{width: 15px;}
     font-weight:normal;
     font-size: 17px;
     margin-top:4%;
+}
+.setZeroMargin{
+    margin-top:0px;
+}
+.settings_container .list a{
+    text-decoration: none;
 }

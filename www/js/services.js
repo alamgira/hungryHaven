@@ -79,7 +79,7 @@ myApp.factory('SessionService', function() {
 myApp.factory('StorageService', function() {
     return {
         get: function(key) {
-            localStorage.getItem(key);
+            return localStorage.getItem(key);
         },
         set: function(key, val) {
             return localStorage.setItem(key, val);
@@ -89,3 +89,36 @@ myApp.factory('StorageService', function() {
         }
     }
 });
+myApp.factory('addMarker', function() {
+    return {
+        addMarkerList: function(map,list) {
+
+            var title,longitude,latitude,latlng;
+            var icon = "/img/blu-Map.png";
+            angular.forEach(list,function(value,key){
+                if (value.title != null){
+                    title = value.title;
+                }
+                longitude = value.longitude;
+                latitude = value.latitude;
+                latlng = new plugin.google.maps.LatLng(latitude,longitude);
+
+                map.addMarker(
+                    {
+                        'position':latlng,
+                        'title':title,
+                        'icon':icon
+
+                    },function(marker){
+                        console.log("marker added");
+                    });
+
+                //localStorage.getItem(key);
+
+
+            });
+            return true;
+        }
+    }
+});
+

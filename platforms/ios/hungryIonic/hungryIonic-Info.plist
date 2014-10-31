@@ -85,5 +85,18 @@
     <string>AIzaSyB_7YMp9ruG68qlUbZEy2RKi7dciMBzASE</string>
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Trace your location on the map</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.Company.hungryHaven</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.Company.hungryHaven</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

@@ -1,0 +1,83 @@
+<ion-view title="List">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar-header setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td class="festivalHeaderText"><h3>Settings</h3></td>
+                        <td width="35px"><a><img src="img/search-icon-white.png"></a></td>
+                    </tr>
+                </table>
+            </div>
+
+        </ion-header-bar>
+
+
+
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="settings_containor">
+
+
+                <ul class="list">
+
+                    <li class="item item-toggle">
+                        Notifications
+                        <label class="toggle toggle-assertive">
+                            <input type="checkbox" checked="true">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </li>
+                    <li class="item item-icon-right" href="#">
+                        <a href="#/app/home">
+                        Privacy Policy
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                        </a>
+                    </li>
+
+                    <li class="item item-icon-right" href="#">
+                        <a href="#/app/home">
+                        Terms and conditions
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                        </a>
+                    </li>
+                    <li class="item item-icon-right" href="#/app/home">
+                        <a ng-click="editProfile()">
+                        Edit your profile
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                        </a>
+                    </li>
+                    <li class="item item-icon-right" href="#">
+                        <a href="#/app/home">
+                            Change password
+                            <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                        </a>
+                    </li>
+                    <li class="item item-icon-right" href="#">
+                        <a href="#/app/home">
+                        Log out
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                        </a>
+                    </li>
+                    <li class="item item-icon-right" href="#">
+                        <a href="#/app/home">
+                        Leave feedback
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+                            </a>
+                    </li>
+                </ul>
+
+           <!-- </div> -->
+        </div>
+
+
+
+
+    </ion-content>
+    <ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>
+</ion-view>

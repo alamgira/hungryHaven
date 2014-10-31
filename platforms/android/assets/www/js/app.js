@@ -65,6 +65,7 @@ myApp.run(function($ionicPlatform) {
               }
           }
       })
+
       .state('app.festival', {
           url: "/festivalList",
           views: {
@@ -83,12 +84,48 @@ myApp.run(function($ionicPlatform) {
               }
           }
       })
+      .state('app.blog', {
+          url: "/blog",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/blog.html",
+                  controller: 'blogListCtrl'
+              }
+          }
+      })
+      .state('app.about', {
+          url: "/about",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/about.html",
+                  controller: 'aboutCtrl'
+              }
+          }
+      })
       .state('app.details', {
           url: "/details/:id/:type",
           views: {
               'menuContent' :{
                   templateUrl: "templates/details.html",
                   controller: 'detailsCtrl'
+              }
+          }
+      })
+      .state('app.influencer_details', {
+          url: "/influencer_details/:id",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/influencerDetails.html",
+                  controller: 'detailsCtrl'
+              }
+          }
+      })
+      .state('app.settings', {
+          url: "/settings",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/settings.html",
+                  controller: 'settingsCtrl'
               }
           }
       })
@@ -110,6 +147,15 @@ myApp.run(function($ionicPlatform) {
         }
       }
     })
+      .state('app.mapit',{
+          url: "/details/mapit/:longitude/:latitude",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/mapIt.html",
+                  controller: 'mapCtrl'
+              }
+          }
+        })
       .state('checkLocation',{
           url:"/checkLocation",
           templateUrl:'templates/checkLocation.html',

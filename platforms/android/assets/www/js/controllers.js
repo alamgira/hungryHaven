@@ -38,9 +38,9 @@ var appController = angular.module('starter.controllers', []);
                 {sideMenuName:"Food Festivals",url:"#/app/festivalList"},
                 {sideMenuName:"Influencers",url:"#/app/influencersList"},
                 {sideMenuName:"Shop",url:""},
-                {sideMenuName:"Blog",url:""},
-                {sideMenuName:"About",url:""},
-                {sideMenuName:"Settings",url:""}
+                {sideMenuName:"Blog",url:"#/app/blog"},
+                {sideMenuName:"About",url:"#/app/about"},
+                {sideMenuName:"Settings",url:"#/app/settings"}
             ];
             $scope.goToPage = function($index){
 
@@ -60,7 +60,36 @@ var appController = angular.module('starter.controllers', []);
         { title: 'Cowbell', id: 6 }
       ];
     })
+        .controller('mapCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,$timeout,$stateParams,addMarker) {
+            $ionicPlatform.ready(function() {
+                console.log($stateParams.longitude + " "+ $stateParams.latitude);
+                var map = null
+                $scope.goBack = function(){
 
+                    $ionicNavBarDelegate.back();
+                };
+                var locations = [{longitude:$stateParams.longitude,latitude:$stateParams.latitude, title:"mapTitle"},{longitude:-85.70089,latitude:38.16110, title:"second"}];
+                $timeout(function() {
+                    var div = document.getElementById("gMap");
+                    map = plugin.google.maps.Map.getMap(div);
+                    map.clear();
+                    map.setClickable(true);
+                    /*var latlng = new plugin.google.maps.LatLng($stateParams.latitude,$stateParams.longitude);
+                    console.log(latlng);
+                    map.addMarker(
+                        {
+                            'position':latlng,
+                            'title':"This is a test"
+
+                        },function(marker){
+                            console.log("marker added");
+                            marker.showInfoWindow();
+                        });*/
+                    var test =  addMarker.addMarkerList(map,locations);
+                }, 1000);
+
+            });
+        })
     .controller('PlaylistCtrl', function($scope, $stateParams) {
     })
 
@@ -88,23 +117,24 @@ var appController = angular.module('starter.controllers', []);
 
 
                 // $scope.submit = utils.submitForm;
-                $ionicLoading.show({
-                    template: '<i class=""></i>Loading...'
-                });
+
 
                 window.scope = $scope;
-
+                $ionicLoading.show({
+                 template: '<i class=""></i>Loading...'
+                 });
                 $scope.countryList = [
-                    {countryName:"Abilene, TX"},
-                    {countryName:"Akron / Canton"},
-                    {countryName:"Albany  / Capital Region"},
-                    {countryName:"Albuquerque"},
-                    {countryName:"Allentown /Reading"},
-                    {countryName:"Amarillo"},
-                    {countryName:"Anchorage"},
-                    {countryName:"Anchorage"}
+                    {countryName:"Abilene, TX" ,longitude:"0",latitude:"0"},
+                    {countryName:"Akron / Canton",longitude:"1",latitude:"1"},
+                    {countryName:"Albany  / Capital Region",longitude:"2",latitude:"2"},
+                    {countryName:"Albuquerque",longitude:"3",latitude:"3"},
+                    {countryName:"Allentown /Reading",longitude:"4",latitude:"4"},
+                    {countryName:"Amarillo",longitude:"5",latitude:"5"},
+                    {countryName:"Anchorage",longitude:"6",latitude:"6"},
+                    {countryName:"Anchorage",longitude:"7",latitude:"7"}
 
                 ];
+
                 function startRedirecting(){
                     console.log("redirecting");
                    // $location.path('/login');
@@ -121,7 +151,9 @@ var appController = angular.module('starter.controllers', []);
                      'Timestamp: '         + position.timestamp                + '\n');
 
                      */
+
                     SessionService.set('current_user_longitude',position.coords.longitude);
+                    SessionService.set('current_user_latitude',position.coords.longitude);
                     console.log(SessionService.get('current_user_longitude'));
                     $ionicLoading.hide();
                     startRedirecting();
@@ -142,14 +174,24 @@ var appController = angular.module('starter.controllers', []);
                     navigator.app.exitApp();
                 }
                 else{
-                    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                    if ("geolocation" in navigator){
+
+
+                        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                    }
+                    else{
+
+                        console.log("geolocation off");
+                        //$ionicLoading.hide();
+                    }
                 }
                 $scope.myForm = {};
-                $scope.data = null;
+                $scope.data = {};
 
                 var utils = {
                     submitForm:function(){
-                        SessionService.set('current_user_locationDetails',$scope.data.locationDetails);
+                        SessionService.set('current_user_longitude',$scope.data.longitude);
+                        SessionService.set('current_user_latitude',$scope.data.latitude);
                         //$location.path('/login');
                        // $state.go('/login','slide');
                         $state.go('login');
@@ -161,8 +203,8 @@ var appController = angular.module('starter.controllers', []);
                     }
 
                 };
-                $scope.$watch('data.locationDetails',function(oldValue,newValue){
-                    alert(newValue);
+                /*$scope.$watch('data.locationDetails',function(oldValue,newValue){
+                    //alert(newValue);
                     if (newValue != oldValue && newValue != null){
                         $scope.data = newValue;
                         alert('clicked');
@@ -170,9 +212,12 @@ var appController = angular.module('starter.controllers', []);
                     }
 
 
-                });
-                $scope.locationChanged = function($index){
-                   console.log("CLICKED "+$index);
+                });*/
+                $scope.locationChanged = function(selected){
+                   console.log(selected.longitude);
+                   $scope.data.longitude = selected.longitude;
+                    $scope.data.latitude = selected.latitude;
+                    utils.submitForm();
                 };
                 //$scope.test = utils.test;
 
@@ -241,7 +286,15 @@ var appController = angular.module('starter.controllers', []);
     }])
     .controller('registerCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','SessionService','$stateParams', function($scope, Auth, $location, $ionicPlatform,SessionService,$stateParams) {
         $ionicPlatform.ready(function() {
-
+            window.scope = $scope;
+            var options = {
+                date: new Date(),
+                mode: 'date'
+            };
+// calling show() function with options and a result handler
+            datePicker.show(options, function(date){
+                console.log("date result " + date);
+            });
         });
 
 
@@ -249,7 +302,8 @@ var appController = angular.module('starter.controllers', []);
 
     .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
         $ionicPlatform.ready(function() {
-
+            var map = null;
+            window.scope = $scope;
             $scope.toggleRight = function() {
                 alert('RightMenu');
                 $ionicSideMenuDelegate.toggleRight();
@@ -257,6 +311,9 @@ var appController = angular.module('starter.controllers', []);
             $timeout(function() {
                 var div = document.getElementById("mapView");
                 map = plugin.google.maps.Map.getMap(div);
+                map.clear()
+                map.setClickable(true);
+
             }, 1000);
 
             $scope.toggleSideMenu = function(){
@@ -277,24 +334,31 @@ var appController = angular.module('starter.controllers', []);
                 }
 
             };
-
+            var init = function (){
+                document.getElementById('leftSideMenu').style.visibility = "hidden";
+                if (map != null){
+                    map.setClickable(true);
+                }
+            }
+            init();
         });
     }])
     .controller('challengeListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
         $ionicPlatform.ready(function() {
+            window.scope = $scope;
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
 
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
-                    map.setClickable(true);
+                    //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
 
 
                     document.getElementById('leftSideMenu').style.visibility = "visible";
-                    map.setClickable(false);
+                   // map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
 
                 }
@@ -304,19 +368,20 @@ var appController = angular.module('starter.controllers', []);
     }])
         .controller('festivalListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
             $ionicPlatform.ready(function() {
+                window.scope = $scope;
                 $scope.toggleSideMenu = function(){
 
                     if ($ionicSideMenuDelegate.isOpenLeft()){
 
                         document.getElementById('leftSideMenu').style.visibility = "hidden";
-                        map.setClickable(true);
+                        //map.setClickable(true);
                         $ionicSideMenuDelegate.toggleRight();
                     }
                     else{
 
 
                         document.getElementById('leftSideMenu').style.visibility = "visible";
-                        map.setClickable(false);
+                        //map.setClickable(false);
                         $ionicSideMenuDelegate.toggleLeft();
 
                     }
@@ -326,19 +391,117 @@ var appController = angular.module('starter.controllers', []);
         }])
         .controller('influencerListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
             $ionicPlatform.ready(function() {
+                window.scope = $scope;
                 $scope.toggleSideMenu = function(){
 
                     if ($ionicSideMenuDelegate.isOpenLeft()){
 
                         document.getElementById('leftSideMenu').style.visibility = "hidden";
-                        map.setClickable(true);
+                        //map.setClickable(true);
                         $ionicSideMenuDelegate.toggleRight();
                     }
                     else{
 
 
                         document.getElementById('leftSideMenu').style.visibility = "visible";
-                        map.setClickable(false);
+                        //map.setClickable(false);
+                        $ionicSideMenuDelegate.toggleLeft();
+
+                    }
+
+                };
+            });
+        }])
+        .controller('aboutCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+            $ionicPlatform.ready(function() {
+                window.scope = $scope;
+                $scope.toggleSideMenu = function(){
+
+                    if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                        document.getElementById('leftSideMenu').style.visibility = "hidden";
+                        //map.setClickable(true);
+                        $ionicSideMenuDelegate.toggleRight();
+                    }
+                    else{
+
+
+                        document.getElementById('leftSideMenu').style.visibility = "visible";
+                        //map.setClickable(false);
+                        $ionicSideMenuDelegate.toggleLeft();
+
+                    }
+
+                };
+            });
+        }])
+        .controller('settingsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','$ionicModal' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,$ionicModal) {
+            $ionicPlatform.ready(function() {
+                window.scope = $scope;
+                $ionicModal.fromTemplateUrl('templates/editProfile.html', {
+                    scope: $scope
+                }).then(function(modal) {
+                        $scope.modal = modal;
+                    });
+
+                // Triggered in the login modal to close it
+                $scope.closeLogin = function() {
+                    $scope.modal.hide();
+                };
+                var utils = {
+                    editUser:function(){
+                        console.log('here');
+                        $scope.modal.show();
+                    }
+
+                };
+                $scope.editProfile = utils.editUser;
+
+                $scope.toggleSideMenu = function(){
+
+                    if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                        document.getElementById('leftSideMenu').style.visibility = "hidden";
+                        //map.setClickable(true);
+                        $ionicSideMenuDelegate.toggleRight();
+                    }
+                    else{
+
+
+                        document.getElementById('leftSideMenu').style.visibility = "visible";
+                        //map.setClickable(false);
+                        $ionicSideMenuDelegate.toggleLeft();
+
+                    }
+
+                };
+            });
+        }])
+        .controller('blogListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+            $ionicPlatform.ready(function() {
+                window.scope = $scope;
+                var subMenuList = [
+                    {subMenuName:"TOP STORIES"},
+                    {subMenuName:"CATEGORIES"}
+                ];
+                $scope.selected = 0;
+                $scope.subMenuList = subMenuList;
+                $scope.selectBlog = function(index){
+                    $scope.selected = index;
+                }
+                $scope.toggleSideMenu = function(){
+
+                    if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                        document.getElementById('leftSideMenu').style.visibility = "hidden";
+                        //map.setClickable(true);
+                        $ionicSideMenuDelegate.toggleRight();
+                    }
+                    else{
+
+
+                        document.getElementById('leftSideMenu').style.visibility = "visible";
+                        //map.setClickable(false);
                         $ionicSideMenuDelegate.toggleLeft();
 
                     }
