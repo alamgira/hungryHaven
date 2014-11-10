@@ -474,6 +474,7 @@ public class PluginMarker extends MyPlugin {
         return;
       }
       
+      Boolean isResized = false;
       if (iconProperty.containsKey("size") == true) {
         Object size = iconProperty.get("size");
         
@@ -483,14 +484,17 @@ public class PluginMarker extends MyPlugin {
           int width = sizeInfo.getInt("width", 0);
           int height = sizeInfo.getInt("height", 0);
           if (width > 0 && height > 0) {
-            //width = (int)Math.round(width * webView.getScale());
-            //height = (int)Math.round(height * webView.getScale());
+            isResized = true;
+            width = (int)Math.round(width * PluginMarker.this.density);
+            height = (int)Math.round(height * PluginMarker.this.density);
             image = PluginUtil.resizeBitmap(image, width, height);
           }
         }
       }
       
-      image = PluginUtil.scaleBitmapForDevice(image);
+      if (isResized == false) {
+        image = PluginUtil.scaleBitmapForDevice(image);
+      }
       BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(image);
       marker.setIcon(bitmapDescriptor);
       
@@ -526,6 +530,10 @@ public class PluginMarker extends MyPlugin {
 
         @Override
         public void onPostExecute(Bitmap image) {
+          if (image == null) {
+            callback.onMarkerIconLoaded(marker);
+            return;
+          }
           int width = image.getWidth();
           int height = image.getHeight();
           
@@ -534,9 +542,9 @@ public class PluginMarker extends MyPlugin {
             Bundle sizeInfo = (Bundle) iconProperty.get("size");
             width = sizeInfo.getInt("width", width);
             height = sizeInfo.getInt("height", height);
-            if (width != image.getWidth() && height > image.getHeight()) {
-              //width = (int)Math.round(width * webView.getScale());
-              //height = (int)Math.round(height * webView.getScale());
+            if (width > 0 && height > 0) {
+              width = (int)Math.round(width * PluginMarker.this.density);
+              height = (int)Math.round(height * PluginMarker.this.density);
               image = PluginUtil.resizeBitmap(image, width, height);
             }
           }

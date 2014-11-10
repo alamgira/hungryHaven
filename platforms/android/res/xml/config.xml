@@ -26,7 +26,7 @@
     <feature name="Geocoder">
         <param name="android-package" value="plugin.google.maps.MyGeocoder" />
     </feature>
-    <name>hungryIonic</name>
+    <name>Hungry Haven</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>

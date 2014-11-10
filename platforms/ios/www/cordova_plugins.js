@@ -79,32 +79,34 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
-        "id": "plugin.google.maps.phonegap-googlemaps-plugin",
-        "clobbers": [
-            "plugin.google.maps"
-        ]
-    },
-    {
         "file": "plugins/plugin.http.request/www/http-request.js",
         "id": "plugin.http.request.phonegap-http-requst",
         "clobbers": [
             "cordova.plugins.http-request"
+        ]
+    },
+    {
+        "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
+        "id": "plugin.google.maps.phonegap-googlemaps-plugin",
+        "clobbers": [
+            "plugin.google.maps"
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "android.support.v4": "1.0.0",
+    "com.google.playservices": "19.0.0",
     "com.ionic.keyboard": "1.0.3",
     "com.plugin.datepicker": "0.4.0",
     "org.apache.cordova.console": "0.2.11",
     "org.apache.cordova.device": "0.2.12",
     "org.apache.cordova.geolocation": "0.3.10",
     "org.apache.cordova.network-information": "0.2.13",
-    "plugin.google.maps": "1.2.3",
     "plugin.http.request": "1.0.0",
-    "com.googlemaps.ios": "1.8.1"
+    "plugin.google.maps": "1.2.4",
+    "com.googlemaps.ios": "1.9.0"
 }
 // BOTTOM OF METADATA
 });

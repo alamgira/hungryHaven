@@ -6,10 +6,10 @@
         <div class="containor">
             <div class="login-content">
                 <div class="input-box login-box">
-                    <input name="email" type="text" value="E-mail" >
+                    <input name="email" type="text" ng-model="credentials.username" value="E-mail" >
                 </div>
                 <div class="input-box login-box">
-                    <input name="email" type="text" value="Password" >
+                    <input name="email" type="password" value="Password" ng-model="credentials.password" >
                 </div>
                 <div class="reg-content">
                     <a class="reg-box" ng-click="goToRegistration()">

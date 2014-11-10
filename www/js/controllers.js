@@ -219,7 +219,7 @@ var appController = angular.module('starter.controllers', []);
                     $scope.data.latitude = selected.latitude;
                     utils.submitForm();
                 };
-                //$scope.test = utils.test;
+                $scope.test = utils.test;
 
                 //checkConnection();
                 /*var div = document.getElementById("map_canvas");
@@ -232,16 +232,21 @@ var appController = angular.module('starter.controllers', []);
     .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','SessionService','$ionicModal', function($scope, Auth, $location, $ionicPlatform, SessionService,$ionicModal) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
-            $scope.credentials = {username: "", password: "", remember: ""};
-            $scope.userData = {username: "", id: ""};
+            $scope.credentials = {username: "", password: ""};
+            $scope.userData = {};
 
             $ionicModal.fromTemplateUrl('templates/registerUser.html', {
                 scope: $scope
             }).then(function(modal) {
                     $scope.modal = modal;
                 });
-
+            var modalOptions = {
+                submit:function(){
+                    console.log($scope.userData);
+                }
+            };
             // Triggered in the login modal to close it
+            $scope.modalActions = modalOptions;
             $scope.closeLogin = function() {
                 $scope.modal.hide();
             };
@@ -251,10 +256,12 @@ var appController = angular.module('starter.controllers', []);
                     $scope.modal.show();
                 },
                 signIn:function(){
-                    console.log("Clicking Sign IN");
-                    $location.path('/app/home');
+
+                    console.log(Auth.login({username:$scope.credentials.username,password:$scope.credentials.password}));
+                    //$location.path('/app/home');
                 }
             };
+
             $scope.goToRegistration = utils.createNewUser;
             $scope.signInUser = utils.signIn;
            /*$scope.loginUser = function() {

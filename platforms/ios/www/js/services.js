@@ -2,7 +2,7 @@
 
 
 myApp.factory('Auth', function($http, $location, SessionService, StorageService){
-    var adminRoot = "http://www.adminhungryhaven.com";
+    var adminRoot = "http://admin2.hungryhaven.com/index.php/";
     var cacheSession = function(data) {
         SessionService.set('couponzies-login', JSON.stringify(data));
     };
@@ -28,13 +28,14 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService)
         },
         login: function(inputs) {
             //return $http.post('/auth/login', inputs);
-            var login = $http.post(adminRoot + 'auth/login', inputs);
+            var login = $http.post(adminRoot + 'api/appLogin', inputs);
             login.success(function(data) {
-                cacheSession(data);
+                console.log(data);
+                /*cacheSession(data);
                 if(inputs.remember) {
                     console.log('remember this login');
                     saveSession(data);
-                }
+                }*/
             });
             return login;
         },
@@ -51,7 +52,11 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService)
             return promise;
         },
         register: function(inputs) {
-            return $http.post('/api/v1/auth/register', inputs);
+            var promise =  $http.post(adminRoot + 'api/appRegisterUser', inputs).then(function(response){
+                return response;
+            });
+            return promise;
+
         },
         locations: function() {
             return $http.get('/api/v1/auth/locations');
@@ -122,3 +127,18 @@ myApp.factory('addMarker', function() {
     }
 });
 
+myApp.factory('dataService',function($http){
+   return{
+        getContent:function(){
+            return;
+        },
+       loginUser:function(){
+           return;
+       }
+   }
+});
+
+myApp.factory('User',function(){
+
+    return {};
+});

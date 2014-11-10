@@ -9,6 +9,7 @@
     <ion-content scroll="false">
         <div class="bp-bg">
             <div class="padding-top">&nbsp; <a class="backBtn" ng-click="closeLogin()"><img src="img/back-arrow.png"></a></div>
+            <form name="userData" ng-submit="modalActions.submit()">
             <ul class="pPic">
                 <li>
                     <ul class="proImg clearfix">
@@ -25,24 +26,30 @@
                         </li>
                     </ul>
                 </li>
-                <li><input type="text" placeholder="Name" class="useFullWidth"></li>
-                <li><input type="email" placeholder="Email" class="useFullWidth"></li>
-                <li><input type="text" placeholder="Username" class="useFullWidth"></li>
+                <li><input type="text" ng-model="userData.name" placeholder="Name" class="useFullWidth"></li>
+                <li><input type="email" ng-model="userData.email" placeholder="Email" class="useFullWidth"></li>
+                <li><input type="text" ng-model="userData.username" placeholder="Username" class="useFullWidth"></li>
                 <li>
-                    <select class="useFullWidth">
+                    <select class="useFullWidth" ng-model="userData.city">
                         <option>City</option>
-                        <option>Port Lands</option>
-                        <option>Bathurst Street</option>
-                        <option>Fort York</option>
-                        <option>North York</option>
-                        <option>Ontario</option>
+                        <option value="port">Port Lands</option>
+                        <option value="port">Bathurst Street</option>
+                        <option value="port">Fort York</option>
+                        <option value="port">North York</option>
+                        <option value="port">Ontario</option>
                     </select>
                 </li>
-                <li><div class="row"><input type="date" placeholder="Birthdate" class="useFullWidth"><span class="calImg"><img src="img/calenderImg.png"></span></div></li>
+                <li>
+                    <div class="row">
+                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="userData.birthDate">
+                    <span class="calImg"><img src="img/calenderImg.png"></span>
+                    </div>
+                </li>
                 <li><input type="password" placeholder="Password" class="useFullWidth"><span class="min6">min 6 char.</span></li>
                 <li><input type="password" placeholder="Confirm" class="useFullWidth"></li>
                 <li><input type="submit" value="Submit" class="redJumboBtn useFullWidth" style="width:100%;"></li>
             </ul>
+            </form>
         </div>
     </ion-content>
 </div>

@@ -9,7 +9,7 @@
             </div>
             <div class="select-box">
 
-                <form name="checkLocationForm" ng-submit="submit()">
+                <form name="checkLocationForm" ng-submit="submit()" ng-click="test()">
                    <select ng-model="countrySelected" ng-options="country.countryName for country in countryList" ng-change="locationChanged(countrySelected)">
                         <option value="">Choose a location</option>
 
