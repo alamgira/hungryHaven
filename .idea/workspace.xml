@@ -2,420 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35375b9-65ff-4c6b-8d97-218b720e7908" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$9$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/project.pbxproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/project.xcworkspace/xcshareddata/hungryIonic.xccheckout" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/xcuserdata/asifalamgir.xcuserdatad/xcschemes/hungryIonic.xcscheme" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic.xcodeproj/xcuserdata/asifalamgir.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Classes/AppDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Classes/AppDelegate.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Classes/MainViewController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Classes/MainViewController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Classes/MainViewController.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/GoogleMaps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Headers" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Resources" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSAddress.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSCALayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSCameraPosition.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSCameraUpdate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSCircle.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSCoordinateBounds.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSGeocoder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSGeometryUtils.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSGroundOverlay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSIndoorBuilding.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSIndoorDisplay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSIndoorLevel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMapLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMapView+Animation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMapView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMarker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMarkerLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSMutablePath.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSOrientation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSOverlay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanorama.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaCamera.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaCameraUpdate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaLink.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaService.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPath.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPolygon.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPolyline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSProjection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSServices.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSSyncTileLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSTileLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSUISettings.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSURLTileLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GoogleMaps.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.omo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0_retina.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Siemreap.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_flat_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_dark@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_light@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/active.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/active@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/active_grouped.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/active_grouped@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/bubble_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/bubble_left@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/bubble_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/bubble_right@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/default_marker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/default_marker@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/en.lproj/InfoPlist.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/Current" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.ionic.keyboard/IonicKeyboard.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.ionic.keyboard/IonicKeyboard.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.ionic.keyboard/UIWebViewExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.ionic.keyboard/UIWebViewExtension.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.plugin.datepicker/DatePicker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/com.plugin.datepicker/DatePicker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.console/CDVLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.console/CDVLogger.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.device/CDVDevice.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.device/CDVDevice.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.geolocation/CDVLocation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.geolocation/CDVLocation.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.network-information/CDVConnection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.network-information/CDVConnection.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.network-information/CDVReachability.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/org.apache.cordova.network-information/CDVReachability.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Circle.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Circle.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/External.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/External.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Geocoder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Geocoder.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GoogleMaps.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GoogleMaps.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GoogleMapsViewController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GoogleMapsViewController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GroundOverlay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/GroundOverlay.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/KmlOverlay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/KmlOverlay.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Map.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Map.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Marker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Marker.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPlgunProtocol.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginLayer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginLayer.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginLayerDebugView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginLayerDebugView.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginScrollView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyPluginScrollView.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyReachability.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/MyReachability.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/NSData+Base64.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/NSData+Base64.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/NSData+Base64.podspec" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/PluginUtil.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/PluginUtil.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Polygon.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Polygon.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Polyline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/Polyline.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/TBXML.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/TBXML.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/TileOverlay.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.google.maps/TileOverlay.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/HttpRequest/HttpRequest.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/HttpRequest/HttpRequest.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/HttpRequest/R9HTTPRequest/BSD-LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Plugins/plugin.http.request/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/DatePicker.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.omo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0_retina.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Siemreap.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_flat_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_dark@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/watermark_light@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/active.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/active@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/active_grouped.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/active_grouped@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/back.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/back@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/bubble_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/bubble_left@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/bubble_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/bubble_right@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/card_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/card_bg@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/close@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/default_marker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/default_marker@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/GoogleMaps.bundle/en.lproj/InfoPlist.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/de.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/en.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/es.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-40@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-50@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-60@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-72@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-76.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-76@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon-small@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/icons/icon@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/se.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default-568h@2x~iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default-Landscape@2x~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default-Landscape~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default-Portrait@2x~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default-Portrait~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default@2x~iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/Resources/splash/Default~iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/hungryIonic-Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/hungryIonic-Prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/hungryIonic/main.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0_retina.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/compass_pin@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_flat_texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Reachability.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/Reachability.m" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1$1.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$10.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$2.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$3.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$4.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$5.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$6.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$7.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$8.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$9.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$EVENTS.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$EVENTS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$TEXT_STYLE_ALIGNMENTS.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps$TEXT_STYLE_ALIGNMENTS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/GoogleMaps.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginMarker$3.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginMarker$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginMarker.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginMarker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginUtil.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/plugin/google/maps/PluginUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.omo" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.omo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/android-support-v4-50010b11c13d6e3f01b9d4928403733f.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/android-support-v4-50010b11c13d6e3f01b9d4928403733f.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back@2x.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/back@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg@2x.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/card_bg@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-e60c469377e42f56b0a21f38bee9d45b.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-e60c469377e42f56b0a21f38bee9d45b.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close@2x.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/close@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-play-services-2482da6916768f78fd8ea58b22923f28.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-play-services-2482da6916768f78fd8ea58b22923f28.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-volley-7172bc70a7de4c3b0e4145bf92d5cd28.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-volley-7172bc70a7de4c3b0e4145bf92d5cd28.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.project" afterPath="$PROJECT_DIR$/platforms/android/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/CHANGELOG" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/CHANGELOG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata/asifalamgir.xcuserdatad/xcschemes/CordovaLib.xcscheme" afterPath="$PROJECT_DIR$/platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata/asifalamgir.xcuserdatad/xcschemes/CordovaLib.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSGeometryUtils.h" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSGeometryUtils.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaCamera.h" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSPanoramaCamera.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSURLTileLayer.h" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Headers/GMSURLTileLayer.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/GoogleMaps.java" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/GoogleMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/GoogleMaps.java" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/GoogleMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMaps.m" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/ios/GoogleMaps/GoogleMaps.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginMarker.java" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginMarker.java" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginMarker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginUtil.java" afterPath="$PROJECT_DIR$/platforms/android/src/plugin/google/maps/PluginUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginUtil.java" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/src/android/plugin/google/maps/PluginUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/README.md" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" />
@@ -423,43 +15,37 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/checkLocation.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/checkLocation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/checkLocation.html" afterPath="$PROJECT_DIR$/www/templates/checkLocation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven/config.xml" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" afterPath="$PROJECT_DIR$/platforms/ios/www/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ios.json" afterPath="$PROJECT_DIR$/plugins/ios.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login.html" afterPath="$PROJECT_DIR$/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/package.json" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/plugin.xml" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/plugin.google.maps/plugin.xml" afterPath="$PROJECT_DIR$/plugins/plugin.google.maps/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/registerUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/www/templates/registerUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" afterPath="$PROJECT_DIR$/platforms/android/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hungryHaven.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415632422394" ignored="false" />
-    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415400122795" ignored="false" />
-    <file path="/checkLocation.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415389210408" ignored="false" />
-    <file path="/login.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415399282570" ignored="false" />
+    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415656684270" ignored="false" />
+    <file path="/checkLocation.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415653711761" ignored="false" />
+    <file path="/login.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415633860370" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414424648131" ignored="false" />
     <file path="/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414771651538" ignored="false" />
-    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415399499404" ignored="false" />
+    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415653668934" ignored="false" />
     <file path="/*.regexp" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415396254460" ignored="false" />
-    <file path="/registerUser.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415391799393" ignored="false" />
+    <file path="/registerUser.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657142148" ignored="false" />
     <file path="/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414783934391" ignored="false" />
     <file path="/home.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414524020231" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414437715488" ignored="false" />
@@ -484,9 +70,9 @@
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795782" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/ionic-angular.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795782" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415292135681" ignored="false" />
-    <file path="/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415400860509" ignored="false" />
+    <file path="/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415658339767" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/models/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415291781390" ignored="false" />
-    <file path="/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415291779318" ignored="false" />
+    <file path="/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657578733" ignored="false" />
     <file path="/a.dummy" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415211078828" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/libraries/googleMap/geocode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415289528027" ignored="false" />
     <file path="/geocode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415289496988" ignored="false" />
@@ -503,7 +89,11 @@
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/.htaccess" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379693439" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/.htaccess" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379714177" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/config/config.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379702194" ignored="false" />
-    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415401189726" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415658524162" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415648085225" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/location_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415650439051" ignored="false" />
+    <file path="/location_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415650430614" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657584911" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +112,64 @@
     <favorites_list name="hungryHaven" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="22" selection-start="332" selection-end="332" vertical-scroll-proportion="-4.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="1488" selection-end="1488" vertical-scroll-proportion="-0.22031824">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="-10.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="180" column="26" selection-start="4990" selection-end="4993" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerUser.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="162" selection-start="2095" selection-end="2095" vertical-scroll-proportion="-18.458334">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#li#8;n#ul#0;n#form#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -551,10 +198,10 @@
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/www/templates/checkLocation.html" />
-        <option value="$PROJECT_DIR$/www/templates/registerUser.html" />
         <option value="$PROJECT_DIR$/www/templates/login.html" />
         <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/templates/checkLocation.html" />
+        <option value="$PROJECT_DIR$/www/templates/registerUser.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
@@ -638,42 +285,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hungryHaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hungryHaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hungryHaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hungryHaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -801,14 +412,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="990" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17716116" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17716116" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -884,11 +495,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="50" selection-start="1884" selection-end="1884" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/challengContestList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="45" selection-start="0" selection-end="14411" vertical-scroll-proportion="0.0" />
@@ -906,27 +512,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="23" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="0.31288344" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="0" selection-start="10662" selection-end="10662" vertical-scroll-proportion="0.18181819" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="54" selection-start="588" selection-end="588" vertical-scroll-proportion="0.31015038" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="51" selection-start="316" selection-end="316" vertical-scroll-proportion="0.13489209" />
+        <state line="127" column="23" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/templates/checkLocation.html">
@@ -936,34 +524,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="21" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.027624309" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="584" selection-end="584" vertical-scroll-proportion="0.24280575" />
+        <state line="140" column="21" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.027624309">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="798" selection-end="798" vertical-scroll-proportion="0.4856115">
+        <state line="18" column="9" selection-start="798" selection-end="798" vertical-scroll-proportion="0.3206651">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/ios/build/device/Hungry Haven.app/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="8" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="26" selection-start="4990" selection-end="4993" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="162" selection-start="2095" selection-end="2095" vertical-scroll-proportion="-18.458334">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#li#8;n#ul#0;n#form#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="24" selection-start="493" selection-end="493" vertical-scroll-proportion="0.31015038" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/checkLocation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="84" selection-start="511" selection-end="511" vertical-scroll-proportion="0.31015038" />
+        <state line="15" column="29" selection-start="533" selection-end="787" vertical-scroll-proportion="0.27506113">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="332" selection-end="332" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="-10.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="695" column="14" selection-start="27102" selection-end="27102" vertical-scroll-proportion="6.828358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1488" selection-end="1488" vertical-scroll-proportion="-0.22031824">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

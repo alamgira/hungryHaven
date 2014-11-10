@@ -1,8 +1,14 @@
 'use strict';
 
-
-myApp.factory('Auth', function($http, $location, SessionService, StorageService){
-    var adminRoot = "http://admin2.hungryhaven.com/index.php/";
+myApp.factory('definedVariable',function(){
+    return{
+        getAdminRoot:function(){
+            return "http://admin2.hungryhaven.com/index.php/";
+        }
+    }
+})
+myApp.factory('Auth', function($http, $location, SessionService, StorageService,definedVariable){
+    var adminRoot = definedVariable.getAdminRoot();
     var cacheSession = function(data) {
         SessionService.set('couponzies-login', JSON.stringify(data));
     };
@@ -10,7 +16,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService)
         SessionService.unset('couponzies-login');
     };
     var saveSession = function(data) {
-        StorageService.set('couponzies-login', JSON.stringify(data));
+        StorageService.set('hungryAuth', JSON.stringify(data));
     };
     var deleteSession = function() {
         StorageService.unset('couponzies-login');
@@ -28,9 +34,19 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService)
         },
         login: function(inputs) {
             //return $http.post('/auth/login', inputs);
+            console.log("INPUTS: "+JSON.stringify(inputs))
+            deleteSession();
             var login = $http.post(adminRoot + 'api/appLogin', inputs);
             login.success(function(data) {
-                console.log(data);
+                console.log('data: '+JSON.stringify(data));
+
+                if (data.status == 'success'){
+
+                    saveSession(data.data);
+
+
+                }
+
                 /*cacheSession(data);
                 if(inputs.remember) {
                     console.log('remember this login');
@@ -141,4 +157,60 @@ myApp.factory('dataService',function($http){
 myApp.factory('User',function(){
 
     return {};
+});
+myApp.factory('countryList',function($http,definedVariable){
+    var adminRoot = definedVariable.getAdminRoot();
+   var list = null;
+    return{
+        getList:function(){
+            return list;
+        },
+        setList:function(){
+            console.log('URL: '+adminRoot+'api/getCountryList');
+            if (list == null){
+                console.log("I am here");
+                var req = $http.get(adminRoot+'api/getCountryList');
+                /*req.success(function(data) {
+                    list = data;
+                    console.log("After success: "+JSON.stringify(list));
+                });
+                console.log("LIST:"+JSON.stringify(list));*/
+                list = req.then(function(result){
+                   return result.data;
+                });
+            }
+            console.log(list);
+            return list;
+        }
+    }
+});
+myApp.directive('pwCheck', [function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            console.log(attrs.pwCheck);
+            if (document.getElementById(attrs.pwCheck) != null){
+                var valid = document.getElementById(attrs.pwCheck)===elem.val();
+                console.log("VALID "+valid);
+                ctrl.$setValidity('pwMatch',valid);
+            }
+
+        }
+    }
+}]);
+myApp.filter('unique', function() {
+    return function(collection, keyname) {
+        var output = [],
+            keys = [];
+
+        angular.forEach(collection, function(item) {
+            var key = item[keyname];
+            if(keys.indexOf(key) === -1) {
+                keys.push(key);
+                output.push(item);
+            }
+        });
+
+        return output;
+    };
 });

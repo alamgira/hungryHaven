@@ -9,14 +9,14 @@
     <ion-content scroll="false">
         <div class="bp-bg">
             <div class="padding-top">&nbsp; <a class="backBtn" ng-click="closeLogin()"><img src="img/back-arrow.png"></a></div>
-            <form name="userData" ng-submit="modalActions.submit()">
+            <form name="userData.registerForm" ng-submit="modalActions.submit()" novalidate>
             <ul class="pPic">
                 <li>
                     <ul class="proImg clearfix">
                         <li>
                             <div class="proImgBlk">
-                                <img src="img/user.png">
-                                <a href="#"><img src="img/add-icon.png"></a>
+                                <img id="myImage" src="img/user.png">
+                                <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
                             </div>
                         </li>
                         <li class="proTxtBlk">
@@ -26,27 +26,27 @@
                         </li>
                     </ul>
                 </li>
-                <li><input type="text" ng-model="userData.name" placeholder="Name" class="useFullWidth"></li>
-                <li><input type="email" ng-model="userData.email" placeholder="Email" class="useFullWidth"></li>
-                <li><input type="text" ng-model="userData.username" placeholder="Username" class="useFullWidth"></li>
+                <li><input type="text" ng-model="userData.name" placeholder="Name" class="useFullWidth" required="required"></li>
+                <li><input type="email" ng-model="userData.email_address" placeholder="Email" class="useFullWidth" required="required"></li>
+                <li><input type="text" ng-model="userData.username" placeholder="Username" class="useFullWidth" required="required"></li>
                 <li>
-                    <select class="useFullWidth" ng-model="userData.city">
-                        <option>City</option>
-                        <option value="port">Port Lands</option>
-                        <option value="port">Bathurst Street</option>
-                        <option value="port">Fort York</option>
-                        <option value="port">North York</option>
-                        <option value="port">Ontario</option>
+                   <!-- <select ng-model="countrySelected" ng-options="country.country for country in countryList | unique:'country'" ng-change="locationChanged(countrySelected)">
+                        <option value="">Choose a location</option>
+
+                    </select>-->
+                    <select class="useFullWidth" ng-model="city" ng-options="country.city for country in countryList | unique:'city'" required="required" ng-change="locationChange(city)">
+                        <option value="">City</option>
+
                     </select>
                 </li>
                 <li>
                     <div class="row">
-                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="userData.birthDate">
+                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="userData.birthDate" required="required">
                     <span class="calImg"><img src="img/calenderImg.png"></span>
                     </div>
                 </li>
-                <li><input type="password" placeholder="Password" class="useFullWidth"><span class="min6">min 6 char.</span></li>
-                <li><input type="password" placeholder="Confirm" class="useFullWidth"></li>
+                <li><input type="password" placeholder="Password" class="useFullWidth" ng-model="userData.password" required="required" id="pw1"><span class="min6">min 6 char.</span></li>
+                <li><input type="password" placeholder="Confirm" class="useFullWidth" ng-model="userData.conf" id="pw2" required="required" pw-check="pw1"></li>
                 <li><input type="submit" value="Submit" class="redJumboBtn useFullWidth" style="width:100%;"></li>
             </ul>
             </form>
