@@ -6,7 +6,7 @@
                     <tr>
                         <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
                         <td class="cLoc"><select><option>Choose Location</option></select></td>
-                        <td width="35px"><a><img src="img/filterIcon.png"></a></td>
+                        <td width="35px"><a ng-click="showFilter()"><img src="img/filterIcon.png"></a></td>
                     </tr>
                 </table>
             </div>
@@ -32,71 +32,54 @@
     <ion-content class="has-header">
         <div class="mapCont">
 
-            <ion-scroll direction="x" class="wide-as-needed">
-                <ul class="hNav clearfix">
+            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus">
+                <ul class="hNav clearfix" style="width:500px;">
                     <li><a href="#">&nbsp;</a></li>
                     <li><a href="#" class="sltItm">all</a></li>
-                    <li><a href="#" >challanges</a></li>
+                    <li><a href="#">challanges</a></li>
+
                     <li><a href="#">challanges</a></li>
                     <li><a href="#">challanges</a></li>
                     <li><a href="#">challanges</a></li>
-                    <li><a href="#">challanges</a></li>
-                    <div class="fadeImg"><img src="img/fadeImg.png"></div>
                 </ul>
+
             </ion-scroll>
-            <div class="sltBar">
+            <div class="fadeImg"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
+            <div class="sltBar" ng-show="showFilterStatus">
                 <span></span>
             </div>
             <div class="mapView" id="mapView">
 
             </div>
             <ion-scroll direction="x" class="wide-as-needed">
-                <ul class="restList clearfix">
-                    <li>
-                        <figure>
-                            <a href="#/app/details/1/challenge"><img src="img/img1.jpg"></a>
-                            <figcaption><a href="#/app/details/1/challenge">Crazy Tacos challenge</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/1/challenge"><img src="img/gb.png"></a></span>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="#/app/details/2/contest"><img src="img/img2.jpg"></a>
-                            <figcaption><a href="#/app/details/2/contest">Eat 2 pounds of beef cont</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/2/contest"><img src="img/gn.png"></a></span>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="#/app/details/3/festival"><img src="img/img3.jpg"></a>
-                            <figcaption><a href="#/app/details/3/festival">Toronto Food Festival</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/3/festival"><img src="img/org.png"></a></span>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="#/app/details/4/challenge"><img src="img/img1.jpg"></a>
-                            <figcaption><a href="#/app/details/4/challenge">Crazy Tacos challenge</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/4/challenge"><img src="img/gb.png"></a></span>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="#/app/details/5/contest"> <img src="img/img2.jpg"></a>
-                            <figcaption><a href="#/app/details/5/contest">Eat 2 pounds of beef cont</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/5/contest"><img src="img/gn.png"></a></span>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <a href="#/app/details/6/festival"><img src="img/img3.jpg"></a>
-                            <figcaption><a href="#/app/details/6/festival">Toronto Food Festival</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/6/festival"><img src="img/org.png"></a></span>
-                        </figure>
-                    </li>
-                </ul>
-            </ion-scroll>
 
+                        <!--<div ng-repeat="challenge in challengeList" style="float:left;margin-right:10px;">
+                            <figure >
+                                <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg"></a>
+                                <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}">{{challenge.challenge_name}}</a></figcaption>
+                                <span class="flgSet"><a href="#/app/details/1/challenge"><img src="img/gb.png"></a></span>
+                            </figure>
+                        </div>-->
+
+
+
+
+                <ul class="restList clearfix" style="width:500px;">
+
+                    <li ng-repeat="challenge in challengeList">
+
+                        <figure >
+                            <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg" ng-if="challenge.pic_url == null">
+                                <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null"></a>
+                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}">{{challenge.challenge_name}}</a></figcaption>
+                            <span class="flgSet"><a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/gb.png"></a></span>
+                        </figure>
+                    </li>
+
+
+                </ul>
+
+            </ion-scroll>
         </div>
 
     </ion-content>

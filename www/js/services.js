@@ -1,27 +1,40 @@
 'use strict';
 
-myApp.factory('definedVariable',function(){
+myApp.factory('definedVariable',function(StorageService){
     return{
         getAdminRoot:function(){
             return "http://admin2.hungryhaven.com/index.php/";
+        },
+        getAdminRootClean:function(){
+            return "http://admin2.hungryhaven.com";
+        },
+        getStorage:function(key){
+            return StorageService.get(key);
         }
     }
 })
 myApp.factory('Auth', function($http, $location, SessionService, StorageService,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();
     var cacheSession = function(data) {
-        SessionService.set('couponzies-login', JSON.stringify(data));
+        SessionService.set('hungryAuth', JSON.stringify(data));
     };
     var uncacheSession = function() {
-        SessionService.unset('couponzies-login');
+        SessionService.unset('hungryAuth');
     };
     var saveSession = function(data) {
         StorageService.set('hungryAuth', JSON.stringify(data));
     };
     var deleteSession = function() {
-        StorageService.unset('couponzies-login');
+        StorageService.unset('hungryAuth');
     };
-
+    var win = function(r){
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);
+    };
+    var fail = function(error){
+        console.log("Error: "+JSON.stringify(error));
+    };
     return {
         load: function() {
             return $http.get('/api/v1/auth');
@@ -29,8 +42,24 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         logout: function() {
             //return $http.get('/auth/logout');
             var logout = $http.get(adminRoot + 'auth/logout');
-            logout.success(uncacheSession, deleteSession);
-            return logout;
+            uncacheSession();
+            deleteSession();
+            //logout.success(uncacheSession, deleteSession);
+            return true;
+        },
+        checkLogin:function(inputs){
+            console.log("check login inputs: "+JSON.stringify(inputs));
+            var login = $http.post(adminRoot+'apiAppLogin',inputs);
+            var ret = login.then(function(data){
+                console.log("check login: "+JSON.stringify(data));
+                if (data.status == "success"){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            })
+            return ret;
         },
         login: function(inputs) {
             //return $http.post('/auth/login', inputs);
@@ -68,18 +97,41 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return promise;
         },
         register: function(inputs) {
+
             var promise =  $http.post(adminRoot + 'api/appRegisterUser', inputs).then(function(response){
                 return response;
             });
             return promise;
 
         },
+        upload_profile_pic:function(imageURI){
+
+            var options = new FileUploadOptions();
+             options.fileKey="file";
+             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+             options.mimeType="image/jpeg";
+
+            options.headers = {
+                Connection:"close"
+            };
+             var params = {};
+            params.fullPath = imageURI;
+            params.name = options.fileName;
+
+             options.params = params;
+             options.chunkedMode = false;
+
+             var ft = new FileTransfer();
+             var url = adminRoot+'api/profileImageUpload';
+             ft.upload(imageURI, url, win, fail, options,true);
+        },
         locations: function() {
             return $http.get('/api/v1/auth/locations');
         },
         isLoggedIn: function() {
             //return $http.get('/auth/check');
-            return SessionService.get('couponzies-login');
+
+            return JSON.parse(StorageService.get('hungryAuth'));
         }
     }
 });
@@ -143,20 +195,75 @@ myApp.factory('addMarker', function() {
     }
 });
 
-myApp.factory('dataService',function($http){
+myApp.factory('dataService',function($http,definedVariable,ChallengeList){
+    var adminRoot = definedVariable.getAdminRoot();
+    var auth_token = definedVariable.getStorage('hungryAuth');
+    var utils = {
+
+    };
    return{
-        getContent:function(){
-            return;
+        get_auth_token:function(){
+          return auth_token;
         },
-       loginUser:function(){
-           return;
-       }
+        getChallengeList:function(inputs){
+
+            console.log("data service: "+JSON.stringify(inputs));
+
+            if (ChallengeList.getList() == null){
+                var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
+                    console.log("Function Called to get challenges");
+                    console.log("STATUS RESPONSE: "+JSON.stringify(response));
+                    ChallengeList.setList(response.data.response);
+                    return ChallengeList.getList();
+                });
+                return promise;
+            }else{
+                console.log("Challenge List already contains info: "+ChallengeList.getList());
+                return ChallengeList.getList();
+            }
+
+
+
+        },
+
    }
 });
 
 myApp.factory('User',function(){
 
     return {};
+});
+myApp.factory('ChallengeList',function(){
+    var list = null;
+    return {
+        getList:function(){
+            return list;
+        },
+        setList:function(challengeList){
+            list = challengeList;
+
+        }
+    };
+});
+myApp.directive('getDistance',function(Auth){
+    var R = 6371;
+
+    return {
+        restrict: 'E',
+        template: 'path/to/template.html',
+        scope: {
+            value: '=value',
+            maxValue: '=max-value'
+        },
+        link : function(scope, element, attr) {
+            scope.calculated = scope.maxValue - scope.value;
+            /// watch value to update calculated on value update:
+            scope.$watch('value', function(newValue){
+                scope.calculated = scope.maxValue - newValue;
+            });
+        }
+    };
+
 });
 myApp.factory('countryList',function($http,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();

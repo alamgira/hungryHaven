@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 var myApp = angular.module('starter', ['ionic', 'starter.controllers','ui.router']);
 
-myApp.run(function($ionicPlatform) {
+myApp.run(function($ionicPlatform,Auth,$location) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -17,6 +17,29 @@ myApp.run(function($ionicPlatform) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+      console.log("RUNNING");
+    //var loggedIn = localStorage.getItem('hungryAuth');
+      var loggedIn = Auth.isLoggedIn();
+      if (loggedIn.auth_token !== 'undefined'){
+          console.log("AUTH TOKEN SET : "+loggedIn.auth_token);
+          Auth.checkLogin({authToken:String(loggedIn.auth_token)}).then(function(data){
+              console.log("AUTH TOKEN")
+             if (data){
+                 $location.path('/app/home');
+             }else{
+                 Auth.logout();
+             }
+          });
+          /*if (!Auth.checkLogin({authToken:String(loggedIn.auth_token)})){
+              Auth.logout();
+          }else{
+              $location.path('/app/home');
+          }*/
+
+      }
+      else{
+          console.log("tok:" + loggedIn);
+      }
   });
 })
 

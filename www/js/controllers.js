@@ -84,7 +84,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
     .controller('PlaylistCtrl', function($scope, $stateParams) {
     })
 
-    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList) {
+    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth) {
         function checkConnection() {
             var networkState = navigator.connection.type;
 
@@ -104,9 +104,14 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             return false;
 
         }
+
         $ionicPlatform.ready(function() {
 
-
+            var loggedIn = Auth.isLoggedIn();
+            if (loggedIn.hasOwnProperty('auth_token')){
+                $location.path('/app/home');
+            }
+            console.log("Logged In : "+loggedIn);
             // $scope.submit = utils.submitForm;
 
 
@@ -230,7 +235,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
     })
     .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','StorageService','$ionicModal','$ionicPopup','$ionicActionSheet','SessionService','countryList',
-        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList) {
+        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList,dataService) {
             $ionicPlatform.ready(function() {
                 window.scope = $scope;
                 $scope.credentials = {username: "", password: ""};
@@ -271,6 +276,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     var image = document.getElementById('myImage');
                     image.src = "data:image/jpeg;base64," + imageData;
                     imageURI = imageData;
+                    //Auth.upload_profile_pic(imageURI);
                 }
 
                 function onFail(message) {
@@ -304,9 +310,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                     },
                     submit:function(){
-                        console.log("USERDATA: "+JSON.stringify($scope.userData));
+                       // dataService.upload_profile_pic(imageURI);
                         if ($scope.userData.registerForm.$valid){
                             if ($scope.userData.conf == $scope.userData.password){
+
+                               Auth.register($scope.userData).then(function(response){
+                                   console.log("Register DATA: "+JSON.stringify(response.data));
+                                    if (response.data.status == "success"){
+                                        StorageService.set('hungryAuth',{auth_token:response.data.auth_token});
+                                        utils.registrationSuccessfull();
+                                    }
+                                });
+
                                 console.log(JSON.stringify($scope.userData));
                             }
                             else{
@@ -324,11 +339,17 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.closeLogin = function() {
                     $scope.modal.hide();
                 };
+
                 var utils = {
                     createNewUser:function(){
                         console.log('here');
 
                         $scope.modal.show();
+                    },
+                    registrationSuccessfull:function(){
+                        $scope.modal.hide();
+                        $location.path('/app/home');
+
                     },
                     signIn:function(){
                         console.log("Credentials: "+$scope.credentials);
@@ -398,8 +419,10 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
     }])
 
-    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','Auth' ,'definedVariable',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,Auth,definedVariable) {
         $ionicPlatform.ready(function() {
+
             var map = null;
             window.scope = $scope;
             $scope.toggleRight = function() {
@@ -432,13 +455,59 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
 
             };
+            $scope.showFilterStatus = false;
+            $scope.showFilter = function(){
+                if ($scope.showFilterStatus == false){
+                    $scope.showFilterStatus = true;
+                }
+                else{
+                    $scope.showFilterStatus = false;
+                }
+            }
+            var utils = {
+                getChallengeList: function(inputs){
+                    var challList = dataService.getChallengeList(inputs);
+                    console.log("CHeck Chall List: "+JSON.stringify(challList) + " length: "+challList.length);
+                    if (challList.length > 0){
+                        $scope.challengeList = challList;
+
+                    }
+                    else{
+                        challList.then(function(response){
+
+                            $scope.challengeList = response;
+                        });
+                    }
+                   // $scope.challengeList = challList;
+                    console.log("Challenge List: "+$scope.challengeList);
+
+                    //return JSON.stringify(dataService.getChallengeList(inputs));
+                }
+            };
             var init = function (){
                 document.getElementById('leftSideMenu').style.visibility = "hidden";
                 if (map != null){
                     map.setClickable(true);
                 }
+
+                var loggedIn = Auth.isLoggedIn();
+
+
+                var inputs = {auth_token:loggedIn.auth_token,category_type:''};
+                console.log("Input test: "+JSON.stringify(inputs));
+                $scope.admin = definedVariable.getAdminRootClean();
+                utils.getChallengeList(inputs);
+               // console.log(utils.getChallengeList(''));
             }
             init();
+            var loggedIn = Auth.isLoggedIn();
+
+
+            var inputs = {auth_token:loggedIn.auth_token,category_type:''};
+            console.log("Input test: "+JSON.stringify(inputs));
+            //$scope.challengeList = utils.getChallengeList(inputs);
+
+
         });
     }])
     .controller('challengeListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
@@ -607,16 +676,14 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
         });
     }])
-    .controller('detailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate) {
+    .controller('detailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate','ChallengeList' ,'definedVariable',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate,ChallengeList,definedVariable) {
         $ionicPlatform.ready(function() {
 
             $scope.goBack = function(){
                 $ionicNavBarDelegate.back();
             };
-            $scope.selected = 0;
-            $scope.selectMenu = function(index){
-                $scope.selected = index;
-            };
+
             var menuC = [
                 {menuName:"DETAILS"},
                 {menuName:"PRIZE"},
@@ -677,6 +744,46 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.styleClass = festival;
                 $scope.menus = menuFest;
             }
+            var utils = {
+                getChallengeList: function(){
+                    return ChallengeList.getList();
+
+                    //return JSON.stringify(dataService.getChallengeList(inputs));
+                }
+            };
+                $scope.challengeList = null;
+            var list = null
+            var init = function (){
+                list = utils.getChallengeList();
+                $scope.challengeList = list[$stateParams.id];
+                $scope.selectedDetails = list[$stateParams.id].detail;
+                $scope.selectedCategory = list[$stateParams.id].category_name;
+                $scope.admin = definedVariable.getAdminRootClean();
+                $scope.currentChallengeIndex = $stateParams.id;
+                $scope.challenges = list;
+                // console.log(utils.getChallengeList(''));
+            };
+            init();
+            $scope.selected = 0;
+            $scope.selectMenu = function(index){
+                $scope.selected = index;
+                if (menuC[index].menuName == "DETAILS"){
+                    $scope.selectedDetails = list[$stateParams.id].detail;
+                }else if (menuC[index].menuName == "PRIZE"){
+                    console.log("I AM HERE "+list[$stateParams.id].prize_details);
+
+                    $scope.selectedDetails = list[$stateParams.id].prize_details;
+                }else if (menuC[index].menuName == "STATS"){
+                    $scope.selectedDetails = list[$stateParams.id].success_text;
+                }else if (menuC[index].menuName == "MORE INFO"){
+                    $scope.selectedDetails = list[$stateParams.id].detail;
+
+                }
+                //$scope.$apply();
+            };
+            $scope.$watch('selectedDetails',function(newValue,oldValue){
+                console.log("WATCH IN PROGRESS: "+newValue+" "+ oldValue);
+            });
             /*$scope.toggleRight = function() {
              alert('RightMenu');
              $ionicSideMenuDelegate.toggleRight();

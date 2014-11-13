@@ -6,55 +6,49 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/checkLocation.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/checkLocation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/checkLocation.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/checkLocation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/checkLocation.html" afterPath="$PROJECT_DIR$/www/templates/checkLocation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven/config.xml" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ios.json" afterPath="$PROJECT_DIR$/plugins/ios.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login.html" afterPath="$PROJECT_DIR$/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/Hungry Haven.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/details.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/details.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/details.html" afterPath="$PROJECT_DIR$/www/templates/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/home.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/home.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/home.html" afterPath="$PROJECT_DIR$/www/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/registerUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/www/templates/registerUser.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="hungryHaven.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415632422394" ignored="false" />
-    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415656684270" ignored="false" />
+    <file path="/Dummy.txt" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415891897363" ignored="false" />
+    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415912046684" ignored="false" />
     <file path="/checkLocation.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415653711761" ignored="false" />
     <file path="/login.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415633860370" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414424648131" ignored="false" />
-    <file path="/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414771651538" ignored="false" />
-    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415653668934" ignored="false" />
-    <file path="/*.regexp" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415396254460" ignored="false" />
-    <file path="/registerUser.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657142148" ignored="false" />
-    <file path="/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414783934391" ignored="false" />
-    <file path="/home.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414524020231" ignored="false" />
+    <file path="/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919771760" ignored="false" />
+    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919755781" ignored="false" />
+    <file path="/*.regexp" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415816670035" ignored="false" />
+    <file path="/registerUser.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415807134836" ignored="false" />
+    <file path="/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415916966698" ignored="false" />
+    <file path="/home.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415916941398" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414437715488" ignored="false" />
     <file path="/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414791951333" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/cordova/defaults.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414439367459" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/android/project.properties" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414439367459" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/android/custom_rules.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414439367459" ignored="false" />
     <file path="/menu.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414786363238" ignored="false" />
-    <file path="/details.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414772160574" ignored="false" />
+    <file path="/details.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415912448944" ignored="false" />
     <file path="/challengContestList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414701879612" ignored="false" />
     <file path="/festivalList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414615325618" ignored="false" />
     <file path="/influencerList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414702805837" ignored="false" />
@@ -70,9 +64,9 @@
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795782" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/ionic-angular.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795782" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415292135681" ignored="false" />
-    <file path="/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415658339767" ignored="false" />
+    <file path="/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415892871449" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/models/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415291781390" ignored="false" />
-    <file path="/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657578733" ignored="false" />
+    <file path="/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415815895214" ignored="false" />
     <file path="/a.dummy" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415211078828" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/libraries/googleMap/geocode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415289528027" ignored="false" />
     <file path="/geocode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415289496988" ignored="false" />
@@ -89,11 +83,31 @@
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/.htaccess" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379693439" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/.htaccess" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379714177" ignored="false" />
     <file path="$PROJECT_DIR$/../hungryHavenAdmin/application/config/config.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415379702194" ignored="false" />
-    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415658524162" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415648085225" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/api.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415893182172" ignored="false" />
     <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/location_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415650439051" ignored="false" />
     <file path="/location_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415650430614" ignored="false" />
-    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415657584911" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/users_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415816616923" ignored="false" />
+    <file path="/dmv-shortcode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415813040325" ignored="false" />
+    <file path="$PROJECT_DIR$/../../dmvrate/web/wp-content/plugins/dmv-state/includes/dmv-shortcode.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415813043422" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/challenges_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415893036254" ignored="false" />
+    <file path="/challenges_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415823799742" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/Hungry Haven.app/www/lib/ionic/css/ionic.min.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415900124233" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/css/ionic.min.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415900124233" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/css/ionic.min.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415900124233" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/js/vendor/jquery-1.11.1.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415903386476" ignored="false" />
+    <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/restaurant.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415917997566" ignored="false" />
+    <file path="/restaurant.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415914519055" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/res/values/strings.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/Hungry Haven.app/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/Hungry Haven/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/ant-build/AndroidManifest.cordova.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/res/xml/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/build.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/CordovaLib/build.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/AndroidManifest.cordova.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919606054" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919836416" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/angular/angular.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415919836416" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,26 +130,70 @@
       <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="22" selection-start="332" selection-end="332" vertical-scroll-proportion="-4.375">
+            <state line="22" column="28" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1488" selection-end="1488" vertical-scroll-proportion="-0.22031824">
+            <state line="64" column="55" selection-start="2206" selection-end="2206" vertical-scroll-proportion="-21.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="-10.375">
+            <state line="421" column="25" selection-start="17111" selection-end="17119" vertical-scroll-proportion="-10.72">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkLocation.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/checkLocation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="18" selection-start="831" selection-end="831" vertical-scroll-proportion="-11.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="22" selection-start="3413" selection-end="3413" vertical-scroll-proportion="-2.5833333">
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ion-scroll#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#a#0;n#div#0;n#ion-scroll#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="10" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.4406365">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="0" selection-start="3959" selection-end="3959" vertical-scroll-proportion="-23.458334">
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#ion-scroll#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,16 +201,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="26" selection-start="4990" selection-end="4993" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,10 +210,8 @@
       <file leaf-file-name="registerUser.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="162" selection-start="2095" selection-end="2095" vertical-scroll-proportion="-18.458334">
-              <folding>
-                <element signature="n#style#0;n#input#0;n#li#8;n#ul#0;n#form#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="17" column="68" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,27 +234,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/www/templates/editProfile.html" />
-        <option value="$PROJECT_DIR$/www/templates/challengContestList.html" />
         <option value="$PROJECT_DIR$/www/templates/influencerList.html" />
         <option value="$PROJECT_DIR$/www/templates/influencerDetails.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/mapIt.html" />
-        <option value="$PROJECT_DIR$/www/templates/details.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/templates/login.html" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/templates/checkLocation.html" />
         <option value="$PROJECT_DIR$/www/templates/registerUser.html" />
+        <option value="$PROJECT_DIR$/platforms/ios/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/details.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/www/templates/home.html" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="990" />
@@ -238,6 +286,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,6 +347,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hungryHaven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hungryHaven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hungryHaven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hungryHaven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="hooks" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -322,7 +407,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,16 +422,16 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="265" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1059" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1059" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1059" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="265" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="261" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -411,7 +495,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="990" extended-state="0" />
+    <frame x="1" y="23" width="1920" height="990" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -419,7 +503,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17716116" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18356457" sideWeight="0.67126435" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -495,38 +579,14 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/challengContestList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="45" selection-start="0" selection-end="14411" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="48" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/mapIt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="29" selection-start="1492" selection-end="1505" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="23" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="127" column="23" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/templates/checkLocation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="27" selection-start="701" selection-end="701" vertical-scroll-proportion="0.36654136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="21" selection-start="2688" selection-end="2688" vertical-scroll-proportion="0.027624309">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
@@ -538,24 +598,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/ios/build/device/Hungry Haven.app/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="8" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="8" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="26" selection-start="4990" selection-end="4993" vertical-scroll-proportion="0.0">
+        <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="162" selection-start="2095" selection-end="2095" vertical-scroll-proportion="-18.458334">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#li#8;n#ul#0;n#form#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="17" column="68" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -566,37 +622,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/checkLocation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="29" selection-start="533" selection-end="787" vertical-scroll-proportion="0.27506113">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="332" selection-end="332" vertical-scroll-proportion="-4.375">
+        <state line="22" column="28" selection-start="1071" selection-end="1071" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
+    <entry file="file://$PROJECT_DIR$/platforms/ios/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="119" selection-start="879" selection-end="879" vertical-scroll-proportion="-10.375">
+        <state line="175" column="5" selection-start="5437" selection-end="5437" vertical-scroll-proportion="0.6785714">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/checkLocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="18" selection-start="831" selection-end="831" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="22" selection-start="3413" selection-end="3413" vertical-scroll-proportion="-2.5833333">
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ion-scroll#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#a#0;n#div#0;n#ion-scroll#0;n#div#3;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="73" selection-start="7643" selection-end="7643" vertical-scroll-proportion="0.8271144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="0" selection-start="3959" selection-end="3959" vertical-scroll-proportion="-23.458334">
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#ion-scroll#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="695" column="14" selection-start="27102" selection-end="27102" vertical-scroll-proportion="6.828358">
+        <state line="421" column="25" selection-start="17111" selection-end="17119" vertical-scroll-proportion="-10.72">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1488" selection-end="1488" vertical-scroll-proportion="-0.22031824">
+        <state line="64" column="55" selection-start="2206" selection-end="2206" vertical-scroll-proportion="-21.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="10" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.4406365">
           <folding />
         </state>
       </provider>

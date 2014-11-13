@@ -6,7 +6,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" class="useFullWidth">
                     <tr>
                         <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
-                        <td>Superbowl Challenge</td>
+                        <td>{{challengeList.challenge_name}}</td>
                         <td width="35px" class="exptIco"><a href="#"><img src="img/exportIcon.png"></a></td>
                     </tr>
                 </table>
@@ -34,23 +34,25 @@
         <div class="norContainor">
 
             <div class="ff-hero">
-                <img src="img/challenge-details-hero.jpg">
+                <img src="img/challenge-details-hero.jpg" ng-if="challengeList.pic_url == null">
+                <img src="{{admin}}{{challengeList.pic_url}}" ng-if="challengeList.pic_url != null" />
             </div>
             <div class="whtbg">
                 <div class="{{styleClass.titleClass}}">
-                    <h1>Superbowl Challenge</h1>
+
+                    <h1>{{challengeList.challenge_name}}</h1>
                 </div>
                 <div class="othDts">
                     <ul>
-                        <li class="{{styleClass.dateClass}}">Sept. 1, 2014 at 8pm</li>
-                        <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">1h30</li>
-                        <li class="{{styleClass.addressClass}}">Jimmy’s restaurant<br>
-                    <span>121 Austinpaul Dr,<br>
-                    Newmarket, ON L3X 2K6</span>
+                        <li class="{{styleClass.dateClass}}">{{challengeList.timestamp}}</li>
+                        <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">{{challengeList.challenge_condition}}</li>
+                        <li class="{{styleClass.addressClass}}">{{challengeList.restaurant_name}}<br>
+                    <span>{{challengeList.street}}<br>
+                    {{challengeList.city}}, {{challengeList.state}} {{challengeList.postalcode}}</span>
                         </li>
                     </ul>
-                    <div ng-if="styleClass.priceEnabled" href="#" class="{{styleClass.priceClass}}">$25</div>
-                    <a href="#/app/details/mapit/-79.398304/43.708349" class="{{styleClass.mapClass}}">MAP IT</a>
+                    <div ng-if="styleClass.priceEnabled" href="#" class="{{styleClass.priceClass}}">${{challengeList.price}}</div>
+                    <a href="#/app/details/mapit/{{challengeList.longitude}}/{{challengeList.latitude}}" class="{{styleClass.mapClass}}">MAP IT</a>
                 </div>
             </div>
             <div style="margin-top: 10px;">
@@ -63,48 +65,41 @@
                     </ul>
                 </div>
                 <div class="whitebg" style="margin-top: 0;padding-top: 10px;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales. </p>
+                    {{selectedDetails}}
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales. </p>
                     <p>Aliquam ut pretium magna, vel ornare risus. Praesent vel venenatis felis. Nam in facilisis mauris, id elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales.  </p></div>
+          -->
             </div>
             <div style="margin-top: 10px;">
                 <div class="{{styleClass.otherClass}}">Other Challenges in your area</div>
             </div>
-            <div class="eventListCont whitebg">
-                <a href="#" class="evntList">
-                    <table>
-                        <tr>
-                            <td class="eventHero"><img src="img/img1.jpg"></td>
-                            <td style="padding-left:10px;">
-                                <div class="et">Crazy Tacos Challenge</div>
-                                <div class="ds">Lorem ipsum dolor sit amet, consectetu... </div>
-                                <ul class="evtInfoIco clearfix">
-                                    <li class="{{styleClass.eventInfoIcon}}">35</li>
-                                    <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
-                                </ul>
-                            </td>
-                            <td class="moreArrow"><img src="img/moreArrowB.png"></td>
-                        </tr>
-                    </table>
-                </a>
+            <div style="max-height: 250px;">
+                <ion-scroll style="height:250px;">
+                    <div class="eventListCont whitebg" ng-repeat="all in challenges" ng-if="$index!=currentChallengeIndex && all.category_name==selectedCategory">
+                        <a href="#/app/details/{{$index}}/{{all.category_name}}#" class="evntList">
+                            <table>
+                                <tr>
+                                    <td class="eventHero">
+                                        <img src="img/img1.jpg" ng-if="all.pic_url == null">
+                                        <img src="{{all.pic_url}}" ng-if="all.pic_url != null">
+                                    </td>
+                                    <td style="padding-left:10px;">
+                                        <div class="et">{{all.challenge_name}}</div>
+                                        <div class="ds">{{all.short_detail}} </div>
+                                        <ul class="evtInfoIco clearfix">
+                                            <li class="{{styleClass.eventInfoIcon}}" ng-if="styleClass.priceEnabled">{{all.price}}</li>
+                                            <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
+                                        </ul>
+                                    </td>
+                                    <td class="moreArrow"><img src="img/moreArrowB.png"></td>
+                                </tr>
+                            </table>
+                        </a>
+                    </div>
+
+                </ion-scroll>
             </div>
-            <div class="eventListCont whitebg">
-                <a href="#" class="evntList">
-                    <table>
-                        <tr>
-                            <td class="eventHero"><img src="img/img4.jpg"></td>
-                            <td style="padding-left:10px;">
-                                <div class="et">Fifty Ribs Challenge</div>
-                                <div class="ds">Lorem ipsum dolor sit amet, consectetu... </div>
-                                <ul class="evtInfoIco clearfix">
-                                    <li class="{{styleClass.eventInfoIcon}}">35</li>
-                                    <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
-                                </ul>
-                            </td>
-                            <td class="moreArrow"><img src="img/moreArrowB.png"></td>
-                        </tr>
-                    </table>
-                </a>
-            </div>
+
         </div>
     </ion-content>
 

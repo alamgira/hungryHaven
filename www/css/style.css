@@ -219,20 +219,23 @@ ul.pPic select{
     background-size: 13px;
 }
 .mapView{min-height: 250px;border-bottom: 1px solid #c1c1c1; position: relative;}
-.hNav{padding: 10px 0; background: #fff; border-bottom: 1px solid #c1c1c1; display: block; position: relative;}
-.hNav li{float: left;width: 33.33%; text-align: center; text-transform: uppercase;}
+.hNav{padding: 10px 0; background: #fff; border-bottom: 1px solid #c1c1c1; display: block; position: relative; list-style-type:none;
+    white-space:nowrap; /*overflow-x:auto;*/}
+.hNav li{/*float: left;*/width: 33.33%; margin:0px 10px;text-align: center; text-transform: uppercase;display:inline;}
 .hNav li a{text-decoration: none;color: #999; }
-.hNav li a.sltItm{color: #da251d; font-weight: bold;}
-.fadeImg{position: absolute; right: 0; z-index: 5;}
+.hNav li a.sltItm{color: #da251d; font-weight: bold;margin-left:35%;}
+.fadeImg{position: fixed;top:0;right: 0; z-index: 5;margin-top:10px;width:60px;}
 .sltBar{padding: 3px 0; border-bottom: 1px solid #c1c1c1; text-align: center; background: #fff;}
 .sltBar span{display: inline-block; height: 6px; border-radius: 5px; background: #cccccc; width: 50px; position: relative; top: -3px;}
-.restList{padding: 10px;}
-.restList li{width: 33.33%; float: left; padding: 0 3px; text-align: center;}
+.restList{padding: 10px;width:100%; white-space:  nowrap;
+    /*overflow-x:auto;*/}
+.restList li{/* float: left;*/ padding: 0 3px; text-align: center;display: inline-block;width: 33.33%;}
 .flgSet{position: absolute; top: 0; left: 0}
 .restList li img{width:100%; padding: 1px;}
 .restList li:first-child{padding-left: 0}
 .restList li:last-child{padding-right: 0}
-.restList li figcaption{font-size: 13px; line-height: 15px; padding-top: 5px; text-align: left; color: #333}
+.restList li figcaption{font-size: 13px; line-height: 15px; padding-top: 5px; text-align: left; color: #333;}
+.white_space{white-space:normal;}
 .mapCont{background: #fff; padding-bottom: 50px;}
 .promoAds{position: fixed;bottom: 0}
 .promoAds img{width: 100%}
@@ -240,7 +243,8 @@ ul.pPic select{
 .restList li figure span img{width: 70%;}
 .flgSet{position: absolute;left: 0; top:0; text-align: left;}
 .clopArrow{position: absolute; bottom:0; left:50%; margin-left: -31px;}
-
+.close_btn{margin-top:-30px;position:absolute;z-index:999px;right:0px;}
+.clear{clear:both;}
 /*----Location----*/
 .grayHead{background: #eeeced; padding: 6px 10px;}
 .minTabs{text-align: center; vertical-align: middle; position: relative;}
