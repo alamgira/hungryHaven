@@ -1,4 +1,4 @@
-<ion-side-menus>
+<ion-side-menus drag-content="false">
 
   <ion-pane ion-side-menu-content drag-content="false">
       <!--<ion-header-bar class="bar-header">
@@ -19,39 +19,59 @@
     <ion-nav-view name="menuContent" animation="slide-left-right" drag-content="false"></ion-nav-view>
   </ion-pane>
 
-  <ion-side-menu side="left" id="leftSideMenu" class="menu_containor" style="visibility: hidden;" drag-content="false">
+  <ion-side-menu side="left"  id="leftSideMenu" class="menu_containor" style="visibility: hidden;" drag-content="false">
 
           <header class="bar about_top no_back">
 
-                  <!--<img src="img/menu-icon.png" width="32" alt="top" />-->
-                  <div class="search-text-box" style="margin-top: 8%;">
-                      <input name="search-menu"  type="text" class="sideMenuSearchBar">
-                  </div>
+              <div class="search-text-box">
+                  <input name="search-menu"  type="text" class="sideMenuSearchBar">
+              </div>
 
 
           </header>
           <ion-content class="has-header" >
+              <div>
+                  <div class="about_top no_back">
 
-              <div class="menu-select-box">
+                      <div class="menu_left_img">
+                          <img src="img/menu-pic.png" width="110">
+                      </div>
+                      <a href="#" class="red_icon"><img src="img/menu-redicon.png"  width="32"></a>
+                      <div class="menu_right_txt">
+                          <h3>Hello,</h3>
+                          <h1>Alexandar</h1>
+                      </div>
+                  </div>
+                  <div class="menu-select-box">
+                      <!--           <p>Edit Profile</p>
+                       -->
+                      <ul>
+                      <li ng-repeat="sMenuList in sideMenuLists" class="border-grey"><a  nav-clear menu-close href="{{sMenuList.url}}" style="color:white;">{{sMenuList.sideMenuName}}</a></li>
+
+
+                  </ul>
+                  </div>
+
+              </div>
+              <!--<div class="menu-select-box">
                   <p>Edit Profile</p>
                   <!--<ion-list>
                   <ion-item nav-clear menu-close ng-repeat="sMenuList in sideMenuLists" href="{{sMenuList.url}}">
                       {{sMenuList.sideMenuName}}
                   </ion-item>
 
-                  </ion-list>-->
+                  </ion-list>
                   <ul>
-                      <a ng-repeat="sMenuList in sideMenuLists" nav-clear menu-close href="{{sMenuList.url}}" style="text-decoration: none;"><li >{{sMenuList.sideMenuName}}</li></a>
+                      <a  nav-clear menu-close href="{{sMenuList.url}}" style="text-decoration: none;"><li >{{sMenuList.sideMenuName}}</li></a>
                       <!--<li id="border-grey">Food festivals</li>
                       <li>Influencers</li>
                       <li>Shop</li>
                       <li>Blog</li>
                       <li id="border-grey">About</li>
-                      <li id="border-grey" >Settings</li>-->
+                      <li id="border-grey" >Settings</li>
 
                   </ul>
-              </div>
-
+-->
               </ion-content>
 
 

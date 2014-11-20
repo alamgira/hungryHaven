@@ -5,7 +5,11 @@
                 <table border="0" cellpadding="0" cellspacing="0" >
                     <tr>
                         <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
-                        <td class="cLoc"><select><option>Choose Location</option></select></td>
+                        <td class="cLoc">
+                            <select ng-model="city" ng-options="country.city group by country.country for country in countryList" ng-change="changeCity(city)">
+                            <option value="">Choose Location</option>
+                            </select>
+                        </td>
                         <td width="35px"><a ng-click="showFilter()"><img src="img/filterIcon.png"></a></td>
                     </tr>
                 </table>
@@ -34,18 +38,14 @@
 
             <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus">
                 <ul class="hNav clearfix" style="width:500px;">
-                    <li><a href="#">&nbsp;</a></li>
-                    <li><a href="#" class="sltItm">all</a></li>
-                    <li><a href="#">challanges</a></li>
+                    <li ><a href="#">&nbsp;</a></li>
+                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
 
-                    <li><a href="#">challanges</a></li>
-                    <li><a href="#">challanges</a></li>
-                    <li><a href="#">challanges</a></li>
                 </ul>
 
             </ion-scroll>
             <div class="fadeImg"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
-            <div class="sltBar" ng-show="showFilterStatus">
+            <div class="sltBar" ng-show="showFilterStatus" on-drag-down="showFilterDetail()">
                 <span></span>
             </div>
             <div class="mapView" id="mapView">
@@ -66,13 +66,18 @@
 
                 <ul class="restList clearfix" style="width:500px;">
 
-                    <li ng-repeat="challenge in challengeList">
+                    <li ng-repeat="challenge in challengeList | multipleSearch:filterCategoryList:tagForChallenge">
 
                         <figure >
                             <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg" ng-if="challenge.pic_url == null">
                                 <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null"></a>
                             <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}">{{challenge.challenge_name}}</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/gb.png"></a></span>
+                            <span class="flgSet"><a href="#/app/details/{{$index}}/{{challenge.category_name}}">
+                                <img src="img/gb.png" ng-if="challenge.category_name == 'challenge'">
+                                <img src="img/gn.png" ng-if="challenge.category_name == 'contest'">
+                                <img src="img/tag-festival-low.png" ng-if="challenge.category_name == 'festival'">
+                            </a>
+                            </span>
                         </figure>
                     </li>
 

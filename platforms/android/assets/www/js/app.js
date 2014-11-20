@@ -4,7 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var myApp = angular.module('starter', ['ionic', 'starter.controllers','ui.router']);
+var myApp = angular.module('starter', ['ionic', 'starter.controllers','ui.router','starter.directives','starter.filters']);
+var directiveApp = angular.module('starter.directives',[]);
+var filterApp = angular.module('starter.filters',[]);
 
 myApp.run(function($ionicPlatform,Auth,$location) {
   $ionicPlatform.ready(function() {
@@ -19,27 +21,12 @@ myApp.run(function($ionicPlatform,Auth,$location) {
     }
       console.log("RUNNING");
     //var loggedIn = localStorage.getItem('hungryAuth');
-      var loggedIn = Auth.isLoggedIn();
-      if (loggedIn.auth_token !== 'undefined'){
-          console.log("AUTH TOKEN SET : "+loggedIn.auth_token);
-          Auth.checkLogin({authToken:String(loggedIn.auth_token)}).then(function(data){
-              console.log("AUTH TOKEN")
-             if (data){
-                 $location.path('/app/home');
-             }else{
-                 Auth.logout();
-             }
-          });
-          /*if (!Auth.checkLogin({authToken:String(loggedIn.auth_token)})){
-              Auth.logout();
-          }else{
-              $location.path('/app/home');
-          }*/
 
-      }
-      else{
-          console.log("tok:" + loggedIn);
-      }
+
+          var loggedIn = Auth.isLoggedIn();
+          console.log("LG "+JSON.stringify(loggedIn));
+
+
   });
 })
 

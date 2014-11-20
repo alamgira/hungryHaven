@@ -10,9 +10,12 @@ myApp.factory('definedVariable',function(StorageService){
         },
         getStorage:function(key){
             return StorageService.get(key);
+        },
+        getFilterList:function(){
+            return [{filterType:"All"},{filterType:"Challenges"},{filterType:"Contest"},{filterType:"Festivals"}];
         }
     }
-})
+});
 myApp.factory('Auth', function($http, $location, SessionService, StorageService,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();
     var cacheSession = function(data) {
@@ -41,7 +44,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         },
         logout: function() {
             //return $http.get('/auth/logout');
-            var logout = $http.get(adminRoot + 'auth/logout');
+            ///var logout = $http.get(adminRoot + 'auth/logout');
             uncacheSession();
             deleteSession();
             //logout.success(uncacheSession, deleteSession);
@@ -49,17 +52,17 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         },
         checkLogin:function(inputs){
             console.log("check login inputs: "+JSON.stringify(inputs));
-            var login = $http.post(adminRoot+'apiAppLogin',inputs);
-            var ret = login.then(function(data){
+            var promise = $http.post(adminRoot+'api/appLogin',inputs).then(function(response){
+                console.log("I am here::::"+JSON.stringify(response));
+                return response;
+            },function(error){
+                console.log("ERROR RESPONSE : "+JSON.stringify(error));
+            });
+           /* var promise = login.then(function(data){
                 console.log("check login: "+JSON.stringify(data));
-                if (data.status == "success"){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            })
-            return ret;
+                return data;
+            })*/
+            return promise;
         },
         login: function(inputs) {
             //return $http.post('/auth/login', inputs);
@@ -130,7 +133,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         },
         isLoggedIn: function() {
             //return $http.get('/auth/check');
-
+            console.log("IS LOGGED IN HUNGRY AUTH: "+StorageService.get('hungryAuth'));
             return JSON.parse(StorageService.get('hungryAuth'));
         }
     }
@@ -163,34 +166,94 @@ myApp.factory('StorageService', function() {
     }
 });
 myApp.factory('addMarker', function() {
+    var currentMarkerList = [];
+    var removeAllMarkers = function(){
+        console.log("MARKER LIST LENGTH: "+currentMarkerList.length);
+        if (currentMarkerList.length > 0 ){
+            angular.forEach(currentMarkerList,function(value,key){
+                console.log("MARKER : "+value);
+                value.remove();
+            });
+            currentMarkerList = [];
+        }
+
+
+
+    };
     return {
         addMarkerList: function(map,list) {
+            console.log("MAP LIST: "+JSON.stringify(list));
+            if (map == null){
+                console.log("MAP IS NULL");
+            }else{
+                console.log("MAP IS SET");
+            }
+            removeAllMarkers();
+            if (list.length > 0){
 
-            var title,longitude,latitude,latlng;
-            var icon = "/img/blu-Map.png";
-            angular.forEach(list,function(value,key){
-                if (value.title != null){
-                    title = value.title;
-                }
-                longitude = value.longitude;
-                latitude = value.latitude;
-                latlng = new plugin.google.maps.LatLng(latitude,longitude);
 
-                map.addMarker(
-                    {
-                        'position':latlng,
-                        'title':title,
-                        'icon':icon
+                var latlng = null;
+                var title,longitude,latitude,icon;
+                var challenge_icon = "www/img/pin-challenges.png";
+                var contest_icon = "www/img/pin-contest.png";
+                var festiva_icon = "www/img/pin-festival.png";
+                console.log("I AM HERE INSIDE ");
+                angular.forEach(list,function(value,key){
+                    console.log("INSIDE FOR EACH : "+JSON.stringify(value));
+                    if (value.challenge_name != null){
+                        title = value.challenge_name;
+                    }
+                    longitude = value.longitude;
+                    latitude = value.latitude;
+                    latlng = new plugin.google.maps.LatLng(latitude,longitude);
+                    if (value.category_name == "challenge"){
+                        icon = challenge_icon;
+                    }else if(value.category_name == "contest"){
+                        icon = contest_icon;
+                    }else if (value.category_name == "festival"){
+                        icon = festiva_icon;
+                    }
+                    map.addMarker(
+                        {
+                            'position':latlng,
+                            'title':title,
+                            'icon':icon
 
-                    },function(marker){
-                        console.log("marker added");
+                        },function(marker){
+                            marker.setIcon({
+                                'url':icon,
+                                'size':{
+                                    'width': 32,
+                                    'height':46
+                                }
+                            })
+                            currentMarkerList.push(marker);
+                            console.log("marker added");
+                        });
+
+                    //localStorage.getItem(key);
+
+
+                });
+                if (latlng != null){
+                    map.animateCamera({
+                        'target': latlng,
+                        'zoom': 5,
+                        'duration': 5000 // = 5 sec.
+                    }, function() {
+                        console.log("The animation is done");
                     });
+                }
 
-                //localStorage.getItem(key);
+
+                return true;
+            }else{
+                console.log("I AM HERE in ELESES");
+            }
 
 
-            });
-            return true;
+            return false;
+
         }
     }
 });
@@ -201,9 +264,22 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
     var utils = {
 
     };
+
    return{
         get_auth_token:function(){
           return auth_token;
+        },
+        get_challenge_list_by_location:function(inputs){
+            console.log("INPUT : "+JSON.stringify(inputs));
+            var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
+                console.log("Function Called to get challenges");
+                console.log("STATUS RESPONSE: "+JSON.stringify(response));
+                ChallengeList.setList(response.data.response);
+                return ChallengeList.getList();
+            });
+            return promise;
+
+
         },
         getChallengeList:function(inputs){
 
@@ -213,7 +289,10 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
                 var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
                     console.log("Function Called to get challenges");
                     console.log("STATUS RESPONSE: "+JSON.stringify(response));
-                    ChallengeList.setList(response.data.response);
+
+                        ChallengeList.setList(response.data.response);
+
+
                     return ChallengeList.getList();
                 });
                 return promise;
@@ -221,50 +300,276 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
                 console.log("Challenge List already contains info: "+ChallengeList.getList());
                 return ChallengeList.getList();
             }
-
-
-
         },
+       getTags:function(){
+            if (ChallengeList.getTagList() == null){
+                var promise = $http.post(adminRoot+'api/getTags').then(function(response){
+                    console.log("TAG LIST : "+JSON.stringify(response));
+                    ChallengeList.setTagList(response.data.response);
+                    return ChallengeList.getTagList();
+                });
+                return promise;
+            }
+            return ChallengeList.getTagList();
+
+       },
+       getTagForChallenge:function(){
+            if (ChallengeList.getTagForChallenge() == null){
+                var promise = $http.post(adminRoot+'api/get_tag_for_challenges').then(function(response){
+                    ChallengeList.setTagForChallenge(response.data.response);
+                    return ChallengeList.getTagForChallenge();
+                })
+                return promise;
+            }
+           return ChallengeList.getTagForChallenge();
+       },
+       getCategories:function(){
+           if (ChallengeList.getCategoryList() == null){
+               var promise = $http.post(adminRoot+'api/getCategories').then(function(response){
+                   console.log("Category LIST : "+JSON.stringify(response));
+                   ChallengeList.setCategoryList(response.data.response);
+               });
+               return promise;
+           }else{
+               return ChallengeList.getCategoryList();
+           }
+       },
+       getSubCat:function(){
+           if (ChallengeList.getSubCatList() == null){
+               var promise = $http.post(adminRoot+'api/get_sub_category').then(function(response){
+                   console.log("Sub CatLIST : "+JSON.stringify(response));
+                   ChallengeList.setSubCatList(response.data.response);
+                   return ChallengeList.getSubCatList();
+               });
+               return promise;
+           }
+           return ChallengeList.getSubCatList();
+
+       },
+       getSubCatForChallenge:function(){
+           if (ChallengeList.getSubCatForChallenge() == null){
+               var promise = $http.post(adminRoot+'api/get_sub_category_for_challenge').then(function(response){
+                   ChallengeList.setSubCatForChallenge(response.data.response);
+                   return ChallengeList.getSubCatForChallenge();
+               })
+               return promise;
+           }
+           return ChallengeList.getSubCatForChallenge();
+       }
 
    }
 });
 
 myApp.factory('User',function(){
+    var tagFilterList = [];
+    var subCatFilterList = [];
+    var removeTagKey = function(key){
+        tagFilterList.splice(key,1);
 
-    return {};
+    }
+    var removeSubKey = function(key){
+        subCatFilterList.splice(key,1);
+
+    }
+    return {
+        getTagFilters:function(){
+            return tagFilterList;
+        },
+        getSubCatFilters:function(){
+          return subCatFilterList;
+        },
+        setTagFilters:function(tag){
+            var existing = 0;
+            angular.forEach(tagFilterList,function(value,key){
+                if (tag.tag_id === value.tag_id){
+                    console.log("INITAL FILTER TAG LIST : "+ JSON.stringify(tagFilterList));
+                    removeTagKey(key);
+                    console.log("REMOVED KEY : "+key + "NEW FILTERED TAG LIST : "+JSON.stringify(tagFilterList));
+                    //User.setTagFilters(tempFilterd);
+
+                    existing = 1;
+                    return;
+                }
+            });
+            if (existing == 0){
+                console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
+                tagFilterList.push(tag)
+            }
+
+
+        },
+        setSubCatFilters:function(tag){
+            var existing = 0;
+            angular.forEach(subCatFilterList,function(value,key){
+                if (tag.sub_id === value.sub_id){
+                    console.log("INITAL FILTER Sub LIST : "+ JSON.stringify(subCatFilterList));
+                    removeSubKey(key);
+                    console.log("REMOVED KEY : "+key + "NEW FILTERED Sub LIST : "+JSON.stringify(subCatFilterList));
+                    //User.setTagFilters(tempFilterd);
+
+                    existing = 1;
+                    return;
+                }
+            });
+            if (existing == 0){
+                console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
+                subCatFilterList.push(tag)
+            }
+
+
+        },
+        removeKey:function(key){
+            tagFilterList.splice(key,1);
+            return tagFilterList;
+        }
+    };
 });
 myApp.factory('ChallengeList',function(){
     var list = null;
+    var challengeList = null;
+    var contestList = null;
+    var festivalList = null;
+    var tagList = null;
+    var tagForChallenge = null;
+    var category_list = null;
+    var sub_category_list = null;
+    var sub_category_list_challenge = null;
     return {
         getList:function(){
             return list;
         },
-        setList:function(challengeList){
-            list = challengeList;
+        setList:function(newList){
+            challengeList = null;
+            contestList = null;
+            festivalList = null;
 
+            list = newList;
+        },
+        getTagForChallenge:function(){
+            return tagForChallenge;
+        },
+        setTagForChallenge:function(tags){
+          if (tagForChallenge == null){
+              tagForChallenge = tags;
+          }
+            return tagForChallenge;
+        },
+        getSubCatForChallenge:function(){
+            return sub_category_list_challenge;
+        },
+        setSubCatForChallenge:function(tags){
+            if (sub_category_list_challenge == null){
+                sub_category_list_challenge = tags;
+            }
+            return sub_category_list_challenge;
+        },
+        getTagList:function(){
+            return tagList;
+        },
+        setTagList:function(newTagList){
+            if (tagList == null){
+                tagList = newTagList;
+            }
+            return tagList;
+        },
+        getSubCatList:function(){
+            return sub_category_list;
+        },
+        setSubCatList:function(newTagList){
+            if (sub_category_list == null){
+                sub_category_list = newTagList;
+            }
+            return tagList;
+        },
+        getCategoryList:function(){
+            return category_list;
+        },
+        setCategoryList:function(newCatList){
+            if (category_list == null){
+                category_list = newCatList;
+            }
+            return category_list;
+        },
+        getChallengeList:function(){
+            if (challengeList == null){
+                if (list != null){
+                    challengeList = [];
+                    angular.forEach(list,function(value,key){
+                        if (value.cateogory_type == "challenge"){
+                            this.push(value);
+                        }
+
+                    },challengeList);
+                }
+            }
+            return challengeList;
+        },
+        getContestList:function(){
+            if (contestList == null){
+                if (list != null){
+                    contestList = [];
+                    angular.forEach(list,function(value,key){
+                        if (value.cateogory_type == "challenge"){
+                            this.push(value);
+                        }
+
+                    },contestList);
+                }
+            }
+            return contestList;
+        },
+        getFestivalList:function(){
+            if (festivalList == null){
+                if (list != null){
+                    festivalList = [];
+                    angular.forEach(list,function(value,key){
+                        if (value.cateogory_type == "challenge"){
+                            this.push(value);
+                        }
+
+                    },festivalList);
+                }
+            }
+            return festivalList;
         }
+
     };
 });
-myApp.directive('getDistance',function(Auth){
+directiveApp.directive('getDistance',function(definedVariable){
     var R = 6371;
+    var user_info = JSON.parse(definedVariable.getStorage('hungryAuth'));
+    var user_longitude = user_info.longitude;
+    var user_latitude = user_info.latitude;
+    var deg2rad = function(value){
+        return value * Math.PI/180;
+    }
 
     return {
-        restrict: 'E',
-        template: 'path/to/template.html',
+        restrict: 'AE',
+        template: '{{distance}}',
         scope: {
-            value: '=value',
-            maxValue: '=max-value'
+            longitude: '=',
+            latitude: '='
         },
-        link : function(scope, element, attr) {
-            scope.calculated = scope.maxValue - scope.value;
-            /// watch value to update calculated on value update:
-            scope.$watch('value', function(newValue){
-                scope.calculated = scope.maxValue - newValue;
-            });
+        link: function(scope, element, attr) {
+            console.log("user_long: "+user_longitude+" user_lat: "+user_latitude+"long : "+scope.longitude+"lat : "+scope.latitude);
+            var R = 6371; // Radius of the earth in km
+            var dLat = deg2rad(user_latitude-scope.latitude);  // deg2rad below
+            var dLon = deg2rad(user_longitude-scope.longitude);
+            var a =
+                    Math.sin(dLat/2) * Math.sin(dLat/2) +
+                        Math.cos(deg2rad(user_latitude)) * Math.cos(deg2rad(scope.latitude)) *
+                            Math.sin(dLon/2) * Math.sin(dLon/2)
+                ;
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            var d = R * c; // Distance in km
+            console.log("DISTANCE : "+d);
+            scope.distance = d.toFixed(1);
         }
     };
 
 });
+
 myApp.factory('countryList',function($http,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();
    var list = null;
@@ -321,3 +626,54 @@ myApp.filter('unique', function() {
         return output;
     };
 });
+myApp.filter('multipleSearch',['User',function(User){
+    return function(challengeList,subCatForChallenge,tagForChallenge){
+
+        var tagList = User.getTagFilters();
+        console.log("TAG LIST INSIDER FILTER : "+JSON.stringify(tagList));
+
+        var result = [];
+        var chall_id = [];
+        var keys = [];
+        var tempTags = [];
+        console.log("TAG FOR CHALLENGE LIST : "+JSON.stringify(tagForChallenge));
+        if (tagForChallenge.length == 0 && subCatForChallenge == 0){
+            return challengeList;
+        }
+        angular.forEach(challengeList,function(value,key){
+            tempTags = [];
+            angular.forEach(tagForChallenge,function(val,k){
+                if (value.id == val.challenge_id){
+                    tempTags.push(val);
+                }
+            });
+            this.push({c_id:value.id,tag:tempTags});
+        },keys);
+
+
+        if (tagList.length > 0){
+            angular.forEach(tagList,function(value,key){
+
+                    angular.forEach(keys,function(val,k){
+                        angular.forEach(val.tag,function(a,b){
+                            if (a.tag_detail_id == value.tag_id && chall_id.indexOf(a.challenge_id) == -1){
+
+                                result.push(challengeList[k]);
+                                chall_id.push(a.challenge_id);
+                            }
+                        });
+
+                    });
+
+
+            });
+            console.log("NEW RESULT : " + JSON.stringify(result));
+
+            return result;
+        }
+
+        var subList = User.getSubCatFilters();
+
+        return challengeList;
+    };
+}]);
