@@ -1,12 +1,6 @@
 <div class="modal">
-    <!--<ion-header-bar align-title="left" class="bar-positive">
-        <div class="buttons">
-            <button class="button button-clear" ng-click="closeLogin()">Close</button>
-        </div>
-        <h1 class="title">Login</h1>
 
-    </ion-header-bar>-->
-    <ion-content >
+    <ion-content  scroll="true">
         <div class="containor grey_back">
             <div class="about_top sorting_top">
                 <h3>Sort by:  </h3>
@@ -15,35 +9,34 @@
                 </div>
             </div>
             <div class="sorting_content">
-                <h2> TAGS</h2>
 
+                <h2> Category</h2>
                 <ul>
-                    {{tagList}}
-                    <li ng-repeat="tag in tagList"><a ng-class="modalActions.tagSelectClass(tag)" ng-click="modalActions.filterTags(tag)">{{tag.tag_name}}</a></li>
+                    <li ng-repeat="cat in filterList"><a ng-class="{'button button-light':$index != showFilterSelected , 'button button-assertive':$index == showFilterSelected}" ng-click="changeFilter($index)">{{cat.filterType}}</a></li>
 
                 </ul>
-
-                </ion-scroll>
-
-
                 <div class="clear"></div>
-                <h2> CATEGORIES</h2>
+                <h2> SUB CATEGORIES</h2>
                 <ul>
-                    {{subCatList}}
+
                     <li ng-repeat="sub in subCatList"><a ng-class="modalActions.subCatSelectClass(sub)" ng-click="modalActions.filterSubCat(sub)">{{sub.sub_category_name}}</a></li>
 
                 </ul>
                 <div class="clear"></div>
-                <h2> FILTER</h2>
-                <ul>
-                    <li><a href="#">PRICE</a></li>
-                    <li><a href="#">DISTANCE</a></li>
-                    <li><a href="#">DATE</a></li>
-                    <li><a href="#">FOOD TYPES</a></li>
-                    <li><a href="#">LOREM IPSUM</a></li>
+                    <h2> TAGS</h2>
 
-                </ul>
+                    <ul>
+
+                        <li ng-repeat="tag in tagList"><a ng-class="modalActions.tagSelectClass(tag)" ng-click="modalActions.filterTags(tag)">{{tag.tag_name}}</a></li>
+
+                    </ul>
+
+
+
+
+
             </div>
+
 
         </div>
 

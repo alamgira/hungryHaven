@@ -335,27 +335,27 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
            }
        },
        getSubCat:function(){
-           if (ChallengeList.getTagList() == null){
+           if (ChallengeList.getSubCatList() == null){
                var promise = $http.post(adminRoot+'api/get_sub_category').then(function(response){
                    console.log("Sub CatLIST : "+JSON.stringify(response));
-                   ChallengeList.setTagList(response.data.response);
-                   return ChallengeList.getTagList();
+                   ChallengeList.setSubCatList(response.data.response);
+                   return ChallengeList.getSubCatList();
                });
                return promise;
            }
-           return ChallengeList.getTagList();
+           return ChallengeList.getSubCatList();
 
        },
        getSubCatForChallenge:function(){
-           if (ChallengeList.getTagForChallenge() == null){
+           if (ChallengeList.getSubCatForChallenge() == null){
                var promise = $http.post(adminRoot+'api/get_sub_category_for_challenge').then(function(response){
-                   ChallengeList.setTagForChallenge(response.data.response);
-                   return ChallengeList.getTagForChallenge();
+                   ChallengeList.setSubCatForChallenge(response.data.response);
+                   return ChallengeList.getSubCatForChallenge();
                })
                return promise;
            }
-           return ChallengeList.getTagForChallenge();
-       },
+           return ChallengeList.getSubCatForChallenge();
+       }
 
    }
 });
@@ -363,6 +363,8 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
 myApp.factory('User',function(){
     var tagFilterList = [];
     var subCatFilterList = [];
+    var tagCounter = 0;
+    var subCounter = 0;
     var removeTagKey = function(key){
         tagFilterList.splice(key,1);
 
@@ -388,12 +390,17 @@ myApp.factory('User',function(){
                     //User.setTagFilters(tempFilterd);
 
                     existing = 1;
+                    tagCounter--;
                     return;
                 }
             });
             if (existing == 0){
                 console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
-                tagFilterList.push(tag)
+                if (tagCounter <= 3){
+                    tagFilterList.push(tag);
+                    tagCounter++;
+                }
+
             }
 
 
@@ -401,24 +408,30 @@ myApp.factory('User',function(){
         setSubCatFilters:function(tag){
             var existing = 0;
             angular.forEach(subCatFilterList,function(value,key){
-                if (tag.tag_id === value.tag_id){
-                    console.log("INITAL FILTER TAG LIST : "+ JSON.stringify(tagFilterList));
+                if (tag.sub_id === value.sub_id){
+                    console.log("INITAL FILTER Sub LIST : "+ JSON.stringify(subCatFilterList));
                     removeSubKey(key);
-                    console.log("REMOVED KEY : "+key + "NEW FILTERED TAG LIST : "+JSON.stringify(tagFilterList));
+                    console.log("REMOVED KEY : "+key + "NEW FILTERED Sub LIST : "+JSON.stringify(subCatFilterList));
                     //User.setTagFilters(tempFilterd);
 
                     existing = 1;
+                    subCounter--;
                     return;
                 }
             });
             if (existing == 0){
-                console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
-                subCatFilterList.push(tag)
+                if (subCounter <=3){
+                    console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
+                    subCatFilterList.push(tag);
+                    subCounter++;
+                }
+
             }
 
 
         },
         removeKey:function(key){
+
             tagFilterList.splice(key,1);
             return tagFilterList;
         }
@@ -439,13 +452,11 @@ myApp.factory('ChallengeList',function(){
             return list;
         },
         setList:function(newList){
-
             challengeList = null;
             contestList = null;
             festivalList = null;
 
             list = newList;
-
         },
         getTagForChallenge:function(){
             return tagForChallenge;
@@ -503,8 +514,6 @@ myApp.factory('ChallengeList',function(){
 
                     },challengeList);
                 }
-
-
             }
             return challengeList;
         },
@@ -519,8 +528,6 @@ myApp.factory('ChallengeList',function(){
 
                     },contestList);
                 }
-
-
             }
             return contestList;
         },
@@ -535,8 +542,6 @@ myApp.factory('ChallengeList',function(){
 
                     },festivalList);
                 }
-
-
             }
             return festivalList;
         }
@@ -635,17 +640,19 @@ myApp.filter('unique', function() {
     };
 });
 myApp.filter('multipleSearch',['User',function(User){
-    return function(challengeList,category_list,tagForChallenge){
+    return function(challengeList,subCatForChallenge,tagForChallenge){
 
         var tagList = User.getTagFilters();
+        var subList = User.getSubCatFilters();
         console.log("TAG LIST INSIDER FILTER : "+JSON.stringify(tagList));
 
         var result = [];
         var chall_id = [];
         var keys = [];
         var tempTags = [];
+        var tempSub = [];
         console.log("TAG FOR CHALLENGE LIST : "+JSON.stringify(tagForChallenge));
-        if (tagForChallenge.length < 1){
+        if (tagForChallenge.length == 0 && subCatForChallenge.length == 0){
             return challengeList;
         }
         angular.forEach(challengeList,function(value,key){
@@ -655,32 +662,52 @@ myApp.filter('multipleSearch',['User',function(User){
                     tempTags.push(val);
                 }
             });
-            this.push({c_id:value.id,tag:tempTags});
+            tempSub = [];
+            angular.forEach(subCatForChallenge,function(sVal,sKey){
+               if (value.id == sVal.challenge_id){
+                   tempSub.push(sVal);
+               }
+            });
+            this.push({c_id:value.id,tag:tempTags,sub:tempSub});
         },keys);
 
 
+
+        if (subList.length > 0){
+            angular.forEach(subList,function(value,key){
+                angular.forEach(keys,function(val,k){
+                    angular.forEach(val.sub,function(a,b){
+                        if (a.sub_category_detail_id == value.sub_id && chall_id.indexOf(a.challenge_id) == -1){
+                            result.push(challengeList[k]);
+                            chall_id.push(a.challenge_id);
+                        }
+                    });
+                });
+            });
+            console.log("NEW RESULT : " + JSON.stringify(result));
+
+
+        }
         if (tagList.length > 0){
             angular.forEach(tagList,function(value,key){
-
                     angular.forEach(keys,function(val,k){
                         angular.forEach(val.tag,function(a,b){
                             if (a.tag_detail_id == value.tag_id && chall_id.indexOf(a.challenge_id) == -1){
-
                                 result.push(challengeList[k]);
                                 chall_id.push(a.challenge_id);
                             }
                         });
-
                     });
-
-
             });
             console.log("NEW RESULT : " + JSON.stringify(result));
 
-            return result;
+
         }
 
 
+        if (tagList.length > 0 || subList.length > 0){
+            return result;
+        }
         return challengeList;
     };
 }]);

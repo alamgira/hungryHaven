@@ -667,7 +667,7 @@ img.bic{width: 15px;}
 	 .sorting_content{
 		 width:100%;
 	
-		 margin-top:200px;
+		 /*margin-top:200px;*/
 	 }
 	  .sorting_content h2{
 	
@@ -1220,7 +1220,7 @@ img.bic{width: 15px;}
 		.login-content{padding-top:90%;}
 		.reg-box{padding-top:0px;padding-bottom:0px;}
 	    .sign-box{padding-top:0px;padding-bottom:0px;}
-		 .sorting_content{margin-top:150px;}
+		 .sorting_content{/*margin-top:150px;*/}
 		 .settings_content ul li{padding:8px 10px; }
 		 .srch_top{height:60px;}
 		 .srch_top h3{ margin-left:15%;margin-right:8%;margin-top:5%;	}

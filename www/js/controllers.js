@@ -471,7 +471,26 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             var map = null;
 
+
             window.scope = $scope;
+            /*THIS IS THE BASIC CATEGORY LIST*/
+            $scope.filterList = definedVariable.getFilterList();
+            $scope.showFilterSelected = 0;
+            $scope.changeFilter = function(index){
+                $scope.showFilterSelected = index;
+                if (index == 0){
+                    $scope.challengeList = ChallengeList.getList();
+                }else if (index == 1){
+                    utils.getChallengeOnly();
+                }else if (index == 2){
+                    utils.getContestOnly();
+                }else if (index == 3){
+                    utils.getFestivalOnly();
+                }
+            };
+            /*Basic Category Ends*/
+
+
             /*this section is for tag filter*/
             var taglist = dataService.getTags();
             if (taglist.length >= 0){
@@ -533,6 +552,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             var modalOptions = {
                 closeModal:function(){
+                    if (map != null){
+                        map.setClickable(true);
+                    }
                     $scope.modal.hide();
                 },
                 filterTags:function(tag){
@@ -546,15 +568,12 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     console.log("CHANGING CLASS : "+JSON.stringify(tag));
                     var tempFilteredTag = User.getTagFilters();
                     angular.forEach(tempFilteredTag,function(value,key){
-                        console.log("CHANGING CLASS TAG ID: "+tag.tag_id+ " FILTER TAG ID : "+value.tag_id);
                         if (tag.tag_id === value.tag_id){
-                            console.log("CLASS MATCHED");
-                           styleClass =  'button button-assertive';
+                            styleClass =  'button button-assertive';
+                            return;
                         }
                     });
                     return styleClass;
-
-
                 },
                 subCatSelectClass:function(tag){
                     var styleClass= 'button button-light';
@@ -568,8 +587,6 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         }
                     });
                     return styleClass;
-
-
                 }
             };
             $scope.modalActions = modalOptions;
@@ -588,24 +605,21 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.countryList =  result.data;
             });
             $scope.toggleSideMenu = function(){
-
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
-
                 }
-
             };
             $scope.showFilterDetail = function(){
+                if(map != null){
+                    map.setClickable(false);
+                }
                 $scope.modal.show();
             };
             $scope.showFilterStatus = false;
@@ -616,7 +630,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 else{
                     $scope.showFilterStatus = false;
                 }
-            }
+            };
             var utils = {
                 //All List
                 insertMarker:function(){
@@ -662,58 +676,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 },
                 getTags:function(){
                     $scope.tagList = User.getTags();
-                },
-                filterTagFunction:function(challengeList){
-                    var challengeList = $scope.challengeList;
-                    var tagList = User.getTagFilters();
-                    var tagForChallenge = $scope.tagForChallenge;
-                    console.log("CHECK SCOPE : "+ JSON.stringify($scope.filterTagList));
-                    console.log("TAG LIST INSIDER FILTER : "+JSON.stringify(tagList));
-
-                    var result = [];
-                    var chall_id = [];
-                    var keys = [];
-                    var tempTags = [];
-                    console.log("TAG FOR CHALLENGE LIST : "+JSON.stringify(tagForChallenge));
-                    if (tagForChallenge.length < 1){
-                        return challengeList;
-                    }
-                    angular.forEach(challengeList,function(value,key){
-                        tempTags = [];
-                        angular.forEach(tagForChallenge,function(val,k){
-                            if (value.id == val.challenge_id){
-                                tempTags.push(val);
-                            }
-                        });
-                        this.push({c_id:value.id,tag:tempTags});
-                    },keys);
-
-
-                    if (tagList.length > 0){
-                        angular.forEach(tagList,function(value,key){
-
-                            angular.forEach(keys,function(val,k){
-                                angular.forEach(val.tag,function(a,b){
-                                    if (a.tag_detail_id == value.tag_id && chall_id.indexOf(a.challenge_id) == -1){
-
-                                        result.push(challengeList[k]);
-                                        chall_id.push(a.challenge_id);
-                                    }
-                                });
-
-                            });
-
-
-                        });
-                        console.log("NEW RESULT : " + JSON.stringify(result));
-
-                        return result;
-                    }
-
-
-                    return challengeList;
                 }
-
             };
             var loggedIn = Auth.isLoggedIn();
             var init = function (){
@@ -727,16 +690,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.filterList = definedVariable.getFilterList();
                 utils.getChallengeList(inputs);
-
-
-
                // console.log(utils.getChallengeList(''));
             }
             init();
 
             $scope.changeCity = function(city){
                 console.log("CITY CHANGE : "+ JSON.stringify(city));
-                 var newCountry = dataService.get_challenge_list_by_location({
+                var newCountry = dataService.get_challenge_list_by_location({
                     city:city.city,
                     state:city.state,
                     country:city.country,
@@ -744,34 +704,16 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     category_type:''
                 });
                 newCountry.then(function(response){
-                        console.log("AFTER FUNCTION : "+JSON.stringify(response));
-                         $scope.challengeList = response;
-
-                    });
-
-            };
-
-            $scope.showFilterSelected = 0;
-            $scope.changeFilter = function(index){
-                $scope.showFilterSelected = index;
-                if (index == 0){
-                    $scope.challengeList = ChallengeList.getList();
-                }else if (index == 1){
-                    utils.getChallengeOnly();
-                }else if (index == 2){
-                    utils.getContestOnly();
-                }else if (index == 3){
-                    utils.getFestivalOnly();
-
-                }
-
+                    console.log("AFTER FUNCTION : "+JSON.stringify(response));
+                    $scope.challengeList = response;
+                });
             };
             //$scope.filterFunction = utils.filterTagFunction;
             $ionicModal.fromTemplateUrl('templates/sort.html', {
                 scope: $scope
             }).then(function(modal) {
                     $scope.modal = modal;
-                });
+            });
             $scope.$watch('challengeList',function(newValue,oldValue){
                 console.log("WATCH IN PROGRESS: "+JSON.stringify(newValue));
                 if (map != null && newValue!= oldValue){
@@ -782,15 +724,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         console.log("RETURN FALSE");
                     }
                 }
-
             });
-
            // $timeout(utils.insertMarker(),5000);
-
-
             //$scope.challengeList = utils.getChallengeList(inputs);
-
-
         });
     }])
     .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService',
