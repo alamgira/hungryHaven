@@ -44,7 +44,7 @@
                 </div>
                 <div class="othDts">
                     <ul>
-                        <li class="{{styleClass.dateClass}}">{{challengeList.timestamp}}</li>
+                        <li class="{{styleClass.dateClass}}"><clean-date timeset="challengeList.timestamp"></clean-date></li>
                         <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">{{challengeList.challenge_condition}}</li>
                         <li class="{{styleClass.addressClass}}">
                             {{challengeList.restaurant_name}}<br>

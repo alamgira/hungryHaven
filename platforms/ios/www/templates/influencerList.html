@@ -22,19 +22,19 @@
 
     </ion-nav-buttons>
     <ion-content class="has-header has-footer">
-        <ion-scroll>
+
+
         <div class="containor white_back">
 
             <div class="clear"></div>
-            <div class="each_inf">
-                <a href="#/app/influencer_details/1">
+            <div class="each_inf" ng-repeat="influencer in influencerList">
+                <a href="#/app/influencer_details/{{$index}}">
                 <div class="blog_left">
-                    <img src="img/influence_img1.jpg"  height="84" alt="burger" />
+                    <img src="{{admin}}{{influencer.pic_url}}"  height="84" alt="burger" />
                 </div>
                 <div class="blog_middle inf_text">
-                    <h1>LA beast</h1>
-                    <p>Competitive eater and
-                        youtube sensation</p>
+                    <h1>{{influencer.influencer_first_name}} {{influencer.influencer_last_name}}</h1>
+                    <p ng-bind-html="influncer.influencer_description"></p>
                 </div>
                 <div class="blog_right">
                     <img src="img/red_arrow.jpg"  height="18" />
@@ -42,61 +42,11 @@
                 </a>
             </div><!--blog_cont-->
 
-            <div class="each_inf ">
-                <div class="blog_left">
-                    <img src="img/influence_img2.jpg"  height="84" alt="burger" />
-                </div>
-                <div class="blog_middle inf_text">
-                    <h1>John Smith</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"  height="18" />
-                </div>
-            </div><!--blog_cont-->
 
-            <div class="each_inf ">
-                <div class="blog_left">
-                    <img src="img/influence_img3.jpg"  height="84" alt="burger" />
-                </div>
-                <div class="blog_middle inf_text">
-                    <h1>Furious Pete</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
-
-            <div class="each_inf">
-                <div class="blog_left">
-                    <img src="img/influence_img4.jpg"  height="84" alt="burger" />
-                </div>
-                <div class="blog_middle inf_text">
-                    <h1>Sonya Thomas</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
-
-            <div class="each_inf no_border" >
-                <div class="blog_left">
-                    <img src="img/influence_img5.jpg"  height="84" alt="burger" />
-                </div>
-                <div class="blog_middle inf_text">
-                    <h1>"Jaws" Chestnut </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
 
         </div>
 
-        </ion-scroll>
+
 
     </ion-content>
     <ion-footer-bar>

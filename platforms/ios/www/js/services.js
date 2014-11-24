@@ -196,7 +196,7 @@ myApp.factory('addMarker', function() {
                 var title,longitude,latitude,icon;
                 var challenge_icon = "www/img/pin-challenges.png";
                 var contest_icon = "www/img/pin-contest.png";
-                var festiva_icon = "www/img/pin-festival.png";
+                var festival_icon = "www/img/pin-festivals.png";
                 console.log("I AM HERE INSIDE ");
                 angular.forEach(list,function(value,key){
                     console.log("INSIDE FOR EACH : "+JSON.stringify(value));
@@ -211,7 +211,7 @@ myApp.factory('addMarker', function() {
                     }else if(value.category_name == "contest"){
                         icon = contest_icon;
                     }else if (value.category_name == "festival"){
-                        icon = festiva_icon;
+                        icon = festival_icon;
                     }
                     map.addMarker(
                         {
@@ -258,7 +258,7 @@ myApp.factory('addMarker', function() {
     }
 });
 
-myApp.factory('dataService',function($http,definedVariable,ChallengeList){
+myApp.factory('dataService',function($http,definedVariable,ChallengeList,influencerList){
     var adminRoot = definedVariable.getAdminRoot();
     var auth_token = definedVariable.getStorage('hungryAuth');
     var utils = {
@@ -351,15 +351,35 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList){
                var promise = $http.post(adminRoot+'api/get_sub_category_for_challenge').then(function(response){
                    ChallengeList.setSubCatForChallenge(response.data.response);
                    return ChallengeList.getSubCatForChallenge();
-               })
+               });
                return promise;
            }
            return ChallengeList.getSubCatForChallenge();
+       },
+       getInfluencers:function(){
+           if (influencerList.getInfluencerList() == null){
+               var promise = $http.post(adminRoot + 'api/get_influencers').then(function(response){
+                    influencerList.setInfluencerList(response.data.response);
+                   return influencerList.getInfluencerList();
+               });
+               return promise;
+           }
+           return influencerList.getInfluencerList();
        }
 
    }
 });
-
+myApp.factory('influencerList',function(){
+    var list = null;
+    return {
+        getInfluencerList:function(){
+            return list;
+        },
+        setInfluencerList:function(newList){
+            list = newList;
+        }
+    };
+});
 myApp.factory('User',function(){
     var tagFilterList = [];
     var subCatFilterList = [];
@@ -522,7 +542,7 @@ myApp.factory('ChallengeList',function(){
                 if (list != null){
                     challengeList = [];
                     angular.forEach(list,function(value,key){
-                        if (value.cateogory_type == "challenge"){
+                        if (value.category_name == "challenge"){
                             this.push(value);
                         }
 
@@ -537,7 +557,7 @@ myApp.factory('ChallengeList',function(){
                 if (list != null){
                     contestList = [];
                     angular.forEach(list,function(value,key){
-                        if (value.cateogory_type == "challenge"){
+                        if (value.category_name == "contest"){
                             this.push(value);
                         }
 
@@ -548,11 +568,12 @@ myApp.factory('ChallengeList',function(){
             return contestList;
         },
         getFestivalList:function(){
+            console.log("CURRENT LIST: "+JSON.stringify(list));
             if (festivalList == null){
                 if (list != null){
                     festivalList = [];
                     angular.forEach(list,function(value,key){
-                        if (value.cateogory_type == "challenge"){
+                        if (value.category_name == "festival"){
                             this.push(value);
                         }
 
@@ -730,3 +751,95 @@ myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeLis
         return challengeList;
     };
 }]);
+
+myApp.filter('groupTime',[function(){
+    var groups = [];
+    var keys = [];
+    var monthName = ["January","February","March","April","May","June","July","August","September","October","Novemeber","December"];
+    var parseTimestamp = function(time){
+        var t = time.split(/[- :]/);
+
+        var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+        var fullYear = d.getFullYear();
+        var month = d.getMonth();
+        return monthName[month] + " "+fullYear;
+    }
+    return function(challengeList,keyname){
+        angular.forEach(challengeList,function(value,key){
+            console.log("KEY "+key);
+            var currKey = parseTimestamp(value.timestamp);
+            if (keys.indexOf(currKey) == -1){
+                value.currentKey = key;
+                var g = {
+                    currKey:currKey,
+                    listing: [value]
+                }
+                groups.push(g);
+                keys.push(currKey);
+            }
+            else{
+                var keyIndex = keys.indexOf(currKey);
+                if (groups[keyIndex].listing.indexOf(value) == -1){
+                    value.currentKey = key;
+                    groups[keyIndex].listing.push(value);
+                }
+            }
+
+        });
+        console.log("CUrrente Key "+JSON.stringify(groups));
+        return groups;
+    };
+}]);
+
+directiveApp.directive('shortDate',function(){
+
+    var monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+    return {
+        restrict: 'AE',
+        template: '<h2 >{{mon}}</h2><h4>{{date}}</h4>',
+        scope: {
+            timeset: '='
+        },
+        link: function(scope, element, attr) {
+            var t = scope.timeset.split(/[- :]/);
+            if (parseInt(t[0]) != 0 && parseInt(t[1])!=0 && parseInt(t[2])!=0){
+                var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+                scope.mon = monthName[d.getMonth()];
+                scope.date = d.getDate();
+            }
+            else{
+                scope.mon = '';
+                scope.date='';
+            }
+
+        }
+    };
+
+});
+
+directiveApp.directive('cleanDate',function(){
+
+    var monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+    return {
+        restrict: 'AE',
+        template: '{{mon}} {{date}}',
+        scope: {
+            timeset: '='
+        },
+        link: function(scope, element, attr) {
+            var t = scope.timeset.split(/[- :]/);
+            console.log(t);
+            if (parseInt(t[0]) != 0 && parseInt(t[1])!=0 && parseInt(t[2])!=0){
+                var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+                scope.mon = monthName[d.getMonth()];
+                scope.date = d.getDate();
+            }
+            else{
+                scope.mon = '';
+                scope.date='';
+            }
+
+        }
+    };
+
+});

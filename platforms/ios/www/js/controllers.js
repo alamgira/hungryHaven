@@ -51,15 +51,19 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 })
 
 
-    .controller('mapCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,$timeout,$stateParams,addMarker) {
+    .controller('mapCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,$timeout,$stateParams,addMarker,ChallengeList) {
         $ionicPlatform.ready(function() {
-            console.log($stateParams.longitude + " "+ $stateParams.latitude);
+            document.getElementById('leftSideMenu').style.visibility = "hidden";
+
             var map = null;
             $scope.goBack = function(){
 
                 $ionicNavBarDelegate.back();
             };
-            var locations = [{longitude:$stateParams.longitude,latitude:$stateParams.latitude, title:"mapTitle"},{longitude:-85.70089,latitude:38.16110, title:"second"}];
+            var currentIndex = $stateParams.currentIndex;
+            var currentList = ChallengeList.getCurrentList()[currentIndex];
+            var locations = [currentList];
+           // var locations = [{longitude:$stateParams.longitude,latitude:$stateParams.latitude, title:"mapTitle"},{longitude:-85.70089,latitude:38.16110, title:"second"}];
             $timeout(function() {
                 var div = document.getElementById("gMap");
                 map = plugin.google.maps.Map.getMap(div);
@@ -954,7 +958,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
         });
     }])
-    .controller('festivalListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+    .controller('festivalListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','ChallengeList' ,
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,ChallengeList) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
             $scope.toggleSideMenu = function(){
@@ -975,11 +980,74 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
 
             };
+            var utils = {
+                getFestival : function(){
+                    $scope.festivalList = ChallengeList.getFestivalList();
+                }
+            };
+
+            var init = function(){
+                utils.getFestival();
+            };
+            init();
         });
     }])
-    .controller('influencerListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+    .controller('influencerListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
+            $scope.toggleSideMenu = function(){
+
+                if ($ionicSideMenuDelegate.isOpenLeft()){
+
+                    document.getElementById('leftSideMenu').style.visibility = "hidden";
+                    //map.setClickable(true);
+                    $ionicSideMenuDelegate.toggleRight();
+                }
+                else{
+
+
+                    document.getElementById('leftSideMenu').style.visibility = "visible";
+                    //map.setClickable(false);
+                    $ionicSideMenuDelegate.toggleLeft();
+
+                }
+
+            };
+            var influencerList = dataService.getInfluencers();
+            if (influencerList.length >=0){
+                $scope.influencerList = influencerList;
+            }else{
+                influencerList.then(function(response){
+                    $scope.influencerList = response;
+                });
+            }
+            var init = function(){
+                $scope.admin = definedVariable.getAdminRootClean();
+            };
+            init();
+        });
+    }])
+    .controller('influencerDetailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','$ionicNavBarDelegate','dataService','definedVariable',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,$ionicNavBarDelegate,dataService,definedVariable) {
+        $ionicPlatform.ready(function() {
+            window.scope = $scope;
+            $scope.goBack = function(){
+                $ionicNavBarDelegate.back();
+            };
+            $scope.openWebView = function(){
+                var ref = window.open('http://www.justgfad.com', '_blank', 'location=yes');
+            };
+            var index = $stateParams.id;
+            var influencerList = dataService.getInfluencers();
+            if (influencerList.length >=0){
+                $scope.influencers = influencerList[index];
+            }else{
+                influencerList.then(function(response){
+                    $scope.influencers = response[index];
+                });
+            }
+            $scope.admin = definedVariable.getAdminRootClean();
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
@@ -1179,7 +1247,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
             };
                 $scope.challengeList = null;
-            var list = null
+            var list = null;
             var init = function (){
                 list = utils.getChallengeList();
                 console.log("id: "+$stateParams.id + " type: "+$stateParams.type);

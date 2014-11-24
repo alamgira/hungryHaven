@@ -126,7 +126,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
           views: {
               'menuContent' :{
                   templateUrl: "templates/influencerDetails.html",
-                  controller: 'detailsCtrl'
+                  controller: 'influencerDetailsCtrl'
               }
           }
       })
@@ -158,7 +158,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
       }
     })
       .state('app.mapit',{
-          url: "/details/mapit/:longitude/:latitude",
+          url: "/details/mapit/:currentIndex/:type",
           views: {
               'menuContent' :{
                   templateUrl: "templates/mapIt.html",

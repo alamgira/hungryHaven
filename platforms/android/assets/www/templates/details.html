@@ -44,7 +44,7 @@
                 </div>
                 <div class="othDts">
                     <ul>
-                        <li class="{{styleClass.dateClass}}">{{challengeList.timestamp}}</li>
+                        <li class="{{styleClass.dateClass}}"><clean-date timeset="challengeList.timestamp"></clean-date></li>
                         <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">{{challengeList.challenge_condition}}</li>
                         <li class="{{styleClass.addressClass}}">
                             {{challengeList.restaurant_name}}<br>
@@ -89,7 +89,7 @@
                                             <div class="ds">{{all.short_detail}} </div>
                                             <ul class="evtInfoIco clearfix">
                                                 <li class="{{styleClass.eventInfoIcon}}" ng-if="styleClass.priceEnabled">{{all.price}}</li>
-                                                <li class="{{styleClass.eventInfoDistance}}">5.2 km</li>
+                                                <li class="{{styleClass.eventInfoDistance}}"><get-distance longitude="all.longitude" latitude="all.latitude"></get-distance> km</li>
                                             </ul>
                                         </td>
                                         <td class="moreArrow"><img src="img/moreArrowB.png"></td>

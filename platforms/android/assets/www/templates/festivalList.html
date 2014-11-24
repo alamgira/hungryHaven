@@ -26,7 +26,29 @@
         <div class="containor white_back">
 
             <div class="clear"></div>
-            <h2 id="food_title">AUGUST 2014</h2>
+            <div ng-repeat="festival in festivalList | groupTime:'timestamp' ">
+                <div class="clear" ng-if="$index != 0"></div>
+                <h2 id="food_title">{{festival.currKey}}</h2>
+                <a href="#/app/details/{{fest.currentKey}}/{{fest.category_name}}" ng-repeat="fest in festival.listing">
+                <div class="each_srch each_food" >
+
+                        <div class="blog_left food_date">
+                            <short-date timeset="fest.timestamp"></short-date>
+
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{fest.challenge_name}}</h1>
+                            <p ng-bind-html="fest.short_detail"></p>
+
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/red_arrow.jpg"   height="18" />
+                        </div>
+
+                </div><!--blog_cont-->
+                </a>
+            </div>
+            <!--<h2 id="food_title">AUGUST 2014</h2>
             <div class="each_srch each_food">
                 <div class="blog_left food_date">
                     <h2 >AUG</h2>
@@ -42,79 +64,7 @@
                 </div>
             </div><!--blog_cont-->
 
-            <div class="each_srch each_food">
-                <div class="blog_left food_date">
-                    <h2 >AUG</h2>
-                    <h4 >18 -19</h4>
-                </div>
-                <div class="blog_middle srch_text">
-                    <h1>Toronto Taste</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
-
-            <div class="each_srch each_food">
-                <div class="blog_left food_date">
-                    <h2>AUG</h2>
-                    <h4>27</h4>
-                </div>
-                <div class="blog_middle srch_text">
-                    <h1>Taste of the Danforth</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
-            <div class="clear"></div>
-            <h2 id="food_title">SEPTEMBER 2014</h2>
-            <div class="each_srch  each_food">
-                <div class="blog_left food_date">
-                    <h2>SEPT</h2>
-                    <h4>21</h4>
-                </div>
-                <div class="blog_middle srch_text">
-                    <h1>&nbsp; </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg"   height="18" />
-                </div>
-            </div><!--blog_cont-->
-            <div class="each_srch  each_food" >
-                <div class="blog_left  food_date">
-                    <h2 >SEPT</h2>
-                    <h4 >24 - 25</h4>
-                </div>
-                <div class="blog_middle srch_text">
-                    <h1>Hot Wings Fest</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg" height="18" />
-                </div>
-            </div><!--blog_cont-->
-            <div class="each_srch  each_food no_border" >
-                <div class="blog_left  food_date">
-                    <h2>SEPT</h2>
-                    <h4>27</h4>
-                </div>
-                <div class="blog_middle srch_text">
-                    <h1>Hot Dog Fest</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                </div>
-                <div class="blog_right">
-                    <img src="img/red_arrow.jpg" height="18" />
-                </div>
-            </div><!--blog_cont-->
 
         </div>
 

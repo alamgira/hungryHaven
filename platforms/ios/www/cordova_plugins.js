@@ -135,6 +135,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+        "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -296,6 +303,7 @@ module.exports.metadata =
     "plugin.google.maps": "1.2.4",
     "org.apache.cordova.file-transfer": "0.4.8-dev",
     "org.apache.cordova.camera": "0.3.4-dev",
+    "org.apache.cordova.inappbrowser": "0.5.3",
     "com.googlemaps.ios": "1.9.0",
     "org.apache.cordova.file": "1.3.1"
 }

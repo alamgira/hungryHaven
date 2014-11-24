@@ -854,8 +854,9 @@ img.bic{width: 15px;}
 		.blog_content_top_right h1{  margin:0; height:auto; width:95%;  font-family:"Kreon"; margin-top:7px; font-size:16px; color:#8e8d93;  font-weight:bold; text-decoration:none; padding:0;line-height:20px;}
 		.each_blog{ float:left; display:inline; padding:0; height:auto; width:100%; padding:14px 15px;;background:#FFF;border-bottom:1px dotted #999;padding-bottom:3%;}
 		
-		.blog_left{width:32%;float:left;margin-right:10px;}
-		.blog_left img{background-size:100%;;}
+		.blog_left{width:25%;float:left;margin-right:10px;}
+
+        .blog_left img{border:2px solid #fff;border-radius:50%;background-size: 100%;width:100%;}
 		.blog_middle{width:57%;float:left;}
 		.blog_middle h1{  margin:0; height:auto; width:100%; font-family:'Open Sans', sans-serif;  font-size:15px; color:#333;  font-weight:bold; text-decoration:none; padding:0;line-height:18px;}
 		.blog_middle p{ margin:0; margin-top:5px;height:auto; width:95%; font-family:'Open Sans', sans-serif;  font-size:13px; color:#da251d;  font-weight:normal; text-transform:uppercase;  padding:0;line-height:15px;background:url(../img/time_icon.jpg) no-repeat;padding:0 0 0 20px;}
@@ -1404,4 +1405,8 @@ img.bic{width: 15px;}
 }
 .settings_container .list a{
     text-decoration: none;
+}
+.rounded_img{
+    border: 2px solid #fff; border-radius: 50%; background-size: 100%; width: 80%;
+    margin:0 auto;
 }

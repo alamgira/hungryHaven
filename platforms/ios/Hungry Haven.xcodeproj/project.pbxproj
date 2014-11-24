@@ -89,6 +89,7 @@
 		E69217DEC1DF4FDD8C1B6E3A /* MyPluginScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CB55ED15224F3E94AF5209 /* MyPluginScrollView.m */; };
 		E77CEBEA4023429EBEF0F2AA /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0A1CBE7C6241C3A2BDC575 /* Circle.m */; };
 		FE41336BE4324E9A91D1A399 /* GoogleMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5A016EF9947438C4E711F /* GoogleMaps.m */; };
+		843438943F1C40B78BE26BF5 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C491EDC8B7C4E0E86D31B8B /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,8 @@
 		ED8DCF611DBD4450AB86F1C3 /* R9HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = R9HTTPRequest.m; path = plugin.http.request/HttpRequest/R9HTTPRequest/R9HTTPRequest.m; sourceTree = "<group>"; };
 		F26764C2FC3C423A903B7003 /* QuartzCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Hungry Haven/config.xml"; sourceTree = "<group>"; };
+		1C491EDC8B7C4E0E86D31B8B /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		AA3CC254D4B149848053BAEE /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +466,8 @@
 				A55E4D4070BB472BAFC6AF96 /* CDVCamera.h */,
 				203EC41270614B0086CD7DEB /* CDVJpegHeaderWriter.h */,
 				B2C57B113E5D4429BDC287AD /* CDVExif.h */,
+				1C491EDC8B7C4E0E86D31B8B /* CDVInAppBrowser.m */,
+				AA3CC254D4B149848053BAEE /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "Hungry Haven/Plugins";
@@ -701,6 +706,7 @@
 				6D8C8BC2F0824DEF8BCCAF30 /* CDVFileTransfer.m in Sources */,
 				7742D384B7B44FE3BC232D24 /* CDVCamera.m in Sources */,
 				033C918093ED4CD9901F3A7A /* CDVJpegHeaderWriter.m in Sources */,
+				843438943F1C40B78BE26BF5 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

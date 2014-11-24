@@ -34,19 +34,16 @@
         <div class="norContainor" style="background:#fff;">
 
             <div class="ff-hero labeast_ban" >
-                <img src="img/labeast_bann.png">
+                <img class="rounded_img" src="{{admin}}{{influencers.pic_url}}" style="">
             </div>
             <div class="hlared" >
-                <h1>LA Beast</h1>
+                <h1>{{influencers.influencer_first_name}} {{influencers.influencer_last_name}}</h1>
             </div>
 
             <div class="innerbeast" >
-                <p>LA beast is a competitive eater and a youtube
-                    sensation. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Pellentesque
-                    fermentum facilisis neque nec sodales. </p>
-                <h4>www.labeast.com</h4>
-                <h2>FOLLOW LA BEAST:</h2>
+                <p ng-bind-html="influncers.influencer_description"></p>
+                <h4>{{influencers.influencer_url}}</h4>
+                <h2>FOLLOW {{influencers.influencer_first_name}} {{influencers.influencer_last_name}}:</h2>
                 <img src="img/fb_icon.png" >
                 <img src="img/tw_icon.png" >
                 <img src="img/linkedin.png" >
@@ -58,13 +55,13 @@
                 <div class="grey_bar"></div>
                 <div class="srhDirHead smTbs clearfix">
                     <ul>
-                        <li><a href="#" class="selt">VIDEOS <span class="sltArrow"><img src="img/sltArrow.png"></span></a></li>
-                        <li><a href="#">MERCHANDISE <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
+                        <li><a class="selt">VIDEOS <span class="sltArrow"><img src="img/sltArrow.png"></span></a></li>
+                        <li><a ng-click="openWebView()">MERCHANDISE <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
                     </ul>
                 </div>
                 <p> </p>
 
-
+                <ion-scroll style="height:350px;">
                 <div class="eventListCont whitebg ">
                     <a href="#" class="evntList labeast_top">
                         <table>
@@ -252,6 +249,7 @@
                         </table>
                     </a>
                 </div>
+                    </ion-scroll>
             </div>
 
         </div>

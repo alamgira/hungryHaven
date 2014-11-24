@@ -126,7 +126,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
           views: {
               'menuContent' :{
                   templateUrl: "templates/influencerDetails.html",
-                  controller: 'detailsCtrl'
+                  controller: 'influencerDetailsCtrl'
               }
           }
       })
