@@ -396,7 +396,7 @@ myApp.factory('User',function(){
             });
             if (existing == 0){
                 console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
-                if (tagCounter <= 3){
+                if (tagCounter < 3){
                     tagFilterList.push(tag);
                     tagCounter++;
                 }
@@ -420,7 +420,7 @@ myApp.factory('User',function(){
                 }
             });
             if (existing == 0){
-                if (subCounter <=3){
+                if (subCounter <3){
                     console.log("PUSHING TO TAG FILTER : "+JSON.stringify(tag));
                     subCatFilterList.push(tag);
                     subCounter++;
@@ -447,8 +447,22 @@ myApp.factory('ChallengeList',function(){
     var category_list = null;
     var sub_category_list = null;
     var sub_category_list_challenge = null;
+    var current_list = null;
+    var currentListFunction = {
+
+        setCurrent:function(newList){
+            current_list = newList;
+        }
+    };
     return {
+        getCurrentList:function(){
+            return current_list;
+        },
+        setCurrentList:function(newList){
+            currentListFunction.setCurrent(newList);
+        },
         getList:function(){
+            currentListFunction.setCurrent(list);
             return list;
         },
         setList:function(newList){
@@ -515,6 +529,7 @@ myApp.factory('ChallengeList',function(){
                     },challengeList);
                 }
             }
+            currentListFunction.setCurrent(challengeList);
             return challengeList;
         },
         getContestList:function(){
@@ -529,6 +544,7 @@ myApp.factory('ChallengeList',function(){
                     },contestList);
                 }
             }
+            currentListFunction.setCurrent(contestList);
             return contestList;
         },
         getFestivalList:function(){
@@ -543,6 +559,7 @@ myApp.factory('ChallengeList',function(){
                     },festivalList);
                 }
             }
+            currentListFunction.setCurrent(list);
             return festivalList;
         }
 
@@ -639,7 +656,7 @@ myApp.filter('unique', function() {
         return output;
     };
 });
-myApp.filter('multipleSearch',['User',function(User){
+myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeList){
     return function(challengeList,subCatForChallenge,tagForChallenge){
 
         var tagList = User.getTagFilters();
@@ -706,8 +723,10 @@ myApp.filter('multipleSearch',['User',function(User){
 
 
         if (tagList.length > 0 || subList.length > 0){
+            ChallengeList.setCurrentList(result);
             return result;
         }
+        ChallengeList.setCurrentList(challengeList);
         return challengeList;
     };
 }]);

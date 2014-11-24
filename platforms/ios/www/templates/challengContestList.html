@@ -41,70 +41,76 @@
                 </ul>
 
             </ion-scroll>
-            <div class="fadeImg"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
+            <div class="fadeImg">
+                <img src="img/fadeImg.png" ng-show="showFilterStatus">
+            </div>
+
             <div class="sltBar" ng-show="showFilterStatus" on-drag-down="showFilterDetail()">
                 <span></span>
             </div>
             <div class="clear"></div>
-        <div ng-repeat="challenge in challengeList" ng-if="challenge.category_name == 'challenge' || challenge.category_name == 'contest'">
-            <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'challenge'">
-        <div class="each_srch">
-            <div class="blog_left">
-                <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
-                <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
+            <div ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" ng-if="challenge.category_name == 'challenge' || challenge.category_name == 'contest'">
+                <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'challenge'">
+                    <div class="each_srch">
+                        <div class="blog_left">
+                            <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
+                            <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
 
+                        </div>
+                        <div class="search_chall_icon">
+                            <img src="img/gb.png" width="28" >
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{challenge.challenge_name}}</h1>
+                            <p ng-bind-html="challenge.short_detail"></p>
+                            <div class="search_rups1">
+                                <img src="img/pricetag-challenges.png" height="22" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups">{{challenge.price}}
+                            </div><!--rups-->
+                            <div class="search_rups1">
+                                <img src="img/car-blue.png"  height="14" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups">
+                                <get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km.
+                            </div>
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/black_arrow.jpg"  />
+                        </div>
+                    </div>
+                </a>
+                <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'contest'">
+                    <div class="each_srch green_list">
+                        <div class="blog_left">
+                            <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
+                            <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
+                        </div>
+                        <div class="search_chall_icon">
+                            <img src="img/gn.png" width="28" >
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{challenge.challenge_name}}</h1>
+                            <p ng-bind-html="challenge.short_detail"></p>
+                            <div class="search_rups1">
+                                <img src="img/pricetag-contest.png"  height="22" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups  green_text">
+                                {{challenge.price}}
+                            </div><!--rups-->
+                            <div class="search_rups1">
+                                <img src="img/car-green.png"  height="14" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups  green_text">
+                                <get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km.
+                            </div>
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/black_arrow.jpg"  />
+                        </div>
+                    </div><!--blog_cont-->
+                </a>
             </div>
-            <div class="search_chall_icon">
-                <img src="img/gb.png" width="28" >
-            </div>
-            <div class="blog_middle srch_text">
-                <h1>{{challenge.challenge_name}}</h1>
-                <p ng-bind-html="challenge.short_detail"></p>
-                <div class="search_rups1">
-                    <img src="img/pricetag-challenges.png" height="22" alt="rs" />
-                </div><!--rups1-->
-                <div class="search_rups">{{challenge.price}}
-                </div><!--rups-->
-                <div class="search_rups1">
-                    <img src="img/car-blue.png"  height="14" alt="rs" />
-                </div><!--rups1-->
-                <div class="search_rups"><get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km.
-                </div>
-            </div>
-            <div class="blog_right">
-                <img src="img/black_arrow.jpg"  />
-            </div>
-        </div>
-        </a>
-            <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'contest'">
-        <div class="each_srch green_list">
-            <div class="blog_left">
-                <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
-                <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
-            </div>
-            <div class="search_chall_icon">
-                <img src="img/gn.png" width="28" >
-            </div>
-            <div class="blog_middle srch_text">
-                <h1>{{challenge.challenge_name}}</h1>
-                <p ng-bind-html="challenge.short_detail"></p>
-                <div class="search_rups1">
-                    <img src="img/pricetag-contest.png"  height="22" alt="rs" />
-                </div><!--rups1-->
-                <div class="search_rups  green_text">{{challenge.price}}
-                </div><!--rups-->
-                <div class="search_rups1">
-                    <img src="img/car-green.png"  height="14" alt="rs" />
-                </div><!--rups1-->
-                <div class="search_rups  green_text"><get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km.
-                </div>
-            </div>
-            <div class="blog_right">
-                <img src="img/black_arrow.jpg"  />
-            </div>
-        </div><!--blog_cont-->
-            </a>
-        </div>
 
 
         </div>

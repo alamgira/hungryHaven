@@ -52,7 +52,6 @@
 
             </div>
             <ion-scroll direction="x" class="wide-as-needed">
-
                         <!--<div ng-repeat="challenge in challengeList" style="float:left;margin-right:10px;">
                             <figure >
                                 <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg"></a>
@@ -60,10 +59,6 @@
                                 <span class="flgSet"><a href="#/app/details/1/challenge"><img src="img/gb.png"></a></span>
                             </figure>
                         </div>-->
-
-
-
-
                 <ul class="restList clearfix" style="width:500px;">
 
                     <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge">
@@ -80,10 +75,7 @@
                             </span>
                         </figure>
                     </li>
-
-
                 </ul>
-
             </ion-scroll>
         </div>
 

@@ -158,7 +158,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
       }
     })
       .state('app.mapit',{
-          url: "/details/mapit/:longitude/:latitude",
+          url: "/details/mapit/:currentIndex/:type",
           views: {
               'menuContent' :{
                   templateUrl: "templates/mapIt.html",
