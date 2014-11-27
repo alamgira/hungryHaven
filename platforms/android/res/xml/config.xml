@@ -52,4 +52,5 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
+    <icon height="57" src="img/hungry_icon.png" width="57" />
 </widget>

@@ -18,6 +18,7 @@ myApp.factory('definedVariable',function(StorageService){
 });
 myApp.factory('Auth', function($http, $location, SessionService, StorageService,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();
+    var pic_id = null;
     var cacheSession = function(data) {
         SessionService.set('hungryAuth', JSON.stringify(data));
     };
@@ -33,12 +34,18 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
     var win = function(r){
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
+        pic_id = JSON.parse(r.response).pic_id;
+
         console.log("Sent = " + r.bytesSent);
+
     };
     var fail = function(error){
         console.log("Error: "+JSON.stringify(error));
     };
     return {
+        getPicId:function(){
+            return pic_id;
+        },
         load: function() {
             return $http.get('/api/v1/auth');
         },
@@ -108,25 +115,50 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
 
         },
         upload_profile_pic:function(imageURI){
-
+            /*var myImg = imageURI;
             var options = new FileUploadOptions();
-             options.fileKey="file";
-             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-             options.mimeType="image/jpeg";
+            options.fileKey="post";
+            options.chunkedMode = false;
+            var params = {};
 
-            options.headers = {
-                Connection:"close"
-            };
-             var params = {};
-            params.fullPath = imageURI;
-            params.name = options.fileName;
+            options.params = params;
+            var ft = new FileTransfer();
+            var url = adminRoot+'api/profileImageUpload';
+            ft.upload(myImg, encodeURI(url), win, fail, options);
+*/
+            var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="text/plain";
 
-             options.params = params;
-             options.chunkedMode = false;
+            var params = new Object();
 
-             var ft = new FileTransfer();
-             var url = adminRoot+'api/profileImageUpload';
-             ft.upload(imageURI, url, win, fail, options,true);
+            options.params = params;
+            var url = adminRoot+'api/profileImageUpload';
+            var ft = new FileTransfer();
+            ft.upload(imageURI, encodeURI(url), win, fail, options);
+
+
+
+            /*
+                        var options = new FileUploadOptions();
+                         options.fileKey="file";
+                         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+                         options.mimeType="image/jpeg";
+
+                        options.headers = {
+                            Connection:"close"
+                        };
+                         var params = {};
+                        params.fullPath = imageURI;
+                        params.name = options.fileName;
+
+                         options.params = params;
+                         options.chunkedMode = false;
+
+                         var ft = new FileTransfer();
+                         var url = adminRoot+'api/profileImageUpload';
+                         ft.upload(imageURI, url, win, fail, options,true);*/
         },
         locations: function() {
             return $http.get('/api/v1/auth/locations');
@@ -258,7 +290,7 @@ myApp.factory('addMarker', function() {
     }
 });
 
-myApp.factory('dataService',function($http,definedVariable,ChallengeList,influencerList){
+myApp.factory('dataService',function($http,definedVariable,ChallengeList,influencerList,blogList){
     var adminRoot = definedVariable.getAdminRoot();
     var auth_token = definedVariable.getStorage('hungryAuth');
     var utils = {
@@ -365,13 +397,54 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
                return promise;
            }
            return influencerList.getInfluencerList();
+       },
+       getInfluencersVideoById:function(id){
+           var promise = $http.post(adminRoot + 'api/get_influencer_video',{id:id}).then(function(response){
+               console.log("DATA SERVICE VIDEO RESPONSE "+JSON.stringify(response));
+                return response.data.response;
+           });
+           return promise;
+       },
+       getBlog:function(){
+            if (blogList.getBlogList() == null){
+                var promise = $http.post(adminRoot + 'api/get_blog').then(function(response){
+                    blogList.setBlogList(response.data.response);
+                    return blogList.getBlogList();
+                });
+                return promise;
+            }
+           return blogList.getBlogList();
+       },
+       getUserInfo:function(inputs){
+           var promise = $http.post(adminRoot + 'api/get_user_info',inputs).then(function(response){
+               console.log("CALLED RESPONSE "+JSON.stringify(response));
+               return response.data.response;
+           });
+           return promise;
        }
 
    }
 });
+myApp.factory('blogList',function(){
+    var blogList = null;
+    return{
+        clearMemory:function(){
+            blogList = null;
+        },
+        getBlogList:function(){
+            return blogList;
+        },
+        setBlogList:function(blog){
+            blogList = blog;
+        }
+    }
+});
 myApp.factory('influencerList',function(){
     var list = null;
     return {
+        clearMemory:function(){
+            list = null;
+        },
         getInfluencerList:function(){
             return list;
         },
@@ -380,9 +453,10 @@ myApp.factory('influencerList',function(){
         }
     };
 });
-myApp.factory('User',function(){
+myApp.factory('User',function(Auth,dataService){
     var tagFilterList = [];
     var subCatFilterList = [];
+    var userInfo = null;
     var tagCounter = 0;
     var subCounter = 0;
     var removeTagKey = function(key){
@@ -394,6 +468,21 @@ myApp.factory('User',function(){
 
     }
     return {
+        getUserInfo:function(){
+            if (userInfo == null){
+                var loggedIn = Auth.isLoggedIn();
+                var inputs = {auth_token:loggedIn.auth_token};
+                console.log("Input User "+JSON.stringify(inputs));
+                var promise = dataService.getUserInfo(inputs).then(function(response){
+                    userInfo = response;
+                    return response;
+                });
+                console.log("USERINFO IS "+ JSON.stringify(promise));
+                return promise;
+            }
+            return userInfo;
+
+        },
         getTagFilters:function(){
             return tagFilterList;
         },
@@ -475,6 +564,18 @@ myApp.factory('ChallengeList',function(){
         }
     };
     return {
+        clearMemory:function(){
+            list = null;
+            challengeList = null;
+            contestList = null;
+            festivalList = null;
+            tagList = null;
+            tagForChallenge = null;
+            category_list = null;
+            sub_category_list = null;
+            sub_category_list_challenge = null;
+            current_list = null;
+        },
         getCurrentList:function(){
             return current_list;
         },
@@ -568,7 +669,6 @@ myApp.factory('ChallengeList',function(){
             return contestList;
         },
         getFestivalList:function(){
-            console.log("CURRENT LIST: "+JSON.stringify(list));
             if (festivalList == null){
                 if (list != null){
                     festivalList = [];
@@ -625,6 +725,9 @@ myApp.factory('countryList',function($http,definedVariable){
     var adminRoot = definedVariable.getAdminRoot();
    var list = null;
     return{
+        clearMemory:function(){
+          list = null;
+        },
         getList:function(){
             return list;
         },
@@ -690,7 +793,7 @@ myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeLis
         var tempTags = [];
         var tempSub = [];
         console.log("TAG FOR CHALLENGE LIST : "+JSON.stringify(tagForChallenge));
-        if (tagForChallenge.length == 0 && subCatForChallenge.length == 0){
+        if ((tagForChallenge.length == "undefined" && subCatForChallenge.length == "undefined") || (tagForChallenge.length == 0 && subCatForChallenge.length == 0)){
             return challengeList;
         }
         angular.forEach(challengeList,function(value,key){
@@ -786,11 +889,43 @@ myApp.filter('groupTime',[function(){
             }
 
         });
-        console.log("CUrrente Key "+JSON.stringify(groups));
+
         return groups;
     };
 }]);
+myApp.filter('groupBy',[function(){
+    var groups = [];
+    var keys = [];
 
+    return function(challengeList){
+        angular.forEach(challengeList,function(value,key){
+
+            var currKey = value.blog_type_name;
+            if (keys.indexOf(currKey) == -1){
+                if (value.status == "active"){
+                    value.currentKey = key;
+                    var g = {
+                        currKey:currKey,
+                        listing: [value]
+                    }
+                    groups.push(g);
+                    keys.push(currKey);
+                }
+
+            }
+            else{
+                var keyIndex = keys.indexOf(currKey);
+                if (groups[keyIndex].listing.indexOf(value) == -1 && value.status=="active"){
+                    value.currentKey = key;
+                    groups[keyIndex].listing.push(value);
+                }
+            }
+
+        });
+        console.log("GROUP IS : "+JSON.stringify(groups));
+        return groups;
+    };
+}]);
 directiveApp.directive('shortDate',function(){
 
     var monthName = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
@@ -843,3 +978,45 @@ directiveApp.directive('cleanDate',function(){
     };
 
 });
+directiveApp.directive('youImage',function(){
+    return{
+        restrict: 'AE',
+        template: '<img src="{{youLink}}" />',
+        scope:{
+            urlset: '='
+        },
+        link: function(scope,element, attr){
+
+            if (scope.urlset.indexOf('youtu.be') > -1){
+                var pieces = scope.urlset.split(/[\s/]+/);
+                scope.youLink = 'http://img.youtube.com/vi/'+pieces[pieces.length -1]+'/0.jpg';
+            }else{
+                scope.youLink = "";
+            }
+
+        }
+    }
+});
+
+directiveApp.directive('disableScreen', function() {
+        return {
+            restrict: 'E',
+            link: function(scope, element) {
+                $ionicGesture.on('drag', function() {
+                    console.log('registered drag!');
+                    //hasClass('display') is a proxy for this directive being active
+                    element.hasClass('display') && scope.$$childHead.toggleOpenMenu();
+                }, element);
+                scope.$watch(
+                    function() {
+                        return scope.sideMenuContentTranslateX;
+                    }, function(translateVal) {
+                        if(Math.abs(translateVal) === 275) {
+                            !element.hasClass('display') && element.addClass('display');
+                        } else {
+                            element.hasClass('display') && element.removeClass('display');
+                        }
+                    });
+            }
+        };
+    });

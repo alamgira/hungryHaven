@@ -1,6 +1,6 @@
 <ion-side-menus drag-content="false">
 
-  <ion-pane ion-side-menu-content drag-content="false">
+  <ion-pane transition-check ion-side-menu-content drag-content="false">
       <!--<ion-header-bar class="bar-header">
           <button class="button button-icon" ng-click="toggleSideMenu()">
               <i class="icon ion-navicon"></i>
@@ -10,89 +10,51 @@
               <i class="icon ion-star"></i>
           </button>
       </ion-header-bar>-->
+      <disable-screen class="cover"></disable-screen>
 
 
-
-   <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-       <!--  <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>-->
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent" animation="slide-left-right" drag-content="false"></ion-nav-view>
+       <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+           <!--  <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>-->
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right" drag-content="false"></ion-nav-view>
   </ion-pane>
 
   <ion-side-menu side="left"  id="leftSideMenu" class="menu_containor" style="visibility: hidden;" drag-content="false">
 
-          <header class="bar about_top no_back">
+          <ion-header-bar class="bar about_top no_back">
 
               <div class="search-text-box">
                   <input name="search-menu"  type="text" class="sideMenuSearchBar">
               </div>
 
 
-          </header>
-          <ion-content class="has-header" >
+          </ion-header-bar>
+          <ion-content class="has-header">
               <div>
                   <div class="about_top no_back">
 
                       <div class="menu_left_img">
-                          <img src="img/menu-pic.png" width="110">
+                          <img src="img/menu-pic.png" width="110" ng-if="userInfo.pic_url == null">
+                          <img src="{{adminUrl}}{{userInfo.pic_url}}" width="110" height="110" ng-if="userInfo.pic_url != null">
                       </div>
                       <a href="#" class="red_icon"><img src="img/menu-redicon.png"  width="32"></a>
                       <div class="menu_right_txt">
                           <h3>Hello,</h3>
-                          <h1>Alexandar</h1>
+                          <h1>{{userInfo.user_firstname}}</h1>
                       </div>
                   </div>
                   <div class="menu-select-box">
                       <!--           <p>Edit Profile</p>
                        -->
-                      <ul>
-                      <li ng-repeat="sMenuList in sideMenuLists" class="border-grey"><a  nav-clear menu-close href="{{sMenuList.url}}" style="color:white;">{{sMenuList.sideMenuName}}</a></li>
-
-
-                  </ul>
+                        <ul>
+                            <li ng-repeat="sMenuList in sideMenuLists" class="border-grey"><a  nav-clear menu-close href="{{sMenuList.url}}" style="color:white;">{{sMenuList.sideMenuName}}</a></li>
+                        </ul>
                   </div>
 
               </div>
-              <!--<div class="menu-select-box">
-                  <p>Edit Profile</p>
-                  <!--<ion-list>
-                  <ion-item nav-clear menu-close ng-repeat="sMenuList in sideMenuLists" href="{{sMenuList.url}}">
-                      {{sMenuList.sideMenuName}}
-                  </ion-item>
 
-                  </ion-list>
-                  <ul>
-                      <a  nav-clear menu-close href="{{sMenuList.url}}" style="text-decoration: none;"><li >{{sMenuList.sideMenuName}}</li></a>
-                      <!--<li id="border-grey">Food festivals</li>
-                      <li>Influencers</li>
-                      <li>Shop</li>
-                      <li>Blog</li>
-                      <li id="border-grey">About</li>
-                      <li id="border-grey" >Settings</li>
-
-                  </ul>
--->
               </ion-content>
 
 
-   <!-- <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
-    </header>-->
-   <!-- <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
-      </ion-list>
-    </ion-content>-->
   </ion-side-menu>
 </ion-side-menus>

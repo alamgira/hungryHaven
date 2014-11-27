@@ -406,7 +406,13 @@ img.bic{width: 15px;}
 .ref{width: 28px;}
 .sIco{width: 20px;}
 
+/*news-details css */
 
+.hcon-news{ margin-bottom: 10px; padding: 0 14px}
+.hcon-news h1{ padding-bottom: 5px; font-size: 22px; display: inline-block; margin: 0; font-family: 'Kreon', serif;}
+.hcon-news label{color:#da251d;font-family:'Open Sans', sans-serif;  font-size:12px; background:url(../img/time_icon.jpg) no-repeat;margin:20px 0px 0px 0px;padding:0px 20px;}
+.newsbg{margin:0px;padding:5px;}
+.newsbg p{margin:0px;width:96%;}
 /*contest-details css */
 
 .hcontestgreen{border-bottom: 1px solid #c6c6c9; margin-bottom: 10px; padding: 0 14px}
@@ -522,8 +528,8 @@ img.bic{width: 15px;}
 
 	.about_containor{
 		min-height: 100%; 
-	/*	background: url(../img/about-bg.png) center 30% no-repeat;*/
-				background: url(../img/about-bg.png)  no-repeat;
+	/*	background: url(../img/about-bg.png) center 30% no-repeat;
+				background: url(../img/about-bg.png)  no-repeat;*/
 		background-size: 100%;
 	}
 .menu_containor{
@@ -847,24 +853,32 @@ img.bic{width: 15px;}
 	
 	  /* blog page */		
         .blog_top h3{margin-left:35%;}
-		.blog_content_top{width:75%;margin:0 auto;border:2px solid #8e8d93;border-radius:5px;margin-top:5px;height:33px;margin-bottom:15px;}
-		.blog_content_top_left{width:50%;background:#8e8d93;float:left;text-align:center;height:33px;}
+		.blog_content_top{width:75%;margin:0 auto;border:2px solid #8e8d93;border-radius:5px;margin-top:5px;height:37px;margin-bottom:15px;}
+		.blog_content_top_left{width:50%;background:#fff;float:left;text-align:center;height:33px;}
 		.blog_content_top_right{width:50%;background:#fff;float:left;text-align:center}
-		.blog_content_top_left h1{  margin:0; height:auto; width:95%;  font-family:"Kreon";margin-top:7px; font-size:16px; color:#fff;  font-weight:bold; text-decoration:none; padding:0;line-height:18px;}
-		.blog_content_top_right h1{  margin:0; height:auto; width:95%;  font-family:"Kreon"; margin-top:7px; font-size:16px; color:#8e8d93;  font-weight:bold; text-decoration:none; padding:0;line-height:20px;}
+        .blog_content_top_left h1{  margin:0; height:auto; width:95%;  font-family:"Kreon";margin-top:7px; font-size:16px;   font-weight:bold; text-decoration:none; padding:0;line-height:18px;color:#8e8d93;}
+        .blog_content_top_right h1{  margin:0; height:auto; width:95%;  font-family:"Kreon"; margin-top:7px; font-size:16px;   font-weight:bold; text-decoration:none; padding:0;line-height:20px;color:#8e8d93;}
 		.each_blog{ float:left; display:inline; padding:0; height:auto; width:100%; padding:14px 15px;;background:#FFF;border-bottom:1px dotted #999;padding-bottom:3%;}
 		
 		.blog_left{width:25%;float:left;margin-right:10px;}
 
         .blog_left img{border:2px solid #fff;border-radius:50%;background-size: 100%;width:100%;}
+.c_left{width:25%;float:left;margin-right:10px;}
+
+.c_left img{border:2px solid #fff;background-size: 100%;width:100%;}
 		.blog_middle{width:57%;float:left;}
 		.blog_middle h1{  margin:0; height:auto; width:100%; font-family:'Open Sans', sans-serif;  font-size:15px; color:#333;  font-weight:bold; text-decoration:none; padding:0;line-height:18px;}
 		.blog_middle p{ margin:0; margin-top:5px;height:auto; width:95%; font-family:'Open Sans', sans-serif;  font-size:13px; color:#da251d;  font-weight:normal; text-transform:uppercase;  padding:0;line-height:15px;background:url(../img/time_icon.jpg) no-repeat;padding:0 0 0 20px;}
 		
 		.blog_right{width:7%;float:right;padding-top:7%;}
 		.no_border{border:none;}
-		
-		
+
+        .blogSelected{
+            background:#8e8d93;
+        }
+        .blogSelected h1{
+            color:#fff;
+        }
 		/* influencers css */
 	     .each_inf{ float:left; display:inline; padding:0; height:auto; width:100%; padding:6px 15px;;background:#FFF;border-bottom:1px dotted #999;padding-bottom:3%;}
 	
@@ -979,7 +993,7 @@ img.bic{width: 15px;}
 	     .menu_right_txt{float:left;margin-left:20px;margin-top:80px;text-align:left;}
 		.menu_right_txt h3{ font-family:"Kreon";font-size:20px;text-align:left;margin:0;padding:0;}
 		.menu_right_txt h1{ font-family:"Kreon";font-size:29px;text-align:left;margin:0;padding:0;color:#fff;}
-		.red_icon{left:80px;top:164px;position:absolute;}
+		.red_icon{left:80px;top:15%;position:absolute;}
 	    .menu-select-box{width:84%;background:none;padding-top:51%;}  
 		.menu-select-box p{margin:0;padding:0;text-align:center;color:#fff;font-size:12px;margin-bottom:20px;}
 		.menu-select-box ul{width:85%;margin:0;padding:0px 0px 20px 0px;}
@@ -1190,7 +1204,7 @@ img.bic{width: 15px;}
 	     .menu_right_txt{margin-top:60px;}
 		.menu_right_txt h3{margin:0;padding:0;font-size:16px;}
 		.menu_right_txt h1{ margin:0;padding:0;font-size:25px;}
-		  .red_icon{left:82px;top:146px;position:absolute;}
+		  .red_icon{left:82px;top:15%;position:absolute;}
 		/*ends here */
 
 
@@ -1255,7 +1269,7 @@ img.bic{width: 15px;}
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    *text-indent: -9999px;
+    text-indent: -9999px;
 }
 
 .ir:before {
@@ -1409,4 +1423,10 @@ img.bic{width: 15px;}
 .rounded_img{
     border: 2px solid #fff; border-radius: 50%; background-size: 100%; width: 80%;
     margin:0 auto;
+}
+.about_bg{
+    min-height: 100%;
+    /*background: url(../img/about-bg.png) center 30% no-repeat;*/
+                background: url(../img/background-about.jpg)  no-repeat;
+    background-size: 100%;
 }

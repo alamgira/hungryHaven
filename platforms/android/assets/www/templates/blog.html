@@ -31,78 +31,47 @@
     <div class="containor white_back">
 
         <div class="clear"></div>
-        <ion-scroll>
 
 
-        <div class="each_blog">
-            <div class="blog_left">
-                <img src="img/burger_img.jpg"  height="54" alt="burger" />
+        <div ng-if="selected == 0" ng-show="selected == 0">
+            <div class="each_blog" ng-repeat="blog in blogList" ng-if="blog.status == 'active' ">
+                <a href="#/app/blog/details/{{$index}}">
+                    <div class="blog_left">
+                        <img src="{{admin}}{{blog.pic_url}}"  height="54" alt="burger" />
+                    </div>
+                    <div class="blog_middle">
+                        <h1 ng-bind-html="blog.blog_title">{{blog.blog_title}}</h1>
+                        <p><clean-date timeset="blog.blog_created_at"></clean-date></p>
+                    </div>
+                    <div class="blog_right">
+                        <img src="img/red_arrow.jpg" height="18" />
+                    </div>
+                </a>
+            </div><!--blog_cont-->
+        </div>
+        <div ng-if="selected == 1" ng-repeat="blog in blogList | groupBy" ng-show="selected == 1">
+            <div class="item item-divider">
+                {{blog.currKey}}
             </div>
-            <div class="blog_middle">
-                <h1>How to Become a Competitive Eater</h1>
-                <p>AUG 26 AT 8PM</p>
-            </div>
-            <div class="blog_right">
-                <img src="img/red_arrow.jpg" height="18" />
-            </div>
-        </div><!--blog_cont-->
+            <div class="each_blog"  ng-repeat="b in blog.listing" >
 
-        <div class="each_blog">
-            <div class="blog_left">
-                <img src="img/danforth_blog.jpg"   alt="burger" />
-            </div>
-            <div class="blog_middle">
-                <h1>Taste of the Danforth is
-                    coming soon</h1>
-                <p>AUG 26 AT 8PM</p>
-            </div>
-            <div class="blog_right">
-                <img src="img/red_arrow.jpg"   height="18" />
-            </div>
-        </div><!--blog_cont-->
 
-        <div class="each_blog">
-            <div class="blog_left">
-                <img src="img/taste_blog.jpg"  height="54" alt="burger" />
-            </div>
-            <div class="blog_middle">
-                <h1>Discover the joy of
-                    Toronto Taste</h1>
-                <p>AUG 25 AT 8PM</p>
-            </div>
-            <div class="blog_right">
-                <img src="img/red_arrow.jpg"  height="18" />
-            </div>
-        </div><!--blog_cont-->
+                <a href="#/app/blog/details/{{b.currentKey}}" >
+                    <div class="blog_left">
+                        <img src="{{admin}}{{b.pic_url}}"  height="54" alt="burger" />
+                    </div>
+                    <div class="blog_middle">
+                        <h1 ng-bind-html="b.blog_title">{{b.blog_title}}</h1>
+                        <p><clean-date timeset="b.blog_created_at"></clean-date></p>
+                    </div>
+                    <div class="blog_right">
+                        <img src="img/red_arrow.jpg" height="18" />
+                    </div>
+                    </a>
 
-        <div class="each_blog">
-            <div class="blog_left">
-                <img src="img/danforth_blog2.jpg"  height="54" alt="burger" />
-            </div>
-            <div class="blog_middle">
-                <h1>Taste of the Danforth is
-                    coming soon</h1>
-                <p>AUG 24 AT 8PM</p>
-            </div>
-            <div class="blog_right">
-                <img src="img/red_arrow.jpg"   height="18" />
-            </div>
-        </div><!--blog_cont-->
+            </div><!--blog_cont-->
+        </div>
 
-        <div class="each_blog no_border" >
-            <div class="blog_left">
-                <img src="img/ribfest_blog.jpg"  height="54" alt="burger" />
-            </div>
-            <div class="blog_middle">
-                <h1>Toronto Ribfest is  back !
-                    New contests !</h1>
-                <p>AUG 22 AT 8PM</p>
-            </div>
-            <div class="blog_right">
-                <img src="img/red_arrow.jpg"   height="18" />
-            </div>
-        </div><!--blog_cont-->
-        </ion-scroll>
     </div>
 
 

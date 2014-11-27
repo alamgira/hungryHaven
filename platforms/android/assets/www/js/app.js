@@ -30,7 +30,8 @@ myApp.run(function($ionicPlatform,Auth,$location) {
   });
 })
 
-.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider','$urlRouterProvider','$httpProvider',function($stateProvider, $urlRouterProvider,$httpProvider) {
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
   $stateProvider
 
     .state('app', {
@@ -103,6 +104,15 @@ myApp.run(function($ionicPlatform,Auth,$location) {
               }
           }
       })
+      .state('app.blogdetails', {
+          url: "/blog/details/:id",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/blogDetails.html",
+                  controller: 'blogDetailsCtrl'
+              }
+          }
+      })
       .state('app.about', {
           url: "/about",
           views: {
@@ -136,6 +146,15 @@ myApp.run(function($ionicPlatform,Auth,$location) {
               'menuContent' :{
                   templateUrl: "templates/settings.html",
                   controller: 'settingsCtrl'
+              }
+          }
+      })
+      .state('app.setting-detail',{
+          url: "/settings/detail/:type",
+          views:{
+              'menuContent' :{
+                  templateUrl: "templates/settingsDetail.html",
+                  controller: 'settingsDetailCtrl'
               }
           }
       })

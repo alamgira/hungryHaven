@@ -3,16 +3,13 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-hdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-hdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-hdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-land-hdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-land-ldpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-land-mdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-land-xhdpi/screen.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-ldpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-mdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-mdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-mdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-mdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-port-hdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-port-ldpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-port-mdpi/screen.png \
@@ -20,7 +17,6 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xhdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xhdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xhdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xhdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xxhdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xxhdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/res/drawable-xxhdpi/ic_action_remove.png \
@@ -31,16 +27,13 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-hdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-hdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-hdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-hdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-land-hdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-land-ldpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-ldpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-mdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-mdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-mdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-mdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-port-hdpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-port-ldpi/screen.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-port-mdpi/screen.png \
@@ -48,7 +41,6 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xhdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xhdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xhdpi/ic_action_remove.png \
-/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xxhdpi/ic_action_next_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xxhdpi/ic_action_previous_item.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/res/drawable-xxhdpi/ic_action_remove.png \
@@ -83,6 +75,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/back-arrow.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/back-white-arrow.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/backgorund-with-logo.jpg \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/background-about.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/bak.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/banner1.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/black_arrow.jpg \
@@ -159,6 +152,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/googleplus.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/gs5_bg.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/heroes-icon-grey.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/hungry_icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/img1.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/img2.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/img3.jpg \
@@ -397,6 +391,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/plugin.http.request/www/http-request.js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/about.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/blog.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/blogDetails.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/browse.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/challengContestList.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/checkLocation.html \
@@ -414,5 +409,6 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/registerUser.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/search.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/settings.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/settingsDetail.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/sort.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/AndroidManifest.xml \

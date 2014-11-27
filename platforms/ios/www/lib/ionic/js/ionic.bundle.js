@@ -40366,7 +40366,7 @@ function($scope, $attrs, $ionicSideMenuDelegate, $ionicPlatform, $ionicBody) {
       startX <= self.edgeThreshold ||
       startX >= self.content.element.offsetWidth - self.edgeThreshold;
 
-    return ($scope.dragContent || self.isOpen()) &&
+    return ($scope.dragContent /*|| self.isOpen()*/) &&
            dragIsWithinBounds &&
            !e.gesture.srcEvent.defaultPrevented &&
            !e.target.tagName.match(/input|textarea|select|object|embed/i) &&
@@ -43516,6 +43516,7 @@ function($timeout, $ionicGesture, $window) {
         function onContentTap(gestureEvt) {
           if(sideMenuCtrl.getOpenAmount() !== 0) {
             sideMenuCtrl.close();
+            document.getElementById('leftSideMenu').style.visibility = "hidden";
             gestureEvt.gesture.srcEvent.preventDefault();
             startCoord = null;
             primaryScrollAxis = null;

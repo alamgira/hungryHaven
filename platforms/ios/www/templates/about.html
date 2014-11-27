@@ -21,19 +21,22 @@
         </ion-header-bar>
 
     </ion-nav-buttons>
-    <ion-content class="has-header has-footer about_bg" scroll="false">
+    <ion-content class="has-header has-footer about_bg" scroll="true">
         <div class="about_containor">
-            <div style="width:100%;height:30%;">
-                <img src="img/about-bg.png" />
-            </div>
-            <div class="about_content">
-                <h1>ABOUT HUNGRY HAVEN</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisl sem, aliquet ut quam non, varius suscipit odio. Etiam lacinia eleifend sem, a facilisis nisi vehicula ac.</p>
 
-                <p>Phasellus mi dui, efficitur non ultricies finibus, maximus at massa. Vivamus sollicitudin fringilla enim ac.</p>
-                <p></p>
-                <p><a href="#"><img src="img/fb_icon.png"  height="34" /></a>&nbsp;&nbsp;<a href="#"><img src="img/tw_icon.png"  height="34" /></a></p>
+            <div class="about-logo">
+                <img src="img/small-logo.png" width="180">
             </div>
+            <ion-scroll style="min-height: 400px;">
+                <div class="about_content">
+                    <h1>ABOUT HUNGRY HAVEN</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisl sem, aliquet ut quam non, varius suscipit odio. Etiam lacinia eleifend sem, a facilisis nisi vehicula ac.</p>
+
+                    <p>Phasellus mi dui, efficitur non ultricies finibus, maximus at massa. Vivamus sollicitudin fringilla enim ac.</p>
+                    <p></p>
+                    <p><a href="#"><img src="img/fb_icon.png"  height="34" /></a>&nbsp;&nbsp;<a href="#"><img src="img/tw_icon.png"  height="34" /></a></p>
+                </div>
+            </ion-scroll>
         </div>
 
     </ion-content>

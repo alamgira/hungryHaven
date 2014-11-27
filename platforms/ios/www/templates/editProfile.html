@@ -14,8 +14,8 @@
                     <ul class="proImg clearfix">
                         <li>
                             <div class="proImgBlk">
-                                <img src="img/edit-user.png">
-                                <a href="#"><img src="img/add-icon.png"></a>
+                                <img id="myImage" src="img/edit-user.png">
+                                <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
                             </div>
                         </li>
                         <li class="proTxtBlk">
@@ -42,9 +42,9 @@
                 </table>
                 </li>
                 <li><table> <tr> <td valign="bottom" class="edit_txt">Birthdate:</td><td><input type="text" placeholder="01/05/1995" class="useFullWidth"><span class="calImg"><img src="img/calenderImg.png"></span></li></td></tr></table>	</li>
-                <li><table> <tr> <td valign="bottom" class="edit_txt">Password:</td><td><input type="password" placeholder="********" class="useFullWidth"></li></td></tr></table>	</li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">Password:</td><td><input type="password" placeholder="********" class="useFullWidth"></td></tr></table>	</li>
 
-                <li><table> <tr> <td valign="bottom" class="edit_txt"></td><td><input type="submit" value="UPDATE PROFILE" class="redJumboBtn updateBtn useFullWidth"></li></td></tr></table>	</li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt"></td><td><input type="submit" value="UPDATE PROFILE" class="redJumboBtn updateBtn useFullWidth"></td></tr></table>	</li>
             </ul>
         </div>
 

@@ -64,9 +64,10 @@
                     <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge">
 
                         <figure >
-                            <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg" ng-if="challenge.pic_url == null">
-                                <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null"></a>
-                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}">{{challenge.challenge_name}}</a></figcaption>
+                            <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
+                                <img src="img/img1.jpg" ng-if="challenge.pic_url == null" width="100" height="100">
+                                <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null" width="100" height="100"></a>
+                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}" style="white-space: normal;">{{challenge.challenge_name}}</a></figcaption>
                             <span class="flgSet"><a href="#/app/details/{{$index}}/{{challenge.category_name}}">
                                 <img src="img/gb.png" ng-if="challenge.category_name == 'challenge'">
                                 <img src="img/gn.png" ng-if="challenge.category_name == 'contest'">

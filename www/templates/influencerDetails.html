@@ -56,34 +56,20 @@
                 <div class="srhDirHead smTbs clearfix">
                     <ul>
                         <li><a class="selt">VIDEOS <span class="sltArrow"><img src="img/sltArrow.png"></span></a></li>
-                        <li><a ng-click="openWebView()">MERCHANDISE <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
+                        <li><a ng-click="openWebView('http://www.justgfad.com','_blank')">MERCHANDISE <span class="sltArrow"><img src="img/sltArrow.png"></span></a></a></li>
                     </ul>
                 </div>
                 <p> </p>
 
                 <ion-scroll style="height:350px;">
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
+                <div class="eventListCont whitebg " ng-repeat="video in influencerVideo">
+                    <a ng-click="openWebView('{{video.video_url}}','_system')" class="evntList labeast_top">
                         <table>
                             <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
+                                <td class="eventHero"><you-image urlset="video.video_url"></you-image></td>
                                 <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
+                                    <div class="et labet"><p ng-bind-html="video.video_description"></p></div>
 
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg">
-                    <a href="#" class="evntList">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img2.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">L.A. BEAST
-                                        VidCon 2014</div>
 
                                 </td>
                                 <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
@@ -92,163 +78,6 @@
                     </a>
                 </div>
 
-                <div class="eventListCont whitebg">
-                    <a href="#" class="evntList">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img3.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">The Watermelon
-                                        Challenge </div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-
-                <div class="eventListCont whitebg">
-                    <a href="#" class="evntList">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img4.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">L.A. BEAST vs
-                                        The Beer Mile</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="eventListCont whitebg ">
-                    <a href="#" class="evntList labeast_top">
-                        <table>
-                            <tr>
-                                <td class="eventHero"><img src="img/video_img1.jpg"></td>
-                                <td style="padding-left:10px;">
-                                    <div class="et labet">1000 Year old egg challenge</div>
-
-                                </td>
-                                <td class="moreArrow"><img src="img/red_arrow.jpg"></td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
                     </ion-scroll>
             </div>
 
