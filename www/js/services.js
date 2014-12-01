@@ -86,11 +86,6 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
 
                 }
 
-                /*cacheSession(data);
-                if(inputs.remember) {
-                    console.log('remember this login');
-                    saveSession(data);
-                }*/
             });
             return login;
         },
@@ -101,7 +96,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return promise;
         },
         changePassword: function(inputs) {
-            var promise = $http.post(adminRoot + 'auth/changepassword', inputs).then(function (response) {
+            var promise = $http.post(adminRoot + 'api/update_password', inputs).then(function (response) {
                 return response.data;
             });
             return promise;
@@ -115,17 +110,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
 
         },
         upload_profile_pic:function(imageURI){
-            /*var myImg = imageURI;
-            var options = new FileUploadOptions();
-            options.fileKey="post";
-            options.chunkedMode = false;
-            var params = {};
 
-            options.params = params;
-            var ft = new FileTransfer();
-            var url = adminRoot+'api/profileImageUpload';
-            ft.upload(myImg, encodeURI(url), win, fail, options);
-*/
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -137,28 +122,6 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             var url = adminRoot+'api/profileImageUpload';
             var ft = new FileTransfer();
             ft.upload(imageURI, encodeURI(url), win, fail, options);
-
-
-
-            /*
-                        var options = new FileUploadOptions();
-                         options.fileKey="file";
-                         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-                         options.mimeType="image/jpeg";
-
-                        options.headers = {
-                            Connection:"close"
-                        };
-                         var params = {};
-                        params.fullPath = imageURI;
-                        params.name = options.fileName;
-
-                         options.params = params;
-                         options.chunkedMode = false;
-
-                         var ft = new FileTransfer();
-                         var url = adminRoot+'api/profileImageUpload';
-                         ft.upload(imageURI, url, win, fail, options,true);*/
         },
         locations: function() {
             return $http.get('/api/v1/auth/locations');
@@ -167,6 +130,17 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             //return $http.get('/auth/check');
             console.log("IS LOGGED IN HUNGRY AUTH: "+StorageService.get('hungryAuth'));
             return JSON.parse(StorageService.get('hungryAuth'));
+        },
+        update_user:function(inputs){
+            console.log("INPIUT " + JSON.stringify(inputs));
+            var promise = $http.post(adminRoot+'api/update_user_info',inputs).then(function(response){
+                console.log("RESPONSE : "+ JSON.stringify(response));
+                if (response.data.status == "success"){
+                    return true;
+                }
+                return false;
+            });
+            return promise;
         }
     }
 });

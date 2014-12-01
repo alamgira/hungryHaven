@@ -5,19 +5,91 @@
     },
     "config_munge": {
         "files": {
-            "AndroidManifest.xml": {
+            "res/xml/config.xml": {
                 "parents": {
-                    "/manifest/application": [
+                    "/*": [
                         {
-                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
-                            "count": 2
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         },
                         {
-                            "xml": "<meta-data android:name=\"com.google.android.maps.v2.API_KEY\" android:value=\"AIzaSyAucILP8XwfRxseFp6MECEjQX8n2FD7X1A\" />",
+                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"HttpRequest\"><param name=\"android-package\" value=\"plugin.http.request.HttpRequest\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"android-package\" value=\"plugin.google.maps.GoogleMaps\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"External\"><param name=\"android-package\" value=\"plugin.google.maps.External\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geocoder\"><param name=\"android-package\" value=\"plugin.google.maps.MyGeocoder\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
                         }
-                    ],
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
                     "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 3
+                        },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
                             "count": 1
@@ -29,10 +101,6 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 3
                         }
                     ],
                     "/manifest": [
@@ -64,58 +132,38 @@
                             "xml": "<uses-feature android:glEsVersion=\"0x00020000\" android:required=\"true\" />",
                             "count": 1
                         }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.maps.v2.API_KEY\" android:value=\"AIzaSyAucILP8XwfRxseFp6MECEjQX8n2FD7X1A\" />",
+                            "count": 1
+                        }
+                    ],
+                    "application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:label=\"@string/fb_app_name\" android:name=\"com.facebook.LoginActivity\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" />",
+                            "count": 1
+                        }
                     ]
                 }
             },
-            "res/xml/config.xml": {
+            "res/values/facebookconnect.xml": {
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<string name=\"fb_app_id\">407512492736320</string>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"HttpRequest\"><param name=\"android-package\" value=\"plugin.http.request.HttpRequest\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"GoogleMaps\"><param name=\"android-package\" value=\"plugin.google.maps.GoogleMaps\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"External\"><param name=\"android-package\" value=\"plugin.google.maps.External\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Geocoder\"><param name=\"android-package\" value=\"plugin.google.maps.MyGeocoder\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "xml": "<string name=\"fb_app_name\">ioshungry</string>",
                             "count": 1
                         }
                     ]
@@ -124,16 +172,13 @@
         }
     },
     "installed_plugins": {
-        "android.support.v4": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "com.google.playservices": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.plugin.datepicker": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.console": {
@@ -142,31 +187,39 @@
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "org.apache.cordova.file-transfer": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
         "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
-        "org.apache.cordova.network-information": {
+        "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
-        "plugin.http.request": {
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "plugin.google.maps": {
             "API_KEY_FOR_ANDROID": "AIzaSyAucILP8XwfRxseFp6MECEjQX8n2FD7X1A",
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
-        "org.apache.cordova.file-transfer": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "org.apache.cordova.inappbrowser": {
+        "com.phonegap.plugins.facebookconnect": {
+            "APP_ID": "407512492736320",
+            "APP_NAME": "ioshungry",
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
     "dependent_plugins": {
-        "org.apache.cordova.file": {
+        "plugin.http.request": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "android.support.v4": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     }

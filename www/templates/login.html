@@ -9,10 +9,10 @@
 
 
                     <div class="input-box login-box">
-                        <input name="email" type="text" ng-model="credentials.username" value="E-mail" >
+                        <input name="email" type="text" ng-model="credentials.username" value="E-mail" placeholder="Username">
                     </div>
                     <div class="input-box login-box">
-                        <input name="email" type="password" value="Password" ng-model="credentials.password" >
+                        <input name="email" type="password" value="Password" ng-model="credentials.password" placeholder="Password">
                     </div>
                     <div class="reg-content">
                         <a class="reg-box" ng-click="goToRegistration()">
@@ -25,7 +25,7 @@
                     </div>
                 </form>
             </div>
-            <div class="input-box face-box">
+            <div class="input-box face-box" ng-click="fbSignIn()">
                 CONNECT WITH FACEBOOK
             </div>
             <p id="fb_bott">We do not post to Facebook without your permission</p>

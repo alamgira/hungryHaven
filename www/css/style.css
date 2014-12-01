@@ -1430,3 +1430,4 @@ img.bic{width: 15px;}
                 background: url(../img/background-about.jpg)  no-repeat;
     background-size: 100%;
 }
+.mySide{position: absolute; left: 0; width: 40%; z-index: 100;}
