@@ -48,9 +48,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
         $scope.sideMenuLists = [
             {sideMenuName:"Home",url:"#/app/home"},
             {sideMenuName:"Challenges & Contests",url:"#/app/challengelist"},
-            {sideMenuName:"Food Festivals",url:"#/app/festivalList"},
+            //{sideMenuName:"Food Festivals",url:"#/app/festivalList"},
             {sideMenuName:"Influencers",url:"#/app/influencersList"},
-            {sideMenuName:"Shop",url:""},
+            //{sideMenuName:"Shop",url:""},
             {sideMenuName:"Blog",url:"#/app/blog"},
             {sideMenuName:"About",url:"#/app/about"},
             {sideMenuName:"Settings",url:"#/app/settings"}
@@ -457,11 +457,11 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         //$location.path('/app/home');
                     },
                     fbSignIn:function(){
-
-
                         facebookConnectPlugin.login(["public_profile"],
                             fbLoginSuccess,
-                            function (error) { alert("" + error) }
+                            function (error) {
+                                alert("" + error);
+                            }
                         );
                     }
                 };
@@ -1380,8 +1380,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
         });
     }])
-    .controller('settingsDetailCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+    .controller('settingsDetailCtrl',['$scope','$stateParams','$ionicPlatform','$ionicNavBarDelegate',
+        function($scope, $stateParams,$ionicPlatform,$ionicNavBarDelegate) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
             $scope.goBack = function(){
