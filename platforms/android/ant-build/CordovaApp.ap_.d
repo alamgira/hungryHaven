@@ -554,6 +554,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-icons.scss \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-variables.scss \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/lib/ionic/scss/ionicons/ionicons.scss \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.google.cordova.admob \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.plugin.datepicker \
@@ -565,6 +566,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/plugin.google.maps \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/plugin.http.request \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.google.cordova.admob/www \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.google.cordova.admob/www/AdMob.js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.ionic.keyboard/www \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/plugins/com.phonegap.plugins.facebookconnect/www \

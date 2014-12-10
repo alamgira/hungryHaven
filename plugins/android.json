@@ -79,6 +79,10 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -100,6 +104,10 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
                             "count": 1
                         }
                     ],
@@ -140,6 +148,10 @@
                         },
                         {
                             "xml": "<meta-data android:name=\"com.google.android.maps.v2.API_KEY\" android:value=\"AIzaSyAucILP8XwfRxseFp6MECEjQX8n2FD7X1A\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
                             "count": 1
                         }
                     ],
@@ -210,6 +222,9 @@
             "APP_ID": "407512492736320",
             "APP_NAME": "ioshungry",
             "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.cordova.admob": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
     "dependent_plugins": {
@@ -220,6 +235,12 @@
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "android.support.v4": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.rjfun.cordova.extension": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.admobsdk": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     }

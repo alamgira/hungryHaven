@@ -7,3 +7,4 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/libs/android-support-v4.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/google-play-services.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/google-volley.jar \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/cordova-generic-ad.jar \

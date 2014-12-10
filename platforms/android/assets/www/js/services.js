@@ -141,6 +141,13 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
                 return false;
             });
             return promise;
+        },
+        fb_login:function(inputs){
+            var promise = $http.post(adminRoot + 'api/fb_signin',inputs).then(function(response){
+                console.log("FB API RESPONSE "+JSON.stringify(response));
+                return response.data;
+            });
+            return promise;
         }
     }
 });
@@ -171,10 +178,30 @@ myApp.factory('StorageService', function() {
         }
     }
 });
+myApp.factory("adMobHelper",function(){
+    var ad_units = {
+        ios : {
+            banner: '/61407247/300x250_HungryHaven_AndroidAppROA' // or DFP format "/6253334/dfp_example_ad"
+
+        },
+        android : {
+            banner: '/61407247/300x250_HungryHaven_AndroidAppROA' // or DFP format "/6253334/dfp_example_ad"
+
+        }
+    };
+    return{
+        getAndroid:function(){
+            return ad_units.android;
+        },
+        getIos:function(){
+            return ad_units.ios;
+        }
+    }
+});
 myApp.factory('addMarker', function() {
     var currentMarkerList = [];
     var removeAllMarkers = function(){
-        console.log("MARKER LIST LENGTH: "+currentMarkerList.length);
+
         if (currentMarkerList.length > 0 ){
             angular.forEach(currentMarkerList,function(value,key){
                 console.log("MARKER : "+value);
@@ -182,8 +209,6 @@ myApp.factory('addMarker', function() {
             });
             currentMarkerList = [];
         }
-
-
 
     };
     return {
@@ -203,7 +228,7 @@ myApp.factory('addMarker', function() {
                 var challenge_icon = "www/img/pin-challenges.png";
                 var contest_icon = "www/img/pin-contest.png";
                 var festival_icon = "www/img/pin-festivals.png";
-                console.log("I AM HERE INSIDE ");
+
                 angular.forEach(list,function(value,key){
                     console.log("INSIDE FOR EACH : "+JSON.stringify(value));
                     if (value.challenge_name != null){
@@ -253,8 +278,6 @@ myApp.factory('addMarker', function() {
 
 
                 return true;
-            }else{
-                console.log("I AM HERE in ELESES");
             }
 
 

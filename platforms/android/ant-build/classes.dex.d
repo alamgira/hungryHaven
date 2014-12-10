@@ -37,6 +37,13 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$DateSetListener.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin$TimeSetListener.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/plugin/datepicker/DatePickerPlugin.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobMediation.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobPlugin$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobPlugin$BannerListener.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobPlugin$InterstitialListener.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobPlugin.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/ext/CordovaPluginExt.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/ext/PluginAdapterDelegate.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/CameraLauncher.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
@@ -189,3 +196,4 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/dexedLibs/android-support-v4-f7e2594cbf4a913c1c332181c6662aba.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/dexedLibs/google-play-services-2482da6916768f78fd8ea58b22923f28.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/dexedLibs/google-volley-7172bc70a7de4c3b0e4145bf92d5cd28.jar \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/dexedLibs/cordova-generic-ad-710eb0bd03113856a1d9be6a8ff4f714.jar \

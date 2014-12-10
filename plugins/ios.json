@@ -95,6 +95,10 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"CDVAdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -120,7 +124,7 @@
                     "CoreGraphics.framework": [
                         {
                             "xml": "false",
-                            "count": 3
+                            "count": 4
                         }
                     ],
                     "AssetsLibrary.framework": [
@@ -142,13 +146,13 @@
                         },
                         {
                             "xml": "false",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "AVFoundation.framework": [
                         {
                             "xml": "false",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "CoreData.framework": [
@@ -220,6 +224,60 @@
                     "Security.framework": [
                         {
                             "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AdSupport.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "CoreTelephony.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "EventKit.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "EventKitUI.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "Foundation.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "MessageUI.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "StoreKit.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "UIKit.framework": [
+                        {
+                            "xml": "false",
                             "count": 1
                         }
                     ]
@@ -314,6 +372,9 @@
             "APP_ID": "407512492736320",
             "APP_NAME": "ioshungry",
             "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.cordova.admob": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
     "dependent_plugins": {
@@ -321,6 +382,12 @@
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.googlemaps.ios": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.rjfun.cordova.extension": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.google.admobsdk": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     }

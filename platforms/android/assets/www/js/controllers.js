@@ -197,9 +197,10 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  'Timestamp: '         + position.timestamp                + '\n');
 
                  */
-
+                alert("I AM HERE");
                 SessionService.set('current_user_longitude',position.coords.longitude);
                 SessionService.set('current_user_latitude',position.coords.longitude);
+
 
                 $ionicLoading.hide();
                 startRedirecting();
@@ -386,9 +387,6 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                             if ($scope.userData.conf == $scope.userData.password){
                                 if (imageURI != null){
                                     $scope.userData.media_id = Auth.getPicId();
-
-
-
                                     Auth.register($scope.userData).then(function(response){
 
                                         if (response.data.status == "success"){
@@ -396,25 +394,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                             utils.registrationSuccessfull();
                                         }
                                     });
-
-
                                 }else{
                                     Auth.register($scope.userData).then(function(response){
-
                                         if (response.data.status == "success"){
                                             StorageService.set('hungryAuth',JSON.stringify({auth_token:response.data.auth_token}));
                                             utils.registrationSuccessfull();
                                         }
                                     });
                                 }
-
                             }
-                            else{
-
-                            }
-                        }
-                        else{
-
                         }
 
                     }
@@ -427,8 +415,6 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                 var utils = {
                     createNewUser:function(){
-
-
                         $scope.modal.show();
                     },
                     registrationSuccessfull:function(){
@@ -440,7 +426,6 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                         Auth.login($scope.credentials).success(function(data){
                             if (data.status == 'success'){
-
                                 $location.path('/app/home');
                             }
                             else{
@@ -457,22 +442,62 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         //$location.path('/app/home');
                     },
                     fbSignIn:function(){
-                        facebookConnectPlugin.login(["public_profile"],
+                        facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
+                        /*facebookConnectPlugin.login(["public_profile"],
                             fbLoginSuccess,
                             function (error) {
-                                alert("" + error)
+                                alert("" + error);
+                            }
+                        );*/
+                        //facebookConnectPlugin.logout(fbLoginSuccess , function(error){alert(error);});
+                    }
+                };
+                var statusSucess = function(userData){
+                    console.log("UserData "+JSON.stringify(userData));
+                    if (userData.status == "connected"){
+                        var longitude = SessionService.get('current_user_longitude');
+                        var latitude = SessionService.get('current_user_latitude');
+                        facebookConnectPlugin.getAccessToken(function(token){
+                            var response = Auth.fb_login({token:token,longitude:longitude,latitude:latitude}).then(function(response){
+                                console.log("FB RESPONSE "+JSON.stringify(response));
+                                if (response.status == "success"){
+                                    StorageService.set('hungryAuth',JSON.stringify({auth_token:response.response.auth_token}));
+                                    $location.path('/app/home')
+                                }
+                            });
+                        });
+                        //var response = Auth.fb_login(userData);
+                    }else{
+                        facebookConnectPlugin.login(["public_profile","email","user_location"],
+                            fbLoginSuccess,
+                            function (error) {
+                                console.log("Error" + error);
                             }
                         );
                     }
                 };
+                var statusError = function(err){
+                    facebookConnectPlugin.login(["public_profile","email","user_location"],
+                        fbLoginSuccess,
+                        function (error) {
+                            console.log("Error" + error);
+                        }
+                    );
+                };
                 var fbLoginSuccess = function (userData) {
-                    alert("UserInfo: " + JSON.stringify(userData));
-                    facebookConnectPlugin.getAccessToken(function(token) {
-                        alert("Token: " + token);
-                    }, function(err) {
-                        alert("Could not get access token: " + err);
+                    var longitude = SessionService.get('current_user_longitude');
+                    var latitude = SessionService.get('current_user_latitude');
+                    facebookConnectPlugin.getAccessToken(function(token){
+                        var response = Auth.fb_login({token:token,longitude:longitude,latitude:latitude}).then(function(response){
+                            console.log("FB RESPONSE "+JSON.stringify(response));
+                            if (response.status == "success"){
+                                StorageService.set('hungryAuth',JSON.stringify({auth_token:response.response.auth_token}));
+                                $location.path('/app/home')
+                            }
+                        });
                     });
                 };
+
                 $scope.goToRegistration = utils.createNewUser;
                 $scope.signInUser = utils.signIn;
                 $scope.fbSignIn = utils.fbSignIn;
@@ -519,9 +544,60 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
     }])
 
-    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','Auth' ,'definedVariable','ChallengeList','countryList','addMarker','$ionicModal','User',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,Auth,definedVariable,ChallengeList,countryList,addMarker,$ionicModal,User) {
+    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','Auth' ,'definedVariable','ChallengeList','countryList','addMarker','$ionicModal','User','adMobHelper',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,Auth,definedVariable,ChallengeList,countryList,addMarker,$ionicModal,User,adMobHelper) {
         $ionicPlatform.ready(function() {
+            /*
+                Admob setup goes here
+             */
+
+
+            if (window.AdMob ){
+                console.log("I AM IN HERE window plugin");
+                var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                var AdMob = window.AdMob;
+
+                AdMob.createBanner({
+                    adId: admobid.banner,
+                    position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                    autoShow:true
+                },
+                    function(){console.log("Success Ad");},
+                    function(error){console.log("Error ad: "+error);}
+                )
+            }
+
+
+           /* var initAd = function(){
+                var defaultOptions = {
+                    // bannerId: admobid.banner,
+                    // interstitialId: admobid.interstitial,
+                    // adSize: 'SMART_BANNER',
+                    // width: integer, // valid when set adSize 'CUSTOM'
+                    // height: integer, // valid when set adSize 'CUSTOM'
+                    position: AdMob.AD_POSITION.BOTTOM_CENTER,
+                    // offsetTopBar: false, // avoid overlapped by status bar, for iOS7+
+                    bgColor: 'black', // color name, or '#RRGGBB'
+                    // x: integer,		// valid when set position to 0 / POS_XY
+                    // y: integer,		// valid when set position to 0 / POS_XY
+                    isTesting: true // set to true, to receiving test ad for testing purpose
+                    // autoShow: true // auto show interstitial ad when loaded, set to false if prepare/show
+                };
+                AdMob.setOptions( defaultOptions );
+
+            };
+            var createBanner = function(){
+                if(AdMob) AdMob.createBanner( {
+                    adId:admobid.banner,
+                    position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                    autoShow:true}
+
+                );
+            };*/
+
+            /*
+            Admob ends
+            */
             $ionicSideMenuDelegate.canDragContent(false);
             var map = null;
 
@@ -744,6 +820,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.filterList = definedVariable.getFilterList();
                 utils.getChallengeList(inputs);
+               // initAd();
+               // createBanner();
                // console.log(utils.getChallengeList(''));
             }
             init();

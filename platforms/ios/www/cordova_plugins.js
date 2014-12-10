@@ -288,6 +288,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
+        "id": "com.google.cordova.admob.AdMob",
+        "clobbers": [
+            "window.AdMob"
+        ]
+    },
+    {
         "file": "plugins/plugin.http.request/www/http-request.js",
         "id": "plugin.http.request.phonegap-http-requst",
         "clobbers": [
@@ -310,8 +317,11 @@ module.exports.metadata =
     "org.apache.cordova.network-information": "0.2.13",
     "plugin.google.maps": "1.2.4",
     "com.phonegap.plugins.facebookconnect": "0.10.1",
+    "com.google.cordova.admob": "2.5.0",
     "plugin.http.request": "1.0.0",
-    "com.googlemaps.ios": "1.9.0"
+    "com.googlemaps.ios": "1.9.0",
+    "com.rjfun.cordova.extension": "1.0.5",
+    "com.google.admobsdk": "6.12.2"
 }
 // BOTTOM OF METADATA
 });
