@@ -1,12 +1,12 @@
 <ion-view title="List">
 <ion-nav-buttons side="left">
-    <ion-header-bar class="bar-header setZeroPadding">
+    <ion-header-bar class="bar-header bar-assertive setZeroPadding">
         <div class="pageNavHead useFullWidth">
             <table border="0" cellpadding="0" cellspacing="0" >
                 <tr>
                     <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
-                    <td class="cLoc"><select><option>Map</option></select></td>
-                    <td width="35px"><a><img src="img/filterIcon.png"></a></td>
+                    <td class="cLoc">{{challengeName}}</td>
+                    <td width="35px"><a ng-click="openWebView('_system')"><img src="img/exportIcon.png"></a></td>
                 </tr>
             </table>
         </div>
@@ -36,7 +36,7 @@
 
 
 </ion-content>
-<ion-footer-bar>
+<!--<ion-footer-bar>
     <div class="promoAds"><img src="img/ads.jpg"></div>
-</ion-footer-bar>
+</ion-footer-bar>-->
 </ion-view>

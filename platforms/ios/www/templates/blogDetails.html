@@ -1,11 +1,11 @@
 <ion-view title="List">
     <ion-nav-buttons side="left">
-        <ion-header-bar class="bar-header setZeroPadding">
+        <ion-header-bar class="bar-header bar-assertive setZeroPadding">
             <div class="pageNavHead opc useFullWidth">
                 <table border="0" cellpadding="0" cellspacing="0" >
                     <tr>
-                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
-                        <td class="festivalHeaderText"><h3>Blog</h3></td>
+                        <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
+                        <td class="festivalHeaderText"><h3>{{blogList.blog_title | limitTo:10}}</h3></td>
                         <td width="35px" class="exptIco"><a><img src="img/exportIcon.png"></a></td>
                     </tr>
                 </table>
@@ -33,7 +33,7 @@
 
 
             <div class="whitebg newsbg">
-                <p ng-bind-html="blogList.blog_content"></p>
+                <p ng-bind-html="blogList.blog_content" class="show_disk"></p>
 
             </div>
             <div style="margin-top: 10px;">
@@ -60,7 +60,7 @@
 
 
     </ion-content>
-    <ion-footer-bar>
+    <!--<ion-footer-bar>
         <div class="promoAds"><img src="img/ads.jpg"></div>
-    </ion-footer-bar>
+    </ion-footer-bar>-->
 </ion-view>

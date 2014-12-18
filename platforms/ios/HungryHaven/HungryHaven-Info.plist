@@ -11,43 +11,9 @@
     <key>CFBundleIconFile</key>
     <string>icon.png</string>
     <key>CFBundleIcons</key>
-    <dict>
-      <key>CFBundlePrimaryIcon</key>
-      <dict>
-        <key>CFBundleIconFiles</key>
-        <array>
-          <string>icon-40</string>
-          <string>icon-small</string>
-          <string>icon-60</string>
-          <string>icon.png</string>
-          <string>icon@2x</string>
-          <string>icon-72</string>
-          <string>icon-72@2x</string>
-        </array>
-        <key>UIPrerenderedIcon</key>
-        <false/>
-      </dict>
-    </dict>
+    <dict/>
     <key>CFBundleIcons~ipad</key>
-    <dict>
-      <key>CFBundlePrimaryIcon</key>
-      <dict>
-        <key>CFBundleIconFiles</key>
-        <array>
-          <string>icon-small</string>
-          <string>icon-40</string>
-          <string>icon-50</string>
-          <string>icon-76</string>
-          <string>icon-60</string>
-          <string>icon</string>
-          <string>icon@2x</string>
-          <string>icon-72</string>
-          <string>icon-72@2x</string>
-        </array>
-        <key>UIPrerenderedIcon</key>
-        <false/>
-      </dict>
-    </dict>
+    <dict/>
     <key>CFBundleIdentifier</key>
     <string>com.Company.hungryHaven</string>
     <key>CFBundleInfoDictionaryVersion</key>
@@ -56,12 +22,38 @@
     <string>${PRODUCT_NAME}</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.0.1</string>
     <key>CFBundleSignature</key>
     <string>????</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.Company.hungryHaven</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb579835932147927</string>
+          <string>com.Company.hungryHaven</string>
+        </array>
+      </dict>
+    </array>
     <key>CFBundleVersion</key>
     <string>0.0.1</string>
+    <key>FacebookAppID</key>
+    <string>579835932147927</string>
+    <key>FacebookDisplayName</key>
+    <string>hungry haven ios</string>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyDgKG2ghYiL87M6gGwR1tl7_h0mgwdYGHM</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show your location on the map</string>
     <key>NSMainNibFile</key>
     <string></string>
     <key>NSMainNibFile~ipad</key>
@@ -77,30 +69,5 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
-    <key>CFBundleShortVersionString</key>
-    <string>0.0.1</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Show your location on the map</string>
-    <key>Google Maps API Key</key>
-    <string>AIzaSyB_7YMp9ruG68qlUbZEy2RKi7dciMBzASE</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Trace your location on the map</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>com.Company.hungryHaven</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>com.Company.hungryHaven</string>
-        </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>407512492736320</string>
-    <key>FacebookDisplayName</key>
-    <string>ioshungry</string>
   </dict>
 </plist>

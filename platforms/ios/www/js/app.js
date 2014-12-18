@@ -12,13 +12,17 @@ myApp.run(function($ionicPlatform,Auth,$location) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+        window.StatusBar.styleDefault();
+       window.StatusBar.backgroundColorByHexString("#DA251D");
+
     }
+
       console.log("RUNNING");
     //var loggedIn = localStorage.getItem('hungryAuth');
 
@@ -158,6 +162,15 @@ myApp.run(function($ionicPlatform,Auth,$location) {
               }
           }
       })
+      .state('app.setting-feedback',{
+          url: "/settings/feedback",
+          views:{
+              'menuContent' :{
+                  templateUrl: "templates/feedback.html",
+                  controller: 'feedbackCtrl'
+              }
+          }
+      })
       .state('app.playlists', {
           url: "/playlists",
           views: {
@@ -167,7 +180,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
               }
           }
       })
-    .state('app.single', {
+   /* .state('app.single', {
       url: "/playlists/:playlistId",
       views: {
         'menuContent' :{
@@ -175,7 +188,7 @@ myApp.run(function($ionicPlatform,Auth,$location) {
           controller: 'PlaylistCtrl'
         }
       }
-    })
+    })*/
       .state('app.mapit',{
           url: "/details/mapit/:currentIndex/:type",
           views: {

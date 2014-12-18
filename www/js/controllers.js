@@ -31,6 +31,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             });
         }
+        $scope.$on('user:updated', function(event,data) {
+            // you could inspect the data to see if what you care about changed, or just update your own scope
+            if (data == null)
+                $scope.userInfo = [];
+            else
+                $scope.userInfo = data;
+        });
         $scope.adminUrl = definedVariable.getAdminRootClean();
         //$scope.userInfo = User.getUserInfo();
 
@@ -78,6 +85,16 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var currentIndex = $stateParams.currentIndex;
             var currentList = ChallengeList.getCurrentList()[currentIndex];
             var locations = [currentList];
+            var latitude = currentList.latitude;
+            var longitude = currentList.longitude;
+            $scope.openWebView = function(target){
+                console.log("ADDR : "+JSON.stringify(currentList));
+                var address = currentList.street +"," +currentList.city + ","+currentList.state + ","+currentList.country;
+                var link = "http://maps.apple.com/?daddr="+address;
+                alert(link);
+                var ref = window.open(link, '_system', 'location=no');
+            };
+            $scope.challengeName = currentList.challenge_name;
            // var locations = [{longitude:$stateParams.longitude,latitude:$stateParams.latitude, title:"mapTitle"},{longitude:-85.70089,latitude:38.16110, title:"second"}];
             var time = $timeout(function() {
                 var div = document.getElementById("gMap");
@@ -101,9 +118,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
         });
     })
-    .controller('PlaylistCtrl', function($scope, $stateParams) {
+   /* .controller('PlaylistCtrl', function($scope, $stateParams) {
     })
-
+*/
     .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth) {
         function checkConnection() {
             var networkState = navigator.connection.type;
@@ -197,7 +214,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  'Timestamp: '         + position.timestamp                + '\n');
 
                  */
-                alert("I AM HERE");
+
                 SessionService.set('current_user_longitude',position.coords.longitude);
                 SessionService.set('current_user_latitude',position.coords.longitude);
 
@@ -227,8 +244,6 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     navigator.geolocation.getCurrentPosition(onSuccess, onError);
                 }
                 else{
-
-
                     //$ionicLoading.hide();
                 }
             }
@@ -392,6 +407,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                         if (response.data.status == "success"){
                                             StorageService.set('hungryAuth',JSON.stringify({auth_token:response.data.auth_token}));
                                             utils.registrationSuccessfull();
+                                        }else{
+                                            alert(response.data.response);
                                         }
                                     });
                                 }else{
@@ -399,6 +416,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                         if (response.data.status == "success"){
                                             StorageService.set('hungryAuth',JSON.stringify({auth_token:response.data.auth_token}));
                                             utils.registrationSuccessfull();
+                                        }
+                                        else{
+                                            alert(response.data.response);
                                         }
                                     });
                                 }
@@ -442,7 +462,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         //$location.path('/app/home');
                     },
                     fbSignIn:function(){
-                        facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
+                        facebookConnectPlugin.login(["public_profile","email","user_location"],
+                            fbLoginSuccess,
+                            function (error) {
+                                console.log("Error" + error);
+                            }
+                        );
+                        //facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
                         /*facebookConnectPlugin.login(["public_profile"],
                             fbLoginSuccess,
                             function (error) {
@@ -453,7 +479,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     }
                 };
                 var statusSucess = function(userData){
-                    console.log("UserData "+JSON.stringify(userData));
+                    //console.log("UserData "+JSON.stringify(userData));
                     if (userData.status == "connected"){
                         var longitude = SessionService.get('current_user_longitude');
                         var latitude = SessionService.get('current_user_latitude');
@@ -550,22 +576,26 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             /*
                 Admob setup goes here
              */
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
 
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            adSize:AdMob.SMART_BANNER,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
 
-            if (window.AdMob ){
-                console.log("I AM IN HERE window plugin");
-                var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
-                var AdMob = window.AdMob;
-
-                AdMob.createBanner({
-                    adId: admobid.banner,
-                    position:AdMob.AD_POSITION.BOTTOM_CENTER,
-                    autoShow:true
-                },
-                    function(){console.log("Success Ad");},
-                    function(error){console.log("Error ad: "+error);}
-                )
-            }
+            createBanner();
 
 
            /* var initAd = function(){
@@ -736,12 +766,17 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.countryList =  result.data;
             });
             $scope.toggleSideMenu = function(){
-                if ($ionicSideMenuDelegate.isOpenLeft()){
+                if ($ionicSideMenuDelegate.isOpenLeft())
+                {
+                    //AdMob.showBanner();
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
+                    //AdMob.hideBanner();
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -751,15 +786,24 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 if(map != null){
                     map.setClickable(false);
                 }
+                $scope.showFilterStatus = false;
                 $scope.modal.show();
             };
             $scope.showFilterStatus = false;
             $scope.showFilter = function(){
                 if ($scope.showFilterStatus == false){
                     $scope.showFilterStatus = true;
+
+                    if (map != null){
+                        map.setClickable(false);
+                    }
                 }
                 else{
                     $scope.showFilterStatus = false;
+
+                    if (map != null){
+                        map.setClickable(true);
+                    }
                 }
             };
             var utils = {
@@ -842,7 +886,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
             //$scope.filterFunction = utils.filterTagFunction;
             $ionicModal.fromTemplateUrl('templates/sort.html', {
-                scope: $scope
+                scope: $scope,
+                animation: 'slide-in-up'
             }).then(function(modal) {
                     $scope.modal = modal;
             });
@@ -861,12 +906,31 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             //$scope.challengeList = utils.getChallengeList(inputs);
         });
     }])
-    .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService','$ionicModal','User',
-        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User) {
+    .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService','$ionicModal','User','adMobHelper','ChallengeList',
+        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User,adMobHelper,ChallengeList) {
         $ionicPlatform.ready(function() {
 
             window.scope = $scope;
             /*this section is for tag filter*/
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
+
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
+
+            createBanner();
             var taglist = dataService.getTags();
             if (taglist.length >= 0){
                 $scope.tagList = taglist;
@@ -1066,14 +1130,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     // map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1117,21 +1180,39 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             init();
         });
     }])
-    .controller('influencerListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable) {
+    .controller('influencerListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable','adMobHelper',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable,adMobHelper) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
+
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
+
+            createBanner();
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     //map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1205,20 +1286,39 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
         });
     }])
-    .controller('aboutCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate' ,function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate) {
+    .controller('aboutCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','adMobHelper' ,
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,adMobHelper) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
+
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
+
+            createBanner();
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     //map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1229,15 +1329,36 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
         });
     }])
     .controller('settingsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','$ionicModal','Auth' ,
-        '$location','$ionicActionSheet','countryList','User','definedVariable','dataService',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,$ionicModal,Auth,$location,$ionicActionSheet,countryList,User,definedVariable,dataService) {
+        '$location','$ionicActionSheet','countryList','User','definedVariable','dataService','adMobHelper','ChallengeList','blogList','influencerList',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,$ionicModal,Auth,$location,$ionicActionSheet,countryList,User,
+                 definedVariable,dataService,adMobHelper,ChallengeList,blogList,influencerList) {
         $ionicPlatform.ready(function() {
 
 
             window.scope = $scope;
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
+
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
+
+            createBanner();
             $scope.updated = {};
             $scope.admin = definedVariable.getAdminRootClean();
             $scope.countryList = [];
+            var image_updated = false;
             var list = countryList.setList();
             list.then(function(result){
 
@@ -1252,7 +1373,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                    $scope.userData = result[0];
                 });
             }
-            console.log("USERDATE IS "+JSON.stringify($scope.userData));
+
             var imageURI = null;
             var takePicture = function(){
                 navigator.camera.getPicture(onSuccess, onFail, {
@@ -1274,8 +1395,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 image.src = FILE_URI;
                 imageURI = FILE_URI;
                 Auth.upload_profile_pic(imageURI);
-
-
+                image_updated = true;
             }
             function onFail(message) {
                 alert('Failed because: ' + message);
@@ -1315,12 +1435,20 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         $scope.updated.pic_id = Auth.getPicId();
                     }
 
-                    Auth.update_user($scope.updated).then(function(result){
+                    var p = Auth.update_user($scope.updated).then(function(result){
+
                        if (result){
-                           $scope.modal.hide();
+                           var promise = User.refreshUserInfo().then(function(response){
+                               return true;
+                           });
+                           if (promise){
+                               $scope.modal.hide();
+                           }
+                           //$scope.modal.hide();
                        }else{
                            alert("Something went wrong");
                        }
+                        return true;
                     });
 
                 },
@@ -1359,24 +1487,36 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             // Triggered in the login modal to close it
             $scope.closeLogin = function() {
-                $scope.modal.hide();
+                if (image_updated){
+                    var promise = User.refreshUserInfo().then(function(response){
+                        $scope.modal.hide();
+                    });
+                }else{
+                    $scope.modal.hide();
+                }
+                createBanner()
+
             };
             var utils = {
                 editUser:function(){
                     $scope.updated = {};
                     console.log('here');
                     $scope.editSelected = "profile";
+                    AdMob.removeBanner();
                     $scope.modal.show();
                 },
                 editPassword:function(){
                     $scope.updated = {};
                     $scope.editSelected = "password";
+                    AdMob.removeBanner();
                     $scope.modal.show();
                 },
                 logout:function(){
-                    if (Auth.logout()){
+                    if (Auth.logout() && User.emptyUser() && ChallengeList.clearMemory() && blogList.clearMemory() && influencerList.clearMemory()){
+                        AdMob.removeBanner();
                         $location.path('/');
                     }
+
                 }
 
             };
@@ -1386,14 +1526,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     //map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1403,10 +1542,29 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
         });
     }])
-    .controller('blogListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable) {
+    .controller('blogListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable','adMobHelper',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable,adMobHelper) {
         $ionicPlatform.ready(function() {
             window.scope = $scope;
+            var AdMob;
+            var createBanner = function(){
+                if (window.AdMob ){
+                    console.log("I AM IN HERE window plugin");
+                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    AdMob = window.AdMob;
+
+                    AdMob.createBanner({
+                            adId: admobid.banner,
+                            position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            autoShow:true
+                        },
+                        function(){console.log("Success Ad");},
+                        function(error){console.log("Error ad: "+error);}
+                    )
+                }
+            };
+
+            createBanner();
             var subMenuList = [
                 {subMenuName:"TOP STORIES"},
                 {subMenuName:"CATEGORIES"}
@@ -1420,14 +1578,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
-
+                    createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
-
-
+                    AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     //map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1476,8 +1633,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             }
         });
     }])
-    .controller('detailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate','ChallengeList' ,'definedVariable',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate,ChallengeList,definedVariable) {
+    .controller('detailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate','ChallengeList' ,'definedVariable','$ionicActionSheet',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate,ChallengeList,definedVariable,$ionicActionSheet) {
         $ionicPlatform.ready(function() {
 
             $scope.goBack = function(){
@@ -1549,6 +1706,32 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     return ChallengeList.getCurrentList();
 
                     //return JSON.stringify(dataService.getChallengeList(inputs));
+                },
+                showActions:function(){
+                    $ionicActionSheet.show({
+                        buttons: [
+                            { text: 'Camera' },
+                            { text: 'Gallery' }
+                        ],
+
+                        titleText: 'Upload Picture',
+                        cancelText: 'Cancel',
+                        cancel: function() {
+
+                            // add cancel code..
+                        },
+                        buttonClicked: function(index) {
+                            if (index == 0){
+                                takePicture();
+                            }
+                            else if (index == 1){
+                                chooseFromGallery();
+                            }
+
+                            return true;
+                        }
+                    });
+
                 }
             };
                 $scope.challengeList = null;
@@ -1563,9 +1746,38 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.currentChallengeIndex = $stateParams.id;
                 $scope.challenges = list;
+
                 // console.log(utils.getChallengeList(''));
             };
             init();
+            $scope.share = function(){
+                var pic = null;
+                var url = "https://www.facebook.com/hungry.haven";
+                var message = list[$stateParams.id].challenge_name + "\n" + list[$stateParams.id].short_detail+"\n";
+                window.plugins.socialsharing.available(function(isAvailable) {
+                    if (isAvailable) {
+                        // use a local image from inside the www folder:
+//      window.plugins.socialsharing.share('Some text', 'Some subject', null, 'http://www.nu.nl');
+//      window.plugins.socialsharing.share('Some text');
+                        if (list[$stateParams.id].pic_url != null){
+                            pic = definedVariable.getAdminRootClean() + list[$stateParams.id].pic_url;
+                        }
+
+//      window.plugins.socialsharing.share('test', null, 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null, function(e){alert("success: " + e)}, function(e){alert("error: " + e)});
+                        window.plugins.socialsharing.share(message, list[$stateParams.id].category_name, pic, url, null, null);
+                        // alternative usage:
+
+                        // 1) a local image from anywhere else (if permitted):
+                        // window.plugins.socialsharing.share('Some text', 'http://domain.com', '/Users/username/Library/Application Support/iPhone/6.1/Applications/25A1E7CF-079F-438D-823B-55C6F8CD2DC0/Documents/.nl.x-services.appname/pics/img.jpg');
+
+                        // 2) an image from the internet:
+//      window.plugins.socialsharing.share('Some text', "Some subject', 'http://domain.com', 'http://domain.com/image.jpg');
+
+                        // 3) text and link:
+//      window.plugins.socialsharing.share('Some text and a link', '', '', 'http://www.nu.nl');
+                    }
+                });
+            };
             $scope.selected = 0;
             $scope.selectMenu = function(index){
                 $scope.selected = index;
@@ -1616,15 +1828,17 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
         });
     }])
-    .controller('blogDetailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable','$sanitize','$sce',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,definedVariable,$sanitize,$sce) {
+    .controller('blogDetailsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicNavBarDelegate','dataService','definedVariable','$sanitize','$sce',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicNavBarDelegate,dataService,definedVariable,$sanitize,$sce) {
             $ionicPlatform.ready(function() {
                 window.scope = $scope;
 
                 $scope.blogId = $stateParams.id;
 
-
-                $scope.toggleSideMenu = function(){
+                $scope.goBack = function(){
+                    $ionicNavBarDelegate.back();
+                };
+                /*$scope.toggleSideMenu = function(){
 
                     if ($ionicSideMenuDelegate.isOpenLeft()){
 
@@ -1641,7 +1855,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                     }
 
-                };
+                };*/
                 var utils = {
                     getBlogList : function(){
                         var blogList = dataService.getBlog();
@@ -1668,5 +1882,30 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             });
         }])
+    .controller('feedbackCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,Auth,dataService) {
+        $ionicPlatform.ready(function() {
+            document.getElementById('leftSideMenu').style.visibility = "hidden";
+            var loggedIn = Auth.isLoggedIn();
+            var auth_token = loggedIn.auth_token;
+            $scope.goBack = function(){
+                $ionicNavBarDelegate.back();
+            };
+            /*Model for feedback*/
+            $scope.form_input = {};
+
+            /*form submission with auth_token*/
+            $scope.submit_feedback = function(){
+                $scope.form_input.auth_token = auth_token;
+                var promise = dataService.send_feedback($scope.form_input).then(function(response){
+                    if (response.status == "success"){
+                        $ionicNavBarDelegate.back();
+                    }
+                });
+
+            };
+
+
+        });
+    })
 ;
 

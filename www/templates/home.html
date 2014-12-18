@@ -1,6 +1,6 @@
 <ion-view title="Home">
     <ion-nav-buttons side="left">
-        <ion-header-bar class="bar-header setZeroPadding">
+        <ion-header-bar class="bar bar-header bar-assertive setZeroPadding">
             <div class="pageNavHead useFullWidth">
                 <table border="0" cellpadding="0" cellspacing="0" >
                     <tr>
@@ -33,10 +33,10 @@
             </table>
         </div><!--End of Header-->
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header" has-bouncing="false">
         <div class="mapCont">
 
-            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus">
+            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus" style="float:left;width:100%;" has-bouncing="false">
                 <ul class="hNav clearfix" style="width:500px;">
                     <li ><a href="#">&nbsp;</a></li>
                     <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
@@ -44,11 +44,11 @@
                 </ul>
 
             </ion-scroll>
-            <div class="fadeImg"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
-            <div class="sltBar" ng-show="showFilterStatus" on-drag-down="showFilterDetail()">
-                <span></span>
+            <div class="fadeImg" style="float:right;"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
+            <div class="sltBar" ng-show="showFilterStatus"  style="float:left;width: 100%;">
+                <a ng-click="showFilterDetail()" class="button button-small button-outline button-assertive">Advanced Filter</a>     <a ng-click="showFilter()" class="button button-small button-assertive">Close</a>
             </div>
-            <div class="mapView" id="mapView">
+            <div class="mapView setZindex" id="mapView" >
 
             </div>
             <ion-scroll direction="x" class="wide-as-needed">
@@ -81,7 +81,7 @@
         </div>
 
     </ion-content>
-    <ion-footer-bar>
-        <div class="promoAds"><!--<img src="img/ads.jpg">--></div>
-    </ion-footer-bar>
+    <!--<ion-footer-bar>
+        <div class="promoAds"><!--<img src="img/ads.jpg"></div>
+    </ion-footer-bar>-->
 </ion-view>

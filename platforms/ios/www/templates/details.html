@@ -1,13 +1,13 @@
 <ion-view title="Home">
     <ion-nav-buttons side="left">
-        <ion-header-bar class="bar-header setZeroPadding useFullWidth">
+        <ion-header-bar class="bar-header bar-assertive setZeroPadding useFullWidth">
 
             <div class="pageNavHead opc useFullWidth">
                 <table border="0" cellpadding="0" cellspacing="0" class="useFullWidth">
                     <tr>
                         <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
                         <td>{{challengeList.challenge_name}}</td>
-                        <td width="35px" class="exptIco"><a href="#"><img src="img/exportIcon.png"></a></td>
+                        <td width="35px" class="exptIco"><a ng-click="share()"><img src="img/exportIcon.png"></a></td>
                     </tr>
                 </table>
             </div><!--End of Header-->
@@ -66,7 +66,7 @@
                     </ul>
                 </div>
                 <div class="whitebg" style="margin-top: 0;padding-top: 10px;">
-                    <p ng-bind-html="selectedDetails"></p>
+                    <p ng-bind-html="selectedDetails" class="show_disk"></p>
                     <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales. </p>
                     <p>Aliquam ut pretium magna, vel ornare risus. Praesent vel venenatis felis. Nam in facilisis mauris, id elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum facilisis neque nec sodales.  </p></div>
                     -->

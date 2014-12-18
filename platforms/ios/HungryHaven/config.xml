@@ -19,6 +19,10 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
+    <feature name="AdMob">
+        <param name="ios-package" value="CDVAdMobPlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
@@ -51,6 +55,10 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="HttpRequest">
         <param name="ios-package" value="HttpRequest" />
     </feature>
@@ -73,10 +81,30 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
-    <feature name="AdMob">
-        <param name="ios-package" value="CDVAdMobPlugin" />
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+        <param name="onload" value="true" />
+    </feature>
+    <icon height="180" src="res/ios/icon-60@3x.png" width="180" />
+    <icon height="60" src="res/Tab-bar-icon.png" width="60" />
+    <icon height="120" src="res/icon-60@2x.png" width="120" />
+    <icon height="76" src="res/Icon-76.png" width="76" />
+    <icon height="152" src="res/icon-76@2x.png" width="152" />
+    <icon height="57" src="res/Icon.png" width="57" />
+    <icon height="114" src="res/Icon@2x.png" width="114" />
+    <icon height="72" src="res/Icon-72.png" width="72" />
+    <icon height="29" src="res/Icon-small.png" width="29" />
+    <icon height="58" src="res/Icon-small@2x.png" width="58" />
+    <icon height="50" src="res/Icon-Small-50.png" width="50" />
+    <icon height="100" src="res/Icon-Small-50@2x.png" width="100" />
+    <icon height="40" src="res/toolbar-icon.png" width="40" />
+    <splash height="1136" src="res/screen.png" width="640" />
     <name>HungryHaven</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -90,5 +118,8 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <icon height="57" src="img/hungry_icon.png" width="57" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <access launch-external="yes" origin="geo:*" />
+    <preference name="StatusBarBackgroundColor" value="#ff0000" />
 </widget>

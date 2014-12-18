@@ -223,7 +223,7 @@ padding: 10px 15px 10px 66px;}
     white-space:nowrap; /*overflow-x:auto;*/}
 .hNav li{/*float: left;*/width: 33.33%; margin:0px 10px;text-align: center; text-transform: uppercase;display:inline;}
 .hNav li a{text-decoration: none;color: #999; }
-.hNav li a.sltItm{color: #da251d; font-weight: bold;margin-left:35%;}
+.hNav li a.sltItm{color: #da251d; font-weight: bold;/*margin-left:35%;*/}
 .fadeImg{position: fixed;top:0;right: 0; z-index: 5;margin-top:10px;width:60px;}
 .sltBar{padding: 3px 0; border-bottom: 1px solid #c1c1c1; text-align: center; background: #fff;}
 .sltBar span{display: inline-block; height: 6px; border-radius: 5px; background: #cccccc; width: 50px; position: relative; top: -3px;}
@@ -866,7 +866,7 @@ img.bic{width: 15px;}
 .c_left{width:25%;float:left;margin-right:10px;}
 
 .c_left img{border:2px solid #fff;background-size: 100%;width:100%;}
-		.blog_middle{width:57%;float:left;}
+		.blog_middle{width:64%;float:left;}
 		.blog_middle h1{  margin:0; height:auto; width:100%; font-family:'Open Sans', sans-serif;  font-size:15px; color:#333;  font-weight:bold; text-decoration:none; padding:0;line-height:18px;}
 		.blog_middle p{ margin:0; margin-top:5px;height:auto; width:95%; font-family:'Open Sans', sans-serif;  font-size:13px; color:#da251d;  font-weight:normal; text-transform:uppercase;  padding:0;line-height:15px;background:url(../img/time_icon.jpg) no-repeat;padding:0 0 0 20px;}
 		
@@ -1111,7 +1111,7 @@ img.bic{width: 15px;}
 
 	.updateBtn{   font-size: 20px;    padding: 8px 12px;}
 	.proImgBlk a{position: absolute; right: 0;bottom: 4px;}
-	.proImg li.proTxtBlk{ padding-left: 10px; text-align:left; color: #fff; font-weight: 700; font-family: 'Kreon', serif; font-size: 28px;}
+	.proImg li.proTxtBlk{ padding-left: 10px; text-align:left; color: #fff; font-weight: 700; font-family: 'Kreon', serif; font-size: 28px;line-height: 100%;}
 	
 	
 	/* starts here */
@@ -1431,3 +1431,15 @@ img.bic{width: 15px;}
     background-size: 100%;
 }
 .mySide{position: absolute; left: 0; width: 40%; z-index: 100;}
+.influencerImgCenter{
+    margin-left: 10%;
+    margin-top: 15%;
+    width:auto;
+}
+.show_disk ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.setZindex{
+    z-index: -1;
+}

@@ -4830,12 +4830,14 @@ function($scope, $attrs, $ionicSideMenuDelegate, $ionicPlatform, $ionicBody) {
    * Toggle the left menu to open 100%
    */
   self.toggleLeft = function(shouldOpen) {
+
     if(isAsideExposed || !self.left.isEnabled) return;
     var openAmount = self.getOpenAmount();
     if (arguments.length === 0) {
       shouldOpen = openAmount <= 0;
     }
     self.content.enableAnimation();
+
     if(!shouldOpen) {
       self.openPercentage(0);
     } else {
@@ -4905,6 +4907,7 @@ function($scope, $attrs, $ionicSideMenuDelegate, $ionicPlatform, $ionicBody) {
    * @param {float} percentage The percentage (positive or negative for left/right) to open the menu.
    */
   self.openPercentage = function(percentage) {
+
     var p = percentage / 100;
 
     if(self.left && percentage >= 0) {
@@ -8353,6 +8356,7 @@ function($timeout, $ionicGesture, $window) {
           },
           setTranslateX: ionic.animationFrameThrottle(function(amount) {
             var xTransform = content.offsetX + amount;
+
             $element[0].style[ionic.CSS.TRANSFORM] = 'translate3d(' + xTransform + 'px,0,0)';
             $timeout(function() {
               $scope.sideMenuContentTranslateX = amount;
@@ -8360,6 +8364,7 @@ function($timeout, $ionicGesture, $window) {
           }),
           setMarginLeft: ionic.animationFrameThrottle(function(amount) {
             if(amount) {
+
               amount = parseInt(amount, 10);
               $element[0].style[ionic.CSS.TRANSFORM] = 'translate3d(' + amount + 'px,0,0)';
               $element[0].style.width = ($window.innerWidth - amount) + 'px';

@@ -1,6 +1,13 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
+        "id": "com.google.cordova.admob.AdMob",
+        "clobbers": [
+            "window.AdMob"
+        ]
+    },
+    {
         "file": "plugins/com.ionic.keyboard/www/keyboard.js",
         "id": "com.ionic.keyboard.keyboard",
         "clobbers": [
@@ -274,6 +281,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
         "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
         "id": "plugin.google.maps.phonegap-googlemaps-plugin",
         "clobbers": [
@@ -288,10 +302,17 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
-        "id": "com.google.cordova.admob.AdMob",
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
         "clobbers": [
-            "window.AdMob"
+            "window.StatusBar"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
         ]
     },
     {
@@ -305,6 +326,9 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "com.google.admobsdk": "6.12.2",
+    "com.google.cordova.admob": "2.5.0",
+    "com.googlemaps.ios": "1.9.0",
     "com.ionic.keyboard": "1.0.3",
     "com.plugin.datepicker": "0.4.0",
     "org.apache.cordova.camera": "0.3.4-dev",
@@ -315,13 +339,13 @@ module.exports.metadata =
     "org.apache.cordova.geolocation": "0.3.10",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.network-information": "0.2.13",
+    "org.apache.cordova.splashscreen": "0.3.5",
     "plugin.google.maps": "1.2.4",
     "com.phonegap.plugins.facebookconnect": "0.10.1",
-    "com.google.cordova.admob": "2.5.0",
-    "plugin.http.request": "1.0.0",
-    "com.googlemaps.ios": "1.9.0",
+    "org.apache.cordova.statusbar": "0.1.9",
+    "nl.x-services.plugins.socialsharing": "4.3.11",
     "com.rjfun.cordova.extension": "1.0.5",
-    "com.google.admobsdk": "6.12.2"
+    "plugin.http.request": "1.0.0"
 }
 // BOTTOM OF METADATA
 });
