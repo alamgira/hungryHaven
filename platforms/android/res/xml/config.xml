@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.Company.hungryHaven" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
+    <feature name="AdMob">
+        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
+    </feature>
     <feature name="Keyboard">
         <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
     <feature name="DatePickerPlugin">
         <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin" />
+    </feature>
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
@@ -26,6 +32,13 @@
     </feature>
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="HttpRequest">
         <param name="android-package" value="plugin.http.request.HttpRequest" />
@@ -47,9 +60,11 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
-    <feature name="AdMob">
-        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
-    </feature>
+    <icon density="ldpi" src="res/toolbar-icon.png" />
+    <icon density="mdpi" src="res/toolbar-icon.png" />
+    <icon density="hdpi" src="res/Icon-72.png" />
+    <icon density="xhdpi" src="res/Icon-72.png" />
+    <splash height="1136" src="res/screen.png" width="640" />
     <name>HungryHaven</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -63,5 +78,8 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <icon height="57" src="img/hungry_icon.png" width="57" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <access launch-external="yes" origin="geo:*" />
+    <preference name="StatusBarBackgroundColor" value="#ff0000" />
 </widget>

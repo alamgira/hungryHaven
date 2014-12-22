@@ -1,6 +1,13 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
+        "id": "com.google.cordova.admob.AdMob",
+        "clobbers": [
+            "window.AdMob"
+        ]
+    },
+    {
         "file": "plugins/com.ionic.keyboard/www/keyboard.js",
         "id": "com.ionic.keyboard.keyboard",
         "clobbers": [
@@ -12,6 +19,13 @@ module.exports = [
         "id": "com.plugin.datepicker.DatePicker",
         "clobbers": [
             "datePicker"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
+        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
         ]
     },
     {
@@ -232,6 +246,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
+    },
+    {
         "file": "plugins/plugin.google.maps/www/googlemaps-cdv-plugin.js",
         "id": "plugin.google.maps.phonegap-googlemaps-plugin",
         "clobbers": [
@@ -246,13 +274,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
-        "id": "com.google.cordova.admob.AdMob",
-        "clobbers": [
-            "window.AdMob"
-        ]
-    },
-    {
         "file": "plugins/plugin.http.request/www/http-request.js",
         "id": "plugin.http.request.phonegap-http-requst",
         "clobbers": [
@@ -263,8 +284,11 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "com.google.admobsdk": "6.12.2",
+    "com.google.cordova.admob": "2.5.0",
     "com.ionic.keyboard": "1.0.3",
     "com.plugin.datepicker": "0.4.0",
+    "nl.x-services.plugins.socialsharing": "4.3.11",
     "org.apache.cordova.camera": "0.3.4-dev",
     "org.apache.cordova.console": "0.2.11",
     "org.apache.cordova.device": "0.2.12",
@@ -273,14 +297,14 @@ module.exports.metadata =
     "org.apache.cordova.geolocation": "0.3.10",
     "org.apache.cordova.inappbrowser": "0.5.3",
     "org.apache.cordova.network-information": "0.2.13",
+    "org.apache.cordova.splashscreen": "0.3.5",
+    "org.apache.cordova.statusbar": "0.1.9",
     "plugin.google.maps": "1.2.4",
     "com.phonegap.plugins.facebookconnect": "0.10.1",
-    "com.google.cordova.admob": "2.5.0",
-    "plugin.http.request": "1.0.0",
     "com.google.playservices": "19.0.0",
-    "android.support.v4": "21.0.1",
     "com.rjfun.cordova.extension": "1.0.5",
-    "com.google.admobsdk": "6.12.2"
+    "plugin.http.request": "1.0.0",
+    "android.support.v4": "21.0.1"
 }
 // BOTTOM OF METADATA
 });

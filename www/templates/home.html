@@ -33,10 +33,11 @@
             </table>
         </div><!--End of Header-->
     </ion-nav-buttons>
-    <ion-content class="has-header" has-bouncing="false">
+    <ion-content class="has-header" has-bouncing="false" >
         <div class="mapCont">
 
-            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus" style="float:left;width:100%;" has-bouncing="false">
+
+            <ion-scroll direction="x" class="wide-as-needed animate-show"  ng-show="showFilterStatus" style="float:left;width:100%;" has-bouncing="false">
                 <ul class="hNav clearfix" style="width:500px;">
                     <li ><a href="#">&nbsp;</a></li>
                     <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
@@ -48,10 +49,14 @@
             <div class="sltBar" ng-show="showFilterStatus"  style="float:left;width: 100%;">
                 <a ng-click="showFilterDetail()" class="button button-small button-outline button-assertive">Advanced Filter</a>     <a ng-click="showFilter()" class="button button-small button-assertive">Close</a>
             </div>
-            <div class="mapView setZindex" id="mapView" >
 
+            <div style="min-height: 250px;">
+                <div class="mapView setZindex" id="mapView" >
+
+                </div>
             </div>
-            <ion-scroll direction="x" class="wide-as-needed">
+
+            <ion-scroll direction="x" class="wide-as-needed" id="listScroll">
                         <!--<div ng-repeat="challenge in challengeList" style="float:left;margin-right:10px;">
                             <figure >
                                 <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg"></a>
@@ -68,7 +73,8 @@
                                 <img src="img/img1.jpg" ng-if="challenge.pic_url == null" width="100" height="100">
                                 <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null" width="100" height="100"></a>
                             <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}" style="white-space: normal;">{{challenge.challenge_name}}</a></figcaption>
-                            <span class="flgSet"><a href="#/app/details/{{$index}}/{{challenge.category_name}}">
+                            <span class="flgSet">
+                                <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
                                 <img src="img/gb.png" ng-if="challenge.category_name == 'challenge'">
                                 <img src="img/gn.png" ng-if="challenge.category_name == 'contest'">
                                 <img src="img/tag-festival-low.png" ng-if="challenge.category_name == 'festival'">

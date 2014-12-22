@@ -31,12 +31,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             });
         }
+        $scope.$watch(function(){
+            return $ionicSideMenuDelegate.getOpenRatio();
+        }, function(newValue, oldValue) {
+            if (newValue == 0){
+                $scope.hideLeft = true;
+            } else{
+                $scope.hideLeft = false;
+            }
+        });
         $scope.$on('user:updated', function(event,data) {
             // you could inspect the data to see if what you care about changed, or just update your own scope
-            if (data == null)
-                $scope.userInfo = [];
-            else
-                $scope.userInfo = data;
+            $scope.userInfo = User.getUserInfo()[0];
         });
         $scope.adminUrl = definedVariable.getAdminRootClean();
         //$scope.userInfo = User.getUserInfo();
@@ -230,7 +236,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $ionicLoading.hide();
             }
             $scope.toggleSideMenu = function(){
-                alert('here');
+
                 $ionicSideMenuDelegate.toggleLeft();
             };
             // $location.path('/login');
@@ -314,13 +320,14 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
 
     })
-    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','StorageService','$ionicModal','$ionicPopup','$ionicActionSheet','SessionService','countryList','$timeout',
-        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList,$timeout) {
+    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','StorageService','$ionicModal','$ionicPopup','$ionicActionSheet','SessionService','countryList','$ionicLoading','$ionicPopup',
+        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList,$ionicLoading,$ionicPopup) {
             $ionicPlatform.ready(function() {
 
                 window.scope = $scope;
                 $scope.credentials = {username: "", password: ""};
                 $scope.userData = {};
+                $scope.reset = {};
                 $scope.countryList = [];
                 var list = countryList.setList();
                 list.then(function(result){
@@ -341,6 +348,12 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     scope: $scope
                 }).then(function(modal) {
                         $scope.modal = modal;
+                    });
+
+                $ionicModal.fromTemplateUrl('templates/forgot_password.html', {
+                    scope: $scope
+                }).then(function(modal) {
+                        $scope.resetModal = modal;
                     });
                 var takePicture = function(){
                     navigator.camera.getPicture(onSuccess, onFail, {
@@ -395,20 +408,63 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         });
 
                     },
+                    reset:function(){
+                        if ($scope.reset.registerForm.$valid){
+                            Auth.changePassword($scope.reset).then(function(response){
+                                console.log("RESPONSE "+JSON.stringify(response));
+                                if (response.status == "success"){
+                                    var alertPopup = $ionicPopup.alert({
+                                        title: 'Success!',
+                                        template: response.response
+                                    });
+                                    alertPopup.then(function(res) {
+                                        $scope.resetModal.hide();
+                                    });
+                                }else{
+                                    var alertPopup = $ionicPopup.alert({
+                                        title: 'Error!',
+                                        template: response.response
+                                    });
+                                    alertPopup.then(function(res) {
+
+                                    });
+                                }
+                            });
+                        }else{
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "INVALID"
+                            });
+                            alertPopup.then(function(res) {
+
+                            });
+                        }
+                    },
                     submit:function(){
                        // dataService.upload_profile_pic(imageURI);
 
                         if ($scope.userData.registerForm.$valid){
                             if ($scope.userData.conf == $scope.userData.password){
+                                $ionicLoading.show({
+                                    template: '<i class=""></i>Loading...'
+                                });
                                 if (imageURI != null){
                                     $scope.userData.media_id = Auth.getPicId();
                                     Auth.register($scope.userData).then(function(response){
 
                                         if (response.data.status == "success"){
                                             StorageService.set('hungryAuth',JSON.stringify({auth_token:response.data.auth_token}));
+                                            $ionicLoading.hide();
                                             utils.registrationSuccessfull();
                                         }else{
-                                            alert(response.data.response);
+
+                                            var alertPopup = $ionicPopup.alert({
+                                                title: 'Error!',
+                                                template: response.data.response
+                                            });
+                                            alertPopup.then(function(res) {
+                                                $ionicLoading.hide();
+                                            });
                                         }
                                     });
                                 }else{
@@ -418,13 +474,27 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                             utils.registrationSuccessfull();
                                         }
                                         else{
-                                            alert(response.data.response);
+                                            var alertPopup = $ionicPopup.alert({
+                                                title: 'Error!',
+                                                template: response.data.response
+                                            });
+                                            alertPopup.then(function(res) {
+                                                $ionicLoading.hide();
+                                            });
                                         }
                                     });
                                 }
                             }
+                        }else{
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Please check all your fields"
+                            });
+                            alertPopup.then(function(res) {
+                                $ionicLoading.hide();
+                            });
                         }
-
+                        $ionicLoading.hide();
                     }
                 };
                 // Triggered in the login modal to close it
@@ -442,10 +512,16 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         $location.path('/app/home');
 
                     },
+                    forget_password:function(){
+                        $scope.resetModal.show();
+                    },
                     signIn:function(){
-
+                        $ionicLoading.show({
+                            template: '<i class=""></i>Loading...'
+                        });
                         Auth.login($scope.credentials).success(function(data){
                             if (data.status == 'success'){
+                                $ionicLoading.hide();
                                 $location.path('/app/home');
                             }
                             else{
@@ -454,7 +530,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                     template: data.data.error_msg
                                 });
                                 alertPopup.then(function(res) {
-
+                                    $ionicLoading.hide();
                                 });
                             }
                         });
@@ -465,7 +541,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         facebookConnectPlugin.login(["public_profile","email","user_location"],
                             fbLoginSuccess,
                             function (error) {
-                                console.log("Error" + error);
+                                var alertPopup = $ionicPopup.alert({
+                                    title: 'Error!',
+                                    template: error
+                                });
+                                alertPopup.then(function(res) {
+
+                                });
                             }
                         );
                         //facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
@@ -497,7 +579,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         facebookConnectPlugin.login(["public_profile","email","user_location"],
                             fbLoginSuccess,
                             function (error) {
-                                console.log("Error" + error);
+                                var alertPopup = $ionicPopup.alert({
+                                    title: 'Error!',
+                                    template: error
+                                });
+                                alertPopup.then(function(res) {
+
+                                });
                             }
                         );
                     }
@@ -506,7 +594,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     facebookConnectPlugin.login(["public_profile","email","user_location"],
                         fbLoginSuccess,
                         function (error) {
-                            console.log("Error" + error);
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: error
+                            });
+                            alertPopup.then(function(res) {
+
+                            });
                         }
                     );
                 };
@@ -514,11 +608,25 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     var longitude = SessionService.get('current_user_longitude');
                     var latitude = SessionService.get('current_user_latitude');
                     facebookConnectPlugin.getAccessToken(function(token){
+                        $ionicLoading.show({
+                            template: '<i class=""></i>Loading...'
+                        });
                         var response = Auth.fb_login({token:token,longitude:longitude,latitude:latitude}).then(function(response){
-                            console.log("FB RESPONSE "+JSON.stringify(response));
+
                             if (response.status == "success"){
                                 StorageService.set('hungryAuth',JSON.stringify({auth_token:response.response.auth_token}));
+                                $ionicLoading.hide();
                                 $location.path('/app/home')
+                            }else{
+                                $ionicLoading.hide();
+                                var alertPopup = $ionicPopup.alert({
+                                    title: 'Error!',
+                                    template: response.response.response
+                                });
+                                alertPopup.then(function(res) {
+
+                                });
+
                             }
                         });
                     });
@@ -527,6 +635,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.goToRegistration = utils.createNewUser;
                 $scope.signInUser = utils.signIn;
                 $scope.fbSignIn = utils.fbSignIn;
+                $scope.forgot_password = utils.forget_password;
                 /*$scope.loginUser = function() {
 
                  angular.element('#error-message').hide();
@@ -579,7 +688,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var AdMob;
             var createBanner = function(){
                 if (window.AdMob ){
-                    console.log("I AM IN HERE window plugin");
+
                     var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
                     AdMob = window.AdMob;
 
@@ -777,6 +886,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 else{
                     //AdMob.hideBanner();
                     AdMob.removeBanner();
+
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     map.setClickable(false);
                     $ionicSideMenuDelegate.toggleLeft();
@@ -1329,9 +1439,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
         });
     }])
     .controller('settingsCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','$ionicModal','Auth' ,
-        '$location','$ionicActionSheet','countryList','User','definedVariable','dataService','adMobHelper','ChallengeList','blogList','influencerList',
+        '$location','$ionicActionSheet','countryList','User','definedVariable','dataService','adMobHelper','ChallengeList','blogList','influencerList','$ionicPopup',
         function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,$ionicModal,Auth,$location,$ionicActionSheet,countryList,User,
-                 definedVariable,dataService,adMobHelper,ChallengeList,blogList,influencerList) {
+                 definedVariable,dataService,adMobHelper,ChallengeList,blogList,influencerList,$ionicPopup) {
         $ionicPlatform.ready(function() {
 
 
@@ -1441,12 +1551,26 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                            var promise = User.refreshUserInfo().then(function(response){
                                return true;
                            });
-                           if (promise){
-                               $scope.modal.hide();
+                           if (promise && ChallengeList.clearMemory() && blogList.clearMemory() && influencerList.clearMemory()){
+                               var alertPopup = $ionicPopup.alert({
+                                   title: 'Success!',
+                                   template: "Profile Updated"
+                               });
+                               alertPopup.then(function(res) {
+                                   $scope.modal.hide();
+                               });
+
                            }
                            //$scope.modal.hide();
                        }else{
-                           alert("Something went wrong");
+                           var alertPopup = $ionicPopup.alert({
+                               title: 'Error',
+                               template: "Something went wrong"
+                           });
+                           alertPopup.then(function(res) {
+
+                           });
+
                        }
                         return true;
                     });
@@ -1458,14 +1582,32 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     if (typeof $scope.updated.password != 'undefined' && typeof $scope.updated.conf_pass != 'undefined'
                         && $scope.updated.password == $scope.updated.conf_pass){
                         Auth.changePassword($scope.updated).then(function(result){
-                            if (result){
-                                $scope.modal.hide();
+                            if (result && ChallengeList.clearMemory() && blogList.clearMemory() && influencerList.clearMemory()){
+                                var alertPopup = $ionicPopup.alert({
+                                    title: 'Success!',
+                                    template: "Password Updated"
+                                });
+                                alertPopup.then(function(res) {
+                                    $scope.modal.hide();
+                                });
                             }else{
-                                alert("Something went wrong");
+                                var alertPopup = $ionicPopup.alert({
+                                    title: 'Error',
+                                    template: "Something went wrong"
+                                });
+                                alertPopup.then(function(res) {
+
+                                });
                             }
                         });
                     }else{
-                        alert("SOMETHING WRONG");
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error',
+                            template: "Something went wrong"
+                        });
+                        alertPopup.then(function(res) {
+
+                        });
                     }
 
                 },
@@ -1882,7 +2024,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             });
         }])
-    .controller('feedbackCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,Auth,dataService) {
+    .controller('feedbackCtrl', function($scope,$ionicPlatform,$ionicNavBarDelegate,Auth,dataService,$ionicPopup) {
         $ionicPlatform.ready(function() {
             document.getElementById('leftSideMenu').style.visibility = "hidden";
             var loggedIn = Auth.isLoggedIn();
@@ -1898,7 +2040,14 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.form_input.auth_token = auth_token;
                 var promise = dataService.send_feedback($scope.form_input).then(function(response){
                     if (response.status == "success"){
-                        $ionicNavBarDelegate.back();
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error!',
+                            template: "Thank you for your response"
+                        });
+                        alertPopup.then(function(res) {
+                            $ionicNavBarDelegate.back();
+                        });
+
                     }
                 });
 

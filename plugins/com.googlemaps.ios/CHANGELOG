@@ -1,3 +1,9 @@
+Version 1.9.1 - December 2014
+=============================
+Resolved Issues:
+  - Added workaround for userEmail private selector false positive.
+  - Improved handling of info windows for iPhone 6+ running applications in scaled mode.
+
 Version 1.9.0 - October 2014
 ============================
 Features:

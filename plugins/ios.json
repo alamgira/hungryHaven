@@ -87,7 +87,17 @@
                             "count": 1
                         }
                     ],
-                    "CoreData.framework": [
+                    "Social.framework": [
+                        {
+                            "xml": "true",
+                            "count": 2
+                        }
+                    ],
+                    "ImageIO.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        },
                         {
                             "xml": "false",
                             "count": 1
@@ -99,6 +109,24 @@
                             "count": 3
                         }
                     ],
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": "false",
+                            "count": 3
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": "false",
+                            "count": 2
+                        }
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
                     "CoreText.framework": [
                         {
                             "xml": "false",
@@ -108,16 +136,6 @@
                     "GLKit.framework": [
                         {
                             "xml": "false",
-                            "count": 1
-                        }
-                    ],
-                    "ImageIO.framework": [
-                        {
-                            "xml": "false",
-                            "count": 1
-                        },
-                        {
-                            "xml": "true",
                             "count": 1
                         }
                     ],
@@ -151,28 +169,10 @@
                             "count": 1
                         }
                     ],
-                    "AssetsLibrary.framework": [
-                        {
-                            "xml": "false",
-                            "count": 3
-                        }
-                    ],
-                    "MobileCoreServices.framework": [
-                        {
-                            "xml": "false",
-                            "count": 2
-                        }
-                    ],
                     "libsqlite3.dylib": [
                         {
                             "xml": "false",
                             "count": 1
-                        }
-                    ],
-                    "Social.framework": [
-                        {
-                            "xml": "true",
-                            "count": 2
                         }
                     ],
                     "Accounts.framework": [
@@ -202,6 +202,10 @@
                         },
                         {
                             "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
@@ -242,6 +246,18 @@
                         },
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
                         },
                         {
@@ -286,22 +302,6 @@
                         },
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -364,13 +364,16 @@
         "com.google.cordova.admob": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
-        "com.googlemaps.ios": {
+        "com.google.playservices": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.plugin.datepicker": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "org.apache.cordova.camera": {
@@ -400,6 +403,9 @@
         "org.apache.cordova.splashscreen": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
+        "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
         "plugin.google.maps": {
             "API_KEY_FOR_IOS": "AIzaSyDgKG2ghYiL87M6gGwR1tl7_h0mgwdYGHM",
             "PACKAGE_NAME": "com.Company.hungryHaven"
@@ -408,12 +414,6 @@
             "APP_ID": "579835932147927",
             "APP_NAME": "hungry haven ios",
             "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "nl.x-services.plugins.socialsharing": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
     "dependent_plugins": {
@@ -421,6 +421,9 @@
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "plugin.http.request": {
+            "PACKAGE_NAME": "com.Company.hungryHaven"
+        },
+        "com.googlemaps.ios": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     }

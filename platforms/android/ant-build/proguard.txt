@@ -1,12 +1,12 @@
-# view AndroidManifest.xml #generated:5
+# view AndroidManifest.xml #generated:6
 -keep class com.Company.hungryHaven.CordovaApp { <init>(...); }
 
-# view AndroidManifest.xml #generated:14
+# view AndroidManifest.xml #generated:16
 -keep class com.facebook.LoginActivity { <init>(...); }
 
 # view res/layout/com_facebook_usersettingsfragment.xml #generated:48
 -keep class com.facebook.widget.LoginButton { <init>(...); }
 
-# view AndroidManifest.xml #generated:15
+# view AndroidManifest.xml #generated:13
 -keep class com.google.android.gms.ads.AdActivity { <init>(...); }
 

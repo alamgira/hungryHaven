@@ -50,17 +50,23 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return $http.get('/api/v1/auth');
         },
         logout: function() {
+
             //return $http.get('/auth/logout');
             ///var logout = $http.get(adminRoot + 'auth/logout');
             uncacheSession();
             deleteSession();
+
+           /* blogList.clearMemory();
+            /*influencerList.clearMemory();
+            ChallengeList.clearMemory();
+            countryList.clearMemory();*/
             //logout.success(uncacheSession, deleteSession);
             return true;
         },
         checkLogin:function(inputs){
             console.log("check login inputs: "+JSON.stringify(inputs));
             var promise = $http.post(adminRoot+'api/appLogin',inputs).then(function(response){
-                console.log("I am here::::"+JSON.stringify(response));
+
                 return response;
             },function(error){
                 console.log("ERROR RESPONSE : "+JSON.stringify(error));
@@ -96,7 +102,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return promise;
         },
         changePassword: function(inputs) {
-            var promise = $http.post(adminRoot + 'api/update_password', inputs).then(function (response) {
+            var promise = $http.post(adminRoot + 'api/forget_your_password', inputs).then(function (response) {
                 return response.data;
             });
             return promise;
@@ -128,11 +134,10 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         },
         isLoggedIn: function() {
             //return $http.get('/auth/check');
-            console.log("IS LOGGED IN HUNGRY AUTH: "+StorageService.get('hungryAuth'));
             return JSON.parse(StorageService.get('hungryAuth'));
         },
         update_user:function(inputs){
-            console.log("INPIUT " + JSON.stringify(inputs));
+
             var promise = $http.post(adminRoot+'api/update_user_info',inputs).then(function(response){
                 console.log("RESPONSE : "+ JSON.stringify(response));
                 if (response.data.status == "success"){
@@ -143,6 +148,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return promise;
         },
         fb_login:function(inputs){
+            console.log("FB INPUT: "+ JSON.stringify(inputs));
             var promise = $http.post(adminRoot + 'api/fb_signin',inputs).then(function(response){
                 console.log("FB API RESPONSE "+JSON.stringify(response));
                 return response.data;
@@ -298,6 +304,12 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
         get_auth_token:function(){
           return auth_token;
         },
+        send_feedback:function(inputs){
+            var promise = $http.post(adminRoot + 'api/send_feedback',inputs).then(function(response){
+               return response.data;
+            });
+            return promise;
+        },
         get_challenge_list_by_location:function(inputs){
             console.log("INPUT : "+JSON.stringify(inputs));
             var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
@@ -427,6 +439,7 @@ myApp.factory('blogList',function(){
     return{
         clearMemory:function(){
             blogList = null;
+            return true;
         },
         getBlogList:function(){
             return blogList;
@@ -441,6 +454,7 @@ myApp.factory('influencerList',function(){
     return {
         clearMemory:function(){
             list = null;
+            return true;
         },
         getInfluencerList:function(){
             return list;
@@ -450,7 +464,7 @@ myApp.factory('influencerList',function(){
         }
     };
 });
-myApp.factory('User',function(Auth,dataService){
+myApp.factory('User',function($rootScope,Auth,dataService){
     var tagFilterList = [];
     var subCatFilterList = [];
     var userInfo = null;
@@ -465,6 +479,10 @@ myApp.factory('User',function(Auth,dataService){
 
     }
     return {
+        emptyUser:function(){
+            userInfo = null;
+            return true;
+        },
         getUserInfo:function(){
             if (userInfo == null){
                 var loggedIn = Auth.isLoggedIn();
@@ -479,6 +497,20 @@ myApp.factory('User',function(Auth,dataService){
             }
             return userInfo;
 
+        },
+        refreshUserInfo:function(){
+            var loggedIn = Auth.isLoggedIn();
+            var inputs = {auth_token:loggedIn.auth_token};
+            console.log("Input User "+JSON.stringify(inputs));
+            var promise = dataService.getUserInfo(inputs).then(function(response){
+                userInfo = response;
+                console.log("REFRESHING "+JSON.stringify(response));
+
+                $rootScope.$broadcast('user:updated',userInfo);
+                return response;
+            });
+
+            return promise;
         },
         getTagFilters:function(){
             return tagFilterList;
@@ -572,6 +604,7 @@ myApp.factory('ChallengeList',function(){
             sub_category_list = null;
             sub_category_list_challenge = null;
             current_list = null;
+            return true;
         },
         getCurrentList:function(){
             return current_list;
@@ -684,10 +717,18 @@ myApp.factory('ChallengeList',function(){
     };
 });
 directiveApp.directive('getDistance',function(definedVariable){
+
     var R = 6371;
+    var user_longitude, user_latitude;
     var user_info = JSON.parse(definedVariable.getStorage('hungryAuth'));
-    var user_longitude = user_info.longitude;
-    var user_latitude = user_info.latitude;
+    if (typeof sessionStorage.getItem('current_user_longitude') !== 'undefined' && typeof sessionStorage.getItem('current_user_latitude') !== 'undefined'){
+        user_longitude = sessionStorage.getItem('current_user_longitude');
+        user_latitude = sessionStorage.getItem('current_user_latitude');
+    }else{
+         user_longitude = user_info.longitude;
+         user_latitude = user_info.latitude;
+    }
+
     var deg2rad = function(value){
         return value * Math.PI/180;
     }
@@ -711,8 +752,12 @@ directiveApp.directive('getDistance',function(definedVariable){
                 ;
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
             var d = R * c; // Distance in km
-            console.log("DISTANCE : "+d);
-            scope.distance = d.toFixed(1);
+            if (d >999){
+                scope.distance = "999+";
+            }else{
+                scope.distance = d.toFixed(1);
+            }
+
         }
     };
 
@@ -731,7 +776,7 @@ myApp.factory('countryList',function($http,definedVariable){
         setList:function(){
             console.log('URL: '+adminRoot+'api/getCountryList');
             if (list == null){
-                console.log("I am here");
+
                 var req = $http.get(adminRoot+'api/getCountryList');
                 /*req.success(function(data) {
                     list = data;

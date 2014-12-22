@@ -44,6 +44,13 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/admob/AdMobPlugin.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/ext/CordovaPluginExt.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/com/rjfun/cordova/ext/PluginAdapterDelegate.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$2$1$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$2$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$2.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$3.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing$SocialSharingRunnable.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/nl/xservices/plugins/SocialSharing.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/CameraLauncher.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/ExifHelper.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/camera/FileHelper.class \
@@ -131,6 +138,11 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager$1.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/networkinformation/NetworkManager.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$1.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$2.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar$3.class \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/org/apache/cordova/statusbar/StatusBar.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncKmlParser$1.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncKmlParser$2.class \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/ant-build/classes/plugin/google/maps/AsyncKmlParser$3.class \

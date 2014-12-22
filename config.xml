@@ -47,7 +47,13 @@
         <splash src="res/screen.png" width="640" height="1136"/>
 
     </platform>
-
+    <platform name="android">
+        <icon src="res/toolbar-icon.png" density="ldpi" />
+        <icon src="res/toolbar-icon.png" density="mdpi" />
+        <icon src="res/Icon-72.png" density="hdpi" />
+        <icon src="res/Icon-72.png" density="xhdpi" />
+        <splash src="res/screen.png" width="640" height="1136"/>
+    </platform>
     <preference name="StatusBarBackgroundColor" value="#ff0000" />
 
 </widget>

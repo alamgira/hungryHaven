@@ -1,13 +1,17 @@
 <div class="modal">
 
-    <ion-content  scroll="true">
+    <ion-content  scroll="false">
         <div class="containor grey_back">
-            <div class="about_top sorting_top">
-                <h3>Sort by:  </h3>
-                <div class="cancel_btn">
-                    <a ng-click="modalActions.closeModal()">Cancel</a>
+            <div style="width:100%;min-height: 20px;background-color: #da251e;"></div>
+            <div class="about_top sorting_top" style="height: 40px;">
+                <h3 style="margin-top: 4%;">Sort by:  </h3>
+
+                <div class="cancel_btn" style="margin-top: 1%;">
+
+                    <a ng-click="modalActions.closeModal()" class="button button-small button-assertive">Cancel</a>
                 </div>
             </div>
+            <ion-scroll style="height:450px;width:100%;">
             <div class="sorting_content">
 
                 <h2> Category</h2>
@@ -36,7 +40,7 @@
 
 
             </div>
-
+            </ion-scroll>
 
         </div>
 

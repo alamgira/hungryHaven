@@ -66,7 +66,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         checkLogin:function(inputs){
             console.log("check login inputs: "+JSON.stringify(inputs));
             var promise = $http.post(adminRoot+'api/appLogin',inputs).then(function(response){
-                console.log("I am here::::"+JSON.stringify(response));
+
                 return response;
             },function(error){
                 console.log("ERROR RESPONSE : "+JSON.stringify(error));
@@ -102,7 +102,7 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
             return promise;
         },
         changePassword: function(inputs) {
-            var promise = $http.post(adminRoot + 'api/update_password', inputs).then(function (response) {
+            var promise = $http.post(adminRoot + 'api/forget_your_password', inputs).then(function (response) {
                 return response.data;
             });
             return promise;
@@ -134,11 +134,10 @@ myApp.factory('Auth', function($http, $location, SessionService, StorageService,
         },
         isLoggedIn: function() {
             //return $http.get('/auth/check');
-            console.log("IS LOGGED IN HUNGRY AUTH: "+StorageService.get('hungryAuth'));
             return JSON.parse(StorageService.get('hungryAuth'));
         },
         update_user:function(inputs){
-            console.log("INPIUT " + JSON.stringify(inputs));
+
             var promise = $http.post(adminRoot+'api/update_user_info',inputs).then(function(response){
                 console.log("RESPONSE : "+ JSON.stringify(response));
                 if (response.data.status == "success"){
@@ -718,10 +717,18 @@ myApp.factory('ChallengeList',function(){
     };
 });
 directiveApp.directive('getDistance',function(definedVariable){
+
     var R = 6371;
+    var user_longitude, user_latitude;
     var user_info = JSON.parse(definedVariable.getStorage('hungryAuth'));
-    var user_longitude = user_info.longitude;
-    var user_latitude = user_info.latitude;
+    if (typeof sessionStorage.getItem('current_user_longitude') !== 'undefined' && typeof sessionStorage.getItem('current_user_latitude') !== 'undefined'){
+        user_longitude = sessionStorage.getItem('current_user_longitude');
+        user_latitude = sessionStorage.getItem('current_user_latitude');
+    }else{
+         user_longitude = user_info.longitude;
+         user_latitude = user_info.latitude;
+    }
+
     var deg2rad = function(value){
         return value * Math.PI/180;
     }
@@ -769,7 +776,7 @@ myApp.factory('countryList',function($http,definedVariable){
         setList:function(){
             console.log('URL: '+adminRoot+'api/getCountryList');
             if (list == null){
-                console.log("I am here");
+
                 var req = $http.get(adminRoot+'api/getCountryList');
                 /*req.success(function(data) {
                     list = data;
