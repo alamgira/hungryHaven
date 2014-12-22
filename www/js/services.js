@@ -275,7 +275,7 @@ myApp.factory('addMarker', function() {
                 if (latlng != null){
                     map.animateCamera({
                         'target': latlng,
-                        'zoom': 5,
+                        'zoom': 10,
                         'duration': 5000 // = 5 sec.
                     }, function() {
                         console.log("The animation is done");
@@ -741,7 +741,6 @@ directiveApp.directive('getDistance',function(definedVariable){
             latitude: '='
         },
         link: function(scope, element, attr) {
-            console.log("user_long: "+user_longitude+" user_lat: "+user_latitude+"long : "+scope.longitude+"lat : "+scope.latitude);
             var R = 6371; // Radius of the earth in km
             var dLat = deg2rad(user_latitude-scope.latitude);  // deg2rad below
             var dLon = deg2rad(user_longitude-scope.longitude);
@@ -966,6 +965,25 @@ myApp.filter('groupBy',[function(){
         });
         console.log("GROUP IS : "+JSON.stringify(groups));
         return groups;
+    };
+}]);
+myApp.filter('cut',[function(){
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
+
+        max = parseInt(max, 10);
+        if (!max) return value;
+        if (value.length <= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace != -1) {
+                value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
     };
 }]);
 directiveApp.directive('shortDate',function(){

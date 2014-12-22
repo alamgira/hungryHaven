@@ -21,14 +21,15 @@
         </ion-header-bar>
 
     </ion-nav-buttons>
-    <ion-content class="has-header has-footer">
+    <ion-content class="has-header" scroll="false">
 
-
+        <ion-scroll style="height:450px;margin-top: 0px;">
         <div class="containor white_back">
 
             <div class="clear"></div>
             <div class="each_inf" ng-repeat="influencer in influencerList">
                 <a href="#/app/influencer_details/{{$index}}">
+                    <div>
                 <div class="blog_left">
                     <img src="{{admin}}{{influencer.pic_url}}"  height="84" alt="burger" />
                 </div>
@@ -39,9 +40,10 @@
                 <div class="blog_right">
                     <img src="img/red_arrow.jpg"  height="18" />
                 </div>
+                    </div>
                 </a>
             </div><!--blog_cont-->
-
+        </ion-scroll>
 
 
         </div>

@@ -218,7 +218,7 @@ padding: 10px 15px 10px 66px;}
     padding: 5px 0 5px 25px;
     background-size: 13px;
 }
-.mapView{min-height: 250px;border-bottom: 1px solid #c1c1c1; position: relative;}
+.mapView{min-height: 300px;border-bottom: 1px solid #c1c1c1; position: relative;}
 .hNav{padding: 10px 0; background: #fff; border-bottom: 1px solid #c1c1c1; display: block; position: relative; list-style-type:none;
     white-space:nowrap; /*overflow-x:auto;*/}
 .hNav li{/*float: left;*/width: 33.33%; margin:0px 10px;text-align: center; text-transform: uppercase;display:inline;}
@@ -1463,4 +1463,7 @@ img.bic{width: 15px;}
 .slidedown {
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
+}
+.verticalChallenge{
+    vertical-align: top;
 }

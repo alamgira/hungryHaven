@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c35375b9-65ff-4c6b-8d97-218b720e7908" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/LaunchImage.launchimage/Default-Landscape@2x~ipad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/AppIcon.appiconset/icon-40@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/forgot_password.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/.classpath" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/android-support-v4-50010b11c13d6e3f01b9d4928403733f.jar" afterPath="" />
@@ -19,66 +16,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-port-ldpi/screen.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-port-mdpi/screen.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/css/ionic.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/css/ionic.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/fonts/ionicons.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/fonts/ionicons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/fonts/ionicons.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/fonts/ionicons.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular-ui/angular-ui-router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-animate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-resource.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-resource.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-sanitize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular-sanitize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/angular/angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic-angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic-angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic.bundle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/js/ionic.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_action-sheet.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_animations.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_backdrop.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_badge.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_bar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_button-bar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_button.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_checkbox.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_form.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_grid.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_items.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_loading.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_menu.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_modal.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_platform.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_popover.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_popup.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_progress.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_radio.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_range.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_reset.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_scaffolding.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_select.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_slide-box.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_tabs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_toggle.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_type.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_util.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionic.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-animation.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-font.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/scss/ionicons/ionicons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/assets/www/lib/ionic/version.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/bin/jarlist.cache" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/AndroidManifest.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/ant-build/AndroidManifest.xml" afterPath="" />
@@ -2151,100 +2088,31 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/LaunchImage.launchimage/Default-568h@2x~iphone.png" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/LaunchImage.launchimage/Default-568h@2x~iphone.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/GoogleMaps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Resources/GoogleMaps.bundle/Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Resources/GoogleMaps.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$drawable.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/facebook/android/R$drawable.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/facebook/android/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$id.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$integer.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$layout.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$string.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$style.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$styleable.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$xml.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R$xml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R.class" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes/com/Company/hungryHaven/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.xcworkspace/xcuserdata/asifalamgir.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/android-support-v4-f7e2594cbf4a913c1c332181c6662aba.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/android-support-v4-f7e2594cbf4a913c1c332181c6662aba.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/bolts-android-1.1.2-2c80744b9c3573afb5f166e6edcdd8e2.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/bolts-android-1.1.2-2c80744b9c3573afb5f166e6edcdd8e2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-74c7874df42787bffa67688da0660baf.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-74c7874df42787bffa67688da0660baf.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-e60c469377e42f56b0a21f38bee9d45b.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/classes-e60c469377e42f56b0a21f38bee9d45b.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/cordova-generic-ad-710eb0bd03113856a1d9be6a8ff4f714.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/cordova-generic-ad-710eb0bd03113856a1d9be6a8ff4f714.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-play-services-2482da6916768f78fd8ea58b22923f28.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-play-services-2482da6916768f78fd8ea58b22923f28.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/libs/google-play-services.jar" afterPath="$PROJECT_DIR$/platforms/android/libs/google-play-services.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-volley-7172bc70a7de4c3b0e4145bf92d5cd28.jar" afterPath="$PROJECT_DIR$/platforms/android/ant-build/dexedLibs/google-volley-7172bc70a7de4c3b0e4145bf92d5cd28.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/AppIcon.appiconset/icon-76@2x.png" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/AppIcon.appiconset/icon-76@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-hdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-hdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-ldpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-ldpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-mdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-mdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-xhdpi/icon.png" afterPath="$PROJECT_DIR$/platforms/android/ant-build/res/drawable-xhdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/.fetch.json" afterPath="$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/.fetch.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/AndroidManifest.cordova.xml" afterPath="$PROJECT_DIR$/platforms/android/ant-build/AndroidManifest.cordova.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/CHANGELOG" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/CHANGELOG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/AppIcon.appiconset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Images.xcassets/LaunchImage.launchimage/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/CordovaApp.ap_.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.xcworkspace/xcshareddata/HungryHaven.xccheckout" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.xcworkspace/xcshareddata/HungryHaven.xccheckout" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/Classes/MainViewController.xib" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/Classes/MainViewController.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/R.txt" afterPath="$PROJECT_DIR$/platforms/android/ant-build/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/about.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/blog.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/blogDetails.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/blogDetails.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/build.prop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" afterPath="$PROJECT_DIR$/platforms/android/ant-build/build.prop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/challengContestList.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/challengContestList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" afterPath="$PROJECT_DIR$/platforms/android/ant-build/classes.dex.d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven/config.xml" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/challengContestList.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/challengContestList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/challengContestList.html" afterPath="$PROJECT_DIR$/www/templates/challengContestList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/ios/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/details.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/editProfile.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/editProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/editProfile.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/editProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/editProfile.html" afterPath="$PROJECT_DIR$/www/templates/editProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/festivalList.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/festivalList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/home.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/home.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/home.html" afterPath="$PROJECT_DIR$/www/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/influencerDetails.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/influencerDetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/influencerDetails.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/influencerDetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/influencerDetails.html" afterPath="$PROJECT_DIR$/www/templates/influencerDetails.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/influencerList.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/influencerList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/platforms/ios/www/lib/ionic/css/ionic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/ios.json" afterPath="$PROJECT_DIR$/plugins/ios.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/jarlist.cache" afterPath="$PROJECT_DIR$/platforms/android/ant-build/jarlist.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/login.html" afterPath="$PROJECT_DIR$/www/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/mapIt.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/mapIt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/menu.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/menu.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/menu.html" afterPath="$PROJECT_DIR$/www/templates/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/com.googlemaps.ios/plugin.xml" afterPath="$PROJECT_DIR$/plugins/com.googlemaps.ios/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/ant-build/proguard.txt" afterPath="$PROJECT_DIR$/platforms/android/ant-build/proguard.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/HungryHaven.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/registerUser.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/influencerList.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/influencerList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/influencerList.html" afterPath="$PROJECT_DIR$/www/templates/influencerList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/js/services.js" afterPath="$PROJECT_DIR$/platforms/ios/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/settings.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/settingsDetail.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/settingsDetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/templates/sort.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/templates/sort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/sort.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/sort.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/sort.html" afterPath="$PROJECT_DIR$/www/templates/sort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/templates/settings.html" afterPath="$PROJECT_DIR$/platforms/ios/www/templates/settings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/settings.html" afterPath="$PROJECT_DIR$/www/templates/settings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/settingsDetail.html" afterPath="$PROJECT_DIR$/www/templates/settingsDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
@@ -2253,15 +2121,15 @@
     <ignored path="hungryHaven.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419260603251" ignored="false" />
-    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419279053106" ignored="false" />
+    <file path="/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419283911263" ignored="false" />
     <file path="/checkLocation.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1415653711761" ignored="false" />
     <file path="/login.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419276173162" ignored="false" />
     <file path="/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418761356295" ignored="false" />
-    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419283425805" ignored="false" />
+    <file path="/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419286272116" ignored="false" />
     <file path="/*.regexp" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418761597105" ignored="false" />
     <file path="/registerUser.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418850658853" ignored="false" />
-    <file path="/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008107947" ignored="false" />
-    <file path="/home.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419015803352" ignored="false" />
+    <file path="/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285332815" ignored="false" />
+    <file path="/home.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419287231314" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/app.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414437715488" ignored="false" />
     <file path="/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418744849614" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/cordova/defaults.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414439367459" ignored="false" />
@@ -2270,12 +2138,12 @@
     <file path="/details.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418854021362" ignored="false" />
     <file path="/challengContestList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418937385090" ignored="false" />
     <file path="/festivalList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416854725455" ignored="false" />
-    <file path="/influencerList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418766410782" ignored="false" />
+    <file path="/influencerList.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419284780749" ignored="false" />
     <file path="/blog.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418418260897" ignored="false" />
     <file path="/about.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418421059047" ignored="false" />
-    <file path="/settings.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418657329024" ignored="false" />
+    <file path="/settings.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419284340061" ignored="false" />
     <file path="/editProfile.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419017812332" ignored="false" />
-    <file path="/influencerDetails.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418854873897" ignored="false" />
+    <file path="/influencerDetails.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419284721423" ignored="false" />
     <file path="/mapIt.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418745805366" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/lib/ionic/js/ionic-angular.min.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795781" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/hungryIonic.app/www/js/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1414781795781" ignored="false" />
@@ -2346,7 +2214,7 @@
     <file path="/influencer_edit.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416863238736" ignored="false" />
     <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/models/blog_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416935908214" ignored="false" />
     <file path="/blog_model.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416935769229" ignored="false" />
-    <file path="/settingsDetail.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416939815449" ignored="false" />
+    <file path="/settingsDetail.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419288429812" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/Hungry Haven.app/www/templates/sort.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1416948802832" ignored="false" />
     <file path="/blogDetails.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418853972904" ignored="false" />
     <file path="$PROJECT_DIR$/platforms/ios/build/emulator/Hungry Haven.app/www/lib/ionic/js/angular/angular.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1417127123608" ignored="false" />
@@ -2399,66 +2267,6 @@
     <file path="/index.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418920022629" ignored="false" />
     <file path="$PROJECT_DIR$/../../distimo/test.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418918487901" ignored="false" />
     <file path="/test.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1418836403453" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_loading.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233812" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_popup.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233819" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_form.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233825" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_items.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233826" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_toggle.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_slide-box.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_util.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-animation.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_modal.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_popover.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233831" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_backdrop.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_platform.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_badge.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_type.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_list.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_action-sheet.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/css/style_back.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_action-sheet.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233832" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_list.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_type.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_tabs.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_popover.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_button-bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_tabs.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233833" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-animation.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_checkbox.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-font.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_util.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_scaffolding.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_platform.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_badge.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233835" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_animations.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_select.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_loading.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_radio.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_items.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_slide-box.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_modal.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_popup.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233836" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_backdrop.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_range.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_toggle.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-font.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_menu.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_form.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233837" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_animations.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_grid.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_select.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_menu.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_radio.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_grid.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233838" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_range.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233839" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_button-bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233839" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_checkbox.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419008233839" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_button.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419016465287" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_button.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419016465287" ignored="false" />
     <file path="/ionic.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419017850942" ignored="false" />
     <file path="$PROJECT_DIR$/../../admin2.hungryhaven.com/web/application/controllers/forget.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419276053002" ignored="false" />
     <file path="/forget.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419276038537" ignored="false" />
@@ -2468,14 +2276,77 @@
     <file path="/forget_password.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419272482367" ignored="false" />
     <file path="/forget_confirmation.php" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419272231395" ignored="false" />
     <file path="/forgot_password.html" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419276310128" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/ionic.bundle.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419280096569" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/android/build.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805818" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/AndroidManifest.cordova.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805818" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/js/ionic.bundle.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805818" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/js/angular/angular.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805819" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/config.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805820" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/js/controllers.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805820" ignored="false" />
-    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/js/services.js" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419281805820" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/CordovaLib/ant-build/AndroidManifest.cordova.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419284405989" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/android/ant-build/AndroidManifest.cordova.xml" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419284405989" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_loading.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412505" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_popup.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412505" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_form.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412505" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_items.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412510" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_toggle.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_slide-box.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_scaffolding.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_util.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-animation.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_modal.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_popover.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_backdrop.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412512" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_platform.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_badge.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_type.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_list.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_action-sheet.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/css/style_back.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_action-sheet.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412513" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_list.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_type.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_tabs.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/css/ionic.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_popover.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/css/ionic.min.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_button-bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_button.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_button.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_tabs.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412514" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/css/ionic.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412515" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/css/ionic.min.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412515" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/css/style_back.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412515" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-animation.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412515" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_checkbox.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412524" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-font.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412531" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_util.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412531" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_scaffolding.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412531" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412531" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_platform.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412531" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_badge.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412532" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_reset.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412532" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_animations.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412532" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_select.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412532" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_loading.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412532" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_radio.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412538" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_items.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412543" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/css/style.css" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412547" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_slide-box.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412547" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_modal.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_popup.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_backdrop.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_range.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_toggle.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-font.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_reset.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_menu.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412548" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_form.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_animations.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_grid.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_select.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_menu.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_radio.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412549" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_grid.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412550" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_range.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412550" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/www/lib/ionic/scss/_button-bar.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412550" ignored="false" />
+    <file path="$PROJECT_DIR$/platforms/ios/build/emulator/HungryHaven.app/www/lib/ionic/scss/_checkbox.scss" changelist="c35375b9-65ff-4c6b-8d97-218b720e7908" time="1419285412550" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2494,100 +2365,7 @@
     <favorites_list name="hungryHaven" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="58" selection-start="8644" selection-end="8666" vertical-scroll-proportion="-23.4">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="25" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgot_password.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/forgot_password.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-15.0">
-              <folding>
-                <element signature="n#style#0;n#input#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerUser.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/registerUser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="45" selection-start="502" selection-end="514" vertical-scroll-proportion="-6.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="influencerDetails.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/influencerDetails.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="60" selection-start="2251" selection-end="2251" vertical-scroll-proportion="-1.7916666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="55" selection-start="1156" selection-end="1171" vertical-scroll-proportion="-14.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/js/services.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="725" column="71" selection-start="24572" selection-end="24572" vertical-scroll-proportion="0.2753978">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="47" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sort.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/sort.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="77" selection-start="168" selection-end="174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1164" column="27" selection-start="36958" selection-end="36962" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -2605,22 +2383,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/www/templates/blogDetails.html" />
-        <option value="$PROJECT_DIR$/www/templates/details.html" />
-        <option value="$PROJECT_DIR$/www/templates/influencerDetails.html" />
-        <option value="$PROJECT_DIR$/www/templates/mapIt.html" />
-        <option value="$PROJECT_DIR$/www/templates/challengContestList.html" />
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/sort.html" />
         <option value="$PROJECT_DIR$/www/templates/editProfile.html" />
         <option value="$PROJECT_DIR$/www/lib/ionic/css/ionic.css" />
-        <option value="$PROJECT_DIR$/www/templates/home.html" />
         <option value="$PROJECT_DIR$/www/templates/login.html" />
         <option value="$PROJECT_DIR$/www/templates/forgot_password.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/www/templates/settings.html" />
+        <option value="$PROJECT_DIR$/www/templates/influencerDetails.html" />
+        <option value="$PROJECT_DIR$/www/templates/influencerList.html" />
+        <option value="$PROJECT_DIR$/www/templates/challengContestList.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/www/templates/home.html" />
         <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/settingsDetail.html" />
       </list>
     </option>
   </component>
@@ -2914,14 +2692,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="988" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20277481" sideWeight="0.6722488" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20277481" sideWeight="0.6722488" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -2999,18 +2777,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="55" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="865" selection-end="865" vertical-scroll-proportion="-6.875" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/editProfile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="40" selection-start="4263" selection-end="4263" vertical-scroll-proportion="0.0">
@@ -3025,44 +2791,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/challengContestList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="24" selection-start="3610" selection-end="3647" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="47" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/sort.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="77" selection-start="168" selection-end="174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1164" column="27" selection-start="36958" selection-end="36962" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/influencerList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="22" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.56116015">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/influencerDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="60" selection-start="2251" selection-end="2251" vertical-scroll-proportion="-1.7916666">
           <folding />
         </state>
       </provider>
@@ -3090,23 +2821,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1441" column="1" selection-start="43354" selection-end="43354" vertical-scroll-proportion="0.382793">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/settingsDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="24" selection-start="634" selection-end="634" vertical-scroll-proportion="0.1891551">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="24" selection-start="2904" selection-end="2904" vertical-scroll-proportion="1.151324">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/challengContestList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="20" selection-start="5651" selection-end="5651" vertical-scroll-proportion="1.7745953">
+          <folding>
+            <element signature="n#style#0;n#ion-scroll#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
+        <state line="25" column="25" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.44642857">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="58" selection-start="8644" selection-end="8666" vertical-scroll-proportion="-23.4">
+        <state line="99" column="0" selection-start="3762" selection-end="3762" vertical-scroll-proportion="0.66794384">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/influencerDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="110" selection-start="655" selection-end="655" vertical-scroll-proportion="0.16544117">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="37" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.46699876">
+          <folding>
+            <element signature="n#style#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#ion-scroll#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#ion-scroll#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#figcaption#0;n#figure#0;n#li#0;n#ul#0;n#ion-scroll#1;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/influencerList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="34" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.2647059">
+          <folding>
+            <element signature="n#style#0;n#ion-scroll#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="725" column="71" selection-start="24572" selection-end="24572" vertical-scroll-proportion="0.2753978">
+        <state line="252" column="34" selection-start="8433" selection-end="8433" vertical-scroll-proportion="0.47116566">
           <folding />
         </state>
       </provider>

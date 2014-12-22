@@ -97,7 +97,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 console.log("ADDR : "+JSON.stringify(currentList));
                 var address = currentList.street +"," +currentList.city + ","+currentList.state + ","+currentList.country;
                 var link = "http://maps.apple.com/?daddr="+address;
-                alert(link);
+
                 var ref = window.open(link, '_system', 'location=no');
             };
             $scope.challengeName = currentList.challenge_name;
@@ -222,7 +222,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  */
 
                 SessionService.set('current_user_longitude',position.coords.longitude);
-                SessionService.set('current_user_latitude',position.coords.longitude);
+                SessionService.set('current_user_latitude',position.coords.latitude);
 
 
                 $ionicLoading.hide();
@@ -1040,6 +1040,37 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
             };
 
+            /**
+             * Geolocation
+             * @param position
+             */
+            function onSuccess(position) {
+                /* alert('Latitude: '          + position.coords.latitude          + '\n' +
+                 'Longitude: '         + position.coords.longitude         + '\n' +
+                 'Altitude: '          + position.coords.altitude          + '\n' +
+                 'Accuracy: '          + position.coords.accuracy          + '\n' +
+                 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                 'Heading: '           + position.coords.heading           + '\n' +
+                 'Speed: '             + position.coords.speed             + '\n' +
+                 'Timestamp: '         + position.timestamp                + '\n');
+
+                 */
+
+                SessionService.set('current_user_longitude',position.coords.longitude);
+                SessionService.set('current_user_latitude',position.coords.latitude);
+
+            };
+
+            // onError Callback receives a PositionError object
+            //
+            function onError(error) {
+
+            }
+            if ("geolocation" in navigator){
+
+
+                navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            }
             createBanner();
             var taglist = dataService.getTags();
             if (taglist.length >= 0){
@@ -1508,7 +1539,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 image_updated = true;
             }
             function onFail(message) {
-                alert('Failed because: ' + message);
+
             }
             var modalOptions = {
                 showActions:function(){

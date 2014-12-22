@@ -66,13 +66,14 @@
                         </div>-->
                 <ul class="restList clearfix" style="width:500px;">
 
-                    <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge">
+                    <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" class="verticalChallenge">
 
                         <figure >
                             <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
                                 <img src="img/img1.jpg" ng-if="challenge.pic_url == null" width="100" height="100">
                                 <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null" width="100" height="100"></a>
-                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}" style="white-space: normal;">{{challenge.challenge_name}}</a></figcaption>
+                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}" style="white-space: normal;text-overflow: ellipsis;">
+                                {{challenge.challenge_name | cut:true:40:'...'}}</a></figcaption>
                             <span class="flgSet">
                                 <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
                                 <img src="img/gb.png" ng-if="challenge.category_name == 'challenge'">
