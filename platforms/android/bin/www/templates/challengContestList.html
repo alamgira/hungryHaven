@@ -1,0 +1,140 @@
+<ion-view title="List">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar bar-header bar-assertive setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td class="cLoc"><select ng-model="city" ng-options="country.city group by country.country for country in countryList" ng-change="changeCity(city)">
+                            <option value="">Choose Location</option>
+                        </select></td>
+                        <td width="35px"><a ng-click="showFilter()"><img src="img/filterIcon.png"></a></td>
+                    </tr>
+                </table>
+            </div>
+            <!--<button class="button button-icon" ng-click="toggleSideMenu()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            <h1 class="title">Home1</h1>
+            <button class="button button-icon">
+                <i class="icon ion-star"></i>
+            </button>-->
+        </ion-header-bar>
+        <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
+        <!--<div class="pageNavHead">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="35px"><a href="#" menu-toggle="left"><img src="img/menu-icon.png"></a></td>
+                    <td class="cLoc"><select><option>Choose Location</option></select></td>
+                    <td width="35px"><a href="#"><img src="img/filterIcon.png"></a></td>
+                </tr>
+            </table>
+        </div><!--End of Header-->
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <div class="containor white_back">
+            <!--<ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus">
+                <ul class="hNav clearfix" style="width:500px;">
+                    <li ><a href="#">&nbsp;</a></li>
+                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
+
+                </ul>
+
+            </ion-scroll>
+            <div class="fadeImg">
+                <img src="img/fadeImg.png" ng-show="showFilterStatus">
+            </div>
+
+            <div class="sltBar" ng-show="showFilterStatus" on-drag-down="showFilterDetail()">
+                <span></span>
+            </div>-->
+            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus" style="float:left;width:100%;" has-bouncing="false" id="ion_main_content">
+                <ul class="hNav clearfix" style="width:500px;">
+                    <li ><a href="#">&nbsp;</a></li>
+                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
+
+                </ul>
+
+            </ion-scroll>
+            <div class="fadeImg" style="float:right;"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
+            <div class="sltBar" ng-show="showFilterStatus"  style="float:left;width: 100%;">
+                <a ng-click="showFilterDetail()" class="button button-small button-outline button-assertive">Advanced Filter</a>  <a ng-click="showFilter()" class="button button-small button-assertive">Close</a>
+            </div>
+            <div class="clear"></div>
+            <ion-scroll style="height:450px;margin-top: 0px;">
+            <div ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" ng-if="challenge.category_name == 'challenge' || challenge.category_name == 'contest'">
+                <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'challenge'">
+                    <div class="each_srch">
+                        <div class="c_left">
+                            <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
+                            <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
+
+                        </div>
+                        <div class="search_chall_icon">
+                            <img src="img/gb.png" width="28" >
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{challenge.challenge_name}}</h1>
+                            <p ng-bind-html="challenge.short_detail"></p>
+                            <div class="search_rups1">
+                                <img src="img/pricetag-challenges.png" height="22" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups">{{challenge.price}}
+                            </div><!--rups-->
+                            <div class="search_rups1">
+                                <img src="img/car-blue.png"  height="14" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups">
+                                <get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km
+                            </div>
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/black_arrow.jpg"  />
+                        </div>
+                    </div>
+                </a>
+                <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'contest'">
+                    <div class="each_srch green_list">
+                        <div class="c_left">
+                            <img src="img/search_img1.jpg"  height="56" alt="burger" ng-if="challenge.pic_url == null"/>
+                            <img src="{{admin}}{{challenge.pic_url}}"  height="56" alt="burger" ng-if="challenge.pic_url != null" style="width:100%;"/>
+                        </div>
+                        <div class="search_chall_icon">
+                            <img src="img/gn.png" width="28" >
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{challenge.challenge_name}}</h1>
+                            <p ng-bind-html="challenge.short_detail"></p>
+                            <div class="search_rups1">
+                                <img src="img/pricetag-contest.png"  height="22" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups  green_text">
+                                {{challenge.price}}
+                            </div><!--rups-->
+                            <div class="search_rups1">
+                                <img src="img/car-green.png"  height="14" alt="rs" />
+                            </div><!--rups1-->
+                            <div class="search_rups  green_text">
+                                <get-distance longitude="challenge.longitude" latitude="challenge.latitude"></get-distance> km
+                            </div>
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/black_arrow.jpg"  />
+                        </div>
+                    </div><!--blog_cont-->
+                </a>
+            </div>
+            </ion-scroll>
+
+        </div>
+
+
+
+
+
+    </ion-content>
+    <!--<ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>-->
+</ion-view>

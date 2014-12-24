@@ -5,9 +5,14 @@
             <div class="pageNavHead opc useFullWidth">
                 <table border="0" cellpadding="0" cellspacing="0" class="useFullWidth">
                     <tr>
-                        <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
+                        <td width="35px"><i class="icon  ion-android-arrow-back" ng-click="goBack()" ng-show="isAndroid"></i>
+                            <i class="icon ion-ios-arrow-back" ng-click="goBack()" ng-hide="isAndroid"></i>
+
                         <td>{{challengeList.challenge_name}}</td>
-                        <td width="35px" class="exptIco"><a ng-click="share()"><img src="img/exportIcon.png"></a></td>
+                        <td width="35px" class="exptIco">
+                            <i class="icon  ion-android-share" ng-click="share()" ng-show="isAndroid"></i>
+                            <i class="icon ion-ios-upload-outline" ng-click="share()" ng-hide="isAndroid"></i>
+
                     </tr>
                 </table>
             </div><!--End of Header-->
@@ -44,7 +49,7 @@
                 </div>
                 <div class="othDts">
                     <ul>
-                        <li class="{{styleClass.dateClass}}"><clean-date timeset="challengeList.timestamp"></clean-date></li>
+                        <li class="{{styleClass.dateClass}}" ng-show="styleClass.dateEnabled"><clean-date timeset="challengeList.timestamp"></clean-date></li>
                         <li ng-if="styleClass.timeEnabled" class="{{styleClass.timeClass}}">{{challengeList.challenge_condition}}</li>
                         <li class="{{styleClass.addressClass}}">
                             {{challengeList.restaurant_name}}<br>

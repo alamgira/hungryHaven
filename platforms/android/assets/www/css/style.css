@@ -342,12 +342,12 @@ padding: 3px 10px; text-decoration: none;
 right: 20px; top: 70px;}
 .mapIt4Green{ top: 90px;}
 .addEvnt{right: 20px; top: 20px; position: absolute;} .addEvnt img{width: 30px;}
-.pTag{right: 20px; top: 20px; position: absolute; padding-left:45px;  font-family: 'Kreon', serif; background: url(../img/priceTagBig.png) 17px 0 no-repeat; background-size: 23px;}
-.othDate{ background: url(../img/orange-Calender.png) 15px 0 no-repeat; background-size: 22px;}
+.pTag{right: 20px; top: 20px; position: absolute; padding-left:45px;  font-family: 'Kreon', serif; background: url(../img/priceTagBig.png) 17px 0 no-repeat; background-size: 20px;}
+.othDate{ background: url(../img/orange-Calender.png) 15px 0 no-repeat; background-size: 20px;}
 .othAds{background: url(../img/orange-Map.png) 17px 0 no-repeat; background-size: 20px;}
 
-.othDateG{ background: url(../img/blu-Calender.png) 15px 0 no-repeat; background-size: 22px; color: #000}
-.othalmG{ background: url(../img/clock-blue.png) 15px 0 no-repeat; background-size: 22px;}
+.othDateG{ background: url(../img/blu-Calender.png) 15px 0 no-repeat; background-size: 20px; color: #000}
+.othalmG{ background: url(../img/clock-blue.png) 15px 0 no-repeat; background-size: 20px;}
 .othAdsG{background: url(../img/blu-Map.png) 17px 0 no-repeat; background-size: 20px;}
 
 .smTbs {padding: 0 !important}
@@ -533,7 +533,7 @@ img.bic{width: 15px;}
 		background-size: 100%;
 	}
 .menu_containor{
-		background: url(../img/menu-bg.png) no-repeat center center fixed;
+		background: url(../img/menu-bg-revised.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1466,4 +1466,16 @@ img.bic{width: 15px;}
 }
 .verticalChallenge{
     vertical-align: top;
+}
+.filterBar{
+    width:100%;
+    float:left;
+}
+.ion-funnel:before, .ion-navicon:before {
+    font-size: 36px;
+    color: white;
+}
+.icon{
+    font-size:36px;
+    color: white;
 }

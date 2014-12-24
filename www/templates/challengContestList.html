@@ -4,11 +4,12 @@
             <div class="pageNavHead useFullWidth">
                 <table border="0" cellpadding="0" cellspacing="0" >
                     <tr>
-                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td width="35px"><i class="icon ion-navicon" ng-click="toggleSideMenu()"></i></td>
                         <td class="cLoc"><select ng-model="city" ng-options="country.city group by country.country for country in countryList" ng-change="changeCity(city)">
                             <option value="">Choose Location</option>
                         </select></td>
-                        <td width="35px"><a ng-click="showFilter()"><img src="img/filterIcon.png"></a></td>
+                        <td width="35px"><i class="icon ion-android-funnel" ng-click="showFilter()" ng-show="isAndroid"></i>
+                            <i class="icon ion-funnel" ng-click="showFilter()" ng-hide="isAndroid"></i></td>
                     </tr>
                 </table>
             </div>
@@ -49,21 +50,27 @@
             <div class="sltBar" ng-show="showFilterStatus" on-drag-down="showFilterDetail()">
                 <span></span>
             </div>-->
-            <ion-scroll direction="x" class="wide-as-needed animate-show" ng-show="showFilterStatus" style="float:left;width:100%;" has-bouncing="false" id="ion_main_content">
-                <ul class="hNav clearfix" style="width:500px;">
-                    <li ><a href="#">&nbsp;</a></li>
-                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>
-
+            <ion-scroll direction="x" class="wide-as-needed animate-show"  ng-show="showFilterStatus"
+                         on-scroll="testSwipe()" scroll-event-interval="1000" has-bouncing="false"  delegate-handle="small" start-x="getXStart()"
+                    >
+                <ul class="hNav clearfix" style="width:1200px;"> <!--style="width:500px;"-->
+                    <!--<li ><a href="#">&nbsp;</a></li>
+                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>-->
+                    <li><img src="img/spacer.png" width="80" height="80" /></li>
+                    <li ng-repeat="filter in fTest">
+                        <img ng-src="{{filter.not_selected}}" width="80" height="80" ng-show="filSel != $index" ng-click="clickFilter($index)"/>
+                        <img ng-src="{{filter.selected}}" width="80" height="80" ng-show="filSel == $index" ng-click="showFilter()"/>
+                    </li>
+                    <li ><img src="img/spacer.png" width="80" height="80" /></li>
                 </ul>
 
             </ion-scroll>
             <div class="fadeImg" style="float:right;"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
-            <div class="sltBar" ng-show="showFilterStatus"  style="float:left;width: 100%;">
-                <a ng-click="showFilterDetail()" class="button button-small button-outline button-assertive">Advanced Filter</a>  <a ng-click="showFilter()" class="button button-small button-assertive">Close</a>
-            </div>
+
             <div class="clear"></div>
             <ion-scroll style="height:450px;margin-top: 0px;">
-            <div ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" ng-if="challenge.category_name == 'challenge' || challenge.category_name == 'contest'">
+
+            <div ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" ng-if="challenge.category_name == 'challenge' || challenge.category_name == 'contest'" >
                 <a href="#/app/details/{{$index}}/{{challenge.category_name}}" ng-if="challenge.category_name == 'challenge'">
                     <div class="each_srch">
                         <div class="c_left">
@@ -90,7 +97,7 @@
                             </div>
                         </div>
                         <div class="blog_right">
-                            <img src="img/black_arrow.jpg"  />
+                            <i class="ion-ios-arrow-forward"></i>
                         </div>
                     </div>
                 </a>
@@ -120,7 +127,8 @@
                             </div>
                         </div>
                         <div class="blog_right">
-                            <img src="img/black_arrow.jpg"  />
+                            <i class="ion-ios-arrow-forward"></i>
+
                         </div>
                     </div><!--blog_cont-->
                 </a>

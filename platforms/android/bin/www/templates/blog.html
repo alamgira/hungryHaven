@@ -1,0 +1,83 @@
+<ion-view title="List">
+<ion-nav-buttons side="left">
+    <ion-header-bar class="bar-header bar-assertive setZeroPadding">
+        <div class="pageNavHead useFullWidth">
+            <table border="0" cellpadding="0" cellspacing="0" >
+                <tr>
+                    <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                    <td class="festivalHeaderText"><h3>Blog</h3></td>
+                    <td width="35px"><!--<a><img src="img/search-icon-white.png"></a>--></td>
+                </tr>
+            </table>
+        </div>
+
+    </ion-header-bar>
+    <ion-header-bar class="bar bar-subheader">
+
+            <div class="blog_content_top">
+                <div ng-click="selectBlog($index)" ng-class="{blogSelected: $index==selected}" ng-repeat="subMenu in subMenuList" class="blog_content_top_left">
+                    <h1> {{subMenu.subMenuName}}</h1>
+                </div>
+                <!--<div class="blog_content_top_left blogSelected">
+                    <h1> CATEGORIES</h1>
+                </div>-->
+            </div>
+
+    </ion-header-bar>
+
+
+</ion-nav-buttons>
+<ion-content class="has-header has-subheader">
+    <div class="containor white_back">
+
+        <div class="clear"></div>
+
+
+        <div ng-if="selected == 0" ng-show="selected == 0">
+            <div class="each_blog" ng-repeat="blog in blogList" ng-if="blog.status == 'active' ">
+                <a href="#/app/blog/details/{{$index}}">
+                    <div class="blog_left">
+                        <img src="{{admin}}{{blog.pic_url}}"  height="54" alt="burger" />
+                    </div>
+                    <div class="blog_middle">
+                        <h1 ng-bind-html="blog.blog_title">{{blog.blog_title}}</h1>
+                        <p><clean-date timeset="blog.blog_created_at"></clean-date></p>
+                    </div>
+                    <div class="blog_right">
+                        <img src="img/red_arrow.jpg" height="18" />
+                    </div>
+                </a>
+            </div><!--blog_cont-->
+        </div>
+        <div ng-if="selected == 1" ng-repeat="blog in blogList | groupBy" ng-show="selected == 1">
+            <div class="item item-divider">
+                {{blog.currKey}}
+            </div>
+            <div class="each_blog"  ng-repeat="b in blog.listing" >
+
+
+                <a href="#/app/blog/details/{{b.currentKey}}" >
+                    <div class="blog_left">
+                        <img src="{{admin}}{{b.pic_url}}"  height="54" alt="burger" />
+                    </div>
+                    <div class="blog_middle">
+                        <h1 ng-bind-html="b.blog_title">{{b.blog_title}}</h1>
+                        <p><clean-date timeset="b.blog_created_at"></clean-date></p>
+                    </div>
+                    <div class="blog_right">
+                        <img src="img/red_arrow.jpg" height="18" />
+                    </div>
+                    </a>
+
+            </div><!--blog_cont-->
+        </div>
+
+    </div>
+
+
+
+</ion-content>
+<!--<ion-footer-bar>
+    <div class="promoAds"><img src="img/ads.jpg"></div>
+</ion-footer-bar>-->
+</ion-view>

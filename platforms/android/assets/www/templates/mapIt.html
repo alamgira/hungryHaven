@@ -4,9 +4,13 @@
         <div class="pageNavHead useFullWidth">
             <table border="0" cellpadding="0" cellspacing="0" >
                 <tr>
-                    <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
+                    <td width="35px"><i class="icon  ion-android-arrow-back" ng-click="goBack()" ng-show="isAndroid"></i>
+                        <i class="icon ion-ios-arrow-back" ng-click="goBack()" ng-hide="isAndroid"></i></td>
                     <td class="cLoc">{{challengeName}}</td>
-                    <td width="35px"><a ng-click="openWebView('_system')"><img src="img/exportIcon.png"></a></td>
+                    <td width="35px">
+                        <i class="icon  icon ion-android-open" ng-click="openWebView('_system')" ng-show="isAndroid"></i>
+                        <i class="icon ion-ios-browsers-outline" ng-click="openWebView('_system')" ng-hide="isAndroid"></i>
+
                 </tr>
             </table>
         </div>

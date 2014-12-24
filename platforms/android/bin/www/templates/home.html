@@ -1,0 +1,112 @@
+<ion-view title="Home">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar bar-header bar-assertive setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><i class="icon ion-navicon" ng-click="toggleSideMenu()"></i></td>
+                        <td class="cLoc">
+                            <select ng-model="city" ng-options="country.city group by country.country for country in countryList" ng-change="changeCity(city)">
+                            <option value="">Choose Location</option>
+                            </select>
+                        </td>
+                        <td width="35px"><i class="icon ion-funnel" ng-click="showFilter()"></i></td>
+                    </tr>
+                </table>
+            </div>
+            <!--<button class="button button-icon" ng-click="toggleSideMenu()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            <h1 class="title">Home1</h1>
+            <button class="button button-icon">
+                <i class="icon ion-star"></i>
+            </button>-->
+        </ion-header-bar>
+        <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
+        <!--<div class="pageNavHead">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="35px"><a href="#" menu-toggle="left"><img src="img/menu-icon.png"></a></td>
+                    <td class="cLoc"><select><option>Choose Location</option></select></td>
+                    <td width="35px"><a href="#"><img src="img/filterIcon.png"></a></td>
+                </tr>
+            </table>
+        </div><!--End of Header-->
+    </ion-nav-buttons>
+    <ion-content class="has-header" has-bouncing="false" >
+        <div class="mapCont">
+
+            <!--<div class="animate-show filterBar" ng-show="showFilterStatus" style="display: inline-block;" >
+
+                <ul class="hNav clearfix filterBar" detect-gestures gesture-type="swipe" on-swipe-left="swipeToLeft()" on-swipe-right="swipeToRight()">
+                    <li><img ng-src="{{leftImg}}" width="80" height="80" /> </li>
+                    <li><img ng-src="{{centerImg}}" width="80" height="80"/></li>
+                    <li><img ng-src="{{rightImg}}" width="80" height="80" /></li>
+                    <li><img ng-src="{{leftImg}}" width="80" height="80" /> </li>
+                    <li><img ng-src="{{centerImg}}" width="80" height="80"/></li>
+                    <li><img ng-src="{{rightImg}}" width="80" height="80" /></li>   `
+                </ul>
+
+            </div>-->
+            <ion-content direction="x" class="wide-as-needed animate-show"  ng-show="showFilterStatus" style="float:left;width:100%;"
+                         on-scroll="testSwipe()" scroll-event-interval="1000" has-bouncing="false"  delegate-handle="small" start-x="getXStart()"
+                    >
+                <ul class="hNav clearfix" style="width:1200px;"> <!--style="width:500px;"-->
+                    <!--<li ><a href="#">&nbsp;</a></li>
+                    <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>-->
+                    <li><img src="img/spacer.png" width="80" height="80" /></li>
+                    <li ng-repeat="filter in fTest">
+                        <img ng-src="{{filter.not_selected}}" width="80" height="80" ng-show="filSel != $index" ng-click="clickFilter($index)"/>
+                        <img ng-src="{{filter.selected}}" width="80" height="80" ng-show="filSel == $index" ng-click="showFilter()"/>
+                    </li>
+                    <li ><img src="img/spacer.png" width="80" height="80" /></li>
+                </ul>
+
+            </ion-content>
+            <!--<div class="fadeImg" style="float:right;"><img src="img/fadeImg.png" ng-show="showFilterStatus"></div>
+            <div class="sltBar" ng-show="showFilterStatus"  style="float:left;width: 100%;">
+                <a ng-click="showFilterDetail()" class="button button-small button-outline button-assertive">Advanced Filter</a>     <a ng-click="showFilter()" class="button button-small button-assertive">Close</a>
+            </div>-->
+
+            <div style="min-height: 250px;">
+                <div class="mapView setZindex" id="mapView" >
+
+                </div>
+            </div>
+
+            <ion-scroll direction="x" class="wide-as-needed" id="listScroll">
+                        <!--<div ng-repeat="challenge in challengeList" style="float:left;margin-right:10px;">
+                            <figure >
+                                <a href="#/app/details/{{$index}}/{{challenge.category_name}}"><img src="img/img1.jpg"></a>
+                                <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}">{{challenge.challenge_name}}</a></figcaption>
+                                <span class="flgSet"><a href="#/app/details/1/challenge"><img src="img/gb.png"></a></span>
+                            </figure>
+                        </div>-->
+                <ul class="restList clearfix" style="width:500px;">
+
+                    <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" class="verticalChallenge">
+
+                        <figure >
+                            <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
+                                <img src="img/img1.jpg" ng-if="challenge.pic_url == null" width="100" height="100">
+                                <img src="{{admin}}{{challenge.pic_url}}" ng-if="challenge.pic_url != null" width="100" height="100"></a>
+                            <figcaption><a href="#/app/details/{{$index}}/{{challenge.category_name}}" style="white-space: normal;text-overflow: ellipsis;">
+                                {{challenge.challenge_name | cut:true:40:'...'}}</a></figcaption>
+                            <span class="flgSet">
+                                <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
+                                <img src="img/gb.png" ng-if="challenge.category_name == 'challenge'">
+                                <img src="img/gn.png" ng-if="challenge.category_name == 'contest'">
+                                <img src="img/tag-festival-low.png" ng-if="challenge.category_name == 'festival'">
+                            </a>
+                            </span>
+                        </figure>
+                    </li>
+                </ul>
+            </ion-scroll>
+        </div>
+
+    </ion-content>
+    <!--<ion-footer-bar>
+        <div class="promoAds"><!--<img src="img/ads.jpg"></div>
+    </ion-footer-bar>-->
+</ion-view>

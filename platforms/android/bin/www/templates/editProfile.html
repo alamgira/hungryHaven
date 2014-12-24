@@ -1,0 +1,83 @@
+<div class="modal">
+    <!--<ion-header-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeLogin()">Close</button>
+        </div>
+        <h1 class="title">Login</h1>
+
+    </ion-header-bar>-->
+    <ion-content scroll="false">
+        <div class="bp-bg">
+            <div class="padding-top">&nbsp; <a class="backBtn left_margin_arrow" ng-click="closeLogin()"><img src="img/back-arrow.png"></a></div>
+            <form name="updated.registerForm" ng-submit="modalActions.updateUserAction()" novalidate ng-show="editSelected == 'profile'">
+            <ul class="pPic">
+
+                <li>
+                    <ul class="proImg clearfix">
+                        <li>
+                            <div class="proImgBlk">
+                                <img id="myImage" src="{{admin}}{{userData.pic_url}}" ng-if="userData.pic_url != null" class="rounded_img" width="110" height="110">
+                                <img id="myImage" src="img/edit-user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
+                                <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
+                            </div>
+                        </li>
+                        <li class="proTxtBlk">
+                            EDIT<br>
+                            YOUR <br>
+                            PROFILE
+                        </li>
+                    </ul>
+                </li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">Name:</td><td><input type="text" ng-model="updated.name" placeholder="{{userData.user_firstname}} {{userData.user_lastname}}" class="useFullWidth" ></td></tr></table>	</li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">Email:</td><td><input type="email" ng-model="updated.email_address" placeholder="{{userData.user_email}}" class="useFullWidth"></td></tr></table>	</li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">Username:</td><td><input type="text" ng-model="updated.username" placeholder="{{userData.username}}" class="useFullWidth"></td></tr></table>	</li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">City:</td><td>
+
+                    <select class="useFullWidth" ng-model="city" ng-options="country.city for country in countryList | unique:'city'" ng-change="modalActions.locationChange(city)">
+                        <option value="">City</option>
+                    </select>
+                </td>
+                </tr>
+                </table>
+                </li>
+                <li><table> <tr> <td valign="bottom" class="edit_txt">Birthdate:</td><td><div class="row">
+                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="updated.user_dob" >
+                    <span class="calImg"><img src="img/calenderImg.png"></span>
+                </div></td></tr></table>	</li>
+
+                <li><table> <tr> <td valign="bottom" class="edit_txt"></td><td><input type="submit" value="UPDATE PROFILE" class="redJumboBtn updateBtn useFullWidth"></td></tr></table>	</li>
+            </ul>
+                </form>
+
+
+            <form name="updated.registerForm" ng-submit="modalActions.updatePassword()" novalidate ng-show="editSelected == 'password'">
+                <ul class="pPic">
+
+                    <li>
+                        <ul class="proImg clearfix">
+                            <li>
+                                <div class="proImgBlk">
+                                    <img id="myImage" src="{{admin}}{{userData.pic_url}}" ng-if="userData.pic_url != null" class="rounded_img" width="110" height="110">
+                                    <img id="myImage" src="img/edit-user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
+                                    <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
+                                </div>
+                            </li>
+                            <li class="proTxtBlk">
+                                EDIT<br>
+                                YOUR <br>
+                                PASSWORD
+                            </li>
+                        </ul>
+                    </li>
+                    <li><table> <tr> <td valign="bottom" class="edit_txt">Password:</td><td><input type="password" ng-model="updated.password" class="useFullWidth" ></td></tr></table>	</li>
+                    <li><table> <tr> <td valign="bottom" class="edit_txt">Confirm Password:</td><td><input type="password" ng-model="updated.conf_pass" class="useFullWidth"></td></tr></table>	</li>
+
+                    <li><table> <tr> <td valign="bottom" class="edit_txt"></td><td><input type="submit" value="UPDATE PROFILE" class="redJumboBtn updateBtn useFullWidth"></td></tr></table>	</li>
+                </ul>
+            </form>
+        </div>
+
+
+    </ion-content>
+</div>
+

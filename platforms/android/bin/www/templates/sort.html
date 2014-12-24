@@ -1,0 +1,50 @@
+<div class="modal">
+
+    <ion-content  scroll="false">
+        <div class="containor grey_back">
+            <div style="width:100%;min-height: 20px;background-color: #da251e;"></div>
+            <div class="about_top sorting_top" style="height: 40px;">
+                <h3 style="margin-top: 4%;">Sort by:  </h3>
+
+                <div class="cancel_btn" style="margin-top: 1%;">
+
+                    <a ng-click="modalActions.closeModal()" class="button button-small button-assertive">Cancel</a>
+                </div>
+            </div>
+            <ion-scroll style="height:450px;width:100%;">
+            <div class="sorting_content">
+
+                <h2> Category</h2>
+                <ul>
+                    <li ng-repeat="cat in filterList"><a ng-class="{'button button-light':$index != showFilterSelected , 'button button-assertive':$index == showFilterSelected}" ng-click="changeFilter($index)">{{cat.filterType}}</a></li>
+
+                </ul>
+                <div class="clear"></div>
+                <h2> SUB CATEGORIES (Max 3)</h2>
+                <ul>
+
+                    <li ng-repeat="sub in subCatList"><a ng-class="modalActions.subCatSelectClass(sub)" ng-click="modalActions.filterSubCat(sub)">{{sub.sub_category_name}}</a></li>
+
+                </ul>
+                <div class="clear"></div>
+                    <h2> TAGS (Max 3)</h2>
+
+                    <ul>
+
+                        <li ng-repeat="tag in tagList"><a ng-class="modalActions.tagSelectClass(tag)" ng-click="modalActions.filterTags(tag)">{{tag.tag_name}}</a></li>
+
+                    </ul>
+
+
+
+
+
+            </div>
+            </ion-scroll>
+
+        </div>
+
+
+    </ion-content>
+</div>
+

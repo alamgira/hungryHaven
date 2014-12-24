@@ -264,6 +264,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/cordova_plugins.js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/css \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img.zip \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/index.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/js \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/lib \
@@ -276,6 +277,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/add-icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/add-to-calendar-icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/ads.jpg \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/all-active@3x.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/all-inactive@3x.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/appPhoneIcon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/arrow-down-black.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/arrow-down-full.gif \
@@ -318,6 +321,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/chall_icon.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/challenge-details-hero.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/challenge-icon-grey.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/challenges-active@3x.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/challenges-inactive@3x.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/chloc_bottom.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/chloc_img1.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/chloc_img2.jpg \
@@ -332,6 +337,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/contest-icon-grey.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/contest_bann.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/contest_icon.jpg \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/contests-active@3x.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/contests-inactive@3x.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/cover.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/curr_loc.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/danforth_blog.jpg \
@@ -351,6 +358,8 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/fb_log_icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/festical-icon-grey.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/festival-calendar.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/festivals-active@3x.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/festivals-inactive@3x.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/ffDetailsHero.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/filterIcon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/food_icon.jpg \
@@ -402,10 +411,13 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/map-image.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/map.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/map.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/menu-bg-revised.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/menu-bg.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/menu-icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/menu-pic.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/menu-redicon.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/more-active@3x.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/more-inactive@3x.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/moreArrow.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/moreArrowB.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/nextArrow.png \
@@ -449,6 +461,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/sltArrow.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/small-logo.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/smallPin.jpg \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/spacer.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/srhField.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/srhFieldRed.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tag-challenges.png \

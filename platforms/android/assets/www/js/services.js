@@ -236,7 +236,7 @@ myApp.factory('addMarker', function() {
                 var festival_icon = "www/img/pin-festivals.png";
 
                 angular.forEach(list,function(value,key){
-                    console.log("INSIDE FOR EACH : "+JSON.stringify(value));
+
                     if (value.challenge_name != null){
                         title = value.challenge_name;
                     }
@@ -275,8 +275,8 @@ myApp.factory('addMarker', function() {
                 if (latlng != null){
                     map.animateCamera({
                         'target': latlng,
-                        'zoom': 15,
-                        'duration': 5000 // = 5 sec.
+                        'zoom': 12,
+                        'duration': 1000 // = 5 sec.
                     }, function() {
                         console.log("The animation is done");
                     });
@@ -311,7 +311,7 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
             return promise;
         },
         get_challenge_list_by_location:function(inputs){
-            console.log("INPUT : "+JSON.stringify(inputs));
+
             var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
                 console.log("Function Called to get challenges");
                 console.log("STATUS RESPONSE: "+JSON.stringify(response));
@@ -324,12 +324,11 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
         },
         getChallengeList:function(inputs){
 
-            console.log("data service: "+JSON.stringify(inputs));
+
 
             if (ChallengeList.getList() == null){
                 var promise = $http.post(adminRoot + 'api/getChallenges', inputs).then(function (response) {
-                    console.log("Function Called to get challenges");
-                    console.log("STATUS RESPONSE: "+JSON.stringify(response));
+
 
                         ChallengeList.setList(response.data.response);
 
@@ -338,14 +337,13 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
                 });
                 return promise;
             }else{
-                console.log("Challenge List already contains info: "+ChallengeList.getList());
                 return ChallengeList.getList();
             }
         },
        getTags:function(){
             if (ChallengeList.getTagList() == null){
                 var promise = $http.post(adminRoot+'api/getTags').then(function(response){
-                    console.log("TAG LIST : "+JSON.stringify(response));
+
                     ChallengeList.setTagList(response.data.response);
                     return ChallengeList.getTagList();
                 });
@@ -367,7 +365,7 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
        getCategories:function(){
            if (ChallengeList.getCategoryList() == null){
                var promise = $http.post(adminRoot+'api/getCategories').then(function(response){
-                   console.log("Category LIST : "+JSON.stringify(response));
+
                    ChallengeList.setCategoryList(response.data.response);
                });
                return promise;
@@ -378,7 +376,7 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
        getSubCat:function(){
            if (ChallengeList.getSubCatList() == null){
                var promise = $http.post(adminRoot+'api/get_sub_category').then(function(response){
-                   console.log("Sub CatLIST : "+JSON.stringify(response));
+
                    ChallengeList.setSubCatList(response.data.response);
                    return ChallengeList.getSubCatList();
                });
@@ -409,7 +407,7 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
        },
        getInfluencersVideoById:function(id){
            var promise = $http.post(adminRoot + 'api/get_influencer_video',{id:id}).then(function(response){
-               console.log("DATA SERVICE VIDEO RESPONSE "+JSON.stringify(response));
+
                 return response.data.response;
            });
            return promise;
@@ -426,7 +424,7 @@ myApp.factory('dataService',function($http,definedVariable,ChallengeList,influen
        },
        getUserInfo:function(inputs){
            var promise = $http.post(adminRoot + 'api/get_user_info',inputs).then(function(response){
-               console.log("CALLED RESPONSE "+JSON.stringify(response));
+
                return response.data.response;
            });
            return promise;
@@ -501,7 +499,6 @@ myApp.factory('User',function($rootScope,Auth,dataService){
         refreshUserInfo:function(){
             var loggedIn = Auth.isLoggedIn();
             var inputs = {auth_token:loggedIn.auth_token};
-            console.log("Input User "+JSON.stringify(inputs));
             var promise = dataService.getUserInfo(inputs).then(function(response){
                 userInfo = response;
                 console.log("REFRESHING "+JSON.stringify(response));

@@ -1,0 +1,80 @@
+<ion-view title="Festival List">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar-header bar-assertive setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td class="festivalHeaderText"><h3>Food festivals</h3></td>
+                        <td width="35px"><a><img src="img/festival-calendar.png"></a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--<div class="pageNavHead about_top  srch_top food_top useFullWidth">
+                 <a ng-click="toggleSideMenu()"><img src="img/menu-icon.png" width="32" alt="top" /></a>
+
+                 <h3>Food festivals</h3>
+
+                 <a><img src="img/festival-calendar.png" height="34" alt="top" /></a>
+             </div>-->
+        </ion-header-bar>
+
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-scroll>
+        <div class="containor white_back">
+
+            <div class="clear"></div>
+            <div ng-repeat="festival in festivalList | groupTime:'timestamp' ">
+                <div class="clear" ng-if="$index != 0"></div>
+                <h2 id="food_title">{{festival.currKey}}</h2>
+                <a href="#/app/details/{{fest.currentKey}}/{{fest.category_name}}" ng-repeat="fest in festival.listing">
+                <div class="each_srch each_food" >
+
+                        <div class="blog_left food_date">
+                            <short-date timeset="fest.timestamp"></short-date>
+
+                        </div>
+                        <div class="blog_middle srch_text">
+                            <h1>{{fest.challenge_name}}</h1>
+                            <p ng-bind-html="fest.short_detail"></p>
+
+                        </div>
+                        <div class="blog_right">
+                            <img src="img/red_arrow.jpg"   height="18" />
+                        </div>
+
+                </div><!--blog_cont-->
+                </a>
+            </div>
+            <!--<h2 id="food_title">AUGUST 2014</h2>
+            <div class="each_srch each_food">
+                <div class="blog_left food_date">
+                    <h2 >AUG</h2>
+                    <h4>6</h4>
+                </div>
+                <div class="blog_middle srch_text">
+                    <h1>Toronto Food Festival</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+                </div>
+                <div class="blog_right">
+                    <img src="img/red_arrow.jpg"   height="18" />
+                </div>
+            </div><!--blog_cont-->
+
+
+
+        </div>
+
+
+
+        </ion-scroll>
+
+
+    </ion-content>
+    <ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>
+</ion-view>

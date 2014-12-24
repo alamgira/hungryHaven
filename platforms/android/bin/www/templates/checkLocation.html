@@ -1,0 +1,22 @@
+<ion-view title="Playlists" hide-nav-bar="true">
+    <!--<ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>-->
+    <ion-content class="" scroll="false">
+        <div class="containor">
+            <div class="hero-txt">
+                Where should we look<br>for your challenges?
+            </div>
+            <div class="select-box">
+
+                <form name="checkLocationForm" ng-submit="submit()" ng-click="test()">
+                   <select ng-model="countrySelected" ng-options="country.country for country in countryList | unique:'country'" ng-change="locationChanged(countrySelected)">
+                        <option value="">Choose a location</option>
+
+                    </select>
+                </form>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

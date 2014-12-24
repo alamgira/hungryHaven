@@ -1,0 +1,44 @@
+<ion-view title="Feedback">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar-header bar-assertive setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="goBack()"><img src="img/leftWhiteArrow.png" class="bic"></a></td>
+                        <td class="festivalHeaderText"><h3>Feedback</h3></td>
+                        <td width="35px"><!--<a><img src="img/search-icon-white.png"></a>--></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--<div class="pageNavHead about_top  srch_top food_top useFullWidth">
+                 <a ng-click="toggleSideMenu()"><img src="img/menu-icon.png" width="32" alt="top" /></a>
+
+                 <h3>Food festivals</h3>
+
+                 <a><img src="img/festival-calendar.png" height="34" alt="top" /></a>
+             </div>-->
+        </ion-header-bar>
+
+    </ion-nav-buttons>
+    <ion-content class="has-header about_bg" >
+        <div class="about_containor">
+            <div class="card">
+                <label class="item item-input">
+                    <textarea placeholder="Feedback" style="height:250px;" ng-model="form_input.feedback"></textarea>
+                </label>
+
+            </div>
+            <div class="list">
+                <button class="button button-block button-assertive" ng-click="submit_feedback()">
+                    Send Feedback
+                </button>
+            </div>
+
+        </div>
+
+    </ion-content>
+    <!--<ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>-->
+</ion-view>

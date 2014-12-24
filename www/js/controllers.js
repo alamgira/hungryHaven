@@ -62,9 +62,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             {sideMenuName:"Home",url:"#/app/home"},
             {sideMenuName:"Challenges & Contests",url:"#/app/challengelist"},
             //{sideMenuName:"Food Festivals",url:"#/app/festivalList"},
-            {sideMenuName:"Influencers",url:"#/app/influencersList"},
+            //{sideMenuName:"Influencers",url:"#/app/influencersList"},
             //{sideMenuName:"Shop",url:""},
-            {sideMenuName:"Blog",url:"#/app/blog"},
+            //{sideMenuName:"Blog",url:"#/app/blog"},
             {sideMenuName:"About",url:"#/app/about"},
             {sideMenuName:"Settings",url:"#/app/settings"}
         ];
@@ -93,10 +93,16 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var locations = [currentList];
             var latitude = currentList.latitude;
             var longitude = currentList.longitude;
+            $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
             $scope.openWebView = function(target){
                 console.log("ADDR : "+JSON.stringify(currentList));
                 var address = currentList.street +"," +currentList.city + ","+currentList.state + ","+currentList.country;
-                var link = "http://maps.apple.com/?daddr="+address;
+                if ($scope.isAndroid){
+                    var link = "geo:"+latitude+","+longitude+"?q="+address;
+                }else{
+                    var link = "http://maps.apple.com/?daddr="+address;
+                }
+
 
                 var ref = window.open(link, '_system', 'location=no');
             };
@@ -120,6 +126,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  });*/
                 var test =  addMarker.addMarkerList(map,locations);
             }, 1000);
+
 
 
         });
@@ -636,6 +643,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.signInUser = utils.signIn;
                 $scope.fbSignIn = utils.fbSignIn;
                 $scope.forgot_password = utils.forget_password;
+                $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
                 /*$scope.loginUser = function() {
 
                  angular.element('#error-message').hide();
@@ -679,12 +687,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
     }])
 
-    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','Auth' ,'definedVariable','ChallengeList','countryList','addMarker','$ionicModal','User','adMobHelper',
-        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,Auth,definedVariable,ChallengeList,countryList,addMarker,$ionicModal,User,adMobHelper) {
+    .controller('homeCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','Auth' ,'definedVariable','ChallengeList','countryList','addMarker',
+        '$ionicModal','User','adMobHelper','$ionicScrollDelegate',
+        function($scope, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,dataService,Auth,definedVariable,ChallengeList,countryList,addMarker,$ionicModal,User,adMobHelper,$ionicScrollDelegate) {
         $ionicPlatform.ready(function() {
             /*
                 Admob setup goes here
              */
+            if (/(android)/i.test(navigator.userAgent) ){
+                console.log("I AM ANDROID");
+            }else{
+                console.log("I AM IOS");
+            }
             var AdMob;
             var createBanner = function(){
                 if (window.AdMob ){
@@ -696,6 +710,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                             adId: admobid.banner,
                             adSize:AdMob.SMART_BANNER,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            overlap: true,
                             autoShow:true
                         },
                         function(){console.log("Success Ad");},
@@ -745,7 +760,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             /*THIS IS THE BASIC CATEGORY LIST*/
             $scope.filterList = definedVariable.getFilterList();
             $scope.showFilterSelected = 0;
-            $scope.changeFilter = function(index){
+            var changeFilter = function(index){
                 $scope.showFilterSelected = index;
                 if (index == 0){
                     $scope.challengeList = ChallengeList.getList();
@@ -758,6 +773,97 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
             };
             /*Basic Category Ends*/
+            /**
+             * This is where custom filter begins
+             * @type {Array}
+             */
+            var filterIconList = [
+                {not_selected:"img/all-inactive@3x.png" , selected:"img/all-active@3x.png"},
+                {not_selected:"img/challenges-inactive@3x.png" , selected:"img/challenges-active@3x.png"},
+                {not_selected:"img/contests-inactive@3x.png" , selected:"img/contests-active@3x.png"},
+                {not_selected:"img/festivals-inactive@3x.png", selected:"img/festivals-active@3x.png"},
+                {not_selected:"img/more-inactive@3x.png", selected:"img/more-active@3x.png"}
+            ];
+            $scope.fTest = filterIconList;
+            var delegate = $ionicScrollDelegate.$getByHandle('small');
+            var scroll_position = 0;
+            $scope.filSel = 0;
+
+            var startAtX = 0;
+            $scope.getXStart = function(){
+                return startAtX;
+            }
+            $scope.clickFilter = function($index){
+                if ($index == 4){
+                    $scope.showFilterDetail();
+                }else{
+                    $scope.filSel = $index;
+                    startAtX = (100*$index);
+                    delegate.scrollTo(100*$scope.filSel,0,true);
+                    var time = $timeout(function() {
+                        $scope.showFilterStatus = false;
+                        return true;
+                    }, 1000);
+                }
+
+
+            };
+
+            $scope.showFilterStatus = false;
+            $scope.showFilter = function(){
+
+                delegate.scrollTo(100*$scope.filSel, 0 , false);
+                if ($scope.showFilterStatus == false){
+
+                    $scope.showFilterStatus = true;
+
+                    if (map != null){
+                        map.setClickable(false);
+                    }
+                }
+                else{
+                    $scope.showFilterStatus = false;
+
+                    if (map != null){
+                        map.setClickable(true);
+                    }
+                }
+            };
+            $scope.testSwipe = function(){
+
+                scroll_position = delegate.getScrollPosition().left;
+                if (scroll_position < 60 ){
+                    $scope.filSel = 0;
+                }else if (scroll_position >60 && scroll_position<140){
+                    $scope.filSel = 1;
+                }else if (scroll_position > 140 && scroll_position < 240){
+                    $scope.filSel = 2;
+                }else{
+                    $scope.filSel = 3;
+                }
+
+                /*else if (scroll_position > 240 && scroll_position < 340){
+                    $scope.filSel = 3;
+                }else{
+                    $scope.filSel = 4;
+                }*/
+                if ($scope.filSel < 4 && $scope.showFilterStatus == true){
+                    startAtX = (100*$scope.filSel);
+                    delegate.scrollTo(100*$scope.filSel, 0 , true);
+                    changeFilter($scope.filSel);
+
+                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true){
+                    delegate.scrollTo(100*$scope.filSel, 0 , true);
+                    var time = $timeout(function() {
+                        $scope.showFilterDetail();
+                        return true;
+                    }, 1000);
+                    //
+                }
+              // alert("INSIDE TEST SWIPE " + JSON.stringify(delegate.getScrollPosition()));
+
+            };
+
 
 
             /*this section is for tag filter*/
@@ -877,6 +983,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.toggleSideMenu = function(){
                 if ($ionicSideMenuDelegate.isOpenLeft())
                 {
+                    $scope.showFilterStatus = false;
                     //AdMob.showBanner();
                     createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
@@ -884,6 +991,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
+                    $scope.showFilterStatus = false;
                     //AdMob.hideBanner();
                     AdMob.removeBanner();
 
@@ -899,23 +1007,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.showFilterStatus = false;
                 $scope.modal.show();
             };
-            $scope.showFilterStatus = false;
-            $scope.showFilter = function(){
-                if ($scope.showFilterStatus == false){
-                    $scope.showFilterStatus = true;
 
-                    if (map != null){
-                        map.setClickable(false);
-                    }
-                }
-                else{
-                    $scope.showFilterStatus = false;
-
-                    if (map != null){
-                        map.setClickable(true);
-                    }
-                }
-            };
             var utils = {
                 //All List
                 insertMarker:function(){
@@ -974,7 +1066,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.filterList = definedVariable.getFilterList();
                 utils.getChallengeList(inputs);
-               // initAd();
+                $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
+                // initAd();
                // createBanner();
                // console.log(utils.getChallengeList(''));
             }
@@ -994,6 +1087,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     $scope.challengeList = response;
                 });
             };
+
+
             //$scope.filterFunction = utils.filterTagFunction;
             $ionicModal.fromTemplateUrl('templates/sort.html', {
                 scope: $scope,
@@ -1016,8 +1111,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             //$scope.challengeList = utils.getChallengeList(inputs);
         });
     }])
-    .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService','$ionicModal','User','adMobHelper','ChallengeList',
-        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User,adMobHelper,ChallengeList) {
+    .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService',
+        '$ionicModal','User','adMobHelper','ChallengeList','$ionicScrollDelegate',
+        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User,adMobHelper,ChallengeList,$ionicScrollDelegate) {
         $ionicPlatform.ready(function() {
 
             window.scope = $scope;
@@ -1032,6 +1128,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     AdMob.createBanner({
                             adId: admobid.banner,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            overlap: true,
                             autoShow:true
                         },
                         function(){console.log("Success Ad");},
@@ -1167,10 +1264,12 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             }
 
             var loggedIn = Auth.isLoggedIn();
+            $scope.defaultMessage ="";
             var utils = {
                 //All List
 
                 getChallengeList: function(inputs){
+                    $scope.defaultMessage = "Sorry, Hungry Haven is currently not available in this city. Let us know  if you’d like to see challenges and contests here!";
                     var challList = dataService.getChallengeList(inputs);
 
 
@@ -1191,12 +1290,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     //return JSON.stringify(dataService.getChallengeList(inputs));
                 },
                 getChallengeOnly:function(){
+                    $scope.defaultMessage = "No food challenges available at this time.";
                     $scope.challengeList = ChallengeList.getChallengeList();
                 },
                 getContestOnly:function(){
+                    $scope.defaultMessage = "No food contests available at this time.";
                     $scope.challengeList = ChallengeList.getContestList();
                 },
                 getFestivalOnly:function(){
+                    $scope.defaultMessage = "No food festivals available at this time.";
                     $scope.challengeList = ChallengeList.getFestivalList();
                 }
             };
@@ -1209,7 +1311,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.filterList = definedVariable.getFilterList();
                 utils.getChallengeList(inputs);
-
+                $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
 
 
                 // console.log(utils.getChallengeList(''));
@@ -1232,8 +1334,24 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
             };
 
-            $scope.showFilterSelected = 0;
-            $scope.changeFilter = function(index){
+
+            $scope.showFilterDetail = function(){
+                $scope.modal.show();
+            };
+
+            /*Basic Category Ends*/
+            /**
+             * This is where custom filter begins
+             * @type {Array}
+             */
+            var filterIconList = [
+                {not_selected:"img/all-inactive@3x.png" , selected:"img/all-active@3x.png"},
+                {not_selected:"img/challenges-inactive@3x.png" , selected:"img/challenges-active@3x.png"},
+                {not_selected:"img/contests-inactive@3x.png" , selected:"img/contests-active@3x.png"},
+                {not_selected:"img/festivals-inactive@3x.png", selected:"img/festivals-active@3x.png"},
+                {not_selected:"img/more-inactive@3x.png", selected:"img/more-active@3x.png"}
+            ];
+            var changeFilter = function(index){
                 $scope.showFilterSelected = index;
                 if (index == 0){
                     $scope.challengeList = ChallengeList.getList();
@@ -1244,39 +1362,104 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }else if (index == 3){
                     utils.getFestivalOnly();
                 }
+            };
+            $scope.fTest = filterIconList;
+            var delegate = $ionicScrollDelegate.$getByHandle('small');
+            var scroll_position = 0;
+            $scope.filSel = 0;
+
+            var startAtX = 0;
+            $scope.getXStart = function(){
+                return startAtX;
+            }
+            $scope.clickFilter = function($index){
+                if ($index == 4){
+                    $scope.showFilterDetail();
+                }else{
+                    $scope.filSel = $index;
+                    startAtX = (100*$index);
+                    delegate.scrollTo(100*$scope.filSel,0,true);
+                    var time = $timeout(function() {
+                        $scope.showFilterStatus = false;
+                        return true;
+                    }, 1000);
+                }
+
 
             };
-            $scope.showFilterDetail = function(){
-                $scope.modal.show();
-            };
+
             $scope.showFilterStatus = false;
             $scope.showFilter = function(){
+
+                delegate.scrollTo(100*$scope.filSel, 0 , false);
                 if ($scope.showFilterStatus == false){
+
                     $scope.showFilterStatus = true;
+
                 }
                 else{
                     $scope.showFilterStatus = false;
+
                 }
             };
+            $scope.testSwipe = function(){
+
+                scroll_position = delegate.getScrollPosition().left;
+                if (scroll_position < 60 ){
+                    $scope.filSel = 0;
+                }else if (scroll_position >60 && scroll_position<140){
+                    $scope.filSel = 1;
+                }else if (scroll_position > 140 && scroll_position < 240){
+                    $scope.filSel = 2;
+                }else{
+                    $scope.filSel = 3;
+                }
+
+                /*else if (scroll_position > 240 && scroll_position < 340){
+                 $scope.filSel = 3;
+                 }else{
+                 $scope.filSel = 4;
+                 }*/
+                if ($scope.filSel < 4 && $scope.showFilterStatus == true){
+                    startAtX = (100*$scope.filSel);
+                    delegate.scrollTo(100*$scope.filSel, 0 , true);
+                    changeFilter($scope.filSel);
+
+                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true){
+                    delegate.scrollTo(100*$scope.filSel, 0 , true);
+                    var time = $timeout(function() {
+                        $scope.showFilterDetail();
+                        return true;
+                    }, 1000);
+                    //
+                }
+                // alert("INSIDE TEST SWIPE " + JSON.stringify(delegate.getScrollPosition()));
+
+            };
+
+
             $ionicModal.fromTemplateUrl('templates/sort.html', {
                 scope: $scope
             }).then(function(modal) {
                     $scope.modal = modal;
                 });
-
+            $scope.challengeAvailable = true;
             $scope.$watch('challengeList',function(newValue,oldValue){
-
+                   if (newValue.length == 0)
+                        $scope.challengeAvailable = false;
             });
 
             $scope.toggleSideMenu = function(){
 
                 if ($ionicSideMenuDelegate.isOpenLeft()){
+                    $scope.showFilterStatus = false;
                     createBanner();
                     document.getElementById('leftSideMenu').style.visibility = "hidden";
                     //map.setClickable(true);
                     $ionicSideMenuDelegate.toggleRight();
                 }
                 else{
+                    $scope.showFilterStatus = false;
                     AdMob.removeBanner();
                     document.getElementById('leftSideMenu').style.visibility = "visible";
                     // map.setClickable(false);
@@ -1335,6 +1518,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     AdMob.createBanner({
                             adId: admobid.banner,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            overlap: true,
                             autoShow:true
                         },
                         function(){console.log("Success Ad");},
@@ -1487,6 +1671,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     AdMob.createBanner({
                             adId: admobid.banner,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            overlap: true,
                             autoShow:true
                         },
                         function(){console.log("Success Ad");},
@@ -1713,6 +1898,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }
 
             };
+            $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
         });
     }])
     .controller('blogListCtrl',['$scope','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','dataService','definedVariable','adMobHelper',
@@ -1729,6 +1915,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     AdMob.createBanner({
                             adId: admobid.banner,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
+                            overlap: true,
                             autoShow:true
                         },
                         function(){console.log("Success Ad");},
@@ -1795,10 +1982,10 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.goBack = function(){
                 $ionicNavBarDelegate.back();
             };
-
+            $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
             var type = $stateParams.type;
-            var privacy = {title:"Privacy Policy",sub_title:"Privacy Hungry Haven", content:"PRIVACY CONTENT"};
-            var terms = {title:"Terms and conditions",sub_title:"Terms Hungry Haven", content:"Terms CONTENT"};
+            var privacy = {title:"Privacy Policy",sub_title:"PRIVACY STATEMENT", type:"privacy"};
+            var terms = {title:"Terms and conditions",sub_title:"Terms Hungry Haven", type:"terms"};
             if (type == "privacy"){
                 $scope.details = privacy;
             }else if (type == "terms"){
@@ -1817,8 +2004,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var menuC = [
                 {menuName:"DETAILS"},
                 {menuName:"PRIZE"},
-                {menuName:"STATS"},
-                {menuName:"MORE INFO"}
+                {menuName:"STATS"}
+                //{menuName:"MORE INFO"}
             ];
             var menuFest = [
                 {menuName:"DETAILS"},
@@ -1835,7 +2022,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 eventInfoIcon: "evtInfo5",
                 eventInfoDistance: "evtInfo6",
                 timeEnabled: "false",
-                priceEnabled: "true"
+                priceEnabled: "true",
+                dateEnabled:    false
             };
             var challenge={
                 titleClass : "hcongreen",
@@ -1848,7 +2036,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 eventInfoIcon: "evtInfo3",
                 eventInfoDistance: "evtInfo4",
                 timeEnabled: "true",
-                priceEnabled: "true"
+                priceEnabled: "true",
+                dateEnabled:    false
             };
             var festival={
                 titleClass : "hcon",
@@ -1861,7 +2050,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 eventInfoIcon: "evtInfo1",
                 eventInfoDistance: "evtInfo2",
                 timeEnabled: "false",
-                priceEnabled: "false"
+                priceEnabled: "false",
+                dateEnabled:    true
             };
 
             if ($stateParams.type == "contest"){
@@ -1919,7 +2109,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 $scope.admin = definedVariable.getAdminRootClean();
                 $scope.currentChallengeIndex = $stateParams.id;
                 $scope.challenges = list;
-
+                $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
                 // console.log(utils.getChallengeList(''));
             };
             init();
@@ -1960,7 +2150,11 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                     $scope.selectedDetails = list[$stateParams.id].prize_details;
                 }else if (menuC[index].menuName == "STATS"){
-                    $scope.selectedDetails = list[$stateParams.id].success_text;
+                    if (list[$stateParams.id].success_text != "")
+                        $scope.selectedDetails = list[$stateParams.id].success_text;
+                    else{
+                        $scope.selectedDetails = "No stats available. Yet.";
+                    }
                 }else if (menuC[index].menuName == "MORE INFO"){
                     $scope.selectedDetails = list[$stateParams.id].detail;
 
@@ -2083,6 +2277,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 });
 
             };
+            $scope.isAndroid = /(android)/i.test(navigator.userAgent) ? true : false;
 
 
         });

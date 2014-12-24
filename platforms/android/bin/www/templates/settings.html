@@ -1,0 +1,94 @@
+<ion-view title="List">
+    <ion-nav-buttons side="left">
+        <ion-header-bar class="bar-header bar-assertive setZeroPadding">
+            <div class="pageNavHead useFullWidth">
+                <table border="0" cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td width="35px"><a ng-click="toggleSideMenu()"><img src="img/menu-icon.png"></a></td>
+                        <td class="festivalHeaderText"><h3>Settings</h3></td>
+                        <td width="35px"><!--<a><img src="img/search-icon-white.png"></a>--></td>
+                    </tr>
+                </table>
+            </div>
+
+        </ion-header-bar>
+
+
+
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="settings_containor">
+
+
+                <ul class="list">
+
+                    <li class="item item-toggle">
+                        Notifications
+                        <label class="toggle toggle-assertive">
+                            <input type="checkbox" checked="true">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </li>
+                    <a href="#/app/settings/detail/privacy">
+                    <li class="item item-icon-right" >
+
+                        Privacy Policy
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                    <a href="#/app/settings/detail/terms">
+                    <li class="item item-icon-right" >
+
+                        Terms and conditions
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                    <a ng-click="editProfile()">
+                    <li class="item item-icon-right">
+
+                        Edit your profile
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                    <a ng-click="editPassword()">
+                    <li class="item item-icon-right" href="#">
+
+                            Change password
+                            <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                    <a ng-click="signout()">
+                    <li class="item item-icon-right" href="#">
+
+                        Log out
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                    <a href="#/app/settings/feedback">
+                    <li class="item item-icon-right" href="#">
+
+                        Leave feedback
+                        <i class="icon"><img src="img/red_arrow.jpg"/></i>
+
+                    </li>
+                    </a>
+                </ul>
+
+           <!-- </div> -->
+        </div>
+
+
+
+
+    </ion-content>
+    <!--<ion-footer-bar>
+        <div class="promoAds"><img src="img/ads.jpg"></div>
+    </ion-footer-bar>-->
+</ion-view>
