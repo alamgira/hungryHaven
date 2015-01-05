@@ -8,7 +8,7 @@
     </ion-header-bar>-->
     <ion-content scroll="false">
         <div class="bp-bg">
-            <div class="padding-top">&nbsp; <a class="backBtn" ng-click="closeLogin()"><img src="img/back-arrow.png"></a></div>
+            <div class="padding-top">&nbsp; <i class="icon  ion-android-arrow-back" ng-click="closeLogin()" ng-show="isAndroid"></i><i class="icon ion-ios-arrow-back" ng-click="closeLogin()" ng-hide="isAndroid"></i></div>
             <form name="userData.registerForm" ng-submit="modalActions.submit()" novalidate>
             <ul class="pPic">
                 <li>
@@ -34,7 +34,7 @@
                         <option value="">Choose a location</option>
 
                     </select>-->
-                    <select class="useFullWidth" ng-model="city" ng-options="country.city for country in countryList | unique:'city'" required="required" ng-change="locationChange(city)">
+                    <select class="useFullWidth" ng-model="city" ng-options="country.city+', '+country.state for country in countryList | unique:'city'" required="required" ng-change="locationChange(city)">
                         <option value="">City</option>
                     </select>
                 </li>

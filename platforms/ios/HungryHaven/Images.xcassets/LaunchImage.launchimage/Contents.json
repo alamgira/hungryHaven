@@ -44,7 +44,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "Default-Landscape@2x~ipad.png",
+      "filename" : "Default-568h@2x~iphone-6.png",
       "scale" : "2x"
     },
     {
@@ -65,7 +65,7 @@
       "orientation" : "portrait",
       "idiom" : "iphone",
       "extent" : "full-screen",
-      "filename" : "Default-568h@2x~iphone.png",
+      "filename" : "Default-568h@2x~iphone-5.png",
       "subtype" : "retina4",
       "scale" : "2x"
     },

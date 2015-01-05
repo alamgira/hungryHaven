@@ -134,7 +134,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
    /* .controller('PlaylistCtrl', function($scope, $stateParams) {
     })
 */
-    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth) {
+    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth,StorageService) {
         function checkConnection() {
             var networkState = navigator.connection.type;
 
@@ -168,7 +168,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 template: '<i class=""></i>Loading...'
             });
 
-            if (loggedIn != null && loggedIn.auth_token !== 'undefined'){
+            //StorageService.unset('didTutorial');
+            if (loggedIn != null && loggedIn.auth_token !== 'undefined' && StorageService.get('didTutorial') === "true"){
 
                  Auth.checkLogin({authToken:String(loggedIn.auth_token)}).then(function(data){
 
@@ -191,7 +192,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  }*/
 
             }else{
-
+                Auth.logout();
             }
             //console.log("IN CONTROLLER: "+JSON.stringify(list));
             $scope.countryList = [
@@ -327,8 +328,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
 
     })
-    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','StorageService','$ionicModal','$ionicPopup','$ionicActionSheet','SessionService','countryList','$ionicLoading','$ionicPopup',
-        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList,$ionicLoading,$ionicPopup) {
+    .controller('LoginCtrl', ['$scope', 'Auth', '$location', '$ionicPlatform','StorageService','$ionicModal','$ionicPopup','$ionicActionSheet','SessionService','countryList',
+        '$ionicLoading','$ionicPopup','$ionicSlideBoxDelegate',
+        function($scope, Auth, $location, $ionicPlatform, StorageService,$ionicModal,$ionicPopup,$ionicActionSheet,SessionService,countryList,$ionicLoading,$ionicPopup,$ionicSlideBoxDelegate) {
             $ionicPlatform.ready(function() {
 
                 window.scope = $scope;
@@ -362,18 +364,24 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }).then(function(modal) {
                         $scope.resetModal = modal;
                     });
+                $scope.closeForgot = function(){
+                    $scope.resetModal.hide();
+                };
                 var takePicture = function(){
                     navigator.camera.getPicture(onSuccess, onFail, {
                         quality: 50,
-                        destinationType: Camera.DestinationType.FILE_URI
+                        destinationType: Camera.DestinationType.FILE_URI,
+                        targetWidth: 200,
+                        targetHeight: 200
                     });
                 };
                 var chooseFromGallery = function(){
                     navigator.camera.getPicture(onSuccess, onFail, {
                         quality: 50,
                         destinationType: Camera.DestinationType.FILE_URI,
-                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-
+                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,     // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+                        targetWidth:200,
+                        targetHeight:200
                     });
                 };
                 function onSuccess(FILE_URI) {
@@ -388,6 +396,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 function onFail(message) {
                     alert('Failed because: ' + message);
                 }
+                $scope.leftButtonText = "Skip";
+                $scope.rightButtonText = "Next";
                 var modalOptions = {
                     showActions:function(){
                         $ionicActionSheet.show({
@@ -414,6 +424,24 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                             }
                         });
 
+                    },
+                    leftButton:function(){
+                        if ($scope.slideIndex == 0){
+
+                            $scope.introModal.hide();
+                        }else{
+
+                            $ionicSlideBoxDelegate.previous();
+                        }
+                    },
+                    rightButton:function(){
+                        if ($scope.slideIndex == 2){
+
+                            $scope.introModal.hide();
+                        }else{
+
+                            $ionicSlideBoxDelegate.next();
+                        }
                     },
                     reset:function(){
                         if ($scope.reset.registerForm.$valid){
@@ -667,7 +695,50 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  }
                  });
                  };*/
+                if (StorageService.get("didTutorial") === null){
+                    StorageService.set("didTutorial","true");
 
+                    var init = function(){
+                        $ionicModal.fromTemplateUrl('templates/intro.html', {
+                         scope: $scope
+                         }).then(function(modal) {
+                         $scope.introModal = modal;
+                                $scope.introModal.show();
+                               // $ionicSlideBoxDelegate.update();
+                         });
+
+                    };
+                    init();
+                    $scope.next = function() {
+                        $ionicSlideBoxDelegate.next();
+                    };
+                    $scope.closeIntro = function(){
+                        $scope.introModal.hide();
+                    }
+                    $scope.previous = function(){
+                        $ionicSlideBoxDelegate.previous();
+                    }
+
+                    $scope.slideIndex = 0;
+                    // Called each time the slide changes
+                    $scope.slideChanged = function(index) {
+                       $scope.slideIndex = index;
+                        if (index == 0){
+                            $scope.leftButtonText = "Skip";
+
+                        }else{
+                            $scope.leftButtonText = "Previous";
+
+                        }
+                        if (index == 2){
+                            $scope.rightButtonText = "Start";
+
+                        }else{
+                            $scope.rightButtonText = "Next";
+
+                        }
+                    };
+                }
             });
 
         }])
@@ -694,11 +765,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             /*
                 Admob setup goes here
              */
-            if (/(android)/i.test(navigator.userAgent) ){
-                console.log("I AM ANDROID");
-            }else{
-                console.log("I AM IOS");
-            }
+
             var AdMob;
             var createBanner = function(){
                 if (window.AdMob ){
@@ -755,13 +822,17 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $ionicSideMenuDelegate.canDragContent(false);
             var map = null;
 
-
+            var preSetFilterView = false;
             window.scope = $scope;
             /*THIS IS THE BASIC CATEGORY LIST*/
             $scope.filterList = definedVariable.getFilterList();
             $scope.showFilterSelected = 0;
-            var changeFilter = function(index){
+            $scope.filSel = 0;
+            $scope.changeFilter = function(index){
                 $scope.showFilterSelected = index;
+                $scope.filSel = index;
+                lastSelection = index;
+                $scope.filSel = index;
                 if (index == 0){
                     $scope.challengeList = ChallengeList.getList();
                 }else if (index == 1){
@@ -787,7 +858,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.fTest = filterIconList;
             var delegate = $ionicScrollDelegate.$getByHandle('small');
             var scroll_position = 0;
-            $scope.filSel = 0;
+
 
             var startAtX = 0;
             $scope.getXStart = function(){
@@ -798,7 +869,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     $scope.showFilterDetail();
                 }else{
                     $scope.filSel = $index;
+                    lastSelection = $index;
                     startAtX = (100*$index);
+                    $scope.changeFilter($index);
                     delegate.scrollTo(100*$scope.filSel,0,true);
                     var time = $timeout(function() {
                         $scope.showFilterStatus = false;
@@ -810,35 +883,47 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             };
 
             $scope.showFilterStatus = false;
+
             $scope.showFilter = function(){
 
-                delegate.scrollTo(100*$scope.filSel, 0 , false);
+                //delegate.scrollTo(100*$scope.filSel, 0 , false);
+                console.log("SCOPE FILE SEL "+$scope.filSel);
                 if ($scope.showFilterStatus == false){
-
+                    preSetFilterView = true;
                     $scope.showFilterStatus = true;
-
+                    //delegate.scrollToRememberedPosition();
                     if (map != null){
                         map.setClickable(false);
                     }
+                    /*delegate.scrollTo(100*$scope.filSel, 0 , false);*/
                 }
                 else{
                     $scope.showFilterStatus = false;
-
+                    preSetFilterView = false;
                     if (map != null){
                         map.setClickable(true);
                     }
+                    //$scope.clickFilter(sel);
                 }
+                console.log("SCOPE FILE SEL "+$scope.filSel);
             };
+            var lastSelection = 0;
+
             $scope.testSwipe = function(){
 
                 scroll_position = delegate.getScrollPosition().left;
-                if (scroll_position < 60 ){
+                console.log("SCOPE SCROLL POSITION "+scroll_position);
+                if (preSetFilterView){
+                    delegate.scrollTo(100*lastSelection, 0 , true);
+                    preSetFilterView = false;
+                }
+                else if (scroll_position < 60 && $scope.showFilterStatus == true){
                     $scope.filSel = 0;
-                }else if (scroll_position >60 && scroll_position<140){
+                }else if (scroll_position >60 && scroll_position<140 && $scope.showFilterStatus == true){
                     $scope.filSel = 1;
-                }else if (scroll_position > 140 && scroll_position < 240){
+                }else if (scroll_position > 140 && scroll_position < 240 && $scope.showFilterStatus == true){
                     $scope.filSel = 2;
-                }else{
+                }else if (scroll_position > 240 && $scope.showFilterStatus == true){
                     $scope.filSel = 3;
                 }
 
@@ -847,12 +932,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 }else{
                     $scope.filSel = 4;
                 }*/
-                if ($scope.filSel < 4 && $scope.showFilterStatus == true){
+                if ($scope.filSel < 4 && $scope.showFilterStatus == true && lastSelection != $scope.filSel){
+                    lastSelection = $scope.filSel;
                     startAtX = (100*$scope.filSel);
                     delegate.scrollTo(100*$scope.filSel, 0 , true);
-                    changeFilter($scope.filSel);
+                    $scope.changeFilter($scope.filSel);
+                    //delegate.rememberScrollPosition('position-set');
 
-                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true){
+                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true && lastSelection != $scope.filSel){
+                    lastSelection = $scope.filSel;
                     delegate.scrollTo(100*$scope.filSel, 0 , true);
                     var time = $timeout(function() {
                         $scope.showFilterDetail();
@@ -860,6 +948,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     }, 1000);
                     //
                 }
+                console.log("SCOPE TEST SWIPE SELE" + $scope.filSel);
               // alert("INSIDE TEST SWIPE " + JSON.stringify(delegate.getScrollPosition()));
 
             };
@@ -934,9 +1023,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 },
                 filterTags:function(tag){
                     User.setTagFilters(tag);
+                    if (User.getSubCatFilters().length > 0 || User.getTagFilters().length > 0){
+                        $scope.defaultMessage = "Sorry, there are no results that match your search.";
+                    }
                 },
                 filterSubCat:function(subCat){
                     User.setSubCatFilters(subCat);
+                    if (User.getSubCatFilters().length > 0 || User.getTagFilters().length > 0){
+                        $scope.defaultMessage = "Sorry, there are no results that match your search.";
+                    }
                 },
                 tagSelectClass:function(tag){
                     var styleClass= 'button button-light';
@@ -1019,6 +1114,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     }
                 },
                 getChallengeList: function(inputs){
+                    $scope.defaultMessage = "Sorry, Hungry Haven is currently not available in this city. Let us know  if you’d like to see challenges and contests here!";
                     var challList = dataService.getChallengeList(inputs);
 
 
@@ -1042,12 +1138,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     //return JSON.stringify(dataService.getChallengeList(inputs));
                 },
                 getChallengeOnly:function(){
+                    $scope.defaultMessage = "No food challenges available at this time.";
                     $scope.challengeList = ChallengeList.getChallengeList();
                 },
                 getContestOnly:function(){
+                    $scope.defaultMessage = "No food contests available at this time.";
                     $scope.challengeList = ChallengeList.getContestList();
                 },
                 getFestivalOnly:function(){
+                    $scope.defaultMessage = "No food festivals available at this time.";
                     $scope.challengeList = ChallengeList.getFestivalList();
                 },
                 getTags:function(){
@@ -1096,9 +1195,17 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             }).then(function(modal) {
                     $scope.modal = modal;
             });
-            $scope.$watch('challengeList',function(newValue,oldValue){
+            $scope.$on('challenge:updated', function(event,data) {
+                // you could inspect the data to see if what you care about changed, or just update your own scope
+                if (map != null){
+                    if (addMarker.addMarkerList(map,data)){
 
-                if (map != null && newValue!= oldValue){
+                    }
+                }
+            });
+            $scope.$watch('challengeList',function(newValue,oldValue){
+                console.log("I AM HERE NEW VAL "+JSON.stringify(newValue));
+                if (map != null){
                     if (addMarker.addMarkerList(map,newValue)){
 
                     }
@@ -1112,8 +1219,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
         });
     }])
     .controller('challengeListCtrl',['$scope','Auth','countryList','$stateParams','$ionicPlatform','$timeout','$ionicSideMenuDelegate','definedVariable','dataService',
-        '$ionicModal','User','adMobHelper','ChallengeList','$ionicScrollDelegate',
-        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User,adMobHelper,ChallengeList,$ionicScrollDelegate) {
+        '$ionicModal','User','adMobHelper','ChallengeList','$ionicScrollDelegate','SessionService',
+        function($scope,Auth,countryList, $stateParams,$ionicPlatform,$timeout,$ionicSideMenuDelegate,definedVariable,dataService,$ionicModal,User,adMobHelper,ChallengeList,$ionicScrollDelegate,SessionService) {
         $ionicPlatform.ready(function() {
 
             window.scope = $scope;
@@ -1219,9 +1326,16 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 },
                 filterTags:function(tag){
                     User.setTagFilters(tag);
+                    if (User.getSubCatFilters().length > 0 || User.getTagFilters().length > 0){
+                        $scope.defaultMessage = "Sorry, there are no results that match your search.";
+                    }
                 },
                 filterSubCat:function(subCat){
                     User.setSubCatFilters(subCat);
+                    if (User.getSubCatFilters().length > 0 || User.getTagFilters().length > 0){
+                        $scope.defaultMessage = "Sorry, there are no results that match your search.";
+                    }
+
                 },
                 tagSelectClass:function(tag){
                     var styleClass= 'button button-light';
@@ -1336,6 +1450,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
 
             $scope.showFilterDetail = function(){
+                $scope.showFilterStatus = false;
                 $scope.modal.show();
             };
 
@@ -1344,6 +1459,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
              * This is where custom filter begins
              * @type {Array}
              */
+            var lastSelection = 0;
+            var preSetFilterView = false;
             var filterIconList = [
                 {not_selected:"img/all-inactive@3x.png" , selected:"img/all-active@3x.png"},
                 {not_selected:"img/challenges-inactive@3x.png" , selected:"img/challenges-active@3x.png"},
@@ -1351,9 +1468,12 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 {not_selected:"img/festivals-inactive@3x.png", selected:"img/festivals-active@3x.png"},
                 {not_selected:"img/more-inactive@3x.png", selected:"img/more-active@3x.png"}
             ];
-            var changeFilter = function(index){
+            $scope.changeFilter = function(index){
                 $scope.showFilterSelected = index;
+                $scope.filSel = index;
+                lastSelection = index;
                 if (index == 0){
+                    $scope.defaultMessage = "Sorry, Hungry Haven is currently not available in this city. Let us know  if you’d like to see challenges and contests here!";
                     $scope.challengeList = ChallengeList.getList();
                 }else if (index == 1){
                     utils.getChallengeOnly();
@@ -1377,8 +1497,10 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     $scope.showFilterDetail();
                 }else{
                     $scope.filSel = $index;
+                    lastSelection = $index;
                     startAtX = (100*$index);
                     delegate.scrollTo(100*$scope.filSel,0,true);
+                    $scope.changeFilter($index);
                     var time = $timeout(function() {
                         $scope.showFilterStatus = false;
                         return true;
@@ -1391,27 +1513,39 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $scope.showFilterStatus = false;
             $scope.showFilter = function(){
 
-                delegate.scrollTo(100*$scope.filSel, 0 , false);
+                //delegate.scrollTo(100*$scope.filSel, 0 , false);
+                console.log("SCOPE FILE SEL "+$scope.filSel);
                 if ($scope.showFilterStatus == false){
-
+                    preSetFilterView = true;
                     $scope.showFilterStatus = true;
+                    //delegate.scrollToRememberedPosition();
 
+                    /*delegate.scrollTo(100*$scope.filSel, 0 , false);*/
                 }
                 else{
                     $scope.showFilterStatus = false;
+                    preSetFilterView = false;
 
+                    //$scope.clickFilter(sel);
                 }
+                console.log("SCOPE FILE SEL "+$scope.filSel);
             };
+
             $scope.testSwipe = function(){
 
                 scroll_position = delegate.getScrollPosition().left;
-                if (scroll_position < 60 ){
+                console.log("SCOPE SCROLL POSITION "+scroll_position);
+                if (preSetFilterView){
+                    delegate.scrollTo(100*lastSelection, 0 , true);
+                    preSetFilterView = false;
+                }
+                else if (scroll_position < 60 && $scope.showFilterStatus == true){
                     $scope.filSel = 0;
-                }else if (scroll_position >60 && scroll_position<140){
+                }else if (scroll_position >60 && scroll_position<140 && $scope.showFilterStatus == true){
                     $scope.filSel = 1;
-                }else if (scroll_position > 140 && scroll_position < 240){
+                }else if (scroll_position > 140 && scroll_position < 240 && $scope.showFilterStatus == true){
                     $scope.filSel = 2;
-                }else{
+                }else if (scroll_position > 240 && $scope.showFilterStatus == true){
                     $scope.filSel = 3;
                 }
 
@@ -1420,12 +1554,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  }else{
                  $scope.filSel = 4;
                  }*/
-                if ($scope.filSel < 4 && $scope.showFilterStatus == true){
+                if ($scope.filSel < 4 && $scope.showFilterStatus == true && lastSelection != $scope.filSel){
+                    lastSelection = $scope.filSel;
                     startAtX = (100*$scope.filSel);
                     delegate.scrollTo(100*$scope.filSel, 0 , true);
-                    changeFilter($scope.filSel);
+                    $scope.changeFilter($scope.filSel);
+                    //delegate.rememberScrollPosition('position-set');
 
-                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true){
+                }else if ($scope.filSel == 4 && $scope.showFilterStatus == true && lastSelection != $scope.filSel){
+                    lastSelection = $scope.filSel;
                     delegate.scrollTo(100*$scope.filSel, 0 , true);
                     var time = $timeout(function() {
                         $scope.showFilterDetail();
@@ -1433,6 +1570,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     }, 1000);
                     //
                 }
+                console.log("SCOPE TEST SWIPE SELE" + $scope.filSel);
                 // alert("INSIDE TEST SWIPE " + JSON.stringify(delegate.getScrollPosition()));
 
             };
@@ -1444,9 +1582,11 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                     $scope.modal = modal;
                 });
             $scope.challengeAvailable = true;
+            $scope.$on('challenge:updated', function(event,data) {
+
+            });
             $scope.$watch('challengeList',function(newValue,oldValue){
-                   if (newValue.length == 0)
-                        $scope.challengeAvailable = false;
+
             });
 
             $scope.toggleSideMenu = function(){
@@ -1704,14 +1844,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var takePicture = function(){
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 50,
-                    destinationType: Camera.DestinationType.FILE_URI
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    targetWidth:200,
+                    targetHeight:200
                 });
             };
             var chooseFromGallery = function(){
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 50,
                     destinationType: Camera.DestinationType.FILE_URI,
-                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                    targetWidth:200,
+                    targetHeight:200
 
                 });
             };
@@ -2150,7 +2294,9 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                     $scope.selectedDetails = list[$stateParams.id].prize_details;
                 }else if (menuC[index].menuName == "STATS"){
-                    if (list[$stateParams.id].success_text != "")
+
+
+                    if (list[$stateParams.id].success_text != "" && list[$stateParams.id].success_text != null && list[$stateParams.id].success_text != "null")
                         $scope.selectedDetails = list[$stateParams.id].success_text;
                     else{
                         $scope.selectedDetails = "No stats available. Yet.";
@@ -2266,7 +2412,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 var promise = dataService.send_feedback($scope.form_input).then(function(response){
                     if (response.status == "success"){
                         var alertPopup = $ionicPopup.alert({
-                            title: 'Error!',
+                            title: 'Success!',
                             template: "Thank you for your response"
                         });
                         alertPopup.then(function(res) {

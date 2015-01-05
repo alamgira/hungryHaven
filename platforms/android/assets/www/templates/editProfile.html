@@ -17,7 +17,7 @@
                         <li>
                             <div class="proImgBlk">
                                 <img id="myImage" src="{{admin}}{{userData.pic_url}}" ng-if="userData.pic_url != null" class="rounded_img" width="110" height="110">
-                                <img id="myImage" src="img/edit-user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
+                                <img id="myImage" src="img/user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
                                 <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
                             </div>
                         </li>
@@ -33,7 +33,7 @@
                 <li><table> <tr> <td valign="bottom" class="edit_txt">Username:</td><td><input type="text" ng-model="updated.username" placeholder="{{userData.username}}" class="useFullWidth"></td></tr></table>	</li>
                 <li><table> <tr> <td valign="bottom" class="edit_txt">City:</td><td>
 
-                    <select class="useFullWidth" ng-model="city" ng-options="country.city for country in countryList | unique:'city'" ng-change="modalActions.locationChange(city)">
+                    <select class="useFullWidth" ng-model="city" ng-options="country.city+', '+country.state for country in countryList | unique:'city'" ng-change="modalActions.locationChange(city)">
                         <option value="">City</option>
                     </select>
                 </td>
@@ -41,7 +41,7 @@
                 </table>
                 </li>
                 <li><table> <tr> <td valign="bottom" class="edit_txt">Birthdate:</td><td><div class="row">
-                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="updated.user_dob" >
+                    <input type="date" placeholder="Birthdate" class="useFullWidth" ng-model="updated.user_dob" placeholder="{{userData.user_dob}}">
                     <span class="calImg"><img src="img/calenderImg.png"></span>
                 </div></td></tr></table>	</li>
 
@@ -58,7 +58,7 @@
                             <li>
                                 <div class="proImgBlk">
                                     <img id="myImage" src="{{admin}}{{userData.pic_url}}" ng-if="userData.pic_url != null" class="rounded_img" width="110" height="110">
-                                    <img id="myImage" src="img/edit-user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
+                                    <img id="myImage" src="img/user.png" ng-if="userData.pic_url == null" class="rounded_img" width="110" height="110">
                                     <a ng-click="modalActions.showActions()"><img src="img/add-icon.png"></a>
                                 </div>
                             </li>

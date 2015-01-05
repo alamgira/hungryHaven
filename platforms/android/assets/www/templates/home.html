@@ -1,4 +1,4 @@
-<ion-view title="Home">
+<ion-view title="">
     <ion-nav-buttons side="left">
         <ion-header-bar class="bar bar-header bar-assertive setZeroPadding">
             <div class="pageNavHead useFullWidth">
@@ -6,7 +6,8 @@
                     <tr>
                         <td width="35px"><i class="icon ion-navicon" ng-click="toggleSideMenu()"></i></td>
                         <td class="cLoc">
-                            <select ng-model="city" ng-options="country.city group by country.country for country in countryList" ng-change="changeCity(city)">
+
+                            <select ng-model="city" ng-options="country.city+', '+country.state group by country.country for country in countryList " ng-change="changeCity(city)">
                             <option value="">Choose Location</option>
                             </select>
                         </td>
@@ -52,9 +53,8 @@
 
             </div>-->
             <ion-content direction="x" class="wide-as-needed animate-show"  ng-show="showFilterStatus" style="float:left;width:100%;"
-                         on-scroll="testSwipe()" scroll-event-interval="1000" has-bouncing="false"  delegate-handle="small" start-x="getXStart()"
-                    >
-                <ul class="hNav clearfix" style="width:1200px;"> <!--style="width:500px;"-->
+                         on-scroll="testSwipe()" scroll-event-interval="1000" has-bouncing="false"  delegate-handle="small" padding="false" start-x="getXStart()">
+                <ul class="hNav clearfix" style="width:800px;"> <!--style="width:500px;"-->
                     <!--<li ><a href="#">&nbsp;</a></li>
                     <li ng-repeat="filter in filterList"><a ng-class="{sltItm: $index==showFilterSelected}" ng-click="changeFilter($index)">{{filter.filterType}}</a></li>-->
                     <li><img src="img/spacer.png" width="80" height="80" /></li>
@@ -62,7 +62,7 @@
                         <img ng-src="{{filter.not_selected}}" width="80" height="80" ng-show="filSel != $index" ng-click="clickFilter($index)"/>
                         <img ng-src="{{filter.selected}}" width="80" height="80" ng-show="filSel == $index" ng-click="showFilter()"/>
                     </li>
-                    <li ><img src="img/spacer.png" width="80" height="80" /></li>
+                    <!--<li ><img src="img/spacer.png" width="80" height="80" /></li>-->
                 </ul>
 
             </ion-content>
@@ -87,7 +87,7 @@
                         </div>-->
                 <ul class="restList clearfix" style="width:500px;">
 
-                    <li ng-repeat="challenge in challengeList | multipleSearch:subCatForChallenge:tagForChallenge" class="verticalChallenge">
+                    <li ng-repeat="challenge in chall=(challengeList | multipleSearch:subCatForChallenge:tagForChallenge)" class="verticalChallenge">
 
                         <figure >
                             <a href="#/app/details/{{$index}}/{{challenge.category_name}}">
@@ -103,6 +103,11 @@
                             </a>
                             </span>
                         </figure>
+                    </li>
+                    <li ng-show="!chall.length">
+                        <div ng-show="!chall.length" style="width:80%;margin:0 auto;">
+                            <p ng-bind-html="defaultMessage"></p>
+                        </div>
                     </li>
                 </ul>
             </ion-scroll>

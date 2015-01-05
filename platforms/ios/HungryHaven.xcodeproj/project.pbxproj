@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		0030F792EBDA4E95ABA1B632 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DA250854CED940FF8BDF8F87 /* CDVSplashScreen.m */; };
 		009E4FC3EC5644A893F7C16D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9715D48BBC714FFD8B5A630D /* CoreLocation.framework */; };
@@ -90,6 +91,7 @@
 		BD89718C63774F5FA420D4BA /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 941354B548954A00BD3540A9 /* CDVLocalFilesystem.m */; };
 		C7565B23CFA14DBE92A0BBB1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1DC98F72494CCDBA28E6B0 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CB479B616A1441A8B7A1E7E1 /* MyPluginLayerDebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11393E75AAEA4BB88CC628B1 /* MyPluginLayerDebugView.m */; };
+		CBA26FB8BBBD4311819DFE42 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7BE41CEDFE4380AD85BDE0 /* StoreKit.framework */; };
 		CBB8FD8C1ADA468C8A01CBC0 /* PluginUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53A70AE34448F99451945F /* PluginUtil.m */; };
 		CCEA6A1AFC2E48FDB5943C9B /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22658DA6B221450EB04FDC40 /* CDVLocation.m */; };
 		CEA99BE801384B96B2473C29 /* GroundOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5515C756633E4B97B0089885 /* GroundOverlay.m */; };
@@ -105,7 +107,6 @@
 		E5104D4696FB44B7AA66E028 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8178C8E29F4B4D26B3F206C0 /* SystemConfiguration.framework */; };
 		E926DB8D142D4BD086A09333 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 374C8077F05E40BEA777BBA2 /* SocialSharing.m */; };
 		EB45D05A17EC4C319098D106 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DB5CFA4974BEE84194686 /* Map.m */; };
-		F211AC9332804739AC8E334C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9ADBB81E71B47F09C80D20C /* StoreKit.framework */; };
 		F42BE3DA437647E0AB0E30DB /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49F0317E504347832E934F /* CDVJpegHeaderWriter.m */; };
 		F650A68FAFBC4E0894A2902A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB100FED1B1452CABE1FCB9 /* OpenGLES.framework */; };
 		F6B68A3E6BF14520AC33AC4C /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B45E5E0CB454CB1003163 /* GoogleMaps.bundle */; };
@@ -252,6 +253,7 @@
 		8D1107310486CEB800E47090 /* HungryHaven-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HungryHaven-Info.plist"; path = "../HungryHaven-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		8D383F6C907D47209FEC6509 /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
 		8DF46BF5591645FE81DDAF6D /* GoogleMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleMaps.h; path = plugin.google.maps/GoogleMaps.h; sourceTree = "<group>"; };
+		8E7BE41CEDFE4380AD85BDE0 /* StoreKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		93952FE3DA5D4594A58BC6B5 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circle.h; path = plugin.google.maps/Circle.h; sourceTree = "<group>"; };
 		941354B548954A00BD3540A9 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = org.apache.cordova.file/CDVLocalFilesystem.m; sourceTree = "<group>"; };
 		9443F55777E3454C9A70E48A /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Circle.m; path = plugin.google.maps/Circle.m; sourceTree = "<group>"; };
@@ -321,7 +323,6 @@
 		F1D663FCEE9A4CAE93847A34 /* CDVAdMobPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVAdMobPlugin.m; path = com.google.cordova.admob/CDVAdMobPlugin.m; sourceTree = "<group>"; };
 		F1FBC0D83786456CA80CA40F /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Polygon.h; path = plugin.google.maps/Polygon.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = HungryHaven/config.xml; sourceTree = "<group>"; };
-		F9ADBB81E71B47F09C80D20C /* StoreKit.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FB18BCEFF3B94A72B4427BE8 /* GroundOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroundOverlay.h; path = plugin.google.maps/GroundOverlay.h; sourceTree = "<group>"; };
 		FBBDEBE696EF4B6CAF4CD4AE /* DFPBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DFPBannerView.h; path = com.google.admobsdk/DFPBannerView.h; sourceTree = "<group>"; };
 		FD2E8F440D3C407E9CC55AA6 /* MyReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyReachability.m; path = plugin.google.maps/MyReachability.m; sourceTree = "<group>"; };
@@ -348,7 +349,6 @@
 				84F289801E18471A8B5585CD /* EventKitUI.framework in Frameworks */,
 				9F49816350454C2586C98AFF /* Foundation.framework in Frameworks */,
 				47D9B5E13740429E9F14FF7B /* MessageUI.framework in Frameworks */,
-				F211AC9332804739AC8E334C /* StoreKit.framework in Frameworks */,
 				E5104D4696FB44B7AA66E028 /* SystemConfiguration.framework in Frameworks */,
 				AAC4F40E81064A45B992BBED /* UIKit.framework in Frameworks */,
 				79040A157BD4477A987C354E /* libCordovaGenericAd.a in Frameworks */,
@@ -368,6 +368,7 @@
 				409B746FADCC4A0EBD19F2E2 /* libsqlite3.dylib in Frameworks */,
 				54A19B23A8F04BC28168FE87 /* Accounts.framework in Frameworks */,
 				064CE4E1977E4BF4ABDCB3A0 /* Security.framework in Frameworks */,
+				CBA26FB8BBBD4311819DFE42 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +473,6 @@
 				ADF9BC1E38B44FA6AF87F46F /* EventKitUI.framework */,
 				A0DAA62ECFA644D38200B6FE /* Foundation.framework */,
 				F12EF589F81E4BC0BD6B92EB /* MessageUI.framework */,
-				F9ADBB81E71B47F09C80D20C /* StoreKit.framework */,
 				8178C8E29F4B4D26B3F206C0 /* SystemConfiguration.framework */,
 				0D8F911D917C410294E44CB3 /* UIKit.framework */,
 				07C66C0696AC4409BBBEFDB5 /* libCordovaGenericAd.a */,
@@ -492,6 +492,7 @@
 				A570FC3C268A46E9B0862CF4 /* libsqlite3.dylib */,
 				6D2761BF45AD408B937AFCDE /* Accounts.framework */,
 				035821C37D1240EDAD186272 /* Security.framework */,
+				8E7BE41CEDFE4380AD85BDE0 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -720,6 +721,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 942D58L88Z;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "HungryHaven" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -924,6 +935,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AwareAds Inc. (942D58L88Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -958,7 +971,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = HungryHaven;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -969,6 +983,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AwareAds Inc. (942D58L88Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1001,7 +1017,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = HungryHaven;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

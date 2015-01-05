@@ -293,6 +293,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/back-white-arrow.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/backgorund-with-logo.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/background-about.jpg \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/BackgroundScreen.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/bak.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/banner1.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/black_arrow.jpg \
@@ -472,6 +473,9 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/time_icon.jpg \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/timer-challenges.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/timer-contests.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tut1.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tut2.png \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tut3.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tw_icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/tw_log_icon.png \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/img/twitter-icon.png \
@@ -648,6 +652,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/home.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/influencerDetails.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/influencerList.html \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/intro.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/login.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/mapIt.html \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/assets/www/templates/menu.html \

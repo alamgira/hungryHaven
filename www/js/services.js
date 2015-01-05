@@ -779,11 +779,21 @@ myApp.factory('countryList',function($http,definedVariable){
                     console.log("After success: "+JSON.stringify(list));
                 });
                 console.log("LIST:"+JSON.stringify(list));*/
+                var countryList = [];
                 list = req.then(function(result){
+                    angular.forEach(result.data.data,function(key,value){
+
+                        if (result.data.data[value].city != null && result.data.data[value].state != null){
+
+                            countryList.push(result.data.data[value]);
+                        }
+
+                    });
+                    result.data.data = countryList;
                    return result.data;
                 });
             }
-            console.log(list);
+
             return list;
         }
     }
@@ -818,19 +828,19 @@ myApp.filter('unique', function() {
         return output;
     };
 });
-myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeList){
+myApp.filter('multipleSearch',['User','ChallengeList','$rootScope',function(User,ChallengeList,$rootScope){
     return function(challengeList,subCatForChallenge,tagForChallenge){
 
         var tagList = User.getTagFilters();
         var subList = User.getSubCatFilters();
-        console.log("TAG LIST INSIDER FILTER : "+JSON.stringify(tagList));
+
 
         var result = [];
         var chall_id = [];
         var keys = [];
         var tempTags = [];
         var tempSub = [];
-        console.log("TAG FOR CHALLENGE LIST : "+JSON.stringify(tagForChallenge));
+
         if ((tagForChallenge.length == "undefined" && subCatForChallenge.length == "undefined") || (tagForChallenge.length == 0 && subCatForChallenge.length == 0)){
             return challengeList;
         }
@@ -863,7 +873,7 @@ myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeLis
                     });
                 });
             });
-            console.log("NEW RESULT : " + JSON.stringify(result));
+
 
 
         }
@@ -878,13 +888,14 @@ myApp.filter('multipleSearch',['User','ChallengeList',function(User,ChallengeLis
                         });
                     });
             });
-            console.log("NEW RESULT : " + JSON.stringify(result));
+
 
 
         }
 
 
         if (tagList.length > 0 || subList.length > 0){
+            $rootScope.$broadcast('challenge:updated',result);
             ChallengeList.setCurrentList(result);
             return result;
         }

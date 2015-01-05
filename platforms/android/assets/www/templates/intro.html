@@ -1,0 +1,52 @@
+<div class="modal">
+    <!--<ion-header-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeLogin()">Close</button>
+        </div>
+        <h1 class="title">Login</h1>
+
+    </ion-header-bar>-->
+    <ion-content scroll="false">
+        <div class="intro-bg">
+            <div class="padding-top">&nbsp;
+                <div class="row">
+                    <div class="col col-33">
+                        <button class="button button-clear button-light" style="color: white;" ng-click="modalActions.leftButton()">
+                            {{leftButtonText}}
+                        </button>
+
+                    </div>
+                    <div class="col col-33 col-offset-45">
+                        <button class="button button-clear button-light" style="text-align: right;color:white;" ng-click="modalActions.rightButton()" >
+                        {{rightButtonText}}
+                        </button>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <ion-slide-box on-slide-changed="slideChanged($index)" show-pager="true" style="min-height: 400px;">
+                <ion-slide>
+                    <div class="box" style="width: 100%;">
+                        <img src="img/tut1.png" style="width: 80%; height: 100%; margin-left: 10%; "/>
+
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box">
+                        <img src="img/tut2.png" style="width: 80%;height: 100%;margin-left:10%;" />
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box">
+                        <img src="img/tut3.png" style="width: 80%;height: 100%;margin-left:10%;" />
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+</div>
+

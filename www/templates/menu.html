@@ -13,8 +13,7 @@
       <disable-screen class="cover"></disable-screen>
 
 
-       <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-           <!--  <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>-->
+       <ion-nav-bar class="bar-assertive nav-title-slide-ios7">
         </ion-nav-bar>
         <ion-nav-view name="menuContent" animation="slide-left-right" drag-content="false"></ion-nav-view>
   </ion-pane>
@@ -34,7 +33,7 @@
                   <div class="about_top no_back">
 
                       <div class="menu_left_img">
-                          <img src="img/menu-pic.png" width="110" ng-if="userInfo.pic_url == null">
+                          <img src="img/user.png" width="110" ng-if="userInfo.pic_url == null">
                           <img ng-src="{{adminUrl}}{{userInfo.pic_url}}" width="110" height="110" ng-if="userInfo.pic_url != null">
                       </div>
                       <!--<a href="#" class="red_icon"><img src="img/menu-redicon.png"  width="32"></a>-->
