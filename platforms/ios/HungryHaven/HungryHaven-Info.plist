@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>icon.png</string>
-	<key>CFBundleIcons</key>
-	<dict/>
-	<key>CFBundleIcons~ipad</key>
-	<dict/>
-	<key>CFBundleIdentifier</key>
-	<string>com.Company.hungryHaven</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.Company.hungryHaven</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb579835932147927</string>
-				<string>com.Company.hungryHaven</string>
-			</array>
-		</dict>
-	</array>
-	<key>CFBundleVersion</key>
-	<string>0.0.2</string>
-	<key>FacebookAppID</key>
-	<string>579835932147927</string>
-	<key>FacebookDisplayName</key>
-	<string>hungry haven ios</string>
-	<key>Google Maps API Key</key>
-	<string>AIzaSyDgKG2ghYiL87M6gGwR1tl7_h0mgwdYGHM</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Trace your location on the map</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Show your location on the map</string>
-	<key>NSMainNibFile</key>
-	<string></string>
-	<key>NSMainNibFile~ipad</key>
-	<string></string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-</dict>
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>English</string>
+    <key>CFBundleDisplayName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleIconFile</key>
+    <string>icon.png</string>
+    <key>CFBundleIcons</key>
+    <dict/>
+    <key>CFBundleIcons~ipad</key>
+    <dict/>
+    <key>CFBundleIdentifier</key>
+    <string>com.Company.hungryHaven</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>${PRODUCT_NAME}</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>2.0.4</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.Company.hungryHaven</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb579835932147927</string>
+          <string>com.Company.hungryHaven</string>
+        </array>
+      </dict>
+    </array>
+    <key>CFBundleVersion</key>
+    <string>2.0.4</string>
+    <key>FacebookAppID</key>
+    <string>579835932147927</string>
+    <key>FacebookDisplayName</key>
+    <string>Hungry Haven</string>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyDgKG2ghYiL87M6gGwR1tl7_h0mgwdYGHM</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show your location on the map</string>
+    <key>NSMainNibFile</key>
+    <string></string>
+    <key>NSMainNibFile~ipad</key>
+    <string></string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+  </dict>
 </plist>

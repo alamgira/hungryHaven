@@ -219,7 +219,7 @@ padding: 10px 15px 10px 66px;}
     padding: 5px 0 5px 25px;
     background-size: 13px;
 }
-.mapView{min-height: 300px;border-bottom: 1px solid #c1c1c1; position: relative;}
+.mapView{/*min-height: 300px;*/border-bottom: 1px solid #c1c1c1; position: relative;}
 .hNav{padding: 10px 0; background: #fff; border-bottom: 1px solid #c1c1c1; display: block; position: relative; list-style-type:none;
     white-space:nowrap; /*overflow-x:auto;*/}
 .hNav li{/*float: left;*/width: 33.33%; margin:0px 10px;text-align: center; text-transform: uppercase;display:inline;}
@@ -1493,4 +1493,15 @@ img.bic{width: 15px;}
 }
 .col-offset-45{
     margin-left:45%;
+}
+.iphone_four_height{
+    min-height:200px;
+}
+.map_default_height{
+    min-height:300px;
+}
+@media (max-height: 600px) {
+    .login-content{
+        padding-top: 80%;
+    }
 }

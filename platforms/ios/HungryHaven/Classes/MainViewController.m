@@ -60,9 +60,7 @@
 
     // Release any cached data, images, etc that aren't in use.
 }
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+
 #pragma mark View lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,9 +74,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self preferredStatusBarStyle];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];

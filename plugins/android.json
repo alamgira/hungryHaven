@@ -187,7 +187,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<string name=\"fb_app_name\">hungry haven ios</string>",
+                            "xml": "<string name=\"fb_app_name\">Hungry Haven</string>",
                             "count": 1
                         }
                     ]
@@ -247,7 +247,7 @@
         },
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "579835932147927",
-            "APP_NAME": "hungry haven ios",
+            "APP_NAME": "Hungry Haven",
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },

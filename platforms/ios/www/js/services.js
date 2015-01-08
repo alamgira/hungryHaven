@@ -187,16 +187,18 @@ myApp.factory('StorageService', function() {
 myApp.factory("adMobHelper",function(){
     var ad_units = {
         ios : {
-            banner: '/61407247/300x250_HungryHaven_AndroidAppROA' // or DFP format "/6253334/dfp_example_ad"
+            banner: '/61407247/320x50_HungryHaven_iOSAppROA' // or DFP format "/6253334/dfp_example_ad"
 
         },
         android : {
-            banner: '/61407247/300x250_HungryHaven_AndroidAppROA' // or DFP format "/6253334/dfp_example_ad"
+            //banner: '/61407247/300x250_HungryHaven_iOSAppROA'
+            banner: '/61407247/320x50_HungryHaven_AndroidAppROA' // or DFP format "/6253334/dfp_example_ad"
 
         }
     };
     return{
         getAndroid:function(){
+
             return ad_units.android;
         },
         getIos:function(){

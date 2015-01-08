@@ -4,6 +4,7 @@
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/CordovaLib/ant-build/classes.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/ant-build/classes.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/libs/bolts-android-1.1.2.jar \
+/Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/DistimoSDK.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/com.phonegap.plugins.facebookconnect/FacebookLib/libs/android-support-v4.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/google-play-services.jar \
 /Users/asifalamgir/Documents/hungryHaven/hungryHaven/platforms/android/libs/google-volley.jar \

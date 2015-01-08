@@ -134,7 +134,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
    /* .controller('PlaylistCtrl', function($scope, $stateParams) {
     })
 */
-    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth,StorageService) {
+    .controller('checkLocationCtrl', function($scope, $state, $location,$ionicPlatform,SessionService,$ionicSideMenuDelegate,$ionicLoading,countryList,Auth,StorageService,$interval) {
         function checkConnection() {
             var networkState = navigator.connection.type;
 
@@ -167,23 +167,25 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             $ionicLoading.show({
                 template: '<i class=""></i>Loading...'
             });
-
+            var notLoggedIn = true;
+            var checkComplete = false;
             //StorageService.unset('didTutorial');
             if (loggedIn != null && loggedIn.auth_token !== 'undefined' && StorageService.get('didTutorial') === "true"){
-
+                 notLoggedIn = false;
                  Auth.checkLogin({authToken:String(loggedIn.auth_token)}).then(function(data){
-
+                     checkComplete = true;
                      if (data.data.status == "success"){
 
                         $location.path('/app/home');
                      }else{
+                        notLoggedIn = true;
 
                         Auth.logout();
                      }
 
                  },function(error){
-
-
+                     checkComplete = true;
+                     notLoggedIn = true;
                  });
                 /*if (!Auth.checkLogin({authToken:String(loggedIn.auth_token)})){
                  Auth.logout();
@@ -192,6 +194,8 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                  }*/
 
             }else{
+                notLoggedIn = true;
+                checkComplete = true;
                 Auth.logout();
             }
             //console.log("IN CONTROLLER: "+JSON.stringify(list));
@@ -211,12 +215,21 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
 
                 $scope.countryList =  result.data;
             });
-
+            var inter;
             function startRedirecting(){
-
+                inter = $interval(function(){
+                    if (notLoggedIn && checkComplete){
+                        redirectCheckSuccess();
+                    }
+                },100)
                 // $location.path('/login');
-                $state.go('login');
+
             }
+            var redirectCheckSuccess = function(){
+                $interval.cancel(inter);
+                inter = undefined;
+                $state.go('login');
+            };
             function onSuccess(position) {
                 /* alert('Latitude: '          + position.coords.latitude          + '\n' +
                  'Longitude: '         + position.coords.longitude         + '\n' +
@@ -370,15 +383,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 var takePicture = function(){
                     navigator.camera.getPicture(onSuccess, onFail, {
                         quality: 50,
-                        destinationType: Camera.DestinationType.FILE_URI
+                        destinationType: Camera.DestinationType.FILE_URI,
+                        targetWidth: 200,
+                        targetHeight: 200
                     });
                 };
                 var chooseFromGallery = function(){
                     navigator.camera.getPicture(onSuccess, onFail, {
                         quality: 50,
                         destinationType: Camera.DestinationType.FILE_URI,
-                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-
+                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,     // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+                        targetWidth:200,
+                        targetHeight:200
                     });
                 };
                 function onSuccess(FILE_URI) {
@@ -557,6 +573,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                 $location.path('/app/home');
                             }
                             else{
+
                                 var alertPopup = $ionicPopup.alert({
                                     title: 'Error!',
                                     template: data.data.error_msg
@@ -570,19 +587,19 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         //$location.path('/app/home');
                     },
                     fbSignIn:function(){
-                        facebookConnectPlugin.login(["public_profile","email","user_location"],
+                       /* facebookConnectPlugin.login(["public_profile","email","user_location"],
                             fbLoginSuccess,
                             function (error) {
                                 var alertPopup = $ionicPopup.alert({
                                     title: 'Error!',
-                                    template: error
+                                    template: JSON.stringify(error)
                                 });
                                 alertPopup.then(function(res) {
 
                                 });
                             }
-                        );
-                        //facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
+                        );*/
+                        facebookConnectPlugin.getLoginStatus(statusSucess,statusError);
                         /*facebookConnectPlugin.login(["public_profile"],
                             fbLoginSuccess,
                             function (error) {
@@ -603,9 +620,13 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                                 if (response.status == "success"){
                                     StorageService.set('hungryAuth',JSON.stringify({auth_token:response.response.auth_token}));
                                     $location.path('/app/home')
+                                }else{
+                                    facebookConnectPlugin.logout(fbLoginAttempt , function(error){fbLoginAttempt();});
                                 }
                             });
                         });
+
+
                         //var response = Auth.fb_login(userData);
                     }else{
                         facebookConnectPlugin.login(["public_profile","email","user_location"],
@@ -613,7 +634,7 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                             function (error) {
                                 var alertPopup = $ionicPopup.alert({
                                     title: 'Error!',
-                                    template: error
+                                    template: JSON.stringify(error)
                                 });
                                 alertPopup.then(function(res) {
 
@@ -622,6 +643,20 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                         );
                     }
                 };
+                var fbLoginAttempt = function(){
+                    facebookConnectPlugin.login(["public_profile","email","user_location"],
+                        fbLoginSuccess,
+                        function (error) {
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: JSON.stringify(error)
+                            });
+                            alertPopup.then(function(res) {
+
+                            });
+                        }
+                    );
+                }
                 var statusError = function(err){
                     facebookConnectPlugin.login(["public_profile","email","user_location"],
                         fbLoginSuccess,
@@ -762,12 +797,22 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             /*
                 Admob setup goes here
              */
-
+            console.log("DEVICE HEIGHT "+ window.screen.height);
+            if (window.screen.height < 500){
+                $scope.screenHeightClass = 'iphone_four_height';
+            }else{
+                $scope.screenHeightClass = 'map_default_height';
+            }
             var AdMob;
             var createBanner = function(){
                 if (window.AdMob ){
 
-                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    if (navigator.userAgent !== undefined){
+                        var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    }else{
+                        var admobid = adMobHelper.getAndroid();
+                    }
+                    console.log(admobid.banner);
                     AdMob = window.AdMob;
 
                     AdMob.createBanner({
@@ -775,11 +820,14 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                             adSize:AdMob.SMART_BANNER,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
                             overlap: true,
-                            autoShow:true
-                        },
-                        function(){console.log("Success Ad");},
-                        function(error){console.log("Error ad: "+error);}
-                    )
+                            autoShow:true,
+                            success:function(){console.log("Success Ad");},
+                            error:function(error){console.log("Error ad: "+error);}
+
+                        }
+                    );
+                }else{
+                    console.log("I am here");
                 }
             };
 
@@ -1226,18 +1274,22 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var createBanner = function(){
                 if (window.AdMob ){
                     console.log("I AM IN HERE window plugin");
-                    var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    if (navigator.userAgent !== undefined){
+                        var admobid = ( /(android)/i.test(navigator.userAgent) ) ? adMobHelper.getAndroid() : adMobHelper.getIos();
+                    }else{
+                        var admobid =oadMobHelper.getAndroid() ;
+                    }
+
                     AdMob = window.AdMob;
 
                     AdMob.createBanner({
                             adId: admobid.banner,
                             position:AdMob.AD_POSITION.BOTTOM_CENTER,
                             overlap: true,
-                            autoShow:true
-                        },
-                        function(){console.log("Success Ad");},
-                        function(error){console.log("Error ad: "+error);}
-                    )
+                            autoShow:true,
+                            success:function(){console.log("Success Ad");},
+                            error:function(){console.log("Error ad: ");}
+                        });
                 }
             };
 
@@ -1841,14 +1893,18 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
             var takePicture = function(){
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 50,
-                    destinationType: Camera.DestinationType.FILE_URI
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    targetWidth:200,
+                    targetHeight:200
                 });
             };
             var chooseFromGallery = function(){
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 50,
                     destinationType: Camera.DestinationType.FILE_URI,
-                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                    targetWidth:200,
+                    targetHeight:200
 
                 });
             };
@@ -2008,11 +2064,15 @@ appController.controller('AppCtrl', function($scope,$ionicPlatform, $ionicModal,
                 },
                 logout:function(){
                     if (Auth.logout() && User.emptyUser() && ChallengeList.clearMemory() && blogList.clearMemory() && influencerList.clearMemory()){
+                        facebookConnectPlugin.logout(fbLoginSuccess , function(error){});
                         AdMob.removeBanner();
                         $location.path('/');
                     }
 
                 }
+
+            };
+            var fbLoginSuccess = function(){
 
             };
             $scope.editProfile = utils.editUser;

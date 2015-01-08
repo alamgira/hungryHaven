@@ -328,7 +328,6 @@ module.exports.metadata =
 {
     "com.google.admobsdk": "6.12.2",
     "com.google.cordova.admob": "2.5.0",
-    "com.google.playservices": "19.0.0",
     "com.ionic.keyboard": "1.0.3",
     "com.plugin.datepicker": "0.4.0",
     "nl.x-services.plugins.socialsharing": "4.3.11",

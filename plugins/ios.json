@@ -349,7 +349,7 @@
                     ],
                     "FacebookDisplayName": [
                         {
-                            "xml": "<string>hungry haven ios</string>",
+                            "xml": "<string>Hungry Haven</string>",
                             "count": 1
                         }
                     ]
@@ -362,9 +362,6 @@
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.google.cordova.admob": {
-            "PACKAGE_NAME": "com.Company.hungryHaven"
-        },
-        "com.google.playservices": {
             "PACKAGE_NAME": "com.Company.hungryHaven"
         },
         "com.ionic.keyboard": {
@@ -412,7 +409,7 @@
         },
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "579835932147927",
-            "APP_NAME": "hungry haven ios",
+            "APP_NAME": "Hungry Haven",
             "PACKAGE_NAME": "com.Company.hungryHaven"
         }
     },
